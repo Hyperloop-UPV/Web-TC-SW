@@ -1,0 +1,26 @@
+
+/*-- scss:defaults --*/
+
+
+#quarto-sidebar{
+
+  color: white !important; 
+
+  // Put logo in white
+  img{
+    filter: invert(100);
+  }
+}
+
+
+
+/* Cambiar solo el color de los enlaces */
+$link-color: #ff7f24;             // rosa
+$link-hover-color: darken(#ff7f24, 10%);
+$link-decoration: none;
+$link-hover-decoration: underline;
+
+
+$sidebar-bg: #20274c;
+
+$sidebar-fg: #ffffff;

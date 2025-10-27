@@ -5,6 +5,7 @@ subject: "JavaScript"
 author: "Javier Ribal del Río"
 date: "2025-10-11"
 date-modified: today
+affiliation: "Hyperloop UPV"
 
 format:
   html: default
@@ -165,3 +166,27 @@ Nosotros para el transcurso del curso utilizaremos la extensión Liveserver que 
 - Al concluir la instalación debería de aparecer en la parte derecha de la barra de estado (barra interior)
 
 :::
+
+
+## Node.JS y NPM
+
+### ¿Qué es node JS?
+
+
+**Node.js** es un **entorno de ejecución de JavaScript** basado en el motor V8 de Google Chrome.  
+Permite ejecutar código JavaScript directamente en el sistema operativo, sin depender de un navegador.  
+De este modo, el mismo lenguaje puede usarse tanto en el frontend como en el backend.
+
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### ¿Qué es NPM?
+
+**NPM (Node Package Manager)** es el gestor de paquetes de Node.js.  
+Facilita la instalación, actualización y gestión de librerías que amplían las funcionalidades de los proyectos.
+
+Descarga node y npm  [nodejs.org](https://nodejs.org)

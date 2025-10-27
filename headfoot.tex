@@ -1,0 +1,25 @@
+\usepackage{fancyhdr}
+          \usepackage{graphicx}
+          \usepackage{lastpage} % para usar el total de páginas si lo deseas
+          \graphicspath{{./img/}{../img/}{../../img/}}
+          \setlength{\headheight}{30pt}
+                    \fancypagestyle{plain}{
+            % Limpia cabecera y pie
+            \fancyhf{}
+
+            % --- CABECERA ---
+            \fancyhead[L]{\includegraphics[height=1.3cm]{logo.png}} % logotipo izquierda
+            \fancyhead[R]{Training Center Software}
+            
+            % --- PIE DE PÁGINA ---
+            \fancyfoot[L]{\small Javier Ribal del Río} 
+            \fancyfoot[C]{\small Hyperloop UPV}
+            \fancyfoot[R]{\small \thepage} % número de página
+
+            % --- Estilo de líneas ---
+            \renewcommand{\headrulewidth}{0.4pt} % línea bajo la cabecera
+            \renewcommand{\footrulewidth}{0.4pt} % línea sobre el pie
+          }
+
+          % Aplica el estilo a todas las páginas
+          \pagestyle{plain}

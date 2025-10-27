@@ -1,3 +1,7 @@
+:root{
+
+  background-color: #edeef0 !important;
+}
 
 main.content h2{
 
@@ -11,9 +15,18 @@ main.content h3{
 }
 
 
-
-
 main img{
 
   padding: 2vmax;
+}
+
+.quarto-sidebar-footer img{
+
+  width: 100px !important;
+}
+
+.quarto-sidebar-footer p{
+
+  text-align: center;
+
 }

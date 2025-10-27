@@ -2,26 +2,27 @@
 project:
   type: website 
 
+  resources: ["img/**", public/**]   
 
   preview: 
     browser: false
     port: 3000
 
+metadata: 
+ side-photo: "img/curva.png"
+
+
+
 website:
   title: "Training Center SW"
 
-  page-navigation: true
-  bread-crumbs: true
   
   sidebar:
     title: "Training Center SW"
     style: "docked"
+    collapse-level: 1
     search: false
-    tools: 
-      - icon: linkedin
-        href: https://www.linkedin.com/in/javier-ribal-del-rio/
-        aria-label: LinkedIn
-  
+    alignment: center
     logo: public/logo-text.png
     contents:
       - index.qmd
@@ -30,20 +31,21 @@ website:
           - section: "Semana 0"
             contents: 
               - pages/Bloque1/entorno.qmd
-      - section: "Bloque I Javascript"
+      - section: "Bloque II Javascript"
         contents:
           - section: "Semana 3"
             contents: 
               - pages/jsI.qmd
-  repo-url: https://github.com/quarto-dev/quarto-demo
-  repo-actions: [source, issue]
-  page-footer: "© Copyright 2025, Javier Ribal del Río - Hyperloop-UPV" 
+      - section: "Bloque III Interacción"
+
+    footer: "![](https://i.imgur.com/jbGUd7N.png)<br><br><br> ©Javier Ribal del Río <br> 2025 - Hyperloop UPV"
+  repo-url: https://github.com/HyperloopUPV-H8/Web-TC-SW
 
 
 format:
   html:
     theme:
-      light: flatly
+      light: [flatly, style/theme.scss]
       dark: darkly
     toc: true
     lang: es
@@ -57,3 +59,5 @@ format:
     number-sections: true
     geometry:
       - margin=2.5cm
+    include-in-header: headfoot.tex
+          
