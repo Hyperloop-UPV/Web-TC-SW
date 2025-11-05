@@ -1,6 +1,7 @@
 
 project:
-  type: website 
+  type: website
+  output-dir: docs
 
   resources: ["img/**", public/**]   
 
@@ -37,6 +38,7 @@ website:
             contents: 
               - pages/jsI.qmd
       - section: "Bloque III Interacción"
+      - section
 
     footer: "![](https://i.imgur.com/jbGUd7N.png)<br><br><br> ©Javier Ribal del Río <br> 2025 - Hyperloop UPV"
   repo-url: https://github.com/HyperloopUPV-H8/Web-TC-SW
