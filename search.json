@@ -1,0 +1,157 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "pages/jsI.html",
+    "href": "pages/jsI.html",
+    "title": "Introducción a JS",
+    "section": "",
+    "text": "Contenido",
+    "crumbs": [
+      "Bloque II Javascript",
+      "Semana 3",
+      "Introducción a JS"
+    ]
+  },
+  {
+    "objectID": "pages/jsI.html#introducción-a-js",
+    "href": "pages/jsI.html#introducción-a-js",
+    "title": "Introducción a JS",
+    "section": "Introducción a JS",
+    "text": "Introducción a JS\n\n¿Qué es JavaScript?\n\nEs el lenguaje de programación del navegador.\nCreado en 1995 por Brendan Eich\nPermite crear comportamientos dinámicos: responder a clics, validar formularios, mostrar u ocultar elementos, generar contenido nuevo, etc.\nSe ejecuta directamente en el navegador, sin necesidad de instalación.\nJunto con HTML y CSS forma el trinomio esencial del desarrollo web\n\nLa siguiente tabla recuerda las difrencias entre HTML, CSS y JS:\nsadf\n\n\n\nCapa\nLenguaje\nFunción principal\n\n\n\n\nContenido\nHTML\nEstructura del documento\n\n\nPresentación\nCSS\nApariencia y diseño\n\n\nComportamiento\nJavaScript\nInteractividad y lógica",
+    "crumbs": [
+      "Bloque II Javascript",
+      "Semana 3",
+      "Introducción a JS"
+    ]
+  },
+  {
+    "objectID": "pages/jsI-reveal.html#introducción-a-js",
+    "href": "pages/jsI-reveal.html#introducción-a-js",
+    "title": "Introducción a JS",
+    "section": "Introducción a JS",
+    "text": "Introducción a JS\n¿Qué es JavaScript?\n\nEs el lenguaje de programación del navegador.\nCreado en 1995 por Brendan Eich\nPermite crear comportamientos dinámicos: responder a clics, validar formularios, mostrar u ocultar elementos, generar contenido nuevo, etc.\nSe ejecuta directamente en el navegador, sin necesidad de instalación.\nJunto con HTML y CSS forma el trinomio esencial del desarrollo web\n\nLa siguiente tabla recuerda las difrencias entre HTML, CSS y JS:"
+  },
+  {
+    "objectID": "pages/Bloque1/entorno-reveal.html#ide",
+    "href": "pages/Bloque1/entorno-reveal.html#ide",
+    "title": "Preparación del entorno de trabajo",
+    "section": "IDE",
+    "text": "IDE\n¿Qué es una IDE?\nLas Integrated development environment (IDE) son aplicaciones diseñadas para facilitar la programación a los programadores.\nAunque no hay una lista de características propias de las IDE, suelen tener características comunes, por ejemplo:\n\nDebugger integrado en la interfaz\nGestor de archivos\nEditor de código inteligente: autocompletados"
+  },
+  {
+    "objectID": "pages/Bloque1/entorno-reveal.html#node.js-y-npm",
+    "href": "pages/Bloque1/entorno-reveal.html#node.js-y-npm",
+    "title": "Preparación del entorno de trabajo",
+    "section": "Node.JS y NPM",
+    "text": "Node.JS y NPM\n¿Qué es node JS?\nNode.js es un entorno de ejecución de JavaScript basado en el motor V8 de Google Chrome.\nPermite ejecutar código JavaScript directamente en el sistema operativo, sin depender de un navegador.\nDe este modo, el mismo lenguaje puede usarse tanto en el frontend como en el backend."
+  },
+  {
+    "objectID": "pages/Bloque1/entorno-reveal.html#qué-es-git",
+    "href": "pages/Bloque1/entorno-reveal.html#qué-es-git",
+    "title": "Preparación del entorno de trabajo",
+    "section": "¿Qué es Git?",
+    "text": "¿Qué es Git?\nGit es un sistema de control de versiones distribuido. Permite registrar los cambios de un proyecto, volver a versiones anteriores y trabajar de forma colaborativa sin sobrescribir el trabajo de otros. Cada usuario dispone de una copia completa del repositorio, lo que facilita el trabajo sin conexión."
+  },
+  {
+    "objectID": "pages/Bloque1/entorno-reveal.html#qué-es-github",
+    "href": "pages/Bloque1/entorno-reveal.html#qué-es-github",
+    "title": "Preparación del entorno de trabajo",
+    "section": "¿Qué es GitHub?",
+    "text": "¿Qué es GitHub?\nGitHub es una plataforma en la nube que utiliza Git para almacenar y gestionar proyectos. Permite compartir código, colaborar con otros desarrolladores y mantener un control de versiones centralizado."
+  },
+  {
+    "objectID": "pages/Bloque1/entorno-reveal.html#git-frente-github",
+    "href": "pages/Bloque1/entorno-reveal.html#git-frente-github",
+    "title": "Preparación del entorno de trabajo",
+    "section": "Git frente GitHub",
+    "text": "Git frente GitHub\n\nGit es la herramienta de control de versiones.(Software Libre, Linux Fundation)\nGitHub es la plataforma online donde se alojan los repositorios y se facilita el trabajo en equipo. (Coporativa Microsoft)"
+  },
+  {
+    "objectID": "pages/Bloque1/entorno.html",
+    "href": "pages/Bloque1/entorno.html",
+    "title": "Preparación del entorno de trabajo",
+    "section": "",
+    "text": "Contenido",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 0",
+      "Preparación del entorno de trabajo"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/entorno.html#ide",
+    "href": "pages/Bloque1/entorno.html#ide",
+    "title": "Preparación del entorno de trabajo",
+    "section": "IDE",
+    "text": "IDE\n\n¿Qué es una IDE?\nLas Integrated development environment (IDE) son aplicaciones diseñadas para facilitar la programación a los programadores.\nAunque no hay una lista de características propias de las IDE, suelen tener características comunes, por ejemplo:\n\nDebugger integrado en la interfaz\nGestor de archivos\nEditor de código inteligente: autocompletados\n\n\n\n¿Cuántas IDE existen?\n\nAndroid Studio\nRStudio\nEclipse\n\n\n\n¿Qué IDE utilizaremos nosotros?\nPrincipalmente trabajaremos con VSCode una IDE de proposito general que configuraremos para el desarrollo frontend\n\nInstalación de VScode\n\nEnlace\n\n\nFamiliarizarse con VSCode\n\nBarra lateral:\n\nExplorador de archivos\nMenú de Git\nMenú de extensiones\nBuscar\nDebugger\n\nEditor o área de edición: componente más importante de la IDE, lugar donde se escribe el código.\n\n\n\nExtensiones\nLas extensiones son aplicaciones software desarolladas por empresas o por particulares para modificar o agregar una nueva funcionalidad a las IDE. Pueden ir desde pequeñas modificaciones del tema o de la UI, o incorporar nuevas funcionalidades como la interacción con bases de datos.\n\nLiveServer\nNosotros para el transcurso del curso utilizaremos la extensión Liveserver que nos permitirá desplegar comodamente un pequeño servidor para la programación con HTML (Ahondaremos más la próxima semana)\n\nInstalación de LiveServer\n\n\nEntrar en el menú de extensiones\nBuscar por liveserver\nSeleccionar extensión\nInstalar\n\n\nAl concluir la instalación debería de aparecer en la parte derecha de la barra de estado (barra interior)",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 0",
+      "Preparación del entorno de trabajo"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/entorno.html#node.js-y-npm",
+    "href": "pages/Bloque1/entorno.html#node.js-y-npm",
+    "title": "Preparación del entorno de trabajo",
+    "section": "Node.JS y NPM",
+    "text": "Node.JS y NPM\n\n¿Qué es node JS?\nNode.js es un entorno de ejecución de JavaScript basado en el motor V8 de Google Chrome.\nPermite ejecutar código JavaScript directamente en el sistema operativo, sin depender de un navegador.\nDe este modo, el mismo lenguaje puede usarse tanto en el frontend como en el backend.\n\n\n¿Qué es NPM?\nNPM (Node Package Manager) es el gestor de paquetes de Node.js.\nFacilita la instalación, actualización y gestión de librerías que amplían las funcionalidades de los proyectos.\nDescarga node y npm nodejs.org",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 0",
+      "Preparación del entorno de trabajo"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/entorno.html#qué-es-git",
+    "href": "pages/Bloque1/entorno.html#qué-es-git",
+    "title": "Preparación del entorno de trabajo",
+    "section": "¿Qué es Git?",
+    "text": "¿Qué es Git?\nGit es un sistema de control de versiones distribuido. Permite registrar los cambios de un proyecto, volver a versiones anteriores y trabajar de forma colaborativa sin sobrescribir el trabajo de otros. Cada usuario dispone de una copia completa del repositorio, lo que facilita el trabajo sin conexión.",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 0",
+      "Preparación del entorno de trabajo"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/entorno.html#qué-es-github",
+    "href": "pages/Bloque1/entorno.html#qué-es-github",
+    "title": "Preparación del entorno de trabajo",
+    "section": "¿Qué es GitHub?",
+    "text": "¿Qué es GitHub?\nGitHub es una plataforma en la nube que utiliza Git para almacenar y gestionar proyectos. Permite compartir código, colaborar con otros desarrolladores y mantener un control de versiones centralizado.",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 0",
+      "Preparación del entorno de trabajo"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/entorno.html#git-frente-github",
+    "href": "pages/Bloque1/entorno.html#git-frente-github",
+    "title": "Preparación del entorno de trabajo",
+    "section": "Git frente GitHub",
+    "text": "Git frente GitHub\n\nGit es la herramienta de control de versiones.(Software Libre, Linux Fundation)\nGitHub es la plataforma online donde se alojan los repositorios y se facilita el trabajo en equipo. (Coporativa Microsoft)",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 0",
+      "Preparación del entorno de trabajo"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Programa",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.",
+    "crumbs": [
+      "Programa"
+    ]
+  }
+]
