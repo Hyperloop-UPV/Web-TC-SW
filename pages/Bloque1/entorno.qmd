@@ -11,7 +11,10 @@ format:
   html: default
   revealjs: 
     history: false
+    chalkboard: true
     output-file: entorno-reveal.html
+    parallax-background-image: ../../img/fondo.png
+    parallax-background-size: "cover" 
   pdf: default
 format-links: 
   - pdf
@@ -194,8 +197,8 @@ Facilita la instalación, actualización y gestión de librerías que amplían l
 Descarga node y npm  [nodejs.org](https://nodejs.org)
 
 
-# Git y GitHub
-## ¿Qué es Git?
+## Git y GitHub
+### ¿Qué es Git?
 
 Git es un sistema de control de versiones distribuido.
 Permite registrar los cambios de un proyecto, volver a versiones anteriores y trabajar de forma colaborativa sin sobrescribir el trabajo de otros.
@@ -207,7 +210,7 @@ Cada usuario dispone de una copia completa del repositorio, lo que facilita el t
 
 :::
 
-##  ¿Qué es GitHub?
+###  ¿Qué es GitHub?
 
 GitHub es una plataforma en la nube que utiliza Git para almacenar y gestionar proyectos.
 Permite compartir código, colaborar con otros desarrolladores y mantener un control de versiones centralizado.
@@ -219,8 +222,55 @@ Permite compartir código, colaborar con otros desarrolladores y mantener un con
 
 :::
 
-## Git frente GitHub
+### Git frente GitHub
 
 - Git es la herramienta de control de versiones.(Software Libre, Linux Fundation)
 
 - GitHub es la plataforma online donde se alojan los repositorios y se facilita el trabajo en equipo. (Coporativa Microsoft)
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+
+### Uso de Git y GitHub
+
+En Hyperloop UPV, tanto en los subsistemas de Software y Firmware utilizamos GitHub como herramienta de gestión de código.
+
+Nosotros en el TC, también trataremos de facilitarnos con esta herramienta
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### Instalación de Git y Cuenta de GitHub
+
+- [Instalación de Git](git-scm.com/install/)
+- [Cuenta de GitHub](https://github.com/)
+
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+
+
+### Digrama de trabajo de Git
+
+![](../../img/mapa-git.png)
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+#### Git en VScode
+
+![](../../img/S0-04.png)
