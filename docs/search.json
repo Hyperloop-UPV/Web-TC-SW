@@ -52,25 +52,11 @@
     "text": "Node.JS y NPM\n¿Qué es node JS?\nNode.js es un entorno de ejecución de JavaScript basado en el motor V8 de Google Chrome.\nPermite ejecutar código JavaScript directamente en el sistema operativo, sin depender de un navegador.\nDe este modo, el mismo lenguaje puede usarse tanto en el frontend como en el backend."
   },
   {
-    "objectID": "pages/Bloque1/entorno-reveal.html#qué-es-git",
-    "href": "pages/Bloque1/entorno-reveal.html#qué-es-git",
+    "objectID": "pages/Bloque1/entorno-reveal.html#git-y-github",
+    "href": "pages/Bloque1/entorno-reveal.html#git-y-github",
     "title": "Preparación del entorno de trabajo",
-    "section": "¿Qué es Git?",
-    "text": "¿Qué es Git?\nGit es un sistema de control de versiones distribuido. Permite registrar los cambios de un proyecto, volver a versiones anteriores y trabajar de forma colaborativa sin sobrescribir el trabajo de otros. Cada usuario dispone de una copia completa del repositorio, lo que facilita el trabajo sin conexión."
-  },
-  {
-    "objectID": "pages/Bloque1/entorno-reveal.html#qué-es-github",
-    "href": "pages/Bloque1/entorno-reveal.html#qué-es-github",
-    "title": "Preparación del entorno de trabajo",
-    "section": "¿Qué es GitHub?",
-    "text": "¿Qué es GitHub?\nGitHub es una plataforma en la nube que utiliza Git para almacenar y gestionar proyectos. Permite compartir código, colaborar con otros desarrolladores y mantener un control de versiones centralizado."
-  },
-  {
-    "objectID": "pages/Bloque1/entorno-reveal.html#git-frente-github",
-    "href": "pages/Bloque1/entorno-reveal.html#git-frente-github",
-    "title": "Preparación del entorno de trabajo",
-    "section": "Git frente GitHub",
-    "text": "Git frente GitHub\n\nGit es la herramienta de control de versiones.(Software Libre, Linux Fundation)\nGitHub es la plataforma online donde se alojan los repositorios y se facilita el trabajo en equipo. (Coporativa Microsoft)"
+    "section": "Git y GitHub",
+    "text": "Git y GitHub\n¿Qué es Git?\nGit es un sistema de control de versiones distribuido. Permite registrar los cambios de un proyecto, volver a versiones anteriores y trabajar de forma colaborativa sin sobrescribir el trabajo de otros. Cada usuario dispone de una copia completa del repositorio, lo que facilita el trabajo sin conexión."
   },
   {
     "objectID": "pages/Bloque1/entorno.html",
@@ -109,35 +95,11 @@
     ]
   },
   {
-    "objectID": "pages/Bloque1/entorno.html#qué-es-git",
-    "href": "pages/Bloque1/entorno.html#qué-es-git",
+    "objectID": "pages/Bloque1/entorno.html#git-y-github",
+    "href": "pages/Bloque1/entorno.html#git-y-github",
     "title": "Preparación del entorno de trabajo",
-    "section": "¿Qué es Git?",
-    "text": "¿Qué es Git?\nGit es un sistema de control de versiones distribuido. Permite registrar los cambios de un proyecto, volver a versiones anteriores y trabajar de forma colaborativa sin sobrescribir el trabajo de otros. Cada usuario dispone de una copia completa del repositorio, lo que facilita el trabajo sin conexión.",
-    "crumbs": [
-      "Bloque I Introducción",
-      "Semana 0",
-      "Preparación del entorno de trabajo"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque1/entorno.html#qué-es-github",
-    "href": "pages/Bloque1/entorno.html#qué-es-github",
-    "title": "Preparación del entorno de trabajo",
-    "section": "¿Qué es GitHub?",
-    "text": "¿Qué es GitHub?\nGitHub es una plataforma en la nube que utiliza Git para almacenar y gestionar proyectos. Permite compartir código, colaborar con otros desarrolladores y mantener un control de versiones centralizado.",
-    "crumbs": [
-      "Bloque I Introducción",
-      "Semana 0",
-      "Preparación del entorno de trabajo"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque1/entorno.html#git-frente-github",
-    "href": "pages/Bloque1/entorno.html#git-frente-github",
-    "title": "Preparación del entorno de trabajo",
-    "section": "Git frente GitHub",
-    "text": "Git frente GitHub\n\nGit es la herramienta de control de versiones.(Software Libre, Linux Fundation)\nGitHub es la plataforma online donde se alojan los repositorios y se facilita el trabajo en equipo. (Coporativa Microsoft)",
+    "section": "Git y GitHub",
+    "text": "Git y GitHub\n\n¿Qué es Git?\nGit es un sistema de control de versiones distribuido. Permite registrar los cambios de un proyecto, volver a versiones anteriores y trabajar de forma colaborativa sin sobrescribir el trabajo de otros. Cada usuario dispone de una copia completa del repositorio, lo que facilita el trabajo sin conexión.\n\n\n¿Qué es GitHub?\nGitHub es una plataforma en la nube que utiliza Git para almacenar y gestionar proyectos. Permite compartir código, colaborar con otros desarrolladores y mantener un control de versiones centralizado.\n\n\nGit frente GitHub\n\nGit es la herramienta de control de versiones.(Software Libre, Linux Fundation)\nGitHub es la plataforma online donde se alojan los repositorios y se facilita el trabajo en equipo. (Coporativa Microsoft)\n\n\n\nUso de Git y GitHub\nEn Hyperloop UPV, tanto en los subsistemas de Software y Firmware utilizamos GitHub como herramienta de gestión de código.\nNosotros en el TC, también trataremos de facilitarnos con esta herramienta\n\n\nInstalación de Git y Cuenta de GitHub\n\nInstalación de Git\nCuenta de GitHub\n\n\n\nDigrama de trabajo de Git\n\n\nGit en VScode",
     "crumbs": [
       "Bloque I Introducción",
       "Semana 0",

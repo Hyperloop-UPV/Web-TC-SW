@@ -9,6 +9,9 @@ project:
     browser: false
     port: 3000
 
+execute:
+  freeze: auto
+
 metadata: 
  side-photo: "img/curva.png"
 
