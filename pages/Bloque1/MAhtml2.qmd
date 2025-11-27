@@ -1,0 +1,30 @@
+---
+title: "MA: Mas HTML"
+author: "Javier Ribal del Río"
+date: "2025-11-28"
+date-modified: today
+affiliation: "Hyperloop UPV"
+---
+
+
+Durante la explicación de teoría vista esta semana en clase nos hemos introducido en las etiquetas básicas de HTML.
+
+A continuación una selección de etiquetas que no hemos visto en clase, pero resulta interesante conocer, puesto que en determinadas ocasiones son útiles. Cada ítem de la lista es un enlace a la documentación de Mozilla donde está explicado el funcionamiento de la etiqueta de forma exhaustiva. No hay que conocer todos los aspectos de cada etiqueta, basta con tener una idea general de como funcionan.
+
+- [input types](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input#input_types). Muy importante conocer todos los tipos de inputs
+
+- [code](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/code)
+
+- [iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe). Útil y ampliamente extendida
+
+- [hr](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/hr). Línea horizontal
+
+- [figure](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/figure) y [figcaption](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/figcaption). Permite insertar figura y pie de figura.
+
+- [audio](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/audio). Insertar un audio en la página web.
+
+- [video](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video). Insertar un audio en la página web.
+
+- [header](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/header), [main](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/main), [footer](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/footer). Son como `<div>` pero ya con usos por defecto preasignados.
+
+

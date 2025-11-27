@@ -1,0 +1,13 @@
+---
+title: "TA1: Mi CV I"
+author: "Javier Ribal del Río"
+date: "2025-11-28"
+date-modified: today
+affiliation: "Hyperloop UPV"
+---
+
+A día de hoy es muy importante tener una imagen digital, por ello la tarea extra consite en crearte tu propia página web básica usando html. 
+
+Puedes usar el CV de Antonio Machado como referencia.
+
+Base: [Ejemplo](ta1-solu.html)

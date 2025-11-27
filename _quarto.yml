@@ -11,6 +11,7 @@ project:
 
 execute:
   freeze: auto
+  cache: true
 
 metadata: 
  side-photo: "img/curva.png"
@@ -39,6 +40,10 @@ website:
           - section: "Semana 1"
             contents:
               - pages/Bloque1/html.qmd
+              - pages/Bloque1/t1.qmd
+              - pages/Bloque1/MAhtml2.qmd
+              - pages/Bloque1/t1a.qmd
+
           - text: "Próximamente..."
       - section: "Bloque II Programación"
       - section: "Bloque III Interacción"

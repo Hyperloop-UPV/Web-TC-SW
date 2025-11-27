@@ -2,7 +2,7 @@
 title: "HTML"
 subtitle: "Estructura HTML, etiquetas básicas y diseño web"
 author: "Javier Ribal del Río"
-date: "2025-11-22"
+date: "2025-11-28"
 date-modified: today
 affiliation: "Hyperloop UPV"
 
@@ -80,7 +80,7 @@ HTML es un lenguaje de marcas que permite definir la estructura y el contenido d
 
 ### Estructura básica 
 
-```{.html code-line-numbers="|1|2,12|3,5|7,11|9}
+```{.html code-line-numbers="|1|2,12|3,5|7,11|9"}
 <!DOCTYPE html>
 <html>
 <head>
@@ -347,3 +347,323 @@ Etiqueta invisible
 :::
 
 
+
+#### Tablas
+
+<table>
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio (€)</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>Manzanas</td>
+      <td>10</td>
+      <td>3,50</td>
+    </tr>
+    <tr>
+      <td>Naranjas</td>
+      <td>8</td>
+      <td>4,00</td>
+    </tr>
+    <tr>
+      <td>Plátanos</td>
+      <td>6</td>
+      <td>2,80</td>
+    </tr>
+  </tbody>
+
+  <tfoot>
+    <tr>
+      <td>Total</td>
+      <td>24</td>
+      <td>10,30</td>
+    </tr>
+  </tfoot>
+</table>
+
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+
+
+```html
+<table>
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio (€)</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>Manzanas</td>
+      <td>10</td>
+      <td>3,50</td>
+    </tr>
+    <tr>
+      <td>Naranjas</td>
+      <td>8</td>
+      <td>4,00</td>
+    </tr>
+    <tr>
+      <td>Plátanos</td>
+      <td>6</td>
+      <td>2,80</td>
+    </tr>
+  </tbody>
+
+  <tfoot>
+    <tr>
+      <td>Total</td>
+      <td>24</td>
+      <td>10,30</td>
+    </tr>
+  </tfoot>
+</table>
+```
+
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+
+
+#### `a` Link
+
+[HyperloopUPV](https://hyperloopupv.com/)
+
+```html
+<!-- ¿Qué pasa con la URL -->
+<a>Hyperloop UPV</a>
+```
+
+
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+##### Propiedades HTML
+
+Las etiquetas o elementos html disponen de atributos que nos permiten modificar su comportamiento interno.
+
+En el caso de las etiquetas `<a>` debemos de especificar en los atributos la referncia en cuestión
+
+```html
+  <a href="https://hyperloopupv.com/"> HyperloopUPV </a>
+```
+
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+
+#### `<img>` *Image*
+
+!["Plaza de la Reina"](../../img/pr.jpg)
+
+
+```html
+<img src="../pr.jpg" alt="Plaza con una fuente en el centro alrdedor casetas y fincas">
+```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+
+#### `<forms>` *Forms*
+
+Ampliamente utilizados en HTML, trabajan sobre la etiqueta `<input>` la cual tiene muchos tipos.
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+
+##### `<input type="text">`
+
+<form>
+
+  <label for="first-name">Nombre:</label>
+  <input type="text" name="first-name"/>
+
+</form>
+
+```html
+<form>
+
+  <label for="first-name">Nombre:</label>
+
+  <input type="text" name="first-name"/>
+</form>
+``` 
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+##### `<input type="number">`
+
+
+<form>
+
+  <label for="first-name">Edad:</label>
+  <input type="number" name="first-name"/>
+
+</form>
+
+
+
+
+```html
+<form>
+
+  <label for="age">Edad:</label>
+
+  <input type="number" name="age" />
+</form>
+``` 
+
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+
+##### `<input type="radio">`
+
+
+<form>
+
+  <label for="sub">Subsistema: </label><br />
+  <input type="radio" name="sub" value="software" /> Software <br />
+  <input type="radio" name="sub" value="firmware" /> Firmware <br />
+
+</form>
+
+
+
+
+```html
+<form>
+
+  <label for="sub">Subsistema: </label><br />
+  <input type="radio" name="sub" value="software" /> Software <br />
+  <input type="radio" name="sub" value="firmware" /> Firmware <br />
+
+</form>
+``` 
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+##### `<input type="submit">`
+
+<form>
+
+  <label for="first-name">Nombre:</label>
+  <input type="text" name="first-name"/> <br />
+
+  <input type="submit"/>
+
+</form>
+
+```html
+<form>
+
+  <label for="first-name">Nombre:</label>
+  <input type="text" name="first-name"/>
+
+  <br/>
+
+  <input type="submit"/>
+</form>
+``` 
+
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+
+#### `<button>` *Button*
+
+Por ahora no los utilizaremos, pero es importante saber que existen
+
+<button>Suscribirse</button>
+
+```html
+<button>Suscribirse</button>
+```
+
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+
+## Primer *repo* de Git
+
+0. Iniciar sesión en cuenta de GitHub
+1. Barra superior derecha, Símbolo + > New Repo
+2. Repository Name
+3. Description of the repo
+4. Visibility
+5. Add `README` 
+6. Crear repositorio
+
+---
+
+7. Desde la ventana del repositorio creado
+8. Code <> > Clone > HTTPS > *Copiar URL*
+9. Desde VScode
+10. Clonar repositorio (si no aparece  F1, paleta de comandos *Clonar Repositorio*)
+11. Pegar la *URL* del repo
+12. Presionar intro (equivalente a `git clone`)
+
+---
+
+13. Realizar cambios
+14. Desde la barra derecha seleccionar menú de Git (3 nodos interconectados por dos aristas)
+15. Agregar presionando el + los archivos a la *staging area* (equivalente a `git add <file>`)
+16. Escribir mensaje de *commit* y presionar botón de confirmación (equivalente a `git commit`)
+
+---
+
+Una vez se hayan realizados todos los commits deseados presionar la rueda de sincronización en la barra de estado. Este último cambio es equivalente a ejecutar `git pull` y `git push`.
+
+`push` sube los cambios al repositorio remoto
+`pull` actualiza los cambios de repositorio remoto por el local

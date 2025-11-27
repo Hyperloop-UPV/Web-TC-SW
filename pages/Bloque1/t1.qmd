@@ -1,0 +1,42 @@
+---
+title: "T1: Web de HL I"
+author: "Javier Ribal del Río"
+date: "2025-11-28"
+date-modified: today
+affiliation: "Hyperloop UPV"
+---
+
+
+La primera tarea de esta semana consiste en diseñar una página web para el equipo de generación espontánea llamado Hyperloop UPV, la web debe de ser realizada en un archivo HTML y debe de constar **por lo menos** de los siguientes apartados y estructura
+
+- Título principal de la página `<h1>`
+- Varios secciones cada una introducida por un título `<h2>` (si es necesario hacer `<h3>`)
+  - Descripción del equipo
+  - Lista desordenada de los subsistemas
+  - Lista de Partners por orden de importancia (UPV, )
+  - *Un día en Hyperloop*  (nótese el título del apartado en cursiva)
+    - Breve descripción de lo que hacemos en el equipo, alguna foto
+  - Miembros
+    - Una tabla de miembros por subsistema  (inventarse los datos)
+  - Formulario para solicitar unirse al equipo que solicite
+    - Nombre
+    - Apellido
+    - Curso (*radius button*)
+    - Botón de enviar
+  - Link a la web del TC de SW y a la oficial del equipo
+
+- Cada sección debe de estar contenido en un div de la siguiente forma
+
+```html
+<div>
+
+  <h2>Títlo de sección</h2>
+
+  <Contenido de la sección />
+
+</div>
+```
+
+Base: [Web](t1-solu.html)
+
+Base: [Web](ta1-solu.html)

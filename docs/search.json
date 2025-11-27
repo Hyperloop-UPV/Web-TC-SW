@@ -86,62 +86,16 @@
     "text": "Git y GitHub\n¿Qué es Git?\nGit es un sistema de control de versiones distribuido. Permite registrar los cambios de un proyecto, volver a versiones anteriores y trabajar de forma colaborativa sin sobrescribir el trabajo de otros. Cada usuario dispone de una copia completa del repositorio, lo que facilita el trabajo sin conexión."
   },
   {
-    "objectID": "pages/Bloque1/bloque1.html",
-    "href": "pages/Bloque1/bloque1.html",
-    "title": "Bloque I Introducción",
+    "objectID": "pages/Bloque1/t1.html",
+    "href": "pages/Bloque1/t1.html",
+    "title": "T1: Web de HL I",
     "section": "",
-    "text": "El objetivo del bloque 1 es sentar la base para la realización del curso, aprendiendo las competencias mínimas para realizar el curso.\nEn este bloque se hará una introducción: las herramientas de trabajo, el lenguaje de marcado HTML que permite crear páginas web estáticas y el lenguaje de programación de CSS que nos permite formatear webs previamente construidas.\nEste bloque se compone de 3 semanas, 2 tareas de clase y dos tareas voluntarias.",
+    "text": "La primera tarea de esta semana consiste en diseñar una página web para el equipo de generación espontánea llamado Hyperloop UPV, la web debe de ser realizada en un archivo HTML y debe de constar por lo menos de los siguientes apartados y estructura\n\nTítulo principal de la página &lt;h1&gt;\nVarios secciones cada una introducida por un título &lt;h2&gt; (si es necesario hacer &lt;h3&gt;)\n\nDescripción del equipo\nLista desordenada de los subsistemas\nLista de Partners por orden de importancia (UPV, )\nUn día en Hyperloop (nótese el título del apartado en cursiva)\n\nBreve descripción de lo que hacemos en el equipo, alguna foto\n\nMiembros\n\nUna tabla de miembros por subsistema (inventarse los datos)\n\nFormulario para solicitar unirse al equipo que solicite\n\nNombre\nApellido\nCurso (radius button)\nBotón de enviar\n\nLink a la web del TC de SW y a la oficial del equipo\n\nCada sección debe de estar contenido en un div de la siguiente forma\n\n&lt;div&gt;\n\n  &lt;h2&gt;Títlo de sección&lt;/h2&gt;\n\n  &lt;Contenido de la sección /&gt;\n\n&lt;/div&gt;\nBase: Web\nBase: Web",
     "crumbs": [
-      "Bloque I Introducción"
+      "Bloque I Introducción",
+      "Semana 1",
+      "T1: Web de HL I"
     ]
-  },
-  {
-    "objectID": "pages/Bloque1/bloque1.html#contenido",
-    "href": "pages/Bloque1/bloque1.html#contenido",
-    "title": "Bloque I Introducción",
-    "section": "Contenido",
-    "text": "Contenido\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nFecha\nContenido\nContenido de la clase\nTarea Clase\nMaterial Extra\nTarea Extra\n\n\n\n\n0\n21/11/2025\nIntroducción\nPresentación TC, VSCode, Git, LiveShare y GitHub\n-\n-\n-\n\n\n1\n28/11/2025\nHTML\nEstructura básica, links, listas, tablas, form, img, div, span\nWeb HL I\nEtiquetas: HTML5, video, iframe\nMi porfolio I\n\n\n2\n05/12/2025\nCSS\nEstilos básicos, clases, id, archivos externos\nWeb HL II\nSelectores y Pseudoclases\nMi porfolio II",
-    "crumbs": [
-      "Bloque I Introducción"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque1/bloque1.html#material",
-    "href": "pages/Bloque1/bloque1.html#material",
-    "title": "Bloque I Introducción",
-    "section": "Material",
-    "text": "Material\n\nMDN (Mozilla Developer Network), HTML y CSS\nW3Schools HTML y CSS\nVisual Studio Code Manual VSCode\nCSS tricks CSS Avanzado",
-    "crumbs": [
-      "Bloque I Introducción"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque1/ehtml.html#estructura-básica-de-las-páginas-web",
-    "href": "pages/Bloque1/ehtml.html#estructura-básica-de-las-páginas-web",
-    "title": "HTML",
-    "section": "Estructura básica de las páginas web",
-    "text": "Estructura básica de las páginas web\n¿Qué es una página web?\nUna página web es un documento digital accesible desde un navegador, compuesto por HTML, CSS y, cuando es necesario, JavaScript. Representa la unidad básica de contenido o interacción dentro de un sitio web y puede integrar tanto información estática como elementos dinámicos."
-  },
-  {
-    "objectID": "pages/Bloque1/ehtml.html#html5",
-    "href": "pages/Bloque1/ehtml.html#html5",
-    "title": "HTML",
-    "section": "HTML5",
-    "text": "HTML5\n¿Qué es HTML?\nHTML es un lenguaje de marcas que permite definir la estructura y el contenido de un documento para la web. Mediante un conjunto de etiquetas, el desarrollador describe elementos como textos, imágenes, enlaces o formularios, indicando su función dentro de la página. Es la base sobre la que posteriormente se aplican estilos (CSS) y comportamientos dinámicos (JavaScript)."
-  },
-  {
-    "objectID": "pages/Bloque1/ehtml.html#node.js-y-npm",
-    "href": "pages/Bloque1/ehtml.html#node.js-y-npm",
-    "title": "HTML",
-    "section": "Node.JS y NPM",
-    "text": "Node.JS y NPM\n¿Qué es node JS?\nNode.js es un entorno de ejecución de JavaScript basado en el motor V8 de Google Chrome.\nPermite ejecutar código JavaScript directamente en el sistema operativo, sin depender de un navegador.\nDe este modo, el mismo lenguaje puede usarse tanto en el frontend como en el backend."
-  },
-  {
-    "objectID": "pages/Bloque1/ehtml.html#git-y-github",
-    "href": "pages/Bloque1/ehtml.html#git-y-github",
-    "title": "HTML",
-    "section": "Git y GitHub",
-    "text": "Git y GitHub\n¿Qué es Git?\nGit es un sistema de control de versiones distribuido. Permite registrar los cambios de un proyecto, volver a versiones anteriores y trabajar de forma colaborativa sin sobrescribir el trabajo de otros. Cada usuario dispone de una copia completa del repositorio, lo que facilita el trabajo sin conexión."
   },
   {
     "objectID": "pages/Bloque1/html.html",
@@ -172,7 +126,7 @@
     "href": "pages/Bloque1/html.html#html5",
     "title": "HTML",
     "section": "HTML5",
-    "text": "HTML5\n\n¿Qué es HTML?\nHTML es un lenguaje de marcas que permite definir la estructura y el contenido de un documento para la web. Mediante un conjunto de etiquetas, el desarrollador describe elementos como textos, imágenes, enlaces o formularios, indicando su función dentro de la página. Es la base sobre la que posteriormente se aplican estilos (CSS) y comportamientos dinámicos (JavaScript).\n\n\nEstructura básica\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n\n&lt;/head&gt;\n\n&lt;body&gt;\n\n  &lt;p&gt;Clase 1 del TC&lt;/p&gt;\n  \n&lt;/body&gt;\n&lt;/html&gt;\nEn el código aparecen varias etiquetas HTML, y cada una tiene una etiqueta de apertura y una etiqueta de cierre (por ejemplo, &lt;p&gt; y &lt;/p&gt;).\nEstas etiquetas delimitan y organizan el contenido del documento:\n- &lt;head&gt; agrupa la información del documento,\n- &lt;body&gt; contiene lo que verá el usuario,\n- &lt;p&gt; define un párrafo.\nLa función de las etiquetas es indicar al navegador qué es cada parte del documento y cómo debe interpretarla.\n\n\nHead\nSe corresponde con la cabecera de la pestaña, principalmente solo se modifica el logotipo y el contenido de esta.\nTambién se utiliza para almacenar los metadatos de la web, así como scripts de JavaScript y hojas de estilo de CSS.\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n\n  &lt;title&gt; Web del TC &lt;/title&gt;\n\n&lt;/head&gt;\n\n&lt;body&gt;\n\n  &lt;p&gt;Clase 1 del TC&lt;/p&gt;\n  \n&lt;/body&gt;\n&lt;/html&gt;\n\n\nBody\nSe corresponde con todo el contenido de la página dentro podemos utilizar multitud de etiquetas, acontinuación expondremos las más importantes.\nHasta el momento hemos trabajado únicamente con etiquietas invividuales, pero pronto veremos como podemos juntar varias etiquetas simples para obtener estructuras más complejas como tablas o formularios.\nTodo el código mostrado a partir de ahora se asume que esta correctamente ubicado dentro de una etiqueta body\n\n&lt;p&gt; Paragraph\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;p&gt;\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;/p&gt;\n\n\n&lt;br&gt; Break Line\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\nullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;p&gt;\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\n  &lt;br&gt;&lt;/br&gt;\n  ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;/p&gt;\n\n\n&lt;ul&gt; Unordered list\n\nFrancisco de Quevedo\nLope de Vega\nGóngora\n\n&lt;ul&gt;\n  &lt;li&gt;Francisco de Quevedo&lt;/li&gt;\n  &lt;li&gt;Lope de Vega&lt;/li&gt;\n  &lt;li&gt;Góngora&lt;/li&gt;\n&lt;/ul&gt;\n\n\n&lt;ul&gt; Ordered list\n\nRecepción\nDiscurso del Rector\nDespedida\n\n&lt;ol&gt;\n  &lt;li&gt;Recepción &lt;/li&gt;\n  &lt;li&gt;Discruso del Rector&lt;/li&gt;\n  &lt;li&gt;Despedida&lt;/li&gt;\n&lt;/ol&gt;\n\n\n&lt;h#&gt; Headings\n&lt;h1&gt;Título 1&lt;/h1&gt;\n&lt;h2&gt;Título 2&lt;/h2&gt;\n&lt;h3&gt;Título 3&lt;/h3&gt;\n&lt;h4&gt;Título 4&lt;/h4&gt;\n&lt;h5&gt;Título 5&lt;/h5&gt;\n&lt;h6&gt;Título 6&lt;/h6&gt;\n\n\n&lt;div&gt; Divisor y &lt;span&gt; Span\nEtiquetas contenedores, utilizadas para agrupar otras etiquetas, no presentan ningún efecto visible intrínsico, salvo que tras utilizar &lt;div&gt; se produce un salto de línea. Por lo que utilizaremos &lt;div&gt; para agrupar grandes grupos de etiquetas y &lt;span&gt; para fragementos más pequeños\n\n&lt;div&gt;\n&lt;div&gt;\n  &lt;h2&gt;Capítulo 2 &lt;/h2&gt;\n  &lt;p&gt;\n    Mio Cid Ruy Díaz por Burgos entró,&lt;br&gt;&lt;/br&gt;\n    en su conpaña sessaenta pendones.&lt;br&gt;&lt;/br&gt;\n    Exiénlo ver mugieres e varones,&lt;br&gt;&lt;/br&gt;\n    burgeses e burgesas por las finiestras son,&lt;br&gt;&lt;/br&gt;\n    plorando de los ojos, tanto avién el dolor,&lt;br&gt;&lt;/br&gt;\n    de las sus bocas todos dizían una razón:&lt;br&gt;&lt;/br&gt;\n    — ¡Dios, qué buen vassallo, si oviesse buen señor!—\n  &lt;/p&gt;\n&lt;/div&gt;\n\n\n\n&lt;strong&gt; Strong, &lt;i&gt; Italic\nNegrita Itálica Negrita e Itálica\n&lt;strong&gt;Negrita&lt;/strong&gt;\n&lt;i&gt;Itálica&lt;/i&gt;\n&lt;strong&gt;&lt;i&gt; Negrita e Itálica&lt;/i&gt;&lt;/strong&gt;\n\n\nComentario\nEtiqueta invisible\n&lt;p&gt;Etiqueta invisible&lt;/p&gt;\n\n&lt;!-- Soy un comenario --&gt;",
+    "text": "HTML5\n\n¿Qué es HTML?\nHTML es un lenguaje de marcas que permite definir la estructura y el contenido de un documento para la web. Mediante un conjunto de etiquetas, el desarrollador describe elementos como textos, imágenes, enlaces o formularios, indicando su función dentro de la página. Es la base sobre la que posteriormente se aplican estilos (CSS) y comportamientos dinámicos (JavaScript).\n\n\nEstructura básica\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n\n&lt;/head&gt;\n\n&lt;body&gt;\n\n  &lt;p&gt;Clase 1 del TC&lt;/p&gt;\n  \n&lt;/body&gt;\n&lt;/html&gt;\nEn el código aparecen varias etiquetas HTML, y cada una tiene una etiqueta de apertura y una etiqueta de cierre (por ejemplo, &lt;p&gt; y &lt;/p&gt;).\nEstas etiquetas delimitan y organizan el contenido del documento:\n- &lt;head&gt; agrupa la información del documento,\n- &lt;body&gt; contiene lo que verá el usuario,\n- &lt;p&gt; define un párrafo.\nLa función de las etiquetas es indicar al navegador qué es cada parte del documento y cómo debe interpretarla.\n\n\nHead\nSe corresponde con la cabecera de la pestaña, principalmente solo se modifica el logotipo y el contenido de esta.\nTambién se utiliza para almacenar los metadatos de la web, así como scripts de JavaScript y hojas de estilo de CSS.\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n\n  &lt;title&gt; Web del TC &lt;/title&gt;\n\n&lt;/head&gt;\n\n&lt;body&gt;\n\n  &lt;p&gt;Clase 1 del TC&lt;/p&gt;\n  \n&lt;/body&gt;\n&lt;/html&gt;\n\n\nBody\nSe corresponde con todo el contenido de la página dentro podemos utilizar multitud de etiquetas, acontinuación expondremos las más importantes.\nHasta el momento hemos trabajado únicamente con etiquietas invividuales, pero pronto veremos como podemos juntar varias etiquetas simples para obtener estructuras más complejas como tablas o formularios.\nTodo el código mostrado a partir de ahora se asume que esta correctamente ubicado dentro de una etiqueta body\n\n&lt;p&gt; Paragraph\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;p&gt;\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;/p&gt;\n\n\n&lt;br&gt; Break Line\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\nullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;p&gt;\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\n  &lt;br&gt;&lt;/br&gt;\n  ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;/p&gt;\n\n\n&lt;ul&gt; Unordered list\n\nFrancisco de Quevedo\nLope de Vega\nGóngora\n\n&lt;ul&gt;\n  &lt;li&gt;Francisco de Quevedo&lt;/li&gt;\n  &lt;li&gt;Lope de Vega&lt;/li&gt;\n  &lt;li&gt;Góngora&lt;/li&gt;\n&lt;/ul&gt;\n\n\n&lt;ul&gt; Ordered list\n\nRecepción\nDiscurso del Rector\nDespedida\n\n&lt;ol&gt;\n  &lt;li&gt;Recepción &lt;/li&gt;\n  &lt;li&gt;Discruso del Rector&lt;/li&gt;\n  &lt;li&gt;Despedida&lt;/li&gt;\n&lt;/ol&gt;\n\n\n&lt;h#&gt; Headings\n&lt;h1&gt;Título 1&lt;/h1&gt;\n&lt;h2&gt;Título 2&lt;/h2&gt;\n&lt;h3&gt;Título 3&lt;/h3&gt;\n&lt;h4&gt;Título 4&lt;/h4&gt;\n&lt;h5&gt;Título 5&lt;/h5&gt;\n&lt;h6&gt;Título 6&lt;/h6&gt;\n\n\n&lt;div&gt; Divisor y &lt;span&gt; Span\nEtiquetas contenedores, utilizadas para agrupar otras etiquetas, no presentan ningún efecto visible intrínsico, salvo que tras utilizar &lt;div&gt; se produce un salto de línea. Por lo que utilizaremos &lt;div&gt; para agrupar grandes grupos de etiquetas y &lt;span&gt; para fragementos más pequeños\n\n&lt;div&gt;\n&lt;div&gt;\n  &lt;h2&gt;Capítulo 2 &lt;/h2&gt;\n  &lt;p&gt;\n    Mio Cid Ruy Díaz por Burgos entró,&lt;br&gt;&lt;/br&gt;\n    en su conpaña sessaenta pendones.&lt;br&gt;&lt;/br&gt;\n    Exiénlo ver mugieres e varones,&lt;br&gt;&lt;/br&gt;\n    burgeses e burgesas por las finiestras son,&lt;br&gt;&lt;/br&gt;\n    plorando de los ojos, tanto avién el dolor,&lt;br&gt;&lt;/br&gt;\n    de las sus bocas todos dizían una razón:&lt;br&gt;&lt;/br&gt;\n    — ¡Dios, qué buen vassallo, si oviesse buen señor!—\n  &lt;/p&gt;\n&lt;/div&gt;\n\n\n\n&lt;strong&gt; Strong, &lt;i&gt; Italic\nNegrita Itálica Negrita e Itálica\n&lt;strong&gt;Negrita&lt;/strong&gt;\n&lt;i&gt;Itálica&lt;/i&gt;\n&lt;strong&gt;&lt;i&gt; Negrita e Itálica&lt;/i&gt;&lt;/strong&gt;\n\n\nComentario\nEtiqueta invisible\n&lt;p&gt;Etiqueta invisible&lt;/p&gt;\n\n&lt;!-- Soy un comenario --&gt;\n\n\nTablas\n\n\n\n\nProducto\n\n\nCantidad\n\n\nPrecio (€)\n\n\n\n\n\n\nManzanas\n\n\n10\n\n\n3,50\n\n\n\n\nNaranjas\n\n\n8\n\n\n4,00\n\n\n\n\nPlátanos\n\n\n6\n\n\n2,80\n\n\n\n\n\n\nTotal\n\n\n24\n\n\n10,30\n\n\n\n\n&lt;table&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Producto&lt;/th&gt;\n      &lt;th&gt;Cantidad&lt;/th&gt;\n      &lt;th&gt;Precio (€)&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Manzanas&lt;/td&gt;\n      &lt;td&gt;10&lt;/td&gt;\n      &lt;td&gt;3,50&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Naranjas&lt;/td&gt;\n      &lt;td&gt;8&lt;/td&gt;\n      &lt;td&gt;4,00&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Plátanos&lt;/td&gt;\n      &lt;td&gt;6&lt;/td&gt;\n      &lt;td&gt;2,80&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n\n  &lt;tfoot&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Total&lt;/td&gt;\n      &lt;td&gt;24&lt;/td&gt;\n      &lt;td&gt;10,30&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tfoot&gt;\n&lt;/table&gt;\n\n\na Link\nHyperloopUPV\n&lt;!-- ¿Qué pasa con la URL --&gt;\n&lt;a&gt;Hyperloop UPV&lt;/a&gt;\n\nPropiedades HTML\nLas etiquetas o elementos html disponen de atributos que nos permiten modificar su comportamiento interno.\nEn el caso de las etiquetas &lt;a&gt; debemos de especificar en los atributos la referncia en cuestión\n  &lt;a href=\"https://hyperloopupv.com/\"&gt; HyperloopUPV &lt;/a&gt;\n\n\n\n&lt;img&gt; Image\n\n\n\n“Plaza de la Reina”\n\n\n&lt;img src=\"../pr.jpg\" alt=\"Plaza con una fuente en el centro alrdedor casetas y fincas\"&gt;\n\n\n&lt;forms&gt; Forms\nAmpliamente utilizados en HTML, trabajan sobre la etiqueta &lt;input&gt; la cual tiene muchos tipos.\n\n&lt;input type=\"text\"&gt;\n\nNombre: \n\n&lt;form&gt;\n\n  &lt;label for=\"first-name\"&gt;Nombre:&lt;/label&gt;\n\n  &lt;input type=\"text\" name=\"first-name\"/&gt;\n&lt;/form&gt;\n\n\n&lt;input type=\"number\"&gt;\n\nEdad: \n\n&lt;form&gt;\n\n  &lt;label for=\"age\"&gt;Edad:&lt;/label&gt;\n\n  &lt;input type=\"number\" name=\"age\" /&gt;\n&lt;/form&gt;\n\n\n&lt;input type=\"radio\"&gt;\n\nSubsistema:   Software   Firmware \n\n&lt;form&gt;\n\n  &lt;label for=\"sub\"&gt;Subsistema: &lt;/label&gt;&lt;br /&gt;\n  &lt;input type=\"radio\" name=\"sub\" value=\"software\" /&gt; Software &lt;br /&gt;\n  &lt;input type=\"radio\" name=\"sub\" value=\"firmware\" /&gt; Firmware &lt;br /&gt;\n\n&lt;/form&gt;\n\n\n&lt;input type=\"submit\"&gt;\n\nNombre:  \n\n\n&lt;form&gt;\n\n  &lt;label for=\"first-name\"&gt;Nombre:&lt;/label&gt;\n  &lt;input type=\"text\" name=\"first-name\"/&gt;\n\n  &lt;br/&gt;\n\n  &lt;input type=\"submit\"/&gt;\n&lt;/form&gt;\n\n\n\n&lt;button&gt; Button\nPor ahora no los utilizaremos, pero es importante saber que existen\n\nSuscribirse\n\n&lt;button&gt;Suscribirse&lt;/button&gt;",
     "crumbs": [
       "Bloque I Introducción",
       "Semana 1",
@@ -180,11 +134,11 @@
     ]
   },
   {
-    "objectID": "pages/Bloque1/html.html#node.js-y-npm",
-    "href": "pages/Bloque1/html.html#node.js-y-npm",
+    "objectID": "pages/Bloque1/html.html#primer-repo-de-git",
+    "href": "pages/Bloque1/html.html#primer-repo-de-git",
     "title": "HTML",
-    "section": "Node.JS y NPM",
-    "text": "Node.JS y NPM\n\n¿Qué es node JS?\nNode.js es un entorno de ejecución de JavaScript basado en el motor V8 de Google Chrome.\nPermite ejecutar código JavaScript directamente en el sistema operativo, sin depender de un navegador.\nDe este modo, el mismo lenguaje puede usarse tanto en el frontend como en el backend.\n\n\n¿Qué es NPM?\nNPM (Node Package Manager) es el gestor de paquetes de Node.js.\nFacilita la instalación, actualización y gestión de librerías que amplían las funcionalidades de los proyectos.\nDescarga node y npm nodejs.org",
+    "section": "Primer repo de Git",
+    "text": "Primer repo de Git\n\nIniciar sesión en cuenta de GitHub\nBarra superior derecha, Símbolo + &gt; New Repo\nRepository Name\nDescription of the repo\nVisibility\nAdd README\nCrear repositorio\n\n\n\nDesde la ventana del repositorio creado\nCode &lt;&gt; &gt; Clone &gt; HTTPS &gt; Copiar URL\nDesde VScode\nClonar repositorio (si no aparece F1, paleta de comandos Clonar Repositorio)\nPegar la URL del repo\nPresionar intro (equivalente a git clone)\n\n\n\nRealizar cambios\nDesde la barra derecha seleccionar menú de Git (3 nodos interconectados por dos aristas)\nAgregar presionando el + los archivos a la staging area (equivalente a git add &lt;file&gt;)\nEscribir mensaje de commit y presionar botón de confirmación (equivalente a git commit)\n\n\nUna vez se hayan realizados todos los commits deseados presionar la rueda de sincronización en la barra de estado. Este último cambio es equivalente a ejecutar git pull y git push.\npush sube los cambios al repositorio remoto pull actualiza los cambios de repositorio remoto por el local",
     "crumbs": [
       "Bloque I Introducción",
       "Semana 1",
@@ -192,15 +146,78 @@
     ]
   },
   {
-    "objectID": "pages/Bloque1/html.html#git-y-github",
-    "href": "pages/Bloque1/html.html#git-y-github",
+    "objectID": "pages/Bloque1/ehtml.html#estructura-básica-de-las-páginas-web",
+    "href": "pages/Bloque1/ehtml.html#estructura-básica-de-las-páginas-web",
     "title": "HTML",
-    "section": "Git y GitHub",
-    "text": "Git y GitHub\n\n¿Qué es Git?\nGit es un sistema de control de versiones distribuido. Permite registrar los cambios de un proyecto, volver a versiones anteriores y trabajar de forma colaborativa sin sobrescribir el trabajo de otros. Cada usuario dispone de una copia completa del repositorio, lo que facilita el trabajo sin conexión.\n\n\n¿Qué es GitHub?\nGitHub es una plataforma en la nube que utiliza Git para almacenar y gestionar proyectos. Permite compartir código, colaborar con otros desarrolladores y mantener un control de versiones centralizado.\n\n\nGit frente GitHub\n\nGit es la herramienta de control de versiones.(Software Libre, Linux Fundation)\nGitHub es la plataforma online donde se alojan los repositorios y se facilita el trabajo en equipo. (Coporativa Microsoft)\n\n\n\nUso de Git y GitHub\nEn Hyperloop UPV, tanto en los subsistemas de Software y Firmware utilizamos GitHub como herramienta de gestión de código.\nNosotros en el TC, también trataremos de facilitarnos con esta herramienta\n\n\nInstalación de Git y Cuenta de GitHub\n\nInstalación de Git\nCuenta de GitHub\n\n\n\nDiagrama de trabajo de Git\n\n\nGit en VScode",
+    "section": "Estructura básica de las páginas web",
+    "text": "Estructura básica de las páginas web\n¿Qué es una página web?\nUna página web es un documento digital accesible desde un navegador, compuesto por HTML, CSS y, cuando es necesario, JavaScript. Representa la unidad básica de contenido o interacción dentro de un sitio web y puede integrar tanto información estática como elementos dinámicos."
+  },
+  {
+    "objectID": "pages/Bloque1/ehtml.html#html5",
+    "href": "pages/Bloque1/ehtml.html#html5",
+    "title": "HTML",
+    "section": "HTML5",
+    "text": "HTML5\n¿Qué es HTML?\nHTML es un lenguaje de marcas que permite definir la estructura y el contenido de un documento para la web. Mediante un conjunto de etiquetas, el desarrollador describe elementos como textos, imágenes, enlaces o formularios, indicando su función dentro de la página. Es la base sobre la que posteriormente se aplican estilos (CSS) y comportamientos dinámicos (JavaScript)."
+  },
+  {
+    "objectID": "pages/Bloque1/ehtml.html#primer-repo-de-git",
+    "href": "pages/Bloque1/ehtml.html#primer-repo-de-git",
+    "title": "HTML",
+    "section": "Primer repo de Git",
+    "text": "Primer repo de Git\n\nIniciar sesión en cuenta de GitHub\nBarra superior derecha, Símbolo + &gt; New Repo\nRepository Name\nDescription of the repo\nVisibility\nAdd README\nCrear repositorio"
+  },
+  {
+    "objectID": "pages/Bloque1/bloque1.html",
+    "href": "pages/Bloque1/bloque1.html",
+    "title": "Bloque I Introducción",
+    "section": "",
+    "text": "El objetivo del bloque 1 es sentar la base para la realización del curso, aprendiendo las competencias mínimas para realizar el curso.\nEn este bloque se hará una introducción: las herramientas de trabajo, el lenguaje de marcado HTML que permite crear páginas web estáticas y el lenguaje de programación de CSS que nos permite formatear webs previamente construidas.\nEste bloque se compone de 3 semanas, 2 tareas de clase y dos tareas voluntarias.",
+    "crumbs": [
+      "Bloque I Introducción"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/bloque1.html#contenido",
+    "href": "pages/Bloque1/bloque1.html#contenido",
+    "title": "Bloque I Introducción",
+    "section": "Contenido",
+    "text": "Contenido\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nFecha\nContenido\nContenido de la clase\nTarea Clase\nMaterial Extra\nTarea Extra\n\n\n\n\n0\n21/11/2025\nIntroducción\nPresentación TC, VSCode, Git, LiveShare y GitHub\n-\n-\n-\n\n\n1\n28/11/2025\nHTML\nEstructura básica, links, listas, tablas, form, img, div, span\nWeb HL I\nEtiquetas: HTML5, video, iframe\nMi porfolio I\n\n\n2\n05/12/2025\nCSS\nEstilos básicos, clases, id, archivos externos\nWeb HL II\nSelectores y Pseudoclases\nMi porfolio II",
+    "crumbs": [
+      "Bloque I Introducción"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/bloque1.html#material",
+    "href": "pages/Bloque1/bloque1.html#material",
+    "title": "Bloque I Introducción",
+    "section": "Material",
+    "text": "Material\n\nMDN (Mozilla Developer Network), HTML y CSS\nW3Schools HTML y CSS\nVisual Studio Code Manual VSCode\nCSS tricks CSS Avanzado",
+    "crumbs": [
+      "Bloque I Introducción"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/t1a.html",
+    "href": "pages/Bloque1/t1a.html",
+    "title": "TA1: Mi CV I",
+    "section": "",
+    "text": "A día de hoy es muy importante tener una imagen digital, por ello la tarea extra consite en crearte tu propia página web básica usando html.\nPuedes usar el CV de Antonio Machado como referencia.\nBase: Ejemplo",
     "crumbs": [
       "Bloque I Introducción",
       "Semana 1",
-      "HTML"
+      "TA1: Mi CV I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/MAhtml2.html",
+    "href": "pages/Bloque1/MAhtml2.html",
+    "title": "MA: Mas HTML",
+    "section": "",
+    "text": "Durante la explicación de teoría vista esta semana en clase nos hemos introducido en las etiquetas básicas de HTML.\nA continuación una selección de etiquetas que no hemos visto en clase, pero resulta interesante conocer, puesto que en determinadas ocasiones son útiles. Cada ítem de la lista es un enlace a la documentación de Mozilla donde está explicado el funcionamiento de la etiqueta de forma exhaustiva. No hay que conocer todos los aspectos de cada etiqueta, basta con tener una idea general de como funcionan.\n\ninput types. Muy importante conocer todos los tipos de inputs\ncode\niframe. Útil y ampliamente extendida\nhr. Línea horizontal\nfigure y figcaption. Permite insertar figura y pie de figura.\naudio. Insertar un audio en la página web.\nvideo. Insertar un audio en la página web.\nheader, main, footer. Son como &lt;div&gt; pero ya con usos por defecto preasignados.",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 1",
+      "MA: Mas HTML"
     ]
   },
   {
@@ -273,48 +290,5 @@
     "crumbs": [
       "Programa TC"
     ]
-  },
-  {
-    "objectID": "pages/Bloque1/html.html#título-que-no-quiero-en-el-toc",
-    "href": "pages/Bloque1/html.html#título-que-no-quiero-en-el-toc",
-    "title": "HTML",
-    "section": "Título que no quiero en el TOC",
-    "text": "Título que no quiero en el TOC\n&lt;h1&gt;Título 1&lt;/h1&gt;\n&lt;h2&gt;Título 2&lt;/h2&gt;\n&lt;h3&gt;Título 3&lt;/h3&gt;\n&lt;h4&gt;Título 4&lt;/h4&gt;\n&lt;h5&gt;Título 5&lt;/h5&gt;\n&lt;h6&gt;Título 6&lt;/h6&gt;\n\nLiveServer\nNosotros para el transcurso del curso utilizaremos la extensión Liveserver que nos permitirá desplegar comodamente un pequeño servidor para la programación con HTML (Ahondaremos más la próxima semana)\n\nInstalación de LiveServer\n\n\nEntrar en el menú de extensiones\nBuscar por liveserver\nSeleccionar extensión\nInstalar\n\n\nAl concluir la instalación debería de aparecer en la parte derecha de la barra de estado (barra interior)",
-    "crumbs": [
-      "Bloque I Introducción",
-      "Semana 1",
-      "HTML"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque1/html.html#título-1",
-    "href": "pages/Bloque1/html.html#título-1",
-    "title": "HTML",
-    "section": "Título 1",
-    "text": "Título 1\n&lt;h1&gt;Título 1&lt;/h1&gt;\n&lt;h2&gt;Título 2&lt;/h2&gt;\n&lt;h3&gt;Título 3&lt;/h3&gt;\n&lt;h4&gt;Título 4&lt;/h4&gt;\n&lt;h5&gt;Título 5&lt;/h5&gt;\n&lt;h6&gt;Título 6&lt;/h6&gt;\n\nLiveServer\nNosotros para el transcurso del curso utilizaremos la extensión Liveserver que nos permitirá desplegar comodamente un pequeño servidor para la programación con HTML (Ahondaremos más la próxima semana)\n\nInstalación de LiveServer\n\n\nEntrar en el menú de extensiones\nBuscar por liveserver\nSeleccionar extensión\nInstalar\n\n\nAl concluir la instalación debería de aparecer en la parte derecha de la barra de estado (barra interior)",
-    "crumbs": [
-      "Bloque I Introducción",
-      "Semana 1",
-      "HTML"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque1/html.html#título-2",
-    "href": "pages/Bloque1/html.html#título-2",
-    "title": "HTML",
-    "section": "Título 2",
-    "text": "Título 2\n\nTítulo 3\n\n\nTítulo 4\n\n\nTítulo 5\n\n\nTítulo 6\n&lt;h1&gt;Título 1&lt;/h1&gt;\n&lt;h2&gt;Título 2&lt;/h2&gt;\n&lt;h3&gt;Título 3&lt;/h3&gt;\n&lt;h4&gt;Título 4&lt;/h4&gt;\n&lt;h5&gt;Título 5&lt;/h5&gt;\n&lt;h6&gt;Título 6&lt;/h6&gt;\n\n&lt;div&gt; Divisor y &lt;span&gt; Span\nEtiquetas contenedores, utilizadas para agrupar otras etiquetas, no presentan ningún efecto visible intrínsico, salvo que tras utilizar &lt;div&gt; se produce un salto de línea. Por lo que utilizaremos &lt;div&gt; para agrupar grandes grupos de etiquetas y &lt;span&gt; para fragementos más pequeños\n\n&lt;div&gt;\n\n&lt;div&gt;\n  &lt;h2&gt;Capítulo 2 &lt;/h2&gt;\n  &lt;p&gt;\n    Mio Cid Ruy Díaz por Burgos entró,&lt;br&gt;&lt;/br&gt;\n    en su conpaña sessaenta pendones.&lt;br&gt;&lt;/br&gt;\n    Exiénlo ver mugieres e varones,&lt;br&gt;&lt;/br&gt;\n    burgeses e burgesas por las finiestras son,&lt;br&gt;&lt;/br&gt;\n    plorando de los ojos, tanto avién el dolor,&lt;br&gt;&lt;/br&gt;\n    de las sus bocas todos dizían una razón:&lt;br&gt;&lt;/br&gt;\n    — ¡Dios, qué buen vassallo, si oviesse buen señor!—\n  &lt;/p&gt;\n&lt;/div&gt;\n\nEntrar en el menú de extensiones\nBuscar por liveserver\nSeleccionar extensión\nInstalar\n\n\nAl concluir la instalación debería de aparecer en la parte derecha de la barra de estado (barra interior)",
-    "crumbs": [
-      "Bloque I Introducción",
-      "Semana 1",
-      "HTML"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque1/ehtml.html#título-2",
-    "href": "pages/Bloque1/ehtml.html#título-2",
-    "title": "HTML",
-    "section": "Título 2",
-    "text": "Título 2\nTítulo 3\nTítulo 4\nTítulo 5\nTítulo 6\n&lt;h1&gt;Título 1&lt;/h1&gt;\n&lt;h2&gt;Título 2&lt;/h2&gt;\n&lt;h3&gt;Título 3&lt;/h3&gt;\n&lt;h4&gt;Título 4&lt;/h4&gt;\n&lt;h5&gt;Título 5&lt;/h5&gt;\n&lt;h6&gt;Título 6&lt;/h6&gt;"
   }
 ]
