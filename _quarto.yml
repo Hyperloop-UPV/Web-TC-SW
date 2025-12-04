@@ -44,6 +44,11 @@ website:
               - pages/Bloque1/MAhtml2.qmd
               - pages/Bloque1/t1a.qmd
           - section: "Semana 2"
+            contents:
+              - pages/Bloque1/css.qmd
+              - pages/Bloque1/t2.qmd
+              - pages/Bloque1/MAcss.qmd
+              - pages/Bloque1/t2a.qmd
 
           - text: "Próximamente..."
       - section: "Bloque II Programación"
@@ -52,7 +57,7 @@ website:
 
       - pages/rubric.qmd
 
-    footer: "![](https://i.imgur.com/jbGUd7N.png)<br><br><br> ©Javier Ribal del Río <br> 2025 - Hyperloop UPV"
+    footer: "![](https://i.imgur.com/jbGUd7N.png)<br><br><br> © Javier Ribal del Río <br> 2025 - Hyperloop UPV"
   repo-url: https://github.com/HyperloopUPV-H8/Web-TC-SW
 
 

@@ -17,6 +17,286 @@
     ]
   },
   {
+    "objectID": "pages/Bloque1/t2.html",
+    "href": "pages/Bloque1/t2.html",
+    "title": "T2: Web de HL II",
+    "section": "",
+    "text": "El objetivo de esta tarea, es poner en práctica lo aprendido en clase para ello vamos a formatear la web de nuestro equipo de Hyperloop, (tarea de la semana pasada).\nSe debe formatear para que quede como está Web, cuanto más se parezca mejor.\nNotas:\nLa hoja de estilos debe de estar incluida en el la etiqueta &lt;style&gt; del &lt;head&gt;.\nPara conseguir que los bordes de la table, td, tr… colapsen (que solo haya un borde y no dos) se debe utilizar la propiedad border-collapse.\nSi no se realizó la T1, puede utilizar este archivo html como base (click derechao guardar enlace como).",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 2",
+      "T2: Web de HL II"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/css.html",
+    "href": "pages/Bloque1/css.html",
+    "title": "CSS",
+    "section": "",
+    "text": "Contenido",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 2",
+      "CSS"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/css.html#problemas-de-html",
+    "href": "pages/Bloque1/css.html#problemas-de-html",
+    "title": "CSS",
+    "section": "Problemas de HTML",
+    "text": "Problemas de HTML\nHasta el momento hemos trabajado con HTML, que a pesar de ser muy práctico para la creación de la estructura interna de la web, presenta ciertas limitaciones a la hora de modificar el formato de la web, para ello se introduce CSS, una herramienta que nos va a permitir modificar el formato cómodamente.",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 2",
+      "CSS"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/css.html#formato-con-css",
+    "href": "pages/Bloque1/css.html#formato-con-css",
+    "title": "CSS",
+    "section": "Formato con CSS",
+    "text": "Formato con CSS\n\nAtributo style\nSupongamos que tenemos el siguiente elemento\n&lt;p&gt; Hola Mundo&lt;p&gt;. Por ahora el texto se mostrará en color negro, el color predeterminado de HTML para las etiquetas &lt;p&gt;\n\n\nHola mundo\n\n\nSi se desea modificar el formato intrínseco de esta etiqueta &lt;p&gt; debemos incluir la propiedad style que, como su nombre indica nos permitirá modificar su estilo. Dentro de este atributo se ha de insertar propiedad CSS (no confundir con los atributos html). La propiedad CSS especifica que aspecto visual del contenido de la etiqueta. Por ejemplo, si se desea modificar el color de la letra se debe de utilizar la propiedad color (nótese que no lleva u).\n&lt;p style=\"color:red\"&gt;Hola Mundo&lt;/p&gt;\n\n&lt;!-- Equivalente en Hexadecimal --&gt;\n\n&lt;p style=\"color:#ff0000\"&gt;Hola Mundo&lt;/p&gt;\n\n\nHola Mundo\n\n\nSí deseamos modificar más de una propiedad CSS deberemos de serparalas dentro de la etiqueta con un punto y coma\n&lt;p style=\"color:#ff0000; font-size: 44px\"&gt;Hola Mundo&lt;/p&gt;\n\n\nHola Mundo\n\n\n\nProblemas del atributo style\nEl atributo style resulta útil para formatear una etiqueta individualmente, pero resulta tedioso y repetitivo para más de una etiqueta. Observe el siguiente ejemplo\n&lt;p&gt;Autores del culteranismo marcados en rojo&lt;p&gt;\n\n&lt;ul&gt;\n    &lt;li&gt;Francisco de Quevedo&lt;/li&gt;\n    &lt;li style=\"color:red; text-decoration: underline; font-size:30px;\"&gt;Luis de Góngora&lt;/li&gt;\n    &lt;li&gt;Baltasar Gracián&lt;/li&gt;\n    &lt;li style=\"color:red; text-decoration: underline; font-size:30px;\"&gt;Pedro Soto de Rojas&lt;/li&gt;\n    &lt;li&gt;Tirso de Molina&lt;/li&gt;\n    &lt;li&gt;Calderón de la Barca&lt;/li&gt;\n&lt;/ul&gt;\n\n\nAutores del culteranismo marcados en rojo\n\n\n\nFrancisco de Quevedo\n\n\nLuis de Góngora\n\n\nBaltasar Gracián\n\n\nPedro Soto de Rojas\n\n\nTirso de Molina\n\n\nCalderón de la Barca\n\n\n\nProblemas:\n\nRepetición de mucho código\nAlta posibilidad error\nPoca escalabilidad\n\nSi añadimos por ejempo a Luis Carrillo y Sotomayor (autor culteranista) hay que volver a repetir todo el atributo\nSi deseasemos cambiar el color de rojo a verde deberemos modificar cada uno de los atributos\n\n\n\n\n\nClases e ID\n\nClases\nLa solución a este problema son las clases que nos permiten identificar aquellos componentes con características de formato similares. Se agregan como atributos a cada etiqueta\n&lt;p&gt;Autores del culteranismo marcados en rojo&lt;p&gt; &lt;!--En este caso no se marcan en rojo--&gt;\n\n&lt;ul&gt;\n    &lt;li&gt;Francisco de Quevedo&lt;/li&gt;\n    &lt;li class=\"culteranista\"&gt;Luis de Góngora&lt;/li&gt;\n    &lt;li&gt;Baltasar Gracián&lt;/li&gt;\n    &lt;li class=\"culteranista\"&gt;Pedro Soto de Rojas&lt;/li&gt;\n    &lt;li&gt;Tirso de Molina&lt;/li&gt;\n    &lt;li&gt;Calderón de la Barca&lt;/li&gt;\n&lt;/ul&gt;\n\nEtiqueta &lt;style&gt;\nAhora para marcar en rojo los culterantistas se ha de indicar el formato de todos en la class culteranista, para ello nos definiremos una hoja de estilo que será común para todo el documento. La hoja de estilos se define en el &lt;head&gt; de la siguiente forma:\n&lt;head&gt;\n&lt;!-- Fragemento HTML --&gt;\n&lt;style&gt;\n  /*Fragmento CSS*/\n  .culteranistas{  /*Nótese el punto*/\n    color: red;\n    text-size: 40px;\n    background-color: blue;\n    text-decoration: underline;  /*Este último ';' no es obligatorio como tal, pero es recomendable, en HTML3 y CSS2 daba error si se incluía*/\n  }\n&lt;/style&gt; \n&lt;!--Fin de la etiqueta Style, seguimos con html--&gt;\n&lt;/head&gt;\nAhora se visualizará correctamente, además se añadirá el fondo azul\n\n\nComposición de clases\nSuponga que tenemos dos clases, una primera clase que modifica el tipo de letra a monospace que aplicaremos a los autores culteranistas y una segunda que modifica el grosor de la letra que se aplicará sobre los autores de lírica.\n&lt;head&gt;&lt;style&gt;\n  .culteranista {\n    font-family: monospace;\n  }\n  .lirica {\n    font-weight: bold;\n  }\n  .autores {\n    list-style: square;\n  }\n&lt;/style&gt;&lt;/head&gt;\n\n&lt;body&gt;\n  &lt;ul class=\"autores\"&gt;\n    &lt;li class=\"lirica\"&gt;Fray Luis de León&lt;/li&gt;\n    &lt;li class=\"culteranista\"&gt;Hortensio Félix de Paravicino&lt;/li&gt;\n    &lt;li class=\"culteranista lirica\"&gt;Lope de Vega&lt;/li&gt;\n    &lt;li class=\"lirica\"&gt;San Juan de la Cruz&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/body&gt;\n\n\n\nFray Luis de León\n\n\nHortensio Félix de Paravicino\n\n\nLope de Vega\n\n\nSan Juan de la Cruz\n\n\n\n\n\n\nID\nLos ID son como las clases pero solo se pueden utlizar una vez por sitio web. Es útil para cosas que no se deben repetir más de una vez por sitio web.\n&lt;style&gt;\n#principal{\n  text-align: center\n  color:blue\n}\n&lt;/style&gt;\n&lt;!--[...]--&gt;\n&lt;div id=\"principal\"&gt;\n  &lt;h4&gt;Teatro Romántico&gt;&lt;/h4&gt;\n  &lt;p&gt;El retablo romántico se caracteriza por exaltar la libertad creadora,\n    la expresión intensa de los sentimientos individuales, el gusto por lo\n    misterioso y lo sublime, y la reivindicación de la imaginación frente a\n    las reglas clásicas.&lt;/p&gt;\n&lt;/div&gt;\n\n\nTeatro Romántico\n\n\nEl retablo romántico se caracteriza por exaltar la libertad creadora, la expresión intensa de los sentimientos individuales, el gusto por lo misterioso y lo sublime, y la reivindicación de la imaginación frente a las reglas clásicas.\n\n\n\n\n\nPropiedades CSS\n\nborder y border-radius\nLa propiedad border es una propiedad abreviada (shorthand) que en realidad combina tres propiedades más pequeñas:\n\nborder-width → grosor del borde\n\nborder-style → estilo del borde (solid, dashed, dotted, etc.)\n\nborder-color → color del borde\n\nPor ejemplo, estas dos definiciones son equivalentes:\n/* Forma abreviada */\n.caja {\n  border: 2px solid red;\n}\n\n/* Forma “desdoblada” en 3 mini propiedades */\n.caja-desdoblada {\n  border-width: 2px;\n  border-style: solid;\n  border-color: red;\n}\n Lope de Vega\n\n\nborder-top, border-right, border-bottom, border-left\nCSS permite aplicar bordes distintos en cada lado. Cada uno funciona igual que border pero aplicado a un solo lado:\nborder-top\nborder-right\nborder-bottom\nborder-left\n.caja-bordes {\n  border-top: 3px solid red;\n  border-right: 2px dashed blue;\n  border-bottom: 4px dotted green;\n  border-left: 5px double orange;\n}\nTambién pueden desdoblarse:\n.caja-top-desdoblado {\n  border-top-width: 4px;\n  border-top-style: solid;\n  border-top-color: purple;\n}\n\n\nmargin y padding\nLas propiedades margin y padding controlan el espacio alrededor de los elementos, pero cada una actúa en una zona distinta:\n\nmargin → espacio externo, fuera del borde del elemento\n\npadding → espacio interno, entre el contenido y el borde\n\nVisualmente:\n\n\n \n\n\n\n CONTENT\n\n\n\n\n&lt;div style=\"background:#f0f0f0; padding:20px;\"&gt;\n &lt;!-- MARGIN (gris claro alrededor del borde) --&gt;\n   &lt;!-- BORDER --&gt;\n   &lt;div style=\"border:3px solid black\"&gt;\n   &lt;!-- PADDING (espacio interno) --&gt;\n   &lt;div style=\"background:#d0ffd0; padding:15px;\"&gt;\n   &lt;!-- CONTENT --&gt;\n     &lt;span style=\"background-color:white\"&gt;CONTENT&lt;/span&gt;\n   &lt;/div&gt;\n &lt;/div&gt;\n&lt;/div&gt;\n\nRegla Trouble\nCuando margin o padding usan 4 valores, el orden siempre es el mismo:\ntop, right, bottom, left\nPara recordarlo fácilmente se utiliza la regla mnemotécnica Trouble:\n\nT → Top (arriba)\n\nR → Right (derecha)\n\nB → Bottom (abajo)\n\nL → Left (izquierda)\n\nEs decir:\nmargin:    top   right   bottom   left;\npadding:   top   right   bottom   left;\n\n\n\n\n\n\nTipTruco para los ingenieros: La regla de la mano derecha\n\n\n\nEl orden de los margin y de los padding siempre es en sentido horario.\nPor lo que podemos utilizar la regla de la mano derecha de la inducción electro magnética asumiendo que el vector intensidad apunta hacia la pantalla\n\n\n\n\n\n\nArchivos externos CSS\nIncluir en la cabecerá el CSS presenta ventajas como tener la página web en un único archivo. Sin embargo en la práctica normalmente trabajaremos con más de 2 archivos por lo que incluir uno más o uno menos no marca la diferencia. Por lo que podemos separar el css en un archivo externo .css. De esta forma podremos reutilizar las hojas de estilos.\n&lt;head&gt;\n    &lt;title&gt;Mi Página&lt;/title&gt;\n    &lt;link rel=\"stylesheet\" href=\"styles.css\"&gt;\n&lt;/head&gt;",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 2",
+      "CSS"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/css.html#etiqueta-meta",
+    "href": "pages/Bloque1/css.html#etiqueta-meta",
+    "title": "CSS",
+    "section": "Etiqueta <meta>",
+    "text": "Etiqueta &lt;meta&gt;\nLas etiquetas &lt;meta&gt; en HTML sirven para proporcionar metadatos sobre la página web. Estos metadatos no se muestran al usuario, pero son importantes para navegadores, buscadores, redes sociales y dispositivos.\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt; &lt;!-- Selecciona el conjunto de caracteres --&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt; &lt;!-- \"Hace la web Responsive\" --&gt;\n    &lt;title&gt;Mi Página&lt;/title&gt;\n    &lt;link rel=\"stylesheet\" href=\"styles.css\"&gt;\n&lt;/head&gt;",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 2",
+      "CSS"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/css.html#git-github",
+    "href": "pages/Bloque1/css.html#git-github",
+    "title": "CSS",
+    "section": "Git & GitHub:",
+    "text": "Git & GitHub:\nLos comandos de git nos permiten utilizar la cli para gestionar nuestro repositorio\ngit init # Incializa repositorio (= crear repo con GitHub)\ngit clone &lt;url-repo&gt; \n\ngit add &lt;files&gt; # Añade los archivos a la stagging area\ngit commit -m \"&lt;mensaje de commit&gt;\" # commit\n\ngit push # push\ngit pull # pull\n\ngit status # estado actual del repo\ngit log # historia reciente del log con poco detalle de profundidad\n\ngit diff &lt;file&gt; # muestra la diferencia entre la versión modificada ente un archivo y otro",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 2",
+      "CSS"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/css_p.html#problemas-de-html",
+    "href": "pages/Bloque1/css_p.html#problemas-de-html",
+    "title": "CSS",
+    "section": "Problemas de HTML",
+    "text": "Problemas de HTML\nHasta el momento hemos trabajado con HTML, que a pesar de ser muy práctico para la creación de la estructura interna de la web, presenta ciertas limitaciones a la hora de modificar el formato de la web, para ello se introduce CSS, una herramienta que nos va a permitir modificar el formato cómodamente."
+  },
+  {
+    "objectID": "pages/Bloque1/css_p.html#formato-con-css",
+    "href": "pages/Bloque1/css_p.html#formato-con-css",
+    "title": "CSS",
+    "section": "Formato con CSS",
+    "text": "Formato con CSS\nAtributo style\nSupongamos que tenemos el siguiente elemento\n&lt;p&gt; Hola Mundo&lt;p&gt;. Por ahora el texto se mostrará en color negro, el color predeterminado de HTML para las etiquetas &lt;p&gt;\n\n\nHola mundo"
+  },
+  {
+    "objectID": "pages/Bloque1/css_p.html#etiqueta-meta",
+    "href": "pages/Bloque1/css_p.html#etiqueta-meta",
+    "title": "CSS",
+    "section": "Etiqueta <meta>",
+    "text": "Etiqueta &lt;meta&gt;\nLas etiquetas &lt;meta&gt; en HTML sirven para proporcionar metadatos sobre la página web. Estos metadatos no se muestran al usuario, pero son importantes para navegadores, buscadores, redes sociales y dispositivos.\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt; &lt;!-- Selecciona el conjunto de caracteres --&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt; &lt;!-- \"Hace la web Responsive\" --&gt;\n    &lt;title&gt;Mi Página&lt;/title&gt;\n    &lt;link rel=\"stylesheet\" href=\"styles.css\"&gt;\n&lt;/head&gt;"
+  },
+  {
+    "objectID": "pages/Bloque1/css_p.html#git-github",
+    "href": "pages/Bloque1/css_p.html#git-github",
+    "title": "CSS",
+    "section": "Git & GitHub:",
+    "text": "Git & GitHub:\nLos comandos de git nos permiten utilizar la cli para gestionar nuestro repositorio\ngit init # Incializa repositorio (= crear repo con GitHub)\ngit clone &lt;url-repo&gt; \n\ngit add &lt;files&gt; # Añade los archivos a la stagging area\ngit commit -m \"&lt;mensaje de commit&gt;\" # commit\n\ngit push # push\ngit pull # pull\n\ngit status # estado actual del repo\ngit log # historia reciente del log con poco detalle de profundidad\n\ngit diff &lt;file&gt; # muestra la diferencia entre la versión modificada ente un archivo y otro"
+  },
+  {
+    "objectID": "pages/Bloque1/MAcss.html",
+    "href": "pages/Bloque1/MAcss.html",
+    "title": "MA: Selectores y Pseudoselectores",
+    "section": "",
+    "text": "Además del id y las class, existen más selectores que son ampliamente utilizados en la programación web. El siguiente video los explica muy detallados y sirve como repaso para lo que se ha visto esta semana de CSS. El vídeo está en Inglés y dura 20 minutos.",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 2",
+      "MA: Selectores y Pseudoselectores"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/t1a.html",
+    "href": "pages/Bloque1/t1a.html",
+    "title": "TA1: Mi CV I",
+    "section": "",
+    "text": "A día de hoy es muy importante tener una imagen digital, por ello la tarea extra consite en crearte tu propia página web básica usando html.\nPuedes usar el CV de Antonio Machado como referencia.\nBase: Ejemplo",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 1",
+      "TA1: Mi CV I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/bloque1.html",
+    "href": "pages/Bloque1/bloque1.html",
+    "title": "Bloque I Introducción",
+    "section": "",
+    "text": "El objetivo del bloque 1 es sentar la base para la realización del curso, aprendiendo las competencias mínimas para realizar el curso.\nEn este bloque se hará una introducción: las herramientas de trabajo, el lenguaje de marcado HTML que permite crear páginas web estáticas y el lenguaje de programación de CSS que nos permite formatear webs previamente construidas.\nEste bloque se compone de 3 semanas, 2 tareas de clase y dos tareas voluntarias.",
+    "crumbs": [
+      "Bloque I Introducción"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/bloque1.html#contenido",
+    "href": "pages/Bloque1/bloque1.html#contenido",
+    "title": "Bloque I Introducción",
+    "section": "Contenido",
+    "text": "Contenido\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nFecha\nContenido\nContenido de la clase\nTarea Clase\nMaterial Extra\nTarea Extra\n\n\n\n\n0\n21/11/2025\nIntroducción\nPresentación TC, VSCode, Git, LiveShare y GitHub\n-\n-\n-\n\n\n1\n28/11/2025\nHTML\nEstructura básica, links, listas, tablas, form, img, div, span\nWeb HL I\nEtiquetas: HTML5, video, iframe\nMi porfolio I\n\n\n2\n05/12/2025\nCSS\nEstilos básicos, clases, id, archivos externos\nWeb HL II\nSelectores y Pseudoclases\nMi porfolio II",
+    "crumbs": [
+      "Bloque I Introducción"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/bloque1.html#material",
+    "href": "pages/Bloque1/bloque1.html#material",
+    "title": "Bloque I Introducción",
+    "section": "Material",
+    "text": "Material\n\nMDN (Mozilla Developer Network), HTML y CSS\nW3Schools HTML y CSS\nVisual Studio Code Manual VSCode\nCSS tricks CSS Avanzado",
+    "crumbs": [
+      "Bloque I Introducción"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/t2a.html",
+    "href": "pages/Bloque1/t2a.html",
+    "title": "TA2: Mi CV II",
+    "section": "",
+    "text": "En la tarea previa definimos nuestra identidad digital, ahora es un buen momento dándole un toque personal con ayuda de CSS.\nSi no se realizó la T1A puede utilizar el CV de Antonio Machado como base sobre la que trabajar. (Click derecho guadrar enlace como)\nImportante: la hoja de estilos debe ser definida como un archivo externo.\nEl objetivo de esta tarea es evaluar, las habilidades de diseño y de investigación, por lo que no hay ningún ejemplo al que imitar. Siguiendo ese objetivo se le recomienda al alumno que investigue y descubrá el máximo número de propiedades CSS.",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 2",
+      "TA2: Mi CV II"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/ehtml.html#estructura-básica-de-las-páginas-web",
+    "href": "pages/Bloque1/ehtml.html#estructura-básica-de-las-páginas-web",
+    "title": "HTML",
+    "section": "Estructura básica de las páginas web",
+    "text": "Estructura básica de las páginas web\n¿Qué es una página web?\nUna página web es un documento digital accesible desde un navegador, compuesto por HTML, CSS y, cuando es necesario, JavaScript. Representa la unidad básica de contenido o interacción dentro de un sitio web y puede integrar tanto información estática como elementos dinámicos."
+  },
+  {
+    "objectID": "pages/Bloque1/ehtml.html#html5",
+    "href": "pages/Bloque1/ehtml.html#html5",
+    "title": "HTML",
+    "section": "HTML5",
+    "text": "HTML5\n¿Qué es HTML?\nHTML es un lenguaje de marcas que permite definir la estructura y el contenido de un documento para la web. Mediante un conjunto de etiquetas, el desarrollador describe elementos como textos, imágenes, enlaces o formularios, indicando su función dentro de la página. Es la base sobre la que posteriormente se aplican estilos (CSS) y comportamientos dinámicos (JavaScript)."
+  },
+  {
+    "objectID": "pages/Bloque1/ehtml.html#primer-repo-de-git",
+    "href": "pages/Bloque1/ehtml.html#primer-repo-de-git",
+    "title": "HTML",
+    "section": "Primer repo de Git",
+    "text": "Primer repo de Git\n\nIniciar sesión en cuenta de GitHub\nBarra superior derecha, Símbolo + &gt; New Repo\nRepository Name\nDescription of the repo\nVisibility\nAdd README\nCrear repositorio"
+  },
+  {
+    "objectID": "pages/Bloque1/html.html",
+    "href": "pages/Bloque1/html.html",
+    "title": "HTML",
+    "section": "",
+    "text": "Contenido",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 1",
+      "HTML"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/html.html#estructura-básica-de-las-páginas-web",
+    "href": "pages/Bloque1/html.html#estructura-básica-de-las-páginas-web",
+    "title": "HTML",
+    "section": "Estructura básica de las páginas web",
+    "text": "Estructura básica de las páginas web\n\n¿Qué es una página web?\nUna página web es un documento digital accesible desde un navegador, compuesto por HTML, CSS y, cuando es necesario, JavaScript. Representa la unidad básica de contenido o interacción dentro de un sitio web y puede integrar tanto información estática como elementos dinámicos.\n\n\n¿Qué partes tiene una página web? (externas)",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 1",
+      "HTML"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/html.html#html5",
+    "href": "pages/Bloque1/html.html#html5",
+    "title": "HTML",
+    "section": "HTML5",
+    "text": "HTML5\n\n¿Qué es HTML?\nHTML es un lenguaje de marcas que permite definir la estructura y el contenido de un documento para la web. Mediante un conjunto de etiquetas, el desarrollador describe elementos como textos, imágenes, enlaces o formularios, indicando su función dentro de la página. Es la base sobre la que posteriormente se aplican estilos (CSS) y comportamientos dinámicos (JavaScript).\n\n\nEstructura básica\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n\n&lt;/head&gt;\n\n&lt;body&gt;\n\n  &lt;p&gt;Clase 1 del TC&lt;/p&gt;\n  \n&lt;/body&gt;\n&lt;/html&gt;\nEn el código aparecen varias etiquetas HTML, y cada una tiene una etiqueta de apertura y una etiqueta de cierre (por ejemplo, &lt;p&gt; y &lt;/p&gt;).\nEstas etiquetas delimitan y organizan el contenido del documento:\n- &lt;head&gt; agrupa la información del documento,\n- &lt;body&gt; contiene lo que verá el usuario,\n- &lt;p&gt; define un párrafo.\nLa función de las etiquetas es indicar al navegador qué es cada parte del documento y cómo debe interpretarla.\n\n\nHead\nSe corresponde con la cabecera de la pestaña, principalmente solo se modifica el logotipo y el contenido de esta.\nTambién se utiliza para almacenar los metadatos de la web, así como scripts de JavaScript y hojas de estilo de CSS.\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n\n  &lt;title&gt; Web del TC &lt;/title&gt;\n\n&lt;/head&gt;\n\n&lt;body&gt;\n\n  &lt;p&gt;Clase 1 del TC&lt;/p&gt;\n  \n&lt;/body&gt;\n&lt;/html&gt;\n\n\nBody\nSe corresponde con todo el contenido de la página dentro podemos utilizar multitud de etiquetas, acontinuación expondremos las más importantes.\nHasta el momento hemos trabajado únicamente con etiquietas invividuales, pero pronto veremos como podemos juntar varias etiquetas simples para obtener estructuras más complejas como tablas o formularios.\nTodo el código mostrado a partir de ahora se asume que esta correctamente ubicado dentro de una etiqueta body\n\n&lt;p&gt; Paragraph\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;p&gt;\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;/p&gt;\n\n\n&lt;br&gt; Break Line\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\nullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;p&gt;\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\n  &lt;br&gt;&lt;/br&gt;\n  ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;/p&gt;\n\n\n&lt;ul&gt; Unordered list\n\nFrancisco de Quevedo\nLope de Vega\nGóngora\n\n&lt;ul&gt;\n  &lt;li&gt;Francisco de Quevedo&lt;/li&gt;\n  &lt;li&gt;Lope de Vega&lt;/li&gt;\n  &lt;li&gt;Góngora&lt;/li&gt;\n&lt;/ul&gt;\n\n\n&lt;ol&gt; Ordered list\n\nRecepción\nDiscurso del Rector\nDespedida\n\n&lt;ol&gt;\n  &lt;li&gt;Recepción &lt;/li&gt;\n  &lt;li&gt;Discruso del Rector&lt;/li&gt;\n  &lt;li&gt;Despedida&lt;/li&gt;\n&lt;/ol&gt;\n\n\n&lt;h#&gt; Headings\n&lt;h1&gt;Título 1&lt;/h1&gt;\n&lt;h2&gt;Título 2&lt;/h2&gt;\n&lt;h3&gt;Título 3&lt;/h3&gt;\n&lt;h4&gt;Título 4&lt;/h4&gt;\n&lt;h5&gt;Título 5&lt;/h5&gt;\n&lt;h6&gt;Título 6&lt;/h6&gt;\n\n\n&lt;div&gt; Divisor y &lt;span&gt; Span\nEtiquetas contenedores, utilizadas para agrupar otras etiquetas, no presentan ningún efecto visible intrínsico, salvo que tras utilizar &lt;div&gt; se produce un salto de línea. Por lo que utilizaremos &lt;div&gt; para agrupar grandes grupos de etiquetas y &lt;span&gt; para fragementos más pequeños\n\n&lt;div&gt;\n&lt;div&gt;\n  &lt;h2&gt;Capítulo 2 &lt;/h2&gt;\n  &lt;p&gt;\n    Mio Cid Ruy Díaz por Burgos entró,&lt;br&gt;&lt;/br&gt;\n    en su conpaña sessaenta pendones.&lt;br&gt;&lt;/br&gt;\n    Exiénlo ver mugieres e varones,&lt;br&gt;&lt;/br&gt;\n    burgeses e burgesas por las finiestras son,&lt;br&gt;&lt;/br&gt;\n    plorando de los ojos, tanto avién el dolor,&lt;br&gt;&lt;/br&gt;\n    de las sus bocas todos dizían una razón:&lt;br&gt;&lt;/br&gt;\n    — ¡Dios, qué buen vassallo, si oviesse buen señor!—\n  &lt;/p&gt;\n&lt;/div&gt;\n\n\n\n&lt;strong&gt; Strong, &lt;i&gt; Italic\nNegrita Itálica Negrita e Itálica\n&lt;strong&gt;Negrita&lt;/strong&gt;\n&lt;i&gt;Itálica&lt;/i&gt;\n&lt;strong&gt;&lt;i&gt; Negrita e Itálica&lt;/i&gt;&lt;/strong&gt;\n\n\nComentario\nEtiqueta invisible\n&lt;p&gt;Etiqueta invisible&lt;/p&gt;\n\n&lt;!-- Soy un comenario --&gt;\n\n\nTablas\n\n\n\n\nProducto\n\n\nCantidad\n\n\nPrecio (€)\n\n\n\n\n\n\nManzanas\n\n\n10\n\n\n3,50\n\n\n\n\nNaranjas\n\n\n8\n\n\n4,00\n\n\n\n\nPlátanos\n\n\n6\n\n\n2,80\n\n\n\n\n\n\nTotal\n\n\n24\n\n\n10,30\n\n\n\n\n&lt;table&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Producto&lt;/th&gt;\n      &lt;th&gt;Cantidad&lt;/th&gt;\n      &lt;th&gt;Precio (€)&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Manzanas&lt;/td&gt;\n      &lt;td&gt;10&lt;/td&gt;\n      &lt;td&gt;3,50&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Naranjas&lt;/td&gt;\n      &lt;td&gt;8&lt;/td&gt;\n      &lt;td&gt;4,00&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Plátanos&lt;/td&gt;\n      &lt;td&gt;6&lt;/td&gt;\n      &lt;td&gt;2,80&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n\n  &lt;tfoot&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Total&lt;/td&gt;\n      &lt;td&gt;24&lt;/td&gt;\n      &lt;td&gt;10,30&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tfoot&gt;\n&lt;/table&gt;\n\n\n&lt;a&gt; Link\nHyperloopUPV\n&lt;!-- ¿Qué pasa con la URL --&gt;\n&lt;a&gt;Hyperloop UPV&lt;/a&gt;\n\nPropiedades HTML\nLas etiquetas o elementos html disponen de atributos que nos permiten modificar su comportamiento interno.\nEn el caso de las etiquetas &lt;a&gt; debemos de especificar en los atributos la referncia en cuestión\n  &lt;a href=\"https://hyperloopupv.com/\"&gt; HyperloopUPV &lt;/a&gt;\n\n\n\n&lt;img&gt; Image\n\n\n\n“Plaza de la Reina”\n\n\n&lt;img src=\"../pr.jpg\" alt=\"Plaza con una fuente en el centro alrdedor casetas y fincas\"&gt;\n\n\n&lt;form&gt; Forms\nAmpliamente utilizados en HTML, trabajan sobre la etiqueta &lt;input&gt; la cual tiene muchos tipos.\n\n&lt;input type=\"text\"&gt;\n\nNombre: \n\n&lt;form&gt;\n\n  &lt;label for=\"first-name\"&gt;Nombre:&lt;/label&gt;\n\n  &lt;input type=\"text\" name=\"first-name\"/&gt;\n&lt;/form&gt;\n\n\n&lt;input type=\"number\"&gt;\n\nEdad: \n\n&lt;form&gt;\n\n  &lt;label for=\"age\"&gt;Edad:&lt;/label&gt;\n\n  &lt;input type=\"number\" name=\"age\" /&gt;\n&lt;/form&gt;\n\n\n&lt;input type=\"radio\"&gt;\n\nSubsistema:   Software   Firmware \n\n&lt;form&gt;\n\n  &lt;label for=\"sub\"&gt;Subsistema: &lt;/label&gt;&lt;br /&gt;\n  &lt;input type=\"radio\" name=\"sub\" value=\"software\" /&gt; Software &lt;br /&gt;\n  &lt;input type=\"radio\" name=\"sub\" value=\"firmware\" /&gt; Firmware &lt;br /&gt;\n\n&lt;/form&gt;\n\n\n&lt;input type=\"submit\"&gt;\n\nNombre:  \n\n\n&lt;form&gt;\n\n  &lt;label for=\"first-name\"&gt;Nombre:&lt;/label&gt;\n  &lt;input type=\"text\" name=\"first-name\"/&gt;\n\n  &lt;br/&gt;\n\n  &lt;input type=\"submit\"/&gt;\n&lt;/form&gt;\n\n\n\n&lt;button&gt; Button\nPor ahora no los utilizaremos, pero es importante saber que existen\n\nSuscribirse\n\n&lt;button&gt;Suscribirse&lt;/button&gt;",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 1",
+      "HTML"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/html.html#primer-repo-de-git",
+    "href": "pages/Bloque1/html.html#primer-repo-de-git",
+    "title": "HTML",
+    "section": "Primer repo de Git",
+    "text": "Primer repo de Git\n\nIniciar sesión en cuenta de GitHub\nBarra superior derecha, Símbolo + &gt; New Repo\nRepository Name\nDescription of the repo\nVisibility\nAdd README\nCrear repositorio\n\n\n\nDesde la ventana del repositorio creado\nCode &lt;&gt; &gt; Clone &gt; HTTPS &gt; Copiar URL\nDesde VScode\nClonar repositorio (si no aparece F1, paleta de comandos Clonar Repositorio)\nPegar la URL del repo\nPresionar intro (equivalente a git clone)\n\n\n\nRealizar cambios\nDesde la barra derecha seleccionar menú de Git (3 nodos interconectados por dos aristas)\nAgregar presionando el + los archivos a la staging area (equivalente a git add &lt;file&gt;)\nEscribir mensaje de commit y presionar botón de confirmación (equivalente a git commit)\n\n\nUna vez se hayan realizados todos los commits deseados presionar la rueda de sincronización en la barra de estado. Este último cambio es equivalente a ejecutar git pull y git push.\npush sube los cambios al repositorio remoto pull actualiza los cambios de repositorio remoto por el local",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 1",
+      "HTML"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/t1.html",
+    "href": "pages/Bloque1/t1.html",
+    "title": "T1: Web de HL I",
+    "section": "",
+    "text": "La primera tarea de esta semana consiste en diseñar una página web para el equipo de generación espontánea llamado Hyperloop UPV, la web debe de ser realizada en un archivo HTML y debe de constar por lo menos de los siguientes apartados y estructura\n\nTítulo principal de la página &lt;h1&gt;\nVarios secciones cada una introducida por un título &lt;h2&gt; (si es necesario hacer &lt;h3&gt;)\n\nDescripción del equipo\nLista desordenada de los subsistemas\nLista de Partners por orden de importancia (UPV, )\nUn día en Hyperloop (nótese el título del apartado en cursiva)\n\nBreve descripción de lo que hacemos en el equipo, alguna foto\n\nMiembros\n\nUna tabla de miembros por subsistema (inventarse los datos)\n\nFormulario para solicitar unirse al equipo que solicite\n\nNombre\nApellido\nCurso (radius button)\nBotón de enviar\n\nLink a la web del TC de SW y a la oficial del equipo\n\nCada sección debe de estar contenido en un div de la siguiente forma\n\n&lt;div&gt;\n\n  &lt;h2&gt;Títlo de sección&lt;/h2&gt;\n\n  &lt;Contenido de la sección /&gt;\n\n&lt;/div&gt;\nBase: Web",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 1",
+      "T1: Web de HL I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/MAhtml2.html",
+    "href": "pages/Bloque1/MAhtml2.html",
+    "title": "MA: Mas HTML",
+    "section": "",
+    "text": "Durante la explicación de teoría vista esta semana en clase nos hemos introducido en las etiquetas básicas de HTML.\nA continuación una selección de etiquetas que no hemos visto en clase, pero resulta interesante conocer, puesto que en determinadas ocasiones son útiles. Cada ítem de la lista es un enlace a la documentación de Mozilla donde está explicado el funcionamiento de la etiqueta de forma exhaustiva. No hay que conocer todos los aspectos de cada etiqueta, basta con tener una idea general de como funcionan.\n\ninput types. Muy importante conocer todos los tipos de inputs\ncode\niframe. Útil y ampliamente extendida\nhr. Línea horizontal\nfigure y figcaption. Permite insertar figura y pie de figura.\naudio. Insertar un audio en la página web.\nvideo. Insertar un audio en la página web.\nheader, main, footer. Son como &lt;div&gt; pero ya con usos por defecto preasignados.",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 1",
+      "MA: Mas HTML"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/entorno-reveal.html#ide",
+    "href": "pages/Bloque1/entorno-reveal.html#ide",
+    "title": "Preparación del entorno de trabajo",
+    "section": "IDE",
+    "text": "IDE\n¿Qué es una IDE?\nLas Integrated development environment (IDE) son aplicaciones diseñadas para facilitar la programación a los programadores.\nAunque no hay una lista de características propias de las IDE, suelen tener características comunes, por ejemplo:\n\nDebugger integrado en la interfaz\nGestor de archivos\nEditor de código inteligente: autocompletados"
+  },
+  {
+    "objectID": "pages/Bloque1/entorno-reveal.html#node.js-y-npm",
+    "href": "pages/Bloque1/entorno-reveal.html#node.js-y-npm",
+    "title": "Preparación del entorno de trabajo",
+    "section": "Node.JS y NPM",
+    "text": "Node.JS y NPM\n¿Qué es node JS?\nNode.js es un entorno de ejecución de JavaScript basado en el motor V8 de Google Chrome.\nPermite ejecutar código JavaScript directamente en el sistema operativo, sin depender de un navegador.\nDe este modo, el mismo lenguaje puede usarse tanto en el frontend como en el backend."
+  },
+  {
+    "objectID": "pages/Bloque1/entorno-reveal.html#git-y-github",
+    "href": "pages/Bloque1/entorno-reveal.html#git-y-github",
+    "title": "Preparación del entorno de trabajo",
+    "section": "Git y GitHub",
+    "text": "Git y GitHub\n¿Qué es Git?\nGit es un sistema de control de versiones distribuido. Permite registrar los cambios de un proyecto, volver a versiones anteriores y trabajar de forma colaborativa sin sobrescribir el trabajo de otros. Cada usuario dispone de una copia completa del repositorio, lo que facilita el trabajo sin conexión."
+  },
+  {
     "objectID": "pages/Bloque1/entorno.html",
     "href": "pages/Bloque1/entorno.html",
     "title": "Preparación del entorno de trabajo",
@@ -62,162 +342,6 @@
       "Bloque I Introducción",
       "Semana 0",
       "Preparación del entorno de trabajo"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque1/entorno-reveal.html#ide",
-    "href": "pages/Bloque1/entorno-reveal.html#ide",
-    "title": "Preparación del entorno de trabajo",
-    "section": "IDE",
-    "text": "IDE\n¿Qué es una IDE?\nLas Integrated development environment (IDE) son aplicaciones diseñadas para facilitar la programación a los programadores.\nAunque no hay una lista de características propias de las IDE, suelen tener características comunes, por ejemplo:\n\nDebugger integrado en la interfaz\nGestor de archivos\nEditor de código inteligente: autocompletados"
-  },
-  {
-    "objectID": "pages/Bloque1/entorno-reveal.html#node.js-y-npm",
-    "href": "pages/Bloque1/entorno-reveal.html#node.js-y-npm",
-    "title": "Preparación del entorno de trabajo",
-    "section": "Node.JS y NPM",
-    "text": "Node.JS y NPM\n¿Qué es node JS?\nNode.js es un entorno de ejecución de JavaScript basado en el motor V8 de Google Chrome.\nPermite ejecutar código JavaScript directamente en el sistema operativo, sin depender de un navegador.\nDe este modo, el mismo lenguaje puede usarse tanto en el frontend como en el backend."
-  },
-  {
-    "objectID": "pages/Bloque1/entorno-reveal.html#git-y-github",
-    "href": "pages/Bloque1/entorno-reveal.html#git-y-github",
-    "title": "Preparación del entorno de trabajo",
-    "section": "Git y GitHub",
-    "text": "Git y GitHub\n¿Qué es Git?\nGit es un sistema de control de versiones distribuido. Permite registrar los cambios de un proyecto, volver a versiones anteriores y trabajar de forma colaborativa sin sobrescribir el trabajo de otros. Cada usuario dispone de una copia completa del repositorio, lo que facilita el trabajo sin conexión."
-  },
-  {
-    "objectID": "pages/Bloque1/t1.html",
-    "href": "pages/Bloque1/t1.html",
-    "title": "T1: Web de HL I",
-    "section": "",
-    "text": "La primera tarea de esta semana consiste en diseñar una página web para el equipo de generación espontánea llamado Hyperloop UPV, la web debe de ser realizada en un archivo HTML y debe de constar por lo menos de los siguientes apartados y estructura\n\nTítulo principal de la página &lt;h1&gt;\nVarios secciones cada una introducida por un título &lt;h2&gt; (si es necesario hacer &lt;h3&gt;)\n\nDescripción del equipo\nLista desordenada de los subsistemas\nLista de Partners por orden de importancia (UPV, )\nUn día en Hyperloop (nótese el título del apartado en cursiva)\n\nBreve descripción de lo que hacemos en el equipo, alguna foto\n\nMiembros\n\nUna tabla de miembros por subsistema (inventarse los datos)\n\nFormulario para solicitar unirse al equipo que solicite\n\nNombre\nApellido\nCurso (radius button)\nBotón de enviar\n\nLink a la web del TC de SW y a la oficial del equipo\n\nCada sección debe de estar contenido en un div de la siguiente forma\n\n&lt;div&gt;\n\n  &lt;h2&gt;Títlo de sección&lt;/h2&gt;\n\n  &lt;Contenido de la sección /&gt;\n\n&lt;/div&gt;\nBase: Web",
-    "crumbs": [
-      "Bloque I Introducción",
-      "Semana 1",
-      "T1: Web de HL I"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque1/html.html",
-    "href": "pages/Bloque1/html.html",
-    "title": "HTML",
-    "section": "",
-    "text": "Contenido",
-    "crumbs": [
-      "Bloque I Introducción",
-      "Semana 1",
-      "HTML"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque1/html.html#estructura-básica-de-las-páginas-web",
-    "href": "pages/Bloque1/html.html#estructura-básica-de-las-páginas-web",
-    "title": "HTML",
-    "section": "Estructura básica de las páginas web",
-    "text": "Estructura básica de las páginas web\n\n¿Qué es una página web?\nUna página web es un documento digital accesible desde un navegador, compuesto por HTML, CSS y, cuando es necesario, JavaScript. Representa la unidad básica de contenido o interacción dentro de un sitio web y puede integrar tanto información estática como elementos dinámicos.\n\n\n¿Qué partes tiene una página web? (externas)",
-    "crumbs": [
-      "Bloque I Introducción",
-      "Semana 1",
-      "HTML"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque1/html.html#html5",
-    "href": "pages/Bloque1/html.html#html5",
-    "title": "HTML",
-    "section": "HTML5",
-    "text": "HTML5\n\n¿Qué es HTML?\nHTML es un lenguaje de marcas que permite definir la estructura y el contenido de un documento para la web. Mediante un conjunto de etiquetas, el desarrollador describe elementos como textos, imágenes, enlaces o formularios, indicando su función dentro de la página. Es la base sobre la que posteriormente se aplican estilos (CSS) y comportamientos dinámicos (JavaScript).\n\n\nEstructura básica\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n\n&lt;/head&gt;\n\n&lt;body&gt;\n\n  &lt;p&gt;Clase 1 del TC&lt;/p&gt;\n  \n&lt;/body&gt;\n&lt;/html&gt;\nEn el código aparecen varias etiquetas HTML, y cada una tiene una etiqueta de apertura y una etiqueta de cierre (por ejemplo, &lt;p&gt; y &lt;/p&gt;).\nEstas etiquetas delimitan y organizan el contenido del documento:\n- &lt;head&gt; agrupa la información del documento,\n- &lt;body&gt; contiene lo que verá el usuario,\n- &lt;p&gt; define un párrafo.\nLa función de las etiquetas es indicar al navegador qué es cada parte del documento y cómo debe interpretarla.\n\n\nHead\nSe corresponde con la cabecera de la pestaña, principalmente solo se modifica el logotipo y el contenido de esta.\nTambién se utiliza para almacenar los metadatos de la web, así como scripts de JavaScript y hojas de estilo de CSS.\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n\n  &lt;title&gt; Web del TC &lt;/title&gt;\n\n&lt;/head&gt;\n\n&lt;body&gt;\n\n  &lt;p&gt;Clase 1 del TC&lt;/p&gt;\n  \n&lt;/body&gt;\n&lt;/html&gt;\n\n\nBody\nSe corresponde con todo el contenido de la página dentro podemos utilizar multitud de etiquetas, acontinuación expondremos las más importantes.\nHasta el momento hemos trabajado únicamente con etiquietas invividuales, pero pronto veremos como podemos juntar varias etiquetas simples para obtener estructuras más complejas como tablas o formularios.\nTodo el código mostrado a partir de ahora se asume que esta correctamente ubicado dentro de una etiqueta body\n\n&lt;p&gt; Paragraph\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;p&gt;\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;/p&gt;\n\n\n&lt;br&gt; Break Line\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\nullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;p&gt;\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\n  &lt;br&gt;&lt;/br&gt;\n  ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;/p&gt;\n\n\n&lt;ul&gt; Unordered list\n\nFrancisco de Quevedo\nLope de Vega\nGóngora\n\n&lt;ul&gt;\n  &lt;li&gt;Francisco de Quevedo&lt;/li&gt;\n  &lt;li&gt;Lope de Vega&lt;/li&gt;\n  &lt;li&gt;Góngora&lt;/li&gt;\n&lt;/ul&gt;\n\n\n&lt;ul&gt; Ordered list\n\nRecepción\nDiscurso del Rector\nDespedida\n\n&lt;ol&gt;\n  &lt;li&gt;Recepción &lt;/li&gt;\n  &lt;li&gt;Discruso del Rector&lt;/li&gt;\n  &lt;li&gt;Despedida&lt;/li&gt;\n&lt;/ol&gt;\n\n\n&lt;h#&gt; Headings\n&lt;h1&gt;Título 1&lt;/h1&gt;\n&lt;h2&gt;Título 2&lt;/h2&gt;\n&lt;h3&gt;Título 3&lt;/h3&gt;\n&lt;h4&gt;Título 4&lt;/h4&gt;\n&lt;h5&gt;Título 5&lt;/h5&gt;\n&lt;h6&gt;Título 6&lt;/h6&gt;\n\n\n&lt;div&gt; Divisor y &lt;span&gt; Span\nEtiquetas contenedores, utilizadas para agrupar otras etiquetas, no presentan ningún efecto visible intrínsico, salvo que tras utilizar &lt;div&gt; se produce un salto de línea. Por lo que utilizaremos &lt;div&gt; para agrupar grandes grupos de etiquetas y &lt;span&gt; para fragementos más pequeños\n\n&lt;div&gt;\n&lt;div&gt;\n  &lt;h2&gt;Capítulo 2 &lt;/h2&gt;\n  &lt;p&gt;\n    Mio Cid Ruy Díaz por Burgos entró,&lt;br&gt;&lt;/br&gt;\n    en su conpaña sessaenta pendones.&lt;br&gt;&lt;/br&gt;\n    Exiénlo ver mugieres e varones,&lt;br&gt;&lt;/br&gt;\n    burgeses e burgesas por las finiestras son,&lt;br&gt;&lt;/br&gt;\n    plorando de los ojos, tanto avién el dolor,&lt;br&gt;&lt;/br&gt;\n    de las sus bocas todos dizían una razón:&lt;br&gt;&lt;/br&gt;\n    — ¡Dios, qué buen vassallo, si oviesse buen señor!—\n  &lt;/p&gt;\n&lt;/div&gt;\n\n\n\n&lt;strong&gt; Strong, &lt;i&gt; Italic\nNegrita Itálica Negrita e Itálica\n&lt;strong&gt;Negrita&lt;/strong&gt;\n&lt;i&gt;Itálica&lt;/i&gt;\n&lt;strong&gt;&lt;i&gt; Negrita e Itálica&lt;/i&gt;&lt;/strong&gt;\n\n\nComentario\nEtiqueta invisible\n&lt;p&gt;Etiqueta invisible&lt;/p&gt;\n\n&lt;!-- Soy un comenario --&gt;\n\n\nTablas\n\n\n\n\nProducto\n\n\nCantidad\n\n\nPrecio (€)\n\n\n\n\n\n\nManzanas\n\n\n10\n\n\n3,50\n\n\n\n\nNaranjas\n\n\n8\n\n\n4,00\n\n\n\n\nPlátanos\n\n\n6\n\n\n2,80\n\n\n\n\n\n\nTotal\n\n\n24\n\n\n10,30\n\n\n\n\n&lt;table&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Producto&lt;/th&gt;\n      &lt;th&gt;Cantidad&lt;/th&gt;\n      &lt;th&gt;Precio (€)&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Manzanas&lt;/td&gt;\n      &lt;td&gt;10&lt;/td&gt;\n      &lt;td&gt;3,50&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Naranjas&lt;/td&gt;\n      &lt;td&gt;8&lt;/td&gt;\n      &lt;td&gt;4,00&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Plátanos&lt;/td&gt;\n      &lt;td&gt;6&lt;/td&gt;\n      &lt;td&gt;2,80&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n\n  &lt;tfoot&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Total&lt;/td&gt;\n      &lt;td&gt;24&lt;/td&gt;\n      &lt;td&gt;10,30&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tfoot&gt;\n&lt;/table&gt;\n\n\na Link\nHyperloopUPV\n&lt;!-- ¿Qué pasa con la URL --&gt;\n&lt;a&gt;Hyperloop UPV&lt;/a&gt;\n\nPropiedades HTML\nLas etiquetas o elementos html disponen de atributos que nos permiten modificar su comportamiento interno.\nEn el caso de las etiquetas &lt;a&gt; debemos de especificar en los atributos la referncia en cuestión\n  &lt;a href=\"https://hyperloopupv.com/\"&gt; HyperloopUPV &lt;/a&gt;\n\n\n\n&lt;img&gt; Image\n\n\n\n“Plaza de la Reina”\n\n\n&lt;img src=\"../pr.jpg\" alt=\"Plaza con una fuente en el centro alrdedor casetas y fincas\"&gt;\n\n\n&lt;forms&gt; Forms\nAmpliamente utilizados en HTML, trabajan sobre la etiqueta &lt;input&gt; la cual tiene muchos tipos.\n\n&lt;input type=\"text\"&gt;\n\nNombre: \n\n&lt;form&gt;\n\n  &lt;label for=\"first-name\"&gt;Nombre:&lt;/label&gt;\n\n  &lt;input type=\"text\" name=\"first-name\"/&gt;\n&lt;/form&gt;\n\n\n&lt;input type=\"number\"&gt;\n\nEdad: \n\n&lt;form&gt;\n\n  &lt;label for=\"age\"&gt;Edad:&lt;/label&gt;\n\n  &lt;input type=\"number\" name=\"age\" /&gt;\n&lt;/form&gt;\n\n\n&lt;input type=\"radio\"&gt;\n\nSubsistema:   Software   Firmware \n\n&lt;form&gt;\n\n  &lt;label for=\"sub\"&gt;Subsistema: &lt;/label&gt;&lt;br /&gt;\n  &lt;input type=\"radio\" name=\"sub\" value=\"software\" /&gt; Software &lt;br /&gt;\n  &lt;input type=\"radio\" name=\"sub\" value=\"firmware\" /&gt; Firmware &lt;br /&gt;\n\n&lt;/form&gt;\n\n\n&lt;input type=\"submit\"&gt;\n\nNombre:  \n\n\n&lt;form&gt;\n\n  &lt;label for=\"first-name\"&gt;Nombre:&lt;/label&gt;\n  &lt;input type=\"text\" name=\"first-name\"/&gt;\n\n  &lt;br/&gt;\n\n  &lt;input type=\"submit\"/&gt;\n&lt;/form&gt;\n\n\n\n&lt;button&gt; Button\nPor ahora no los utilizaremos, pero es importante saber que existen\n\nSuscribirse\n\n&lt;button&gt;Suscribirse&lt;/button&gt;",
-    "crumbs": [
-      "Bloque I Introducción",
-      "Semana 1",
-      "HTML"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque1/html.html#primer-repo-de-git",
-    "href": "pages/Bloque1/html.html#primer-repo-de-git",
-    "title": "HTML",
-    "section": "Primer repo de Git",
-    "text": "Primer repo de Git\n\nIniciar sesión en cuenta de GitHub\nBarra superior derecha, Símbolo + &gt; New Repo\nRepository Name\nDescription of the repo\nVisibility\nAdd README\nCrear repositorio\n\n\n\nDesde la ventana del repositorio creado\nCode &lt;&gt; &gt; Clone &gt; HTTPS &gt; Copiar URL\nDesde VScode\nClonar repositorio (si no aparece F1, paleta de comandos Clonar Repositorio)\nPegar la URL del repo\nPresionar intro (equivalente a git clone)\n\n\n\nRealizar cambios\nDesde la barra derecha seleccionar menú de Git (3 nodos interconectados por dos aristas)\nAgregar presionando el + los archivos a la staging area (equivalente a git add &lt;file&gt;)\nEscribir mensaje de commit y presionar botón de confirmación (equivalente a git commit)\n\n\nUna vez se hayan realizados todos los commits deseados presionar la rueda de sincronización en la barra de estado. Este último cambio es equivalente a ejecutar git pull y git push.\npush sube los cambios al repositorio remoto pull actualiza los cambios de repositorio remoto por el local",
-    "crumbs": [
-      "Bloque I Introducción",
-      "Semana 1",
-      "HTML"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque1/ehtml.html#estructura-básica-de-las-páginas-web",
-    "href": "pages/Bloque1/ehtml.html#estructura-básica-de-las-páginas-web",
-    "title": "HTML",
-    "section": "Estructura básica de las páginas web",
-    "text": "Estructura básica de las páginas web\n¿Qué es una página web?\nUna página web es un documento digital accesible desde un navegador, compuesto por HTML, CSS y, cuando es necesario, JavaScript. Representa la unidad básica de contenido o interacción dentro de un sitio web y puede integrar tanto información estática como elementos dinámicos."
-  },
-  {
-    "objectID": "pages/Bloque1/ehtml.html#html5",
-    "href": "pages/Bloque1/ehtml.html#html5",
-    "title": "HTML",
-    "section": "HTML5",
-    "text": "HTML5\n¿Qué es HTML?\nHTML es un lenguaje de marcas que permite definir la estructura y el contenido de un documento para la web. Mediante un conjunto de etiquetas, el desarrollador describe elementos como textos, imágenes, enlaces o formularios, indicando su función dentro de la página. Es la base sobre la que posteriormente se aplican estilos (CSS) y comportamientos dinámicos (JavaScript)."
-  },
-  {
-    "objectID": "pages/Bloque1/ehtml.html#primer-repo-de-git",
-    "href": "pages/Bloque1/ehtml.html#primer-repo-de-git",
-    "title": "HTML",
-    "section": "Primer repo de Git",
-    "text": "Primer repo de Git\n\nIniciar sesión en cuenta de GitHub\nBarra superior derecha, Símbolo + &gt; New Repo\nRepository Name\nDescription of the repo\nVisibility\nAdd README\nCrear repositorio"
-  },
-  {
-    "objectID": "pages/Bloque1/bloque1.html",
-    "href": "pages/Bloque1/bloque1.html",
-    "title": "Bloque I Introducción",
-    "section": "",
-    "text": "El objetivo del bloque 1 es sentar la base para la realización del curso, aprendiendo las competencias mínimas para realizar el curso.\nEn este bloque se hará una introducción: las herramientas de trabajo, el lenguaje de marcado HTML que permite crear páginas web estáticas y el lenguaje de programación de CSS que nos permite formatear webs previamente construidas.\nEste bloque se compone de 3 semanas, 2 tareas de clase y dos tareas voluntarias.",
-    "crumbs": [
-      "Bloque I Introducción"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque1/bloque1.html#contenido",
-    "href": "pages/Bloque1/bloque1.html#contenido",
-    "title": "Bloque I Introducción",
-    "section": "Contenido",
-    "text": "Contenido\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nFecha\nContenido\nContenido de la clase\nTarea Clase\nMaterial Extra\nTarea Extra\n\n\n\n\n0\n21/11/2025\nIntroducción\nPresentación TC, VSCode, Git, LiveShare y GitHub\n-\n-\n-\n\n\n1\n28/11/2025\nHTML\nEstructura básica, links, listas, tablas, form, img, div, span\nWeb HL I\nEtiquetas: HTML5, video, iframe\nMi porfolio I\n\n\n2\n05/12/2025\nCSS\nEstilos básicos, clases, id, archivos externos\nWeb HL II\nSelectores y Pseudoclases\nMi porfolio II",
-    "crumbs": [
-      "Bloque I Introducción"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque1/bloque1.html#material",
-    "href": "pages/Bloque1/bloque1.html#material",
-    "title": "Bloque I Introducción",
-    "section": "Material",
-    "text": "Material\n\nMDN (Mozilla Developer Network), HTML y CSS\nW3Schools HTML y CSS\nVisual Studio Code Manual VSCode\nCSS tricks CSS Avanzado",
-    "crumbs": [
-      "Bloque I Introducción"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque1/t1a.html",
-    "href": "pages/Bloque1/t1a.html",
-    "title": "TA1: Mi CV I",
-    "section": "",
-    "text": "A día de hoy es muy importante tener una imagen digital, por ello la tarea extra consite en crearte tu propia página web básica usando html.\nPuedes usar el CV de Antonio Machado como referencia.\nBase: Ejemplo",
-    "crumbs": [
-      "Bloque I Introducción",
-      "Semana 1",
-      "TA1: Mi CV I"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque1/MAhtml2.html",
-    "href": "pages/Bloque1/MAhtml2.html",
-    "title": "MA: Mas HTML",
-    "section": "",
-    "text": "Durante la explicación de teoría vista esta semana en clase nos hemos introducido en las etiquetas básicas de HTML.\nA continuación una selección de etiquetas que no hemos visto en clase, pero resulta interesante conocer, puesto que en determinadas ocasiones son útiles. Cada ítem de la lista es un enlace a la documentación de Mozilla donde está explicado el funcionamiento de la etiqueta de forma exhaustiva. No hay que conocer todos los aspectos de cada etiqueta, basta con tener una idea general de como funcionan.\n\ninput types. Muy importante conocer todos los tipos de inputs\ncode\niframe. Útil y ampliamente extendida\nhr. Línea horizontal\nfigure y figcaption. Permite insertar figura y pie de figura.\naudio. Insertar un audio en la página web.\nvideo. Insertar un audio en la página web.\nheader, main, footer. Son como &lt;div&gt; pero ya con usos por defecto preasignados.",
-    "crumbs": [
-      "Bloque I Introducción",
-      "Semana 1",
-      "MA: Mas HTML"
     ]
   },
   {
@@ -290,47 +414,5 @@
     "crumbs": [
       "Programa TC"
     ]
-  },
-  {
-    "objectID": "pages/Bloque1/css.html",
-    "href": "pages/Bloque1/css.html",
-    "title": "CSS",
-    "section": "",
-    "text": "Contenido"
-  },
-  {
-    "objectID": "pages/Bloque1/css.html#problemas-de-html",
-    "href": "pages/Bloque1/css.html#problemas-de-html",
-    "title": "CSS",
-    "section": "Problemas de HTML",
-    "text": "Problemas de HTML\nHasta el momento hemos trabajado con HTML, que a pesar de ser muy práctico para la creación de la estructura interna de la web, presenta ciertas limitaciones a la hora de modificar el formato de la web, para ello se introduce CSS, una herramienta que nos va a permitir modificar el formato cómodamente."
-  },
-  {
-    "objectID": "pages/Bloque1/css.html#formato-con-css",
-    "href": "pages/Bloque1/css.html#formato-con-css",
-    "title": "CSS",
-    "section": "Formato con CSS",
-    "text": "Formato con CSS\n\nAtributo style\nSupongamos que tenemos el siguiente elemento\n&lt;p&gt; Hola Mundo&lt;p&gt;. Por ahora el texto se mostrará en color negro, el color predeterminado de HTML para las etiquetas &lt;p&gt;\n\n\nHola mundo\n\n\nSi se desea modificar el formato intrínseco de esta etiqueta &lt;p&gt; debemos incluir la propiedad style que, como su nombre indica nos permitirá modificar su estilo. Dentro de este atributo se ha de insertar propiedad CSS (no confundir con los atributos html). La propiedad CSS especifica que aspecto visual del contenido de la etiqueta. Por ejemplo, si se desea modificar el color de la letra se debe de utilizar la propiedad color (nótese que no lleva u).\n&lt;p style=\"color:red\"&gt;Hola Mundo&lt;/p&gt;\n\n&lt;!-- Equivalente en Hexadecimal --&gt;\n\n&lt;p style=\"color:#ff0000\"&gt;Hola Mundo&lt;/p&gt;\n\n\nHola Mundo\n\n\nSí deseamos modificar más de una propiedad CSS deberemos de serparalas dentro de la etiqueta con un punto y coma\n&lt;p style=\"color:#ff0000; font-size: 44px\"&gt;Hola Mundo&lt;/p&gt;\n\n\nHola Mundo\n\n\n\nProblemas del atributo style\nEl atributo style resulta útil para formatear una etiqueta individualmente, pero resulta tedioso y repetitivo para más de una etiqueta. Observe el siguiente ejemplo\n&lt;p&gt;Autores del culteranismo marcados en rojo&lt;p&gt;\n\n&lt;ul&gt;\n    &lt;li&gt;Francisco de Quevedo&lt;/li&gt;\n    &lt;li style=\"color:red; text-decoration: underline; font-size:30px;\"&gt;Luis de Góngora&lt;/li&gt;\n    &lt;li&gt;Baltasar Gracián&lt;/li&gt;\n    &lt;li style=\"color:red; text-decoration: underline; font-size:30px;\"&gt;Pedro Soto de Rojas&lt;/li&gt;\n    &lt;li&gt;Tirso de Molina&lt;/li&gt;\n    &lt;li&gt;Calderón de la Barca&lt;/li&gt;\n&lt;/ul&gt;\n\n\nAutores del culteranismo marcados en rojo\n\n\n\nFrancisco de Quevedo\n\n\nLuis de Góngora\n\n\nBaltasar Gracián\n\n\nPedro Soto de Rojas\n\n\nTirso de Molina\n\n\nCalderón de la Barca\n\n\n\nProblemas:\n\nRepetición de mucho código\nAlta posibilidad error\nPoca escalabilidad\n\nSi añadimos por ejempo a Luis Carrillo y Sotomayor (autor culteranista) hay que volver a repetir todo el atributo\nSi deseasemos cambiar el color de rojo a verde deberemos modificar cada uno de los atributos\n\n\n\n\n\nClases e ID\n\nClases\nLa solución a este problema son las clases que nos permiten identificar aquellos componentes con características de formato similares. Se agregan como atributos a cada etiqueta\n&lt;p&gt;Autores del culteranismo marcados en rojo&lt;p&gt; &lt;!--En este caso no se marcan en rojo--&gt;\n\n&lt;ul&gt;\n    &lt;li&gt;Francisco de Quevedo&lt;/li&gt;\n    &lt;li class=\"culteranista\"&gt;Luis de Góngora&lt;/li&gt;\n    &lt;li&gt;Baltasar Gracián&lt;/li&gt;\n    &lt;li class=\"culteranista\"&gt;Pedro Soto de Rojas&lt;/li&gt;\n    &lt;li&gt;Tirso de Molina&lt;/li&gt;\n    &lt;li&gt;Calderón de la Barca&lt;/li&gt;\n&lt;/ul&gt;\n\nEtiqueta &lt;style&gt;\nAhora para marcar en rojo los culterantistas se ha de indicar el formato de todos en la class culteranista, para ello nos definiremos una hoja de estilo que será común para todo el documento. La hoja de estilos se define en el &lt;head&gt; de la siguiente forma:\n&lt;head&gt;\n&lt;!-- Fragemento HTML --&gt;\n&lt;style&gt;\n  /*Fragmento CSS*/\n  .culteranistas{  /*Nótese el punto*/\n    color: red;\n    text-size: 40px;\n    background-color: blue;\n    text-decoration: underline;  /*Este último ';' no es obligatorio como tal, pero es recomendable, en HTML3 y CSS2 daba error si se incluía*/\n  }\n&lt;/style&gt; \n&lt;!--Fin de la etiqueta Style, seguimos con html--&gt;\n&lt;/head&gt;\nAhora se visualizará correctamente, además se añadirá el fondo azul\n\n\nComposición de clases\nSuponga que tenemos dos clases, una primera clase que modifica el tipo de letra a monospace que aplicaremos a los autores culteranistas y una segunda que modifica el grosor de la letra que se aplicará sobre los autores de lírica.\n&lt;head&gt;&lt;style&gt;\n  .culteranista {\n    font-family: monospace;\n  }\n  .lirica {\n    font-weight: bold;\n  }\n  .autores {\n    list-style: square;\n  }\n&lt;/style&gt;&lt;/head&gt;\n\n&lt;body&gt;\n  &lt;ul class=\"autores\"&gt;\n    &lt;li class=\"lirica\"&gt;Fray Luis de León&lt;/li&gt;\n    &lt;li class=\"culteranista\"&gt;Hortensio Félix de Paravicino&lt;/li&gt;\n    &lt;li class=\"culteranista lirica\"&gt;Lope de Vega&lt;/li&gt;\n    &lt;li class=\"lirica\"&gt;San Juan de la Cruz&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/body&gt;\n\n\n\nFray Luis de León\n\n\nHortensio Félix de Paravicino\n\n\nLope de Vega\n\n\nSan Juan de la Cruz\n\n\n\n\n\n\nID\nLos ID son como las clases pero solo se pueden utlizar una vez por sitio web. Es útil para cosas que no se deben repetir más de una vez por sitio web.\n&lt;style&gt;\n#principal{\n  text-align: center\n  color:blue\n}\n&lt;/style&gt;\n&lt;!--[...]--&gt;\n&lt;div id=\"principal\"&gt;\n  &lt;h4&gt;Teatro Romántico&gt;&lt;/h4&gt;\n  &lt;p&gt;El retablo romántico se caracteriza por exaltar la libertad creadora,\n    la expresión intensa de los sentimientos individuales, el gusto por lo\n    misterioso y lo sublime, y la reivindicación de la imaginación frente a\n    las reglas clásicas.&lt;/p&gt;\n&lt;/div&gt;\n\n\nTeatro Romántico\n\n\nEl retablo romántico se caracteriza por exaltar la libertad creadora, la expresión intensa de los sentimientos individuales, el gusto por lo misterioso y lo sublime, y la reivindicación de la imaginación frente a las reglas clásicas.\n\n\n\n\n\nPropiedades CSS\n\nborder y border-radius\nLa propiedad border es una propiedad abreviada (shorthand) que en realidad combina tres propiedades más pequeñas:\n\nborder-width → grosor del borde\n\nborder-style → estilo del borde (solid, dashed, dotted, etc.)\n\nborder-color → color del borde\n\nPor ejemplo, estas dos definiciones son equivalentes:\n/* Forma abreviada */\n.caja {\n  border: 2px solid red;\n}\n\n/* Forma “desdoblada” en 3 mini propiedades */\n.caja-desdoblada {\n  border-width: 2px;\n  border-style: solid;\n  border-color: red;\n}\n Lope de Vega\n\n\nborder-top, border-right, border-bottom, border-left\nCSS permite aplicar bordes distintos en cada lado. Cada uno funciona igual que border pero aplicado a un solo lado:\nborder-top\nborder-right\nborder-bottom\nborder-left\n.caja-bordes {\n  border-top: 3px solid red;\n  border-right: 2px dashed blue;\n  border-bottom: 4px dotted green;\n  border-left: 5px double orange;\n}\nTambién pueden desdoblarse:\n.caja-top-desdoblado {\n  border-top-width: 4px;\n  border-top-style: solid;\n  border-top-color: purple;\n}\n\n\nmargin y padding\nLas propiedades margin y padding controlan el espacio alrededor de los elementos, pero cada una actúa en una zona distinta:\n\nmargin → espacio externo, fuera del borde del elemento\n\npadding → espacio interno, entre el contenido y el borde\n\nVisualmente:\n\n\n \n\n\n\n CONTENT\n\n\n\n\n&lt;div style=\"background:#f0f0f0; padding:20px;\"&gt;\n &lt;!-- MARGIN (gris claro alrededor del borde) --&gt;\n   &lt;!-- BORDER --&gt;\n   &lt;div style=\"border:3px solid black\"&gt;\n   &lt;!-- PADDING (espacio interno) --&gt;\n   &lt;div style=\"background:#d0ffd0; padding:15px;\"&gt;\n   &lt;!-- CONTENT --&gt;\n     &lt;span style=\"background-color:white\"&gt;CONTENT&lt;/span&gt;\n   &lt;/div&gt;\n &lt;/div&gt;\n&lt;/div&gt;\n\nRegla Trouble\nCuando margin o padding usan 4 valores, el orden siempre es el mismo:\ntop, right, bottom, left\nPara recordarlo fácilmente se utiliza la regla mnemotécnica Trouble:\n\nT → Top (arriba)\n\nR → Right (derecha)\n\nB → Bottom (abajo)\n\nL → Left (izquierda)\n\nEs decir:\nmargin:    top   right   bottom   left;\npadding:   top   right   bottom   left;\n\n\n\n\n\n\nTipTruco para los ingenieros: La regla de la mano derecha\n\n\n\nEl orden de los margin y de los padding siempre es en sentido horario.\nPor lo que podemos utilizar la regla de la mano derecha de la inducción electro magnética asumiendo que el vector intensidad apunta hacia la pantalla"
-  },
-  {
-    "objectID": "pages/Bloque1/css_p.html#problemas-de-html",
-    "href": "pages/Bloque1/css_p.html#problemas-de-html",
-    "title": "CSS",
-    "section": "Problemas de HTML",
-    "text": "Problemas de HTML\nHasta el momento hemos trabajado con HTML, que a pesar de ser muy práctico para la creación de la estructura interna de la web, presenta ciertas limitaciones a la hora de modificar el formato de la web, para ello se introduce CSS, una herramienta que nos va a permitir modificar el formato cómodamente."
-  },
-  {
-    "objectID": "pages/Bloque1/css_p.html#formato-con-css",
-    "href": "pages/Bloque1/css_p.html#formato-con-css",
-    "title": "CSS",
-    "section": "Formato con CSS",
-    "text": "Formato con CSS\nAtributo style\nSupongamos que tenemos el siguiente elemento\n&lt;p&gt; Hola Mundo&lt;p&gt;. Por ahora el texto se mostrará en color negro, el color predeterminado de HTML para las etiquetas &lt;p&gt;\n\n\nHola mundo"
-  },
-  {
-    "objectID": "pages/Bloque1/css.html#border-y-border-radius-1",
-    "href": "pages/Bloque1/css.html#border-y-border-radius-1",
-    "title": "CSS",
-    "section": "border y border-radius",
-    "text": "border y border-radius\nLa propiedad border es una propiedad abreviada (shorthand) que en realidad combina tres propiedades más pequeñas:\n\nborder-width → grosor del borde\n\nborder-style → estilo del borde (solid, dashed, dotted, etc.)\n\nborder-color → color del borde\n\nPor ejemplo, estas dos definiciones son equivalentes:\n/* Forma abreviada */\n.caja {\n  border: 2px solid red;\n}\n\n/* Forma “desdoblada” en 3 mini propiedades */\n.caja-desdoblada {\n  border-width: 2px;\n  border-style: solid;\n  border-color: red;\n}\n\nmargin y padding"
   }
 ]

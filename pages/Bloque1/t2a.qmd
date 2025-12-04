@@ -1,0 +1,15 @@
+---
+title: "TA2: Mi CV II"
+author: "Javier Ribal del Río"
+date: "2025-11-28"
+date-modified: today
+affiliation: "Hyperloop UPV"
+---
+
+En la tarea previa definimos nuestra identidad digital, ahora es un buen momento dándole un toque personal con ayuda de CSS.
+
+Si no se realizó la T1A puede utilizar el [CV de Antonio Machado](ta1-solu.html) como base sobre la que trabajar. (Click derecho guadrar enlace como)
+
+Importante: la hoja de estilos debe ser definida como un archivo externo.
+
+El objetivo de esta tarea es evaluar, las habilidades de diseño y de investigación, por lo que no hay ningún ejemplo al que imitar. Siguiendo ese objetivo se le recomienda al alumno que investigue y descubrá el máximo número de propiedades CSS.
