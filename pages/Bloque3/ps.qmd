@@ -1,0 +1,61 @@
+---
+title: "Proyecto Subsistema "
+author: "Javier Ribal del Río"
+date: "2025-12-19"
+date-modified: today
+affiliation: "Hyperloop UPV"
+---
+
+
+
+
+
+## Objetivo
+Desarrollar una pequeña aplicación web para gestionar una lista de tareas utilizando **HTML, CSS y JavaScript**, trabajando directamente con el **DOM**.
+
+[base](pc-ac.html)
+
+---
+
+## Qué se quiere hacer
+
+- Crear una página web que permita añadir tareas.
+- Cada tarea debe tener:
+  - Un texto descriptivo.
+  - Un responsable (Software, Hardware, Partners, Otros).
+- Las tareas deben mostrarse en una lista.
+- Al hacer click sobre una tarea, esta debe eliminarse.
+- La página no debe recargarse al añadir o eliminar tareas.
+
+---
+
+## Requisitos técnicos
+
+- La lógica debe implementarse **manipulando el DOM directamente** (`document.createElement`, `appendChild`, `addEventListener`, etc.).
+- HTML básico para la estructura.
+- **CSS libre**, se espera que se use de forma creativa para mejorar el diseño.
+- JavaScript en un archivo separado o en un `<script>`.
+
+---
+
+## Importante
+
+- La solución mínima funcional es sencilla.
+- **Se espera que el alumnado mejore notablemente el aspecto visual usando CSS**.
+- El diseño, la usabilidad y la presentación formarán parte de la evaluación.
+- Aquellos que completen la funcionalidad básica de la tarea podrán preguntarle al profesor como mejorar la tarea o que agregar para ampliar funcionalidades
+
+---
+
+## No es necesario
+
+- Guardar las tareas al recargar la página.
+- Autenticación de usuarios.
+- Base de datos o backend.
+
+---
+
+## Entregable
+
+- Archivos `index.html`, `script.js` y `style.css`.
+- El proyecto debe poder abrirse directamente en el navegador.

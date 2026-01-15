@@ -1,0 +1,191 @@
+---
+cache: false
+format:
+  pdf:
+    pdf-engine: xelatex
+    toc: false
+    number-sections: false
+execute:
+  echo: false
+  warning: false
+  message: false
+header-includes:
+  - \usepackage{array}
+  - \usepackage{colortbl}
+  - \usepackage{xcolor}
+  - \usepackage{longtable}
+  - \renewcommand{\arraystretch}{1.4}
+---
+
+```{r}
+library(dplyr)
+library(knitr)
+library(kableExtra)
+```
+
+```{r}
+# ===============================
+# VARIABLES GENERALES
+# ===============================
+titulo_rubrica  <- "Rúbrica de Evaluación"
+nombre_tarea   <- "Web de Hyperloop II"
+nombre_alumno  <- "Pau Minguet Micó"
+comentarios    <- "
+
+Has abusado mucho de la notación para redefinir el estilo predeterminado de las etiquetas. Es mejor utilizar siempre clases e ID. Muy buen uso de los selectores por propiedad y el pseudoselector de el link.
+
+No has usado ni una clase en toda la tarea.
+
+
+---
+
+Dominio completo de propiedades CSS, pero todavía tienes margen de mejora en el uso de selectores básicos.
+
+"
+```
+
+# `r titulo_rubrica`
+
+**Tarea:** `r nombre_tarea`  
+**Alumno:** `r nombre_alumno`
+
+```{r}
+# ===============================
+# NOTAS (USA NA PARA "NO APLICA")
+# ===============================
+notas <- tibble(
+  criterio = c(
+    "Diseño",
+    "Programación",
+    "Esfuerzo e implicación",
+    "Documentación / Claridad",
+    "Funcionalidad"
+  ),
+  puntuacion = c(7.5, NA, 9.5, 10, 9)
+)
+```
+
+```{r}
+# ===============================
+# DESCRIPTORES
+# ===============================
+desc <- tibble::tribble(
+  ~criterio, ~nivel, ~texto,
+  "Diseño", "Deficiente", "Diseño desordenado y/o con problemas de visualización funcional.",
+  "Diseño", "Insuficiente", "Diseño básico pero con problemas de visualización o estructura.",
+  "Diseño", "Aceptable", "Diseño claro y ordenado, cumple los requisitos básicos.",
+  "Diseño", "Bueno", "Diseño cuidado, buena estética y estructura clara.",
+  "Diseño", "Excelente", "Diseño profesional, limpio, pulido y sobresaliente.",
+
+  "Programación", "Deficiente", "Código incompleto o con errores graves.",
+  "Programación", "Insuficiente", "Código funcional parcialmente y/o con errores importantes.",
+  "Programación", "Aceptable", "Código funcional y adecuado a la tarea.",
+  "Programación", "Bueno", "Código bien estructurado con mejoras respecto a lo exigido.",
+  "Programación", "Excelente", "Código impecable, eficiente y muy bien organizado.",
+
+  "Esfuerzo e implicación", "Deficiente", "Bajo esfuerzo o dedicación mínima.",
+  "Esfuerzo e implicación", "Insuficiente", "Esfuerzo adecuado pero limitado.",
+  "Esfuerzo e implicación", "Aceptable", "Esfuerzo notable, cumple con lo requerido.",
+  "Esfuerzo e implicación", "Bueno", "Esfuerzo claro, trabajo más allá de lo solicitado.",
+  "Esfuerzo e implicación", "Excelente", "Dedicación sobresaliente y trabajo excepcional.",
+
+  "Documentación / Claridad", "Deficiente", "Documentación mínima o inexistente.",
+  "Documentación / Claridad", "Insuficiente", "Documentación incompleta o confusa.",
+  "Documentación / Claridad", "Aceptable", "Documentación clara y suficiente.",
+  "Documentación / Claridad", "Bueno", "Documentación bien presentada y detallada.",
+  "Documentación / Claridad", "Excelente", "Documentación excelente y altamente profesional.",
+
+  "Funcionalidad", "Deficiente", "No funciona o no cumple objetivos.",
+  "Funcionalidad", "Insuficiente", "Funciona de forma parcial.",
+  "Funcionalidad", "Aceptable", "Funciona correctamente.",
+  "Funcionalidad", "Bueno", "Funciona con mejoras o funcionalidades extra.",
+  "Funcionalidad", "Excelente", "Funciona perfectamente y supera expectativas."
+)
+```
+
+```{r}
+texto_desc <- function(crit, niv) {
+  desc |> filter(criterio == crit, nivel == niv) |> pull(texto)
+}
+
+marcar <- function(p, min, max, crit, niv) {
+  if (is.na(p)) "" else if (p >= min && p <= max) {
+    paste0("\\cellcolor{gray!15}\\textbf{", round(p,1), "}\\newline \\footnotesize ", texto_desc(crit,niv))
+  } else {
+    paste0("\\footnotesize ", texto_desc(crit,niv))
+  }
+}
+
+marcar_no_aplica <- function(p) {
+  if (is.na(p)) "\\cellcolor{gray!15}\\textbf{N/A}" else ""
+}
+```
+
+```{r}
+rubrica <- notas |>
+  rowwise() |>
+  mutate(
+    Criterio = paste0("\\textbf{", criterio, "}"),
+    `No aplica` = marcar_no_aplica(puntuacion),
+    `Deficiente (0–4)` = marcar(puntuacion, 0, 3.99, criterio, "Deficiente"),
+    `Insuficiente (4–5)` = marcar(puntuacion, 4, 4.99, criterio, "Insuficiente"),
+    `Aceptable (5–7)` = marcar(puntuacion, 5, 6.88, criterio, "Aceptable"),
+    `Bueno (7–9)` = marcar(puntuacion, 7, 8.9, criterio, "Bueno"),
+    `Excelente (9–10)` = marcar(puntuacion, 9.00, 10, criterio, "Excelente"),
+    `Puntuación` = ifelse(is.na(puntuacion), "—", paste0("\\textbf{", round(puntuacion,1), "}"))
+  ) |>
+  ungroup() |>
+  select(-criterio, -puntuacion)
+```
+
+```{r, results='asis'}
+rubrica |>
+  kable(
+    format = "latex",
+    escape = FALSE,
+    booktabs = FALSE,
+    linesep = "\\hline",
+    row.names = FALSE,
+    col.names = c(
+      "\\textbf{Criterio}",
+      "\\textbf{N/A}",
+      "\\textbf{Deficiente}",
+      "\\textbf{Insuficiente}",
+      "\\textbf{Aceptable}",
+      "\\textbf{Bueno}",
+      "\\textbf{Excelente}",
+      "\\textbf{Puntuación}"
+    ),
+    align = c(
+      "|>{\\centering\\arraybackslash}p{2cm}",
+      ">{\\centering\\arraybackslash}p{0.5cm}",
+      ">{\\centering\\arraybackslash}p{2.0cm}",
+      ">{\\centering\\arraybackslash}p{2.0cm}",
+      ">{\\centering\\arraybackslash}p{2.0cm}",
+      ">{\\centering\\arraybackslash}p{2.0cm}",
+      ">{\\centering\\arraybackslash}p{2.0cm}",
+      ">{\\centering\\arraybackslash}p{1.4cm}|"
+    )
+  ) |>
+  kable_styling(font_size = 7, latex_options = "hold_position") |>
+  row_spec(0, bold = TRUE, background = "gray!35") |>
+  column_spec(1, bold = TRUE, background = "gray!25")
+```
+
+```{r, results='asis'}
+media_10 <- mean(notas$puntuacion, na.rm = TRUE)
+media_60 <- media_10 * 6
+
+cat(paste0(
+  "\\vspace{0.3cm}",
+  "\\textbf{Puntuación final: } ",
+  round(media_10, 2), " / 10",
+  "\\newline ",
+  "\\textbf{Equivalente sobre 60: } ",
+  round(media_60, 1), " / 60"
+))
+```
+
+# Comentarios
+
+`r comentarios`

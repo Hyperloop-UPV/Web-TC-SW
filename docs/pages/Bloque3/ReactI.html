@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Javier Ribal del Río">
+
+<title>React I – Training Center SW</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-7010b3c259c44ebb4b6b7a5b7b7107e0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-036d13c4e18d8d7539729d541f55cf23.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-7010b3c259c44ebb4b6b7a5b7b7107e0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../style/main.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Bloque III Interacción</li><li class="breadcrumb-item"><a href="../../pages/Bloque3/ReactI.html">Semana 7</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque3/ReactI.html">React I</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../public/logo-text.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../../public/logo-text.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Training Center SW</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programa TC</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../pages/Bloque1/bloque1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bloque I Introducción</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Semana 0</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/Bloque1/entorno.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preparación del entorno de trabajo</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Semana 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/Bloque1/html.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HTML</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/Bloque1/t1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1: Web de HL I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/Bloque1/MAhtml2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MA: Mas HTML</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/Bloque1/t1a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TA1: Mi CV I</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Semana 2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/Bloque1/css.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CSS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/Bloque1/t2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2: Web de HL II</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/Bloque1/MAcss.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MA: Selectores y Pseudoselectores</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/Bloque1/t2a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TA2: Mi CV II</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Bloque II Programación</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Repaso Intensivo</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/Bloque2/intensivo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repaso Intensivo JS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/Bloque2/ti.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TI: Ejercicios JS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/Bloque2/MAclases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MA: Clases ES6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/Bloque2/tia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TAI: La objetización de las personas</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Bloque III Interacción</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Semana 6</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/Bloque3/DOM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DOM</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/Bloque3/t6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T6: Romancero Gitano I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/Bloque3/MAcss2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MA: CSS Flex y CSS</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Semana 7</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/Bloque3/ReactI.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">React I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/Bloque3/ps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Proyecto Subsistema</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">Próximamente...</span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Bloque IV Comunicación</span></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/rubric.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rúbrica de evaluación</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<p><img src="https://i.imgur.com/jbGUd7N.png" class="img-fluid"><br><br><br> © Javier Ribal del Río <br> 2025 - Hyperloop UPV</p>
+</div></div></nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#sintaxis-jsx" id="toc-sintaxis-jsx" class="nav-link active" data-scroll-target="#sintaxis-jsx">Sintaxis JSX</a>
+  <ul>
+  <li><a href="#qué-es-la-sintaxis-jsx" id="toc-qué-es-la-sintaxis-jsx" class="nav-link" data-scroll-target="#qué-es-la-sintaxis-jsx">¿Qué es la sintaxis JSX?</a></li>
+  <li><a href="#qué-nos-ofrece-la-sintaxis-jsx" id="toc-qué-nos-ofrece-la-sintaxis-jsx" class="nav-link" data-scroll-target="#qué-nos-ofrece-la-sintaxis-jsx">¿Qué nos ofrece la sintaxis JSX?</a>
+  <ul class="collapse">
+  <li><a href="#almacenar-una-etiqueta-como-una-variable" id="toc-almacenar-una-etiqueta-como-una-variable" class="nav-link" data-scroll-target="#almacenar-una-etiqueta-como-una-variable">Almacenar una etiqueta como una variable</a></li>
+  <li><a href="#renderizar-etiquetas-dentro-de-etiquetas" id="toc-renderizar-etiquetas-dentro-de-etiquetas" class="nav-link" data-scroll-target="#renderizar-etiquetas-dentro-de-etiquetas">Renderizar etiquetas dentro de etiquetas</a></li>
+  <li><a href="#renderizar-con-el-map" id="toc-renderizar-con-el-map" class="nav-link" data-scroll-target="#renderizar-con-el-map">Renderizar con el map</a></li>
+  <li><a href="#renderizar-con-el-map-1" id="toc-renderizar-con-el-map-1" class="nav-link" data-scroll-target="#renderizar-con-el-map-1">Renderizar con el map</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#react" id="toc-react" class="nav-link" data-scroll-target="#react">React</a>
+  <ul>
+  <li><a href="#motivación" id="toc-motivación" class="nav-link" data-scroll-target="#motivación">Motivación</a></li>
+  <li><a href="#bases-de-react" id="toc-bases-de-react" class="nav-link" data-scroll-target="#bases-de-react">Bases de React</a></li>
+  <li><a href="#componente-react" id="toc-componente-react" class="nav-link" data-scroll-target="#componente-react">Componente React</a></li>
+  <li><a href="#props-en-react" id="toc-props-en-react" class="nav-link" data-scroll-target="#props-en-react">Props en React</a>
+  <ul class="collapse">
+  <li><a href="#ejemplo-1-uso-de-props-forma-explícita" id="toc-ejemplo-1-uso-de-props-forma-explícita" class="nav-link" data-scroll-target="#ejemplo-1-uso-de-props-forma-explícita">Ejemplo 1: uso de <code>props</code> (forma explícita)</a></li>
+  <li><a href="#ejemplo-2-props-desestructuradas-sintaxis-javascript" id="toc-ejemplo-2-props-desestructuradas-sintaxis-javascript" class="nav-link" data-scroll-target="#ejemplo-2-props-desestructuradas-sintaxis-javascript">Ejemplo 2: props desestructuradas (sintaxis JavaScript)</a></li>
+  </ul></li>
+  <li><a href="#eventos-en-react" id="toc-eventos-en-react" class="nav-link" data-scroll-target="#eventos-en-react">Eventos en React</a>
+  <ul class="collapse">
+  <li><a href="#ejemplo-básico-de-evento" id="toc-ejemplo-básico-de-evento" class="nav-link" data-scroll-target="#ejemplo-básico-de-evento">Ejemplo básico de evento</a></li>
+  <li><a href="#paso-de-funciones-como-eventos" id="toc-paso-de-funciones-como-eventos" class="nav-link" data-scroll-target="#paso-de-funciones-como-eventos">Paso de funciones como eventos</a></li>
+  <li><a href="#eventos-más-habituales-en-react" id="toc-eventos-más-habituales-en-react" class="nav-link" data-scroll-target="#eventos-más-habituales-en-react">Eventos más habituales en React</a></li>
+  </ul></li>
+  <li><a href="#ciclo-de-vida-de-los-componentes-y-renderizado-en-react" id="toc-ciclo-de-vida-de-los-componentes-y-renderizado-en-react" class="nav-link" data-scroll-target="#ciclo-de-vida-de-los-componentes-y-renderizado-en-react">Ciclo de vida de los componentes y renderizado en React</a>
+  <ul class="collapse">
+  <li><a href="#el-árbol-de-componentes" id="toc-el-árbol-de-componentes" class="nav-link" data-scroll-target="#el-árbol-de-componentes">El árbol de componentes</a></li>
+  <li><a href="#proceso-de-renderizado" id="toc-proceso-de-renderizado" class="nav-link" data-scroll-target="#proceso-de-renderizado">Proceso de renderizado</a></li>
+  <li><a href="#ciclo-de-vida-visión-simplificada" id="toc-ciclo-de-vida-visión-simplificada" class="nav-link" data-scroll-target="#ciclo-de-vida-visión-simplificada">Ciclo de vida (visión simplificada)</a></li>
+  <li><a href="#relación-con-el-dom" id="toc-relación-con-el-dom" class="nav-link" data-scroll-target="#relación-con-el-dom">Relación con el DOM</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#creación-de-una-reactjs-app" id="toc-creación-de-una-reactjs-app" class="nav-link" data-scroll-target="#creación-de-una-reactjs-app">Creación de una ReactJS app</a>
+  <ul>
+  <li><a href="#para-qué-sirve-un-framework" id="toc-para-qué-sirve-un-framework" class="nav-link" data-scroll-target="#para-qué-sirve-un-framework">¿Para qué sirve un framework?</a></li>
+  <li><a href="#framework-y-react" id="toc-framework-y-react" class="nav-link" data-scroll-target="#framework-y-react">Framework y React</a></li>
+  <li><a href="#creación-de-la-aplicación" id="toc-creación-de-la-aplicación" class="nav-link" data-scroll-target="#creación-de-la-aplicación">Creación de la aplicación</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="ReactI.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="reactI.html"><i class="bi bi-file-slides"></i>Presentación</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Bloque III Interacción</li><li class="breadcrumb-item"><a href="../../pages/Bloque3/ReactI.html">Semana 7</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque3/ReactI.html">React I</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">React I</h1>
+<p class="subtitle lead">Introducción a React, JSX</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Javier Ribal del Río </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">16 de enero de 2026</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de última modificación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">15 de enero de 2026</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><strong>Contenido</strong></p>
+<ul>
+<li>Sintaxis JSX</li>
+<li>Introducción a React
+<ul>
+<li>Modulo React</li>
+<li>Componente React</li>
+<li>Interacción React - Árbol del DOM</li>
+</ul></li>
+<li>Framework
+<ul>
+<li>Concepto de Framework</li>
+<li>Uso de react a través de vite</li>
+<li>Perder el miedo a los frameworks</li>
+</ul></li>
+</ul>
+<section id="sintaxis-jsx" class="level2">
+<h2 class="anchored" data-anchor-id="sintaxis-jsx">Sintaxis JSX</h2>
+<section id="qué-es-la-sintaxis-jsx" class="level3">
+<h3 class="anchored" data-anchor-id="qué-es-la-sintaxis-jsx">¿Qué es la sintaxis JSX?</h3>
+<ul>
+<li><strong>JSX (JavaScript XML)</strong> es una extensión de JavaScript utilizada en <strong>React</strong>.<br>
+</li>
+<li>Permite escribir estructuras similares a HTML directamente dentro del código JavaScript.<br>
+</li>
+<li>Facilita la creación y lectura de interfaces de usuario, integrando lógica y presentación.<br>
+</li>
+<li>Aunque su apariencia es HTML, JSX se transpila a JavaScript puro antes de ejecutarse en el navegador.</li>
+<li><em>Forma cómoda de almacenar etiquetas html como variables de JS</em></li>
+</ul>
+</section>
+<section id="qué-nos-ofrece-la-sintaxis-jsx" class="level3">
+<h3 class="anchored" data-anchor-id="qué-nos-ofrece-la-sintaxis-jsx">¿Qué nos ofrece la sintaxis JSX?</h3>
+<section id="almacenar-una-etiqueta-como-una-variable" class="level4">
+<h4 class="anchored" data-anchor-id="almacenar-una-etiqueta-como-una-variable">Almacenar una etiqueta como una variable</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> title <span class="op">=</span> <span class="op">&lt;</span>h1<span class="op">&gt;</span>Web del TC de SW<span class="op">&lt;/</span>h1<span class="op">&gt;;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> driveIndication <span class="op">=</span> (drives)<span class="op">?</span> <span class="op">&lt;</span>p<span class="op">&gt;</span>Puede conducir<span class="op">&lt;/</span>p<span class="op">&gt;</span> <span class="op">:</span> <span class="op">&lt;</span>p<span class="op">&gt;</span>No puede conducir<span class="op">&lt;/</span>p<span class="op">&gt;;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>De esta forma la variable <code>title</code> se corresponde con una etiqueta que contiene el título. Sin embargo, como podemos podemos <em>utilizar</em> está etiqueta una vez la hemos definido como una variable.</p>
+</section>
+<section id="renderizar-etiquetas-dentro-de-etiquetas" class="level4">
+<h4 class="anchored" data-anchor-id="renderizar-etiquetas-dentro-de-etiquetas">Renderizar etiquetas dentro de etiquetas</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> title <span class="op">= </span><span class="kw">&lt;h1&gt;</span>Web del TC de SW<span class="kw">&lt;/h1&gt;</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> page <span class="op">= </span><span class="kw">&lt;div&gt;</span><span class="va">{</span>title<span class="va">}</span><span class="kw">&lt;/div&gt;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>De esta forma estámos encapsulando la etiqueta <code>h1</code> dentro del <code>div</code>.</p>
+</section>
+<section id="renderizar-con-el-map" class="level4">
+<h4 class="anchored" data-anchor-id="renderizar-con-el-map">Renderizar con el map</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> profeAsi<span class="op">=</span> [[<span class="st">"Rosa"</span><span class="op">,</span> <span class="st">"Macro I"</span>]<span class="op">,</span> [<span class="st">"Gabriela"</span><span class="op">,</span> <span class="st">"FSO"</span>]<span class="op">,</span>[<span class="st">"Yolanda"</span><span class="op">,</span><span class="st">"LTP"</span>]<span class="op">,</span> [<span class="st">"Ferrán"</span><span class="op">,</span> <span class="st">"EM"</span>]<span class="op">,</span> [<span class="st">"Pepe"</span><span class="op">,</span> <span class="st">"TCO"</span>]]<span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">// Array de li Asignatura: nombre profesor</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> itemsProfAsi <span class="op">=</span>  profeAsi<span class="op">.</span><span class="fu">map</span>(x <span class="kw">=&gt; &lt;li&gt;</span><span class="va">{</span>x[<span class="dv">1</span>]<span class="va">}</span>: <span class="va">{</span>x[<span class="dv">0</span>]<span class="va">}</span><span class="kw">&lt;/li&gt;</span>)<span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> listaProfesoresAsignatura <span class="op">= </span><span class="kw">&lt;ul&gt;</span><span class="va">{</span>itemsProfAsi<span class="va">}</span><span class="kw">&lt;/ul&gt;</span><span class="op">;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="renderizar-con-el-map-1" class="level4">
+<h4 class="anchored" data-anchor-id="renderizar-con-el-map-1">Renderizar con el map</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> profeAsi<span class="op">=</span> [[<span class="st">"Rosa"</span><span class="op">,</span> <span class="st">"Macro I"</span>]<span class="op">,</span> [<span class="st">"Gabriela"</span><span class="op">,</span> <span class="st">"FSO"</span>]<span class="op">,</span> [<span class="st">"Yolanda"</span><span class="op">,</span><span class="st">"LTP"</span>]<span class="op">,</span> [<span class="st">"Ferrán"</span><span class="op">,</span> <span class="st">"EM"</span>]<span class="op">,</span> [<span class="st">"Pepe"</span><span class="op">,</span> <span class="st">"TCO"</span>]]<span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> listaProfesoresAsignatura <span class="op">= </span><span class="kw">&lt;ul&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="va">{</span>profeAsi<span class="op">.</span><span class="fu">map</span>((x<span class="op">,</span>i) <span class="kw">=&gt; &lt;li</span> <span class="ot">key</span><span class="op">=</span><span class="va">{</span>i<span class="va">}</span><span class="kw">&gt;</span><span class="va">{</span>x[<span class="dv">1</span>]<span class="va">}</span>: <span class="va">{</span>x[<span class="dv">0</span>]<span class="va">}</span><span class="kw">&lt;/li&gt;</span>)<span class="va">}</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/ul&gt;</span><span class="op">;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+</section>
+<section id="react" class="level2">
+<h2 class="anchored" data-anchor-id="react">React</h2>
+<section id="motivación" class="level3">
+<h3 class="anchored" data-anchor-id="motivación">Motivación</h3>
+<p>Hasta el momento hemos trabajado únicamente con HTML5, el cual a pesar de ser muy eficaz, presenta el inconveniente de que no implementa ninguna clase de lógica. Es decir, si queremos repetir alguna estructura previamente definida deberemos copiarla y pegarla. Otro problema, de HTML puro es la complejidad que requiere el manejo del DOM, como ya se vio en la semana anterior.</p>
+<p>Bajo este pretexto, introducimos el <em>framework</em> React diseñado por Meta.</p>
+</section>
+<section id="bases-de-react" class="level3">
+<h3 class="anchored" data-anchor-id="bases-de-react">Bases de React</h3>
+<p>React es un componente basado en la sintaxis JS y en la programación funcional introducida en ES6.</p>
+</section>
+<section id="componente-react" class="level3">
+<h3 class="anchored" data-anchor-id="componente-react">Componente React</h3>
+<p>Los componentes de React los definimos como unidades reutilizables y modulares que se implementan de esta forma: una función que devuelve un objeto de JSX</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Saludo</span>() {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="op">&lt;</span>h1<span class="op">&gt;</span>Hola<span class="op">,</span> mundo<span class="op">&lt;/</span>h1<span class="op">&gt;;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Podemos renderizar nuestro componente <code>Saludo</code> asumiendo que se comporta como una etiqueta html. Recordemos que no lo es.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">main</span><span class="dt">&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">Saludo</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">main</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Dentro de este componente podemos incluir lógica propia de JavaScript, de forma que al definir componente podemos dotarlo de lógica interna.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">DivNúmeroAleatorio</span>() {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> n <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="op">&lt;</span>div className<span class="op">=</span><span class="st">"n-random"</span><span class="op">&gt;</span>{n}<span class="op">&lt;/</span>div<span class="op">&gt;;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><em>*Nótese que aunque JS utilice camelCase para el nombre de las funciones, con React utilizaremos PascalCase para definir los componentes puesto que a pesar de que se trata de funciones, trabajaremos con ellas como si fuesen clases.</em></p>
+</section>
+<section id="props-en-react" class="level3">
+<h3 class="anchored" data-anchor-id="props-en-react">Props en React</h3>
+<p>Hasta ahora, los componentes definidos siempre devuelven el mismo contenido. Sin embargo, para que un componente sea realmente reutilizable, necesitamos poder pasarle información desde el exterior.</p>
+<p>En React, esta información se transmite mediante <strong>props</strong> (<em>properties</em>).</p>
+<p>Las props se definen como los <strong>parámetros de entrada</strong> de un componente y permiten personalizar su comportamiento o su contenido sin modificar su definición interna.</p>
+<section id="ejemplo-1-uso-de-props-forma-explícita" class="level4">
+<h4 class="anchored" data-anchor-id="ejemplo-1-uso-de-props-forma-explícita">Ejemplo 1: uso de <code>props</code> (forma explícita)</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Saludo</span>(props) {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return </span><span class="kw">&lt;h1&gt;</span>Hola, <span class="va">{</span>props<span class="op">.</span><span class="at">nombre</span><span class="va">}</span><span class="kw">&lt;/h1&gt;</span><span class="op">;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Uso del componente:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;Saludo</span> <span class="ot">nombre</span><span class="op">=</span><span class="st">"Rosa"</span> <span class="fu">/&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;Saludo</span> <span class="ot">nombre</span><span class="op">=</span><span class="st">"Gabriela"</span> <span class="fu">/&gt;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="ejemplo-2-props-desestructuradas-sintaxis-javascript" class="level4">
+<h4 class="anchored" data-anchor-id="ejemplo-2-props-desestructuradas-sintaxis-javascript">Ejemplo 2: props desestructuradas (sintaxis JavaScript)</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Saludo</span>({ nombre }) {</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return </span><span class="kw">&lt;h1&gt;</span>Hola, <span class="va">{</span>nombre<span class="va">}</span><span class="kw">&lt;/h1&gt;</span><span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Uso del componente (idéntico al anterior):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;Saludo</span> <span class="ot">nombre</span><span class="op">=</span><span class="st">"Rosa"</span> <span class="fu">/&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;Saludo</span> <span class="ot">nombre</span><span class="op">=</span><span class="st">"Gabriela"</span> <span class="fu">/&gt;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="eventos-en-react" class="level3">
+<h3 class="anchored" data-anchor-id="eventos-en-react">Eventos en React</h3>
+<p>En React, el manejo de eventos se basa en los eventos del DOM, pero utilizando una sintaxis propia de JSX y siguiendo el estilo de JavaScript.</p>
+<section id="ejemplo-básico-de-evento" class="level4">
+<h4 class="anchored" data-anchor-id="ejemplo-básico-de-evento">Ejemplo básico de evento</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">BotonSaludo</span>() {</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">manejarClick</span>() {</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">alert</span>(<span class="st">"Hola desde React"</span>)<span class="op">;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;button</span> <span class="ot">onClick</span><span class="op">=</span><span class="va">{</span>manejarClick<span class="va">}</span><span class="kw">&gt;</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>      Saludar</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/button&gt;</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="paso-de-funciones-como-eventos" class="level4">
+<h4 class="anchored" data-anchor-id="paso-de-funciones-como-eventos">Paso de funciones como eventos</h4>
+<p>La función asociada al evento <strong>no se ejecuta al renderizar el componente</strong>, sino únicamente cuando ocurre el evento; es decir la pasamos como un ciudadano de primera clase.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>button onClick<span class="op">=</span>{manejarClick}<span class="op">&gt;</span>Saludar<span class="op">&lt;/</span>button<span class="op">&gt;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Incorrecto:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>button onClick<span class="op">=</span>{<span class="fu">manejarClick</span>()}<span class="op">&gt;</span>Saludar<span class="op">&lt;/</span>button<span class="op">&gt;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="eventos-más-habituales-en-react" class="level4">
+<h4 class="anchored" data-anchor-id="eventos-más-habituales-en-react">Eventos más habituales en React</h4>
+<p>React soporta la mayoría de los eventos del DOM, adaptados a la sintaxis JSX. A continuación se listan los <strong>eventos más utilizados</strong>, clasificados por tipo.</p>
+<section id="eventos-de-ratón" class="level5">
+<h5 class="anchored" data-anchor-id="eventos-de-ratón">Eventos de ratón</h5>
+<ul>
+<li><strong><code>onClick</code></strong></li>
+<li><code>onDoubleClick</code></li>
+<li><code>onMouseEnter</code></li>
+<li><code>onMouseLeave</code></li>
+<li><strong><code>onMouseMove</code></strong></li>
+<li><code>onMouseDown</code></li>
+<li><code>onMouseUp</code></li>
+</ul>
+</section>
+<section id="eventos-de-teclado" class="level5">
+<h5 class="anchored" data-anchor-id="eventos-de-teclado">Eventos de teclado</h5>
+<ul>
+<li><code>onKeyDown</code></li>
+<li><code>onKeyUp</code></li>
+<li><strong><code>onKeyPress</code></strong></li>
+</ul>
+</section>
+<section id="eventos-de-formularios" class="level5">
+<h5 class="anchored" data-anchor-id="eventos-de-formularios">Eventos de formularios</h5>
+<ul>
+<li><strong><code>onChange</code></strong></li>
+<li><strong><code>onSubmit</code></strong></li>
+<li><code>onFocus</code></li>
+<li><code>onBlur</code></li>
+<li><code>onInput</code></li>
+<li><code>onReset</code></li>
+</ul>
+</section>
+<section id="eventos-de-carga-y-ciclo-del-elemento" class="level5">
+<h5 class="anchored" data-anchor-id="eventos-de-carga-y-ciclo-del-elemento">Eventos de carga y ciclo del elemento</h5>
+<ul>
+<li><code>onLoad</code></li>
+<li><code>onError</code></li>
+</ul>
+</section>
+<section id="eventos-de-selección-y-portapapeles" class="level5">
+<h5 class="anchored" data-anchor-id="eventos-de-selección-y-portapapeles">Eventos de selección y portapapeles</h5>
+<ul>
+<li><code>onSelect</code></li>
+<li><code>onCopy</code></li>
+<li><code>onCut</code></li>
+<li><code>onPaste</code></li>
+</ul>
+</section>
+<section id="eventos-táctiles-dispositivos-móviles" class="level5">
+<h5 class="anchored" data-anchor-id="eventos-táctiles-dispositivos-móviles">Eventos táctiles (dispositivos móviles)</h5>
+<ul>
+<li><code>onTouchStart</code></li>
+<li><code>onTouchMove</code></li>
+<li><code>onTouchEnd</code></li>
+<li><code>onTouchCancel</code></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="ciclo-de-vida-de-los-componentes-y-renderizado-en-react" class="level3">
+<h3 class="anchored" data-anchor-id="ciclo-de-vida-de-los-componentes-y-renderizado-en-react">Ciclo de vida de los componentes y renderizado en React</h3>
+<p>En React, los componentes <strong>no se renderizan directamente sobre el DOM real</strong>, sino que siguen un proceso intermedio que permite optimizar las actualizaciones de la interfaz.</p>
+<p>La idea clave es que <strong>la interfaz se organiza como un árbol de componentes</strong>, análogo al <strong>árbol del DOM</strong>, pero a un nivel de abstracción superior.</p>
+<section id="el-árbol-de-componentes" class="level4">
+<h4 class="anchored" data-anchor-id="el-árbol-de-componentes">El árbol de componentes</h4>
+<p>Cuando una aplicación React se ejecuta:</p>
+<ul>
+<li>Cada componente genera otros componentes o elementos JSX.</li>
+<li>React construye un <strong>árbol de componentes</strong>, donde:
+<ul>
+<li>El componente raíz suele ser <code>App</code></li>
+<li>Cada componente hijo ocupa una rama del árbol</li>
+</ul></li>
+</ul>
+<p>Este árbol de componentes <strong>se corresponde conceptualmente</strong> con el <strong>árbol del DOM</strong>, aunque no es el DOM real.</p>
+</section>
+<section id="proceso-de-renderizado" class="level4">
+<h4 class="anchored" data-anchor-id="proceso-de-renderizado">Proceso de renderizado</h4>
+<p>El proceso general es el siguiente:</p>
+<ol type="1">
+<li>React ejecuta un componente (función).</li>
+<li>El componente devuelve JSX.</li>
+<li>El JSX se transforma en una representación interna del árbol.</li>
+<li>React compara este árbol con el anterior.</li>
+<li>Solo se actualizan en el DOM real los nodos que han cambiado.</li>
+</ol>
+<p>De esta forma, React <strong>minimiza el acceso directo al DOM</strong>, que es una operación costosa.</p>
+</section>
+<section id="ciclo-de-vida-visión-simplificada" class="level4">
+<h4 class="anchored" data-anchor-id="ciclo-de-vida-visión-simplificada">Ciclo de vida (visión simplificada)</h4>
+<p>Desde un punto de vista conceptual, un componente pasa por tres fases:</p>
+<ol type="1">
+<li><strong>Montaje</strong>
+<ul>
+<li>El componente se crea y se inserta en el DOM.</li>
+</ul></li>
+<li><strong>Actualización</strong>
+<ul>
+<li>El componente se vuelve a renderizar cuando cambian sus datos.</li>
+</ul></li>
+<li><strong>Desmontaje</strong>
+<ul>
+<li>El componente se elimina del DOM.</li>
+</ul></li>
+</ol>
+<p>En componentes funcionales modernos, este ciclo se gestiona de forma implícita mediante el renderizado y, más adelante, mediante <em>hooks</em>.</p>
+</section>
+<section id="relación-con-el-dom" class="level4">
+<h4 class="anchored" data-anchor-id="relación-con-el-dom">Relación con el DOM</h4>
+<ul>
+<li>En JavaScript puro:
+<ul>
+<li>Se modifica el DOM directamente.</li>
+</ul></li>
+<li>En React:
+<ul>
+<li>Se describe cómo debe ser la interfaz.</li>
+<li>React decide el cuándo y el cómo modificar el DOM.</li>
+</ul></li>
+</ul>
+<p>El desarrollador no recorre ni manipula el árbol del DOM, sino que trabaja sobre el <strong>árbol de componentes</strong>.</p>
+</section>
+</section>
+</section>
+<section id="creación-de-una-reactjs-app" class="level2">
+<h2 class="anchored" data-anchor-id="creación-de-una-reactjs-app">Creación de una ReactJS app</h2>
+<p>El desarrollo de aplicaciones web modernas requiere coordinar múltiples elementos: estructura del proyecto, gestión de dependencias, compilación del código y ejecución en el navegador.</p>
+<p>Un framework de desarrollo proporciona un entorno de trabajo preconfigurado que organiza estos elementos y establece una forma estándar de trabajar.</p>
+<section id="para-qué-sirve-un-framework" class="level3">
+<h3 class="anchored" data-anchor-id="para-qué-sirve-un-framework">¿Para qué sirve un framework?</h3>
+<p>Un framework permite al desarrollador:</p>
+<ul>
+<li>Evitar configuraciones manuales complejas</li>
+<li>Seguir una estructura común de proyecto</li>
+<li>Automatizar tareas repetitivas</li>
+<li>Centrarse en la lógica de la aplicación y no en la infraestructura</li>
+</ul>
+<p>En lugar de partir de un proyecto vacío, el framework ofrece una base funcional sobre la que desarrollar.</p>
+</section>
+<section id="framework-y-react" class="level3">
+<h3 class="anchored" data-anchor-id="framework-y-react">Framework y React</h3>
+<p>React se encarga de definir cómo se construye la interfaz, pero no gestiona por sí mismo:</p>
+<ul>
+<li>La estructura de archivos</li>
+<li>El arranque de la aplicación</li>
+<li>La compilación del código</li>
+<li>El servidor de desarrollo</li>
+</ul>
+<p>Por ello, React se apoya en un framework que orquesta el entorno de ejecución.</p>
+</section>
+<section id="creación-de-la-aplicación" class="level3">
+<h3 class="anchored" data-anchor-id="creación-de-la-aplicación">Creación de la aplicación</h3>
+<p>Para crear una nueva aplicación React utilizando un framework, se ejecuta el siguiente comando en la terminal:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> create vite@latest</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Este comando genera:</p>
+<ul>
+<li>Una estructura inicial del proyecto</li>
+<li>La configuración necesaria para trabajar con React</li>
+<li>Un entorno listo para el desarrollo</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

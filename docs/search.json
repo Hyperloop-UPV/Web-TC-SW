@@ -7,263 +7,168 @@
     "text": "About this site"
   },
   {
-    "objectID": "pages/Bloque3/DOM.html",
-    "href": "pages/Bloque3/DOM.html",
-    "title": "DOM",
+    "objectID": "pages/Bloque3/ReactI.html",
+    "href": "pages/Bloque3/ReactI.html",
+    "title": "React I",
     "section": "",
-    "text": "El DOM (Document Object Model) es la representación en memoria que el navegador crea a partir del HTML.\n\nEl HTML es estático\nEl DOM es dinámico\nJavaScript interactúa con el DOM, no con el HTML original\n\n\nEl DOM es la página web viva dentro del navegador.",
+    "text": "Contenido",
     "crumbs": [
       "Bloque III Interacción",
-      "Semana 6",
-      "DOM"
+      "Semana 7",
+      "React I"
     ]
   },
   {
-    "objectID": "pages/Bloque3/DOM.html#qué-es-el-dom",
-    "href": "pages/Bloque3/DOM.html#qué-es-el-dom",
-    "title": "DOM",
+    "objectID": "pages/Bloque3/ReactI.html#sintaxis-jsx",
+    "href": "pages/Bloque3/ReactI.html#sintaxis-jsx",
+    "title": "React I",
+    "section": "Sintaxis JSX",
+    "text": "Sintaxis JSX\n\n¿Qué es la sintaxis JSX?\n\nJSX (JavaScript XML) es una extensión de JavaScript utilizada en React.\n\nPermite escribir estructuras similares a HTML directamente dentro del código JavaScript.\n\nFacilita la creación y lectura de interfaces de usuario, integrando lógica y presentación.\n\nAunque su apariencia es HTML, JSX se transpila a JavaScript puro antes de ejecutarse en el navegador.\nForma cómoda de almacenar etiquetas html como variables de JS\n\n\n\n¿Qué nos ofrece la sintaxis JSX?\n\nAlmacenar una etiqueta como una variable\nconst title = &lt;h1&gt;Web del TC de SW&lt;/h1&gt;;\n\nconst driveIndication = (drives)? &lt;p&gt;Puede conducir&lt;/p&gt; : &lt;p&gt;No puede conducir&lt;/p&gt;;\nDe esta forma la variable title se corresponde con una etiqueta que contiene el título. Sin embargo, como podemos podemos utilizar está etiqueta una vez la hemos definido como una variable.\n\n\nRenderizar etiquetas dentro de etiquetas\nconst title = &lt;h1&gt;Web del TC de SW&lt;/h1&gt;;\n\nconst page = &lt;div&gt;{title}&lt;/div&gt;\nDe esta forma estámos encapsulando la etiqueta h1 dentro del div.\n\n\nRenderizar con el map\nconst profeAsi= [[\"Rosa\", \"Macro I\"], [\"Gabriela\", \"FSO\"],[\"Yolanda\",\"LTP\"], [\"Ferrán\", \"EM\"], [\"Pepe\", \"TCO\"]];\n\n// Array de li Asignatura: nombre profesor\nconst itemsProfAsi =  profeAsi.map(x =&gt; &lt;li&gt;{x[1]}: {x[0]}&lt;/li&gt;);\n\nconst listaProfesoresAsignatura = &lt;ul&gt;{itemsProfAsi}&lt;/ul&gt;;\n\n\nRenderizar con el map\nconst profeAsi= [[\"Rosa\", \"Macro I\"], [\"Gabriela\", \"FSO\"], [\"Yolanda\",\"LTP\"], [\"Ferrán\", \"EM\"], [\"Pepe\", \"TCO\"]];\n\nconst listaProfesoresAsignatura = &lt;ul&gt;\n{profeAsi.map((x,i) =&gt; &lt;li key={i}&gt;{x[1]}: {x[0]}&lt;/li&gt;)}\n&lt;/ul&gt;;",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 7",
+      "React I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/ReactI.html#react",
+    "href": "pages/Bloque3/ReactI.html#react",
+    "title": "React I",
+    "section": "React",
+    "text": "React\n\nMotivación\nHasta el momento hemos trabajado únicamente con HTML5, el cual a pesar de ser muy eficaz, presenta el inconveniente de que no implementa ninguna clase de lógica. Es decir, si queremos repetir alguna estructura previamente definida deberemos copiarla y pegarla. Otro problema, de HTML puro es la complejidad que requiere el manejo del DOM, como ya se vio en la semana anterior.\nBajo este pretexto, introducimos el framework React diseñado por Meta.\n\n\nBases de React\nReact es un componente basado en la sintaxis JS y en la programación funcional introducida en ES6.\n\n\nComponente React\nLos componentes de React los definimos como unidades reutilizables y modulares que se implementan de esta forma: una función que devuelve un objeto de JSX\nfunction Saludo() {\n  return &lt;h1&gt;Hola, mundo&lt;/h1&gt;;\n}\nPodemos renderizar nuestro componente Saludo asumiendo que se comporta como una etiqueta html. Recordemos que no lo es.\n&lt;main&gt;\n  &lt;Saludo /&gt;\n&lt;/main&gt;\nDentro de este componente podemos incluir lógica propia de JavaScript, de forma que al definir componente podemos dotarlo de lógica interna.\nfunction DivNúmeroAleatorio() {\n\n  let n = Math.random();\n  return &lt;div className=\"n-random\"&gt;{n}&lt;/div&gt;;\n}\n*Nótese que aunque JS utilice camelCase para el nombre de las funciones, con React utilizaremos PascalCase para definir los componentes puesto que a pesar de que se trata de funciones, trabajaremos con ellas como si fuesen clases.\n\n\nProps en React\nHasta ahora, los componentes definidos siempre devuelven el mismo contenido. Sin embargo, para que un componente sea realmente reutilizable, necesitamos poder pasarle información desde el exterior.\nEn React, esta información se transmite mediante props (properties).\nLas props se definen como los parámetros de entrada de un componente y permiten personalizar su comportamiento o su contenido sin modificar su definición interna.\n\nEjemplo 1: uso de props (forma explícita)\nfunction Saludo(props) {\n  return &lt;h1&gt;Hola, {props.nombre}&lt;/h1&gt;;\n}\nUso del componente:\n&lt;Saludo nombre=\"Rosa\" /&gt;\n&lt;Saludo nombre=\"Gabriela\" /&gt;\n\n\nEjemplo 2: props desestructuradas (sintaxis JavaScript)\nfunction Saludo({ nombre }) {\n  return &lt;h1&gt;Hola, {nombre}&lt;/h1&gt;;\n}\nUso del componente (idéntico al anterior):\n&lt;Saludo nombre=\"Rosa\" /&gt;\n&lt;Saludo nombre=\"Gabriela\" /&gt;\n\n\n\nEventos en React\nEn React, el manejo de eventos se basa en los eventos del DOM, pero utilizando una sintaxis propia de JSX y siguiendo el estilo de JavaScript.\n\nEjemplo básico de evento\nfunction BotonSaludo() {\n\n  function manejarClick() {\n    alert(\"Hola desde React\");\n  }\n\n  return (\n    &lt;button onClick={manejarClick}&gt;\n      Saludar\n    &lt;/button&gt;\n  );\n}\n\n\nPaso de funciones como eventos\nLa función asociada al evento no se ejecuta al renderizar el componente, sino únicamente cuando ocurre el evento; es decir la pasamos como un ciudadano de primera clase.\n&lt;button onClick={manejarClick}&gt;Saludar&lt;/button&gt;\nIncorrecto:\n&lt;button onClick={manejarClick()}&gt;Saludar&lt;/button&gt;\n\n\nEventos más habituales en React\nReact soporta la mayoría de los eventos del DOM, adaptados a la sintaxis JSX. A continuación se listan los eventos más utilizados, clasificados por tipo.\n\nEventos de ratón\n\nonClick\nonDoubleClick\nonMouseEnter\nonMouseLeave\nonMouseMove\nonMouseDown\nonMouseUp\n\n\n\nEventos de teclado\n\nonKeyDown\nonKeyUp\nonKeyPress\n\n\n\nEventos de formularios\n\nonChange\nonSubmit\nonFocus\nonBlur\nonInput\nonReset\n\n\n\nEventos de carga y ciclo del elemento\n\nonLoad\nonError\n\n\n\nEventos de selección y portapapeles\n\nonSelect\nonCopy\nonCut\nonPaste\n\n\n\nEventos táctiles (dispositivos móviles)\n\nonTouchStart\nonTouchMove\nonTouchEnd\nonTouchCancel\n\n\n\n\n\nCiclo de vida de los componentes y renderizado en React\nEn React, los componentes no se renderizan directamente sobre el DOM real, sino que siguen un proceso intermedio que permite optimizar las actualizaciones de la interfaz.\nLa idea clave es que la interfaz se organiza como un árbol de componentes, análogo al árbol del DOM, pero a un nivel de abstracción superior.\n\nEl árbol de componentes\nCuando una aplicación React se ejecuta:\n\nCada componente genera otros componentes o elementos JSX.\nReact construye un árbol de componentes, donde:\n\nEl componente raíz suele ser App\nCada componente hijo ocupa una rama del árbol\n\n\nEste árbol de componentes se corresponde conceptualmente con el árbol del DOM, aunque no es el DOM real.\n\n\nProceso de renderizado\nEl proceso general es el siguiente:\n\nReact ejecuta un componente (función).\nEl componente devuelve JSX.\nEl JSX se transforma en una representación interna del árbol.\nReact compara este árbol con el anterior.\nSolo se actualizan en el DOM real los nodos que han cambiado.\n\nDe esta forma, React minimiza el acceso directo al DOM, que es una operación costosa.\n\n\nCiclo de vida (visión simplificada)\nDesde un punto de vista conceptual, un componente pasa por tres fases:\n\nMontaje\n\nEl componente se crea y se inserta en el DOM.\n\nActualización\n\nEl componente se vuelve a renderizar cuando cambian sus datos.\n\nDesmontaje\n\nEl componente se elimina del DOM.\n\n\nEn componentes funcionales modernos, este ciclo se gestiona de forma implícita mediante el renderizado y, más adelante, mediante hooks.\n\n\nRelación con el DOM\n\nEn JavaScript puro:\n\nSe modifica el DOM directamente.\n\nEn React:\n\nSe describe cómo debe ser la interfaz.\nReact decide el cuándo y el cómo modificar el DOM.\n\n\nEl desarrollador no recorre ni manipula el árbol del DOM, sino que trabaja sobre el árbol de componentes.",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 7",
+      "React I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/ReactI.html#creación-de-una-reactjs-app",
+    "href": "pages/Bloque3/ReactI.html#creación-de-una-reactjs-app",
+    "title": "React I",
+    "section": "Creación de una ReactJS app",
+    "text": "Creación de una ReactJS app\nEl desarrollo de aplicaciones web modernas requiere coordinar múltiples elementos: estructura del proyecto, gestión de dependencias, compilación del código y ejecución en el navegador.\nUn framework de desarrollo proporciona un entorno de trabajo preconfigurado que organiza estos elementos y establece una forma estándar de trabajar.\n\n¿Para qué sirve un framework?\nUn framework permite al desarrollador:\n\nEvitar configuraciones manuales complejas\nSeguir una estructura común de proyecto\nAutomatizar tareas repetitivas\nCentrarse en la lógica de la aplicación y no en la infraestructura\n\nEn lugar de partir de un proyecto vacío, el framework ofrece una base funcional sobre la que desarrollar.\n\n\nFramework y React\nReact se encarga de definir cómo se construye la interfaz, pero no gestiona por sí mismo:\n\nLa estructura de archivos\nEl arranque de la aplicación\nLa compilación del código\nEl servidor de desarrollo\n\nPor ello, React se apoya en un framework que orquesta el entorno de ejecución.\n\n\nCreación de la aplicación\nPara crear una nueva aplicación React utilizando un framework, se ejecuta el siguiente comando en la terminal:\nnpm create vite@latest\nEste comando genera:\n\nUna estructura inicial del proyecto\nLa configuración necesaria para trabajar con React\nUn entorno listo para el desarrollo",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 7",
+      "React I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/reactI.html#sintaxis-jsx",
+    "href": "pages/Bloque3/reactI.html#sintaxis-jsx",
+    "title": "React I",
+    "section": "Sintaxis JSX",
+    "text": "Sintaxis JSX\n¿Qué es la sintaxis JSX?\n\nJSX (JavaScript XML) es una extensión de JavaScript utilizada en React.\n\nPermite escribir estructuras similares a HTML directamente dentro del código JavaScript.\n\nFacilita la creación y lectura de interfaces de usuario, integrando lógica y presentación.\n\nAunque su apariencia es HTML, JSX se transpila a JavaScript puro antes de ejecutarse en el navegador.\nForma cómoda de almacenar etiquetas html como variables de JS"
+  },
+  {
+    "objectID": "pages/Bloque3/reactI.html#react",
+    "href": "pages/Bloque3/reactI.html#react",
+    "title": "React I",
+    "section": "React",
+    "text": "React\nMotivación\nHasta el momento hemos trabajado únicamente con HTML5, el cual a pesar de ser muy eficaz, presenta el inconveniente de que no implementa ninguna clase de lógica. Es decir, si queremos repetir alguna estructura previamente definida deberemos copiarla y pegarla. Otro problema, de HTML puro es la complejidad que requiere el manejo del DOM, como ya se vio en la semana anterior.\nBajo este pretexto, introducimos el framework React diseñado por Meta."
+  },
+  {
+    "objectID": "pages/Bloque3/reactI.html#creación-de-una-reactjs-app",
+    "href": "pages/Bloque3/reactI.html#creación-de-una-reactjs-app",
+    "title": "React I",
+    "section": "Creación de una ReactJS app",
+    "text": "Creación de una ReactJS app\nEl desarrollo de aplicaciones web modernas requiere coordinar múltiples elementos: estructura del proyecto, gestión de dependencias, compilación del código y ejecución en el navegador.\nUn framework de desarrollo proporciona un entorno de trabajo preconfigurado que organiza estos elementos y establece una forma estándar de trabajar."
+  },
+  {
+    "objectID": "pages/Bloque3/MAcss2.html",
+    "href": "pages/Bloque3/MAcss2.html",
+    "title": "MA: CSS Flex y CSS",
     "section": "",
-    "text": "El DOM (Document Object Model) es la representación en memoria que el navegador crea a partir del HTML.\n\nEl HTML es estático\nEl DOM es dinámico\nJavaScript interactúa con el DOM, no con el HTML original\n\n\nEl DOM es la página web viva dentro del navegador.",
+    "text": "Además de las propiedades estudiadas de CSS también hay algunas críticas que debido a la falta de tiempo no se han podido explicar como es el caso de display a continuación estos dos vídeos profundizan en los modos flex y grid formas diferentes de diseñar la estructura de la página",
     "crumbs": [
       "Bloque III Interacción",
       "Semana 6",
-      "DOM"
+      "MA: CSS Flex y CSS"
     ]
   },
   {
-    "objectID": "pages/Bloque3/DOM.html#el-dom-como-árbol",
-    "href": "pages/Bloque3/DOM.html#el-dom-como-árbol",
-    "title": "DOM",
-    "section": "El DOM como árbol",
-    "text": "El DOM como árbol\nEl DOM tiene estructura de árbol (grafo):\n\nCada etiqueta HTML es un nodo\nLos nodos tienen relaciones (padre, hijos, hermanos)\n\nEjemplo:\n&lt;body&gt;\n  &lt;h1&gt;Título&lt;/h1&gt;\n  &lt;button&gt;Click&lt;/button&gt;\n&lt;/body&gt;\nRepresentación conceptual:\ndocument\n └─ body\n    ├─ h1\n    └─ button",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 6",
-      "DOM"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque3/DOM.html#acceso-al-dom-desde-javascript",
-    "href": "pages/Bloque3/DOM.html#acceso-al-dom-desde-javascript",
-    "title": "DOM",
-    "section": "Acceso al DOM desde JavaScript",
-    "text": "Acceso al DOM desde JavaScript\nEl navegador nos proporciona el objeto global document, que permite:\n\nBuscar elementos\nLeer su contenido\nModificar la interfaz\n\ndocument\ndocument.body",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 6",
-      "DOM"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque3/DOM.html#selectores",
-    "href": "pages/Bloque3/DOM.html#selectores",
-    "title": "DOM",
-    "section": "Selectores",
-    "text": "Selectores\n\nPor ID\ndocument.getElementById(\"count\")\ndocument.querySelector(\"#count\")\n\n\nPor etiqueta\ndocument.querySelector(\"button\")\n\n\nPor clase\ndocument.querySelector(\".item\")\ndocument.querySelectorAll(\".item\")\nNotas: - querySelector devuelve el primer elemento - querySelectorAll devuelve una lista - Usan la misma sintaxis que CSS",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 6",
-      "DOM"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque3/DOM.html#leer-y-modificar-elementos",
-    "href": "pages/Bloque3/DOM.html#leer-y-modificar-elementos",
-    "title": "DOM",
-    "section": "Leer y modificar elementos",
-    "text": "Leer y modificar elementos\nelement.textContent\nelement.textContent = \"Nuevo texto\"\nelement.classList.add(\"active\")\nelement.classList.remove(\"active\")",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 6",
-      "DOM"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque3/DOM.html#eventos",
-    "href": "pages/Bloque3/DOM.html#eventos",
-    "title": "DOM",
-    "section": "Eventos",
-    "text": "Eventos\nEl DOM permite reaccionar a acciones del usuario mediante eventos.\nbutton.addEventListener(\"click\", () =&gt; {\n  // código a ejecutar\n});\nFlujo típico:\nUsuario → Evento → JavaScript → DOM actualizado",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 6",
-      "DOM"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque3/DOM.html#ejemplo-contador-con-botón",
-    "href": "pages/Bloque3/DOM.html#ejemplo-contador-con-botón",
-    "title": "DOM",
-    "section": "Ejemplo: contador con botón",
-    "text": "Ejemplo: contador con botón\n\nHTML\n&lt;h1 id=\"count\"&gt;0&lt;/h1&gt;\n&lt;button id=\"btn\"&gt;Sumar 1&lt;/button&gt;\n\n\nJavaScript\nlet count = 0;\n\nconst countEl = document.querySelector(\"#count\");\nconst btn = document.querySelector(\"#btn\");\n\nbtn.addEventListener(\"click\", () =&gt; {\n  count++;\n  countEl.textContent = count;\n});",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 6",
-      "DOM"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque3/DOM.html#más-ejemplos",
-    "href": "pages/Bloque3/DOM.html#más-ejemplos",
-    "title": "DOM",
-    "section": "Más ejemplos",
-    "text": "Más ejemplos\nEj1: Show input\nEj2: Par e Impar\nEj3: Toggle\nEj4: Creación dinámica\nEj5: Validación básica",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 6",
-      "DOM"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#qué-es-el-dom",
-    "href": "pages/Bloque3/dom.html#qué-es-el-dom",
-    "title": "DOM",
-    "section": "¿Qué es el DOM?",
-    "text": "¿Qué es el DOM?\nEl DOM (Document Object Model) es la representación en memoria que el navegador crea a partir del HTML.\n\nEl HTML es estático\nEl DOM es dinámico\nJavaScript interactúa con el DOM, no con el HTML original\n\n\nEl DOM es la página web viva dentro del navegador."
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#el-dom-como-árbol",
-    "href": "pages/Bloque3/dom.html#el-dom-como-árbol",
-    "title": "DOM",
-    "section": "El DOM como árbol",
-    "text": "El DOM como árbol\nEl DOM tiene estructura de árbol (grafo):\n\nCada etiqueta HTML es un nodo\nLos nodos tienen relaciones (padre, hijos, hermanos)\n\nEjemplo:\n&lt;body&gt;\n  &lt;h1&gt;Título&lt;/h1&gt;\n  &lt;button&gt;Click&lt;/button&gt;\n&lt;/body&gt;"
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#acceso-al-dom-desde-javascript",
-    "href": "pages/Bloque3/dom.html#acceso-al-dom-desde-javascript",
-    "title": "DOM",
-    "section": "Acceso al DOM desde JavaScript",
-    "text": "Acceso al DOM desde JavaScript\nEl navegador nos proporciona el objeto global document, que permite:\n\nBuscar elementos\nLeer su contenido\nModificar la interfaz\n\ndocument\ndocument.body"
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#selectores",
-    "href": "pages/Bloque3/dom.html#selectores",
-    "title": "DOM",
-    "section": "Selectores",
-    "text": "Selectores\nPor ID\ndocument.getElementById(\"count\")\ndocument.querySelector(\"#count\")\nPor etiqueta\ndocument.querySelector(\"button\")"
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#leer-y-modificar-elementos",
-    "href": "pages/Bloque3/dom.html#leer-y-modificar-elementos",
-    "title": "DOM",
-    "section": "Leer y modificar elementos",
-    "text": "Leer y modificar elementos\nelement.textContent\nelement.textContent = \"Nuevo texto\"\nelement.classList.add(\"active\")\nelement.classList.remove(\"active\")"
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#eventos",
-    "href": "pages/Bloque3/dom.html#eventos",
-    "title": "DOM",
-    "section": "Eventos",
-    "text": "Eventos\nEl DOM permite reaccionar a acciones del usuario mediante eventos.\nbutton.addEventListener(\"click\", () =&gt; {\n  // código a ejecutar\n});\nFlujo típico:\nUsuario → Evento → JavaScript → DOM actualizado"
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#ejemplo-contador-con-botón",
-    "href": "pages/Bloque3/dom.html#ejemplo-contador-con-botón",
-    "title": "DOM",
-    "section": "Ejemplo: contador con botón",
-    "text": "Ejemplo: contador con botón\nHTML\n&lt;h1 id=\"count\"&gt;0&lt;/h1&gt;\n&lt;button id=\"btn\"&gt;Sumar 1&lt;/button&gt;\nJavaScript\nlet count = 0;\n\nconst countEl = document.querySelector(\"#count\");\nconst btn = document.querySelector(\"#btn\");\n\nbtn.addEventListener(\"click\", () =&gt; {\n  count++;\n  countEl.textContent = count;\n});"
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#más-ejemplos",
-    "href": "pages/Bloque3/dom.html#más-ejemplos",
-    "title": "DOM",
-    "section": "Más ejemplos",
-    "text": "Más ejemplos\nEj1: Show input\nEj2: Par e Impar\nEj3: Toggle\nEj4: Creación dinámica\nEj5: Validación básica"
-  },
-  {
-    "objectID": "pages/Bloque3/t6.html",
-    "href": "pages/Bloque3/t6.html",
-    "title": "T6: Romancero Gitano I",
+    "objectID": "pages/Bloque3/ps.html",
+    "href": "pages/Bloque3/ps.html",
+    "title": "Proyecto Subsistema",
     "section": "",
-    "text": "El objetivo de esta tarea es aplicar los conceptos básicos de HTML, CSS y JavaScript (DOM) para crear una página web interactiva que muestre poemas del Romancero gitano de Federico García Lorca y modifique su apariencia visual en función de las diferentes metáforas.\nResultado esperado",
+    "text": "Desarrollar una pequeña aplicación web para gestionar una lista de tareas utilizando HTML, CSS y JavaScript, trabajando directamente con el DOM.\nbase",
     "crumbs": [
       "Bloque III Interacción",
-      "Semana 6",
-      "T6: Romancero Gitano I"
+      "Semana 7",
+      "Proyecto Subsistema"
     ]
   },
   {
-    "objectID": "pages/Bloque3/t6.html#objetivo-de-la-tarea",
-    "href": "pages/Bloque3/t6.html#objetivo-de-la-tarea",
-    "title": "T6: Romancero Gitano I",
+    "objectID": "pages/Bloque3/ps.html#objetivo",
+    "href": "pages/Bloque3/ps.html#objetivo",
+    "title": "Proyecto Subsistema",
     "section": "",
-    "text": "El objetivo de esta tarea es aplicar los conceptos básicos de HTML, CSS y JavaScript (DOM) para crear una página web interactiva que muestre poemas del Romancero gitano de Federico García Lorca y modifique su apariencia visual en función de las diferentes metáforas.\nResultado esperado",
+    "text": "Desarrollar una pequeña aplicación web para gestionar una lista de tareas utilizando HTML, CSS y JavaScript, trabajando directamente con el DOM.\nbase",
     "crumbs": [
       "Bloque III Interacción",
-      "Semana 6",
-      "T6: Romancero Gitano I"
+      "Semana 7",
+      "Proyecto Subsistema"
     ]
   },
   {
-    "objectID": "pages/Bloque3/t6.html#estructura-html",
-    "href": "pages/Bloque3/t6.html#estructura-html",
-    "title": "T6: Romancero Gitano I",
-    "section": "Estructura HTML",
-    "text": "Estructura HTML\nEl documento HTML debe:\n\nEstar correctamente estructurado (&lt;!DOCTYPE&gt;, &lt;html&gt;, &lt;head&gt;, &lt;body&gt;).\nContener un contenedor principal centrado horizontalmente.\nIncluir, en este orden:\n\nUn elemento para mostrar información métrica del poema (número de estrofas y versos).\nUn elemento para el título del poema.\nUn elemento para el texto del poema, respetando los saltos de verso utilizando la etiqueta &lt;pre&gt;.\nUn botón que permita cambiar de poema.\n\n\nNo debe utilizarse ningún framework ni librería externa.",
+    "objectID": "pages/Bloque3/ps.html#qué-se-quiere-hacer",
+    "href": "pages/Bloque3/ps.html#qué-se-quiere-hacer",
+    "title": "Proyecto Subsistema",
+    "section": "Qué se quiere hacer",
+    "text": "Qué se quiere hacer\n\nCrear una página web que permita añadir tareas.\nCada tarea debe tener:\n\nUn texto descriptivo.\nUn responsable (Software, Hardware, Partners, Otros).\n\nLas tareas deben mostrarse en una lista.\nAl hacer click sobre una tarea, esta debe eliminarse.\nLa página no debe recargarse al añadir o eliminar tareas.",
     "crumbs": [
       "Bloque III Interacción",
-      "Semana 6",
-      "T6: Romancero Gitano I"
+      "Semana 7",
+      "Proyecto Subsistema"
     ]
   },
   {
-    "objectID": "pages/Bloque3/t6.html#javascript",
-    "href": "pages/Bloque3/t6.html#javascript",
-    "title": "T6: Romancero Gitano I",
-    "section": "JavaScript",
-    "text": "JavaScript\n\nDatos\nEn JavaScript se debe definir un array de objetos, donde cada objeto represente un poema y tenga al menos:\n\nUn título.\nEl texto del poema como una cadena de texto, usando saltos de línea para los versos.\n\nEl cambio de poema debe hacerse recorriendo este array de forma cíclica (cola circular) mediante el botón.\nDescargar poemas (click derecho guardar enlace como)\n\n\nManipulación del DOM\nEl comportamiento de la página debe implementarse exclusivamente con DOM nativo, cumpliendo lo siguiente:\n\nTodas las funciones deben declararse como arrow functions.\nAl pulsar el botón:\n\nSe actualiza el título.\nSe actualiza el texto del poema.\nSe modifica el formato del fondo.\nSe recalculan y muestran:\n\nNúmero de versos.\nNúmero de estrofas (bloques separados por líneas en blanco).\n\n\n\nEl cálculo debe realizarse a partir del texto del poema, no con valores predefinidos.",
+    "objectID": "pages/Bloque3/ps.html#requisitos-técnicos",
+    "href": "pages/Bloque3/ps.html#requisitos-técnicos",
+    "title": "Proyecto Subsistema",
+    "section": "Requisitos técnicos",
+    "text": "Requisitos técnicos\n\nLa lógica debe implementarse manipulando el DOM directamente (document.createElement, appendChild, addEventListener, etc.).\nHTML básico para la estructura.\nCSS libre, se espera que se use de forma creativa para mejorar el diseño.\nJavaScript en un archivo separado o en un &lt;script&gt;.",
     "crumbs": [
       "Bloque III Interacción",
-      "Semana 6",
-      "T6: Romancero Gitano I"
+      "Semana 7",
+      "Proyecto Subsistema"
     ]
   },
   {
-    "objectID": "pages/Bloque3/t6.html#css",
-    "href": "pages/Bloque3/t6.html#css",
-    "title": "T6: Romancero Gitano I",
-    "section": "CSS",
-    "text": "CSS\nLorca utiliza las metáforas y la alegoría como elemento principal sobre el que construye sus poemas, al analizar profundamente descubrimos que siempre recurre a las mismas metáforas.\nEl color no se utiliza aquí solo como elemento decorativo, sino como un recurso semántico: cada color representa un símbolo literario presente en el poema.\nDesde el punto de vista técnico: - Los colores de fondo y de texto deben definirse en clases CSS. - JavaScript no decide colores, únicamente decide qué clase aplicar según el contenido del poema.\n\nPalabras clave y colores asociados\nSe debe detectar el texto del poema las siguientes palabras clave y aplicar el color de fondo correspondiente:\n\nguardia civil → fondo verde militar\nsangre → fondo granate oscuro\ncaballo → fondo color tierra\ncuchillo / navaja → fondo plateado\n\nEl color del texto debe elegirse siempre de forma que exista contraste suficiente con el fondo y se garantice la legibilidad.\nSi el poema contiene varias palabras clave, solo debe aplicarse un único estilo, siguiendo un orden de prioridad definido previamente.\nSi el poema no contiene ninguna de estas palabras, se aplicará un estilo por defecto con colores aleatorios.",
+    "objectID": "pages/Bloque3/ps.html#importante",
+    "href": "pages/Bloque3/ps.html#importante",
+    "title": "Proyecto Subsistema",
+    "section": "Importante",
+    "text": "Importante\n\nLa solución mínima funcional es sencilla.\nSe espera que el alumnado mejore notablemente el aspecto visual usando CSS.\nEl diseño, la usabilidad y la presentación formarán parte de la evaluación.\nAquellos que completen la funcionalidad básica de la tarea podrán preguntarle al profesor como mejorar la tarea o que agregar para ampliar funcionalidades",
     "crumbs": [
       "Bloque III Interacción",
-      "Semana 6",
-      "T6: Romancero Gitano I"
+      "Semana 7",
+      "Proyecto Subsistema"
     ]
   },
   {
-    "objectID": "pages/Bloque3/t6.html#extra-opcional-símbolo-aurora",
-    "href": "pages/Bloque3/t6.html#extra-opcional-símbolo-aurora",
-    "title": "T6: Romancero Gitano I",
-    "section": "Extra opcional: símbolo aurora 🌈",
-    "text": "Extra opcional: símbolo aurora 🌈\nDe forma voluntaria, se puede añadir el símbolo aurora, que tendrá prioridad absoluta sobre todos los demás.\nCuando el poema contenga la palabra aurora, el fondo debe mostrar un degradado animado.\n\nCSS necesario para el extra\n.aurora {\n  background: linear-gradient(120deg,\n    #ff005d,\n    #ff9f1c,\n    #ffee32,\n    #3cff00,\n    #00e5ff,\n    #7a00ff,\n    #ff00c8\n  );\n  background-size: 600% 600%;\n  animation: aurora 10s linear infinite;\n  color: black;\n}\n\n@keyframes aurora {\n  0%   { background-position: 0% 50%; }\n  50%  { background-position: 100% 50%; }\n  100% { background-position: 0% 50%; }\n}",
+    "objectID": "pages/Bloque3/ps.html#no-es-necesario",
+    "href": "pages/Bloque3/ps.html#no-es-necesario",
+    "title": "Proyecto Subsistema",
+    "section": "No es necesario",
+    "text": "No es necesario\n\nGuardar las tareas al recargar la página.\nAutenticación de usuarios.\nBase de datos o backend.",
     "crumbs": [
       "Bloque III Interacción",
-      "Semana 6",
-      "T6: Romancero Gitano I"
+      "Semana 7",
+      "Proyecto Subsistema"
     ]
   },
   {
-    "objectID": "pages/Bloque3/t6.html#consejos",
-    "href": "pages/Bloque3/t6.html#consejos",
-    "title": "T6: Romancero Gitano I",
-    "section": "Consejos",
-    "text": "Consejos\n\nCentrado de la página (layout clásico)\nToda la página debe estar centrada horizontalmente.\nEl centrado se consigue mediante:\n\nUn contenedor con un ancho máximo definido.\nMárgenes automáticos a izquierda y derecha.\n\nDesde el punto de vista conceptual:\n\nmargin: 0 auto no centra texto, centra bloques.\nEl navegador reparte automáticamente el espacio sobrante a ambos lados del contenedor.\n\n\n\nAnimación del cambio de color\nPara evitar que los cambios de color sean bruscos, se utiliza la propiedad transition en CSS.\nEsta propiedad indica al navegador que los cambios en determinadas propiedades visuales deben hacerse de forma progresiva.\nEjemplo conceptual:\nbody {\n  transition: background-color 0.6s, color 0.6s;\n}\nGracias a esta transición: - Cuando JavaScript cambia una clase o un color, - el navegador interpola automáticamente entre el color anterior y el nuevo.\nNo es necesario programar animaciones en JavaScript: CSS se encarga de todo el efecto visual.\n\n\nBúsqueda de una palabra\nPara buscar si determinada palabra determinada se debe utilizar la función includes de la clase string\n\ntexto = \"hoy nieva\";\n\ntexto.includes(\"nieva\");    //TRUE\ntexto.includes(\"llueve\");   //FALSE\n\n\nGeneración del color aleatorio\nPara la generacióndel color aleatorio de puede utilizar la siguiente función\nconst randomColor = () =&gt; '#' + Math.floor(Math.random() * 16777215).toString(16);\n\n\nConteo versos y estrofas\nEl recuento de versos y estrofas debe hacerse a partir del texto del poema, no con valores escritos a mano. A continuación se dan algunas pistas técnicas para abordar este problema.\n\nConteo de versos\nUn verso puede considerarse, a efectos prácticos en esta tarea, como una línea de texto no vacía.\nUna estrategia habitual consiste en: - Separar el texto por saltos de línea. - Eliminar las líneas vacías o formadas solo por espacios. - Contar cuántas líneas válidas quedan.\nEjemplo orientativo:\nconst versos = texto\n  .split('\\n')\n  .filter(linea =&gt; linea.trim() !== '')\n  .length;\nEste enfoque es suficiente para la mayoría de los poemas del Romancero gitano y evita errores frecuentes.\n\n\nConteo de estrofas\nUna estrofa puede entenderse como un bloque de versos separado de otros bloques por una línea en blanco.\nUna posible estrategia es: - Separar el texto usando dos (o más) saltos de línea consecutivos. - Eliminar bloques vacíos. - Contar los bloques resultantes.\nEjemplo orientativo:\nconst estrofas = texto\n  .split(/\\n\\s*\\n/)\n  .filter(bloque =&gt; bloque.trim() !== '')\n  .length;\nEntrega: un único archivo HTML funcional.",
+    "objectID": "pages/Bloque3/ps.html#entregable",
+    "href": "pages/Bloque3/ps.html#entregable",
+    "title": "Proyecto Subsistema",
+    "section": "Entregable",
+    "text": "Entregable\n\nArchivos index.html, script.js y style.css.\nEl proyecto debe poder abrirse directamente en el navegador.",
     "crumbs": [
       "Bloque III Interacción",
-      "Semana 6",
-      "T6: Romancero Gitano I"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque3/t6.html#recomendaciones-para-afrontar-la-tarea",
-    "href": "pages/Bloque3/t6.html#recomendaciones-para-afrontar-la-tarea",
-    "title": "T6: Romancero Gitano I",
-    "section": "Recomendaciones para afrontar la tarea",
-    "text": "Recomendaciones para afrontar la tarea\nAl enfrentarnos a un proyecto de cierta complejitud, el como afrontarlo resulta de cricial para el desarollo del mismo por ello a a continuación dejo un esquema de implementación modular. Sería mejor no utilizarlo, pero puede ser un buen punto de partida si no se sabe como empezar la app, no es el único proceso de implementación válido ni es más correcto que cualquier otro\n\nEstructura de HTML básica contadores de versos y estrofas placeholders de poema y título y botón\nFormateo CSS parte estática: centrado, tamaño (todo lo que no sea color)\nDefinir clases con colores predeterminados\nLógica interna con JS\n\n\nBuscar palabra\nContar estrofas\nConteo versos\nSelección de clase\nGenerar color aleatorio si procede\n\n\nIntegración con DOM",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 6",
-      "T6: Romancero Gitano I"
+      "Semana 7",
+      "Proyecto Subsistema"
     ]
   },
   {
@@ -1120,15 +1025,263 @@
     ]
   },
   {
-    "objectID": "pages/Bloque3/MAcss2.html",
-    "href": "pages/Bloque3/MAcss2.html",
-    "title": "MA: CSS Flex y CSS",
+    "objectID": "pages/Bloque3/t6.html",
+    "href": "pages/Bloque3/t6.html",
+    "title": "T6: Romancero Gitano I",
     "section": "",
-    "text": "Además de las propiedades estudiadas de CSS también hay algunas críticas que debido a la falta de tiempo no se han podido explicar como es el caso de display a continuación estos dos vídeos profundizan en los modos flex y grid formas diferentes de diseñar la estructura de la página",
+    "text": "El objetivo de esta tarea es aplicar los conceptos básicos de HTML, CSS y JavaScript (DOM) para crear una página web interactiva que muestre poemas del Romancero gitano de Federico García Lorca y modifique su apariencia visual en función de las diferentes metáforas.\nResultado esperado",
     "crumbs": [
       "Bloque III Interacción",
       "Semana 6",
-      "MA: CSS Flex y CSS"
+      "T6: Romancero Gitano I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/t6.html#objetivo-de-la-tarea",
+    "href": "pages/Bloque3/t6.html#objetivo-de-la-tarea",
+    "title": "T6: Romancero Gitano I",
+    "section": "",
+    "text": "El objetivo de esta tarea es aplicar los conceptos básicos de HTML, CSS y JavaScript (DOM) para crear una página web interactiva que muestre poemas del Romancero gitano de Federico García Lorca y modifique su apariencia visual en función de las diferentes metáforas.\nResultado esperado",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "T6: Romancero Gitano I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/t6.html#estructura-html",
+    "href": "pages/Bloque3/t6.html#estructura-html",
+    "title": "T6: Romancero Gitano I",
+    "section": "Estructura HTML",
+    "text": "Estructura HTML\nEl documento HTML debe:\n\nEstar correctamente estructurado (&lt;!DOCTYPE&gt;, &lt;html&gt;, &lt;head&gt;, &lt;body&gt;).\nContener un contenedor principal centrado horizontalmente.\nIncluir, en este orden:\n\nUn elemento para mostrar información métrica del poema (número de estrofas y versos).\nUn elemento para el título del poema.\nUn elemento para el texto del poema, respetando los saltos de verso utilizando la etiqueta &lt;pre&gt;.\nUn botón que permita cambiar de poema.\n\n\nNo debe utilizarse ningún framework ni librería externa.",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "T6: Romancero Gitano I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/t6.html#javascript",
+    "href": "pages/Bloque3/t6.html#javascript",
+    "title": "T6: Romancero Gitano I",
+    "section": "JavaScript",
+    "text": "JavaScript\n\nDatos\nEn JavaScript se debe definir un array de objetos, donde cada objeto represente un poema y tenga al menos:\n\nUn título.\nEl texto del poema como una cadena de texto, usando saltos de línea para los versos.\n\nEl cambio de poema debe hacerse recorriendo este array de forma cíclica (cola circular) mediante el botón.\nDescargar poemas (click derecho guardar enlace como)\n\n\nManipulación del DOM\nEl comportamiento de la página debe implementarse exclusivamente con DOM nativo, cumpliendo lo siguiente:\n\nTodas las funciones deben declararse como arrow functions.\nAl pulsar el botón:\n\nSe actualiza el título.\nSe actualiza el texto del poema.\nSe modifica el formato del fondo.\nSe recalculan y muestran:\n\nNúmero de versos.\nNúmero de estrofas (bloques separados por líneas en blanco).\n\n\n\nEl cálculo debe realizarse a partir del texto del poema, no con valores predefinidos.",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "T6: Romancero Gitano I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/t6.html#css",
+    "href": "pages/Bloque3/t6.html#css",
+    "title": "T6: Romancero Gitano I",
+    "section": "CSS",
+    "text": "CSS\nLorca utiliza las metáforas y la alegoría como elemento principal sobre el que construye sus poemas, al analizar profundamente descubrimos que siempre recurre a las mismas metáforas.\nEl color no se utiliza aquí solo como elemento decorativo, sino como un recurso semántico: cada color representa un símbolo literario presente en el poema.\nDesde el punto de vista técnico: - Los colores de fondo y de texto deben definirse en clases CSS. - JavaScript no decide colores, únicamente decide qué clase aplicar según el contenido del poema.\n\nPalabras clave y colores asociados\nSe debe detectar el texto del poema las siguientes palabras clave y aplicar el color de fondo correspondiente:\n\nguardia civil → fondo verde militar\nsangre → fondo granate oscuro\ncaballo → fondo color tierra\ncuchillo / navaja → fondo plateado\n\nEl color del texto debe elegirse siempre de forma que exista contraste suficiente con el fondo y se garantice la legibilidad.\nSi el poema contiene varias palabras clave, solo debe aplicarse un único estilo, siguiendo un orden de prioridad definido previamente.\nSi el poema no contiene ninguna de estas palabras, se aplicará un estilo por defecto con colores aleatorios.",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "T6: Romancero Gitano I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/t6.html#extra-opcional-símbolo-aurora",
+    "href": "pages/Bloque3/t6.html#extra-opcional-símbolo-aurora",
+    "title": "T6: Romancero Gitano I",
+    "section": "Extra opcional: símbolo aurora 🌈",
+    "text": "Extra opcional: símbolo aurora 🌈\nDe forma voluntaria, se puede añadir el símbolo aurora, que tendrá prioridad absoluta sobre todos los demás.\nCuando el poema contenga la palabra aurora, el fondo debe mostrar un degradado animado.\n\nCSS necesario para el extra\n.aurora {\n  background: linear-gradient(120deg,\n    #ff005d,\n    #ff9f1c,\n    #ffee32,\n    #3cff00,\n    #00e5ff,\n    #7a00ff,\n    #ff00c8\n  );\n  background-size: 600% 600%;\n  animation: aurora 10s linear infinite;\n  color: black;\n}\n\n@keyframes aurora {\n  0%   { background-position: 0% 50%; }\n  50%  { background-position: 100% 50%; }\n  100% { background-position: 0% 50%; }\n}",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "T6: Romancero Gitano I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/t6.html#consejos",
+    "href": "pages/Bloque3/t6.html#consejos",
+    "title": "T6: Romancero Gitano I",
+    "section": "Consejos",
+    "text": "Consejos\n\nCentrado de la página (layout clásico)\nToda la página debe estar centrada horizontalmente.\nEl centrado se consigue mediante:\n\nUn contenedor con un ancho máximo definido.\nMárgenes automáticos a izquierda y derecha.\n\nDesde el punto de vista conceptual:\n\nmargin: 0 auto no centra texto, centra bloques.\nEl navegador reparte automáticamente el espacio sobrante a ambos lados del contenedor.\n\n\n\nAnimación del cambio de color\nPara evitar que los cambios de color sean bruscos, se utiliza la propiedad transition en CSS.\nEsta propiedad indica al navegador que los cambios en determinadas propiedades visuales deben hacerse de forma progresiva.\nEjemplo conceptual:\nbody {\n  transition: background-color 0.6s, color 0.6s;\n}\nGracias a esta transición: - Cuando JavaScript cambia una clase o un color, - el navegador interpola automáticamente entre el color anterior y el nuevo.\nNo es necesario programar animaciones en JavaScript: CSS se encarga de todo el efecto visual.\n\n\nBúsqueda de una palabra\nPara buscar si determinada palabra determinada se debe utilizar la función includes de la clase string\n\ntexto = \"hoy nieva\";\n\ntexto.includes(\"nieva\");    //TRUE\ntexto.includes(\"llueve\");   //FALSE\n\n\nGeneración del color aleatorio\nPara la generacióndel color aleatorio de puede utilizar la siguiente función\nconst randomColor = () =&gt; '#' + Math.floor(Math.random() * 16777215).toString(16);\n\n\nConteo versos y estrofas\nEl recuento de versos y estrofas debe hacerse a partir del texto del poema, no con valores escritos a mano. A continuación se dan algunas pistas técnicas para abordar este problema.\n\nConteo de versos\nUn verso puede considerarse, a efectos prácticos en esta tarea, como una línea de texto no vacía.\nUna estrategia habitual consiste en: - Separar el texto por saltos de línea. - Eliminar las líneas vacías o formadas solo por espacios. - Contar cuántas líneas válidas quedan.\nEjemplo orientativo:\nconst versos = texto\n  .split('\\n')\n  .filter(linea =&gt; linea.trim() !== '')\n  .length;\nEste enfoque es suficiente para la mayoría de los poemas del Romancero gitano y evita errores frecuentes.\n\n\nConteo de estrofas\nUna estrofa puede entenderse como un bloque de versos separado de otros bloques por una línea en blanco.\nUna posible estrategia es: - Separar el texto usando dos (o más) saltos de línea consecutivos. - Eliminar bloques vacíos. - Contar los bloques resultantes.\nEjemplo orientativo:\nconst estrofas = texto\n  .split(/\\n\\s*\\n/)\n  .filter(bloque =&gt; bloque.trim() !== '')\n  .length;\nEntrega: un único archivo HTML funcional.",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "T6: Romancero Gitano I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/t6.html#recomendaciones-para-afrontar-la-tarea",
+    "href": "pages/Bloque3/t6.html#recomendaciones-para-afrontar-la-tarea",
+    "title": "T6: Romancero Gitano I",
+    "section": "Recomendaciones para afrontar la tarea",
+    "text": "Recomendaciones para afrontar la tarea\nAl enfrentarnos a un proyecto de cierta complejitud, el como afrontarlo resulta de cricial para el desarollo del mismo por ello a a continuación dejo un esquema de implementación modular. Sería mejor no utilizarlo, pero puede ser un buen punto de partida si no se sabe como empezar la app, no es el único proceso de implementación válido ni es más correcto que cualquier otro\n\nEstructura de HTML básica contadores de versos y estrofas placeholders de poema y título y botón\nFormateo CSS parte estática: centrado, tamaño (todo lo que no sea color)\nDefinir clases con colores predeterminados\nLógica interna con JS\n\n\nBuscar palabra\nContar estrofas\nConteo versos\nSelección de clase\nGenerar color aleatorio si procede\n\n\nIntegración con DOM",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "T6: Romancero Gitano I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#qué-es-el-dom",
+    "href": "pages/Bloque3/dom.html#qué-es-el-dom",
+    "title": "DOM",
+    "section": "¿Qué es el DOM?",
+    "text": "¿Qué es el DOM?\nEl DOM (Document Object Model) es la representación en memoria que el navegador crea a partir del HTML.\n\nEl HTML es estático\nEl DOM es dinámico\nJavaScript interactúa con el DOM, no con el HTML original\n\n\nEl DOM es la página web viva dentro del navegador."
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#el-dom-como-árbol",
+    "href": "pages/Bloque3/dom.html#el-dom-como-árbol",
+    "title": "DOM",
+    "section": "El DOM como árbol",
+    "text": "El DOM como árbol\nEl DOM tiene estructura de árbol (grafo):\n\nCada etiqueta HTML es un nodo\nLos nodos tienen relaciones (padre, hijos, hermanos)\n\nEjemplo:\n&lt;body&gt;\n  &lt;h1&gt;Título&lt;/h1&gt;\n  &lt;button&gt;Click&lt;/button&gt;\n&lt;/body&gt;"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#acceso-al-dom-desde-javascript",
+    "href": "pages/Bloque3/dom.html#acceso-al-dom-desde-javascript",
+    "title": "DOM",
+    "section": "Acceso al DOM desde JavaScript",
+    "text": "Acceso al DOM desde JavaScript\nEl navegador nos proporciona el objeto global document, que permite:\n\nBuscar elementos\nLeer su contenido\nModificar la interfaz\n\ndocument\ndocument.body"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#selectores",
+    "href": "pages/Bloque3/dom.html#selectores",
+    "title": "DOM",
+    "section": "Selectores",
+    "text": "Selectores\nPor ID\ndocument.getElementById(\"count\")\ndocument.querySelector(\"#count\")\nPor etiqueta\ndocument.querySelector(\"button\")"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#leer-y-modificar-elementos",
+    "href": "pages/Bloque3/dom.html#leer-y-modificar-elementos",
+    "title": "DOM",
+    "section": "Leer y modificar elementos",
+    "text": "Leer y modificar elementos\nelement.textContent\nelement.textContent = \"Nuevo texto\"\nelement.classList.add(\"active\")\nelement.classList.remove(\"active\")"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#eventos",
+    "href": "pages/Bloque3/dom.html#eventos",
+    "title": "DOM",
+    "section": "Eventos",
+    "text": "Eventos\nEl DOM permite reaccionar a acciones del usuario mediante eventos.\nbutton.addEventListener(\"click\", () =&gt; {\n  // código a ejecutar\n});\nFlujo típico:\nUsuario → Evento → JavaScript → DOM actualizado"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#ejemplo-contador-con-botón",
+    "href": "pages/Bloque3/dom.html#ejemplo-contador-con-botón",
+    "title": "DOM",
+    "section": "Ejemplo: contador con botón",
+    "text": "Ejemplo: contador con botón\nHTML\n&lt;h1 id=\"count\"&gt;0&lt;/h1&gt;\n&lt;button id=\"btn\"&gt;Sumar 1&lt;/button&gt;\nJavaScript\nlet count = 0;\n\nconst countEl = document.querySelector(\"#count\");\nconst btn = document.querySelector(\"#btn\");\n\nbtn.addEventListener(\"click\", () =&gt; {\n  count++;\n  countEl.textContent = count;\n});"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#más-ejemplos",
+    "href": "pages/Bloque3/dom.html#más-ejemplos",
+    "title": "DOM",
+    "section": "Más ejemplos",
+    "text": "Más ejemplos\nEj1: Show input\nEj2: Par e Impar\nEj3: Toggle\nEj4: Creación dinámica\nEj5: Validación básica"
+  },
+  {
+    "objectID": "pages/Bloque3/DOM.html",
+    "href": "pages/Bloque3/DOM.html",
+    "title": "DOM",
+    "section": "",
+    "text": "El DOM (Document Object Model) es la representación en memoria que el navegador crea a partir del HTML.\n\nEl HTML es estático\nEl DOM es dinámico\nJavaScript interactúa con el DOM, no con el HTML original\n\n\nEl DOM es la página web viva dentro del navegador.",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/DOM.html#qué-es-el-dom",
+    "href": "pages/Bloque3/DOM.html#qué-es-el-dom",
+    "title": "DOM",
+    "section": "",
+    "text": "El DOM (Document Object Model) es la representación en memoria que el navegador crea a partir del HTML.\n\nEl HTML es estático\nEl DOM es dinámico\nJavaScript interactúa con el DOM, no con el HTML original\n\n\nEl DOM es la página web viva dentro del navegador.",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/DOM.html#el-dom-como-árbol",
+    "href": "pages/Bloque3/DOM.html#el-dom-como-árbol",
+    "title": "DOM",
+    "section": "El DOM como árbol",
+    "text": "El DOM como árbol\nEl DOM tiene estructura de árbol (grafo):\n\nCada etiqueta HTML es un nodo\nLos nodos tienen relaciones (padre, hijos, hermanos)\n\nEjemplo:\n&lt;body&gt;\n  &lt;h1&gt;Título&lt;/h1&gt;\n  &lt;button&gt;Click&lt;/button&gt;\n&lt;/body&gt;\nRepresentación conceptual:\ndocument\n └─ body\n    ├─ h1\n    └─ button",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/DOM.html#acceso-al-dom-desde-javascript",
+    "href": "pages/Bloque3/DOM.html#acceso-al-dom-desde-javascript",
+    "title": "DOM",
+    "section": "Acceso al DOM desde JavaScript",
+    "text": "Acceso al DOM desde JavaScript\nEl navegador nos proporciona el objeto global document, que permite:\n\nBuscar elementos\nLeer su contenido\nModificar la interfaz\n\ndocument\ndocument.body",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/DOM.html#selectores",
+    "href": "pages/Bloque3/DOM.html#selectores",
+    "title": "DOM",
+    "section": "Selectores",
+    "text": "Selectores\n\nPor ID\ndocument.getElementById(\"count\")\ndocument.querySelector(\"#count\")\n\n\nPor etiqueta\ndocument.querySelector(\"button\")\n\n\nPor clase\ndocument.querySelector(\".item\")\ndocument.querySelectorAll(\".item\")\nNotas: - querySelector devuelve el primer elemento - querySelectorAll devuelve una lista - Usan la misma sintaxis que CSS",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/DOM.html#leer-y-modificar-elementos",
+    "href": "pages/Bloque3/DOM.html#leer-y-modificar-elementos",
+    "title": "DOM",
+    "section": "Leer y modificar elementos",
+    "text": "Leer y modificar elementos\nelement.textContent\nelement.textContent = \"Nuevo texto\"\nelement.classList.add(\"active\")\nelement.classList.remove(\"active\")",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/DOM.html#eventos",
+    "href": "pages/Bloque3/DOM.html#eventos",
+    "title": "DOM",
+    "section": "Eventos",
+    "text": "Eventos\nEl DOM permite reaccionar a acciones del usuario mediante eventos.\nbutton.addEventListener(\"click\", () =&gt; {\n  // código a ejecutar\n});\nFlujo típico:\nUsuario → Evento → JavaScript → DOM actualizado",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/DOM.html#ejemplo-contador-con-botón",
+    "href": "pages/Bloque3/DOM.html#ejemplo-contador-con-botón",
+    "title": "DOM",
+    "section": "Ejemplo: contador con botón",
+    "text": "Ejemplo: contador con botón\n\nHTML\n&lt;h1 id=\"count\"&gt;0&lt;/h1&gt;\n&lt;button id=\"btn\"&gt;Sumar 1&lt;/button&gt;\n\n\nJavaScript\nlet count = 0;\n\nconst countEl = document.querySelector(\"#count\");\nconst btn = document.querySelector(\"#btn\");\n\nbtn.addEventListener(\"click\", () =&gt; {\n  count++;\n  countEl.textContent = count;\n});",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/DOM.html#más-ejemplos",
+    "href": "pages/Bloque3/DOM.html#más-ejemplos",
+    "title": "DOM",
+    "section": "Más ejemplos",
+    "text": "Más ejemplos\nEj1: Show input\nEj2: Par e Impar\nEj3: Toggle\nEj4: Creación dinámica\nEj5: Validación básica",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
     ]
   },
   {

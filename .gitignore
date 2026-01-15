@@ -3,3 +3,6 @@ _book/
 
 /.quarto/
 **/*.quarto_ipynb
+
+*_cache/
+notas.csv

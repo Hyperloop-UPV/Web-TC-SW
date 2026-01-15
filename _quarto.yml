@@ -65,6 +65,12 @@ website:
             - pages/Bloque3/DOM.qmd
             - pages/Bloque3/t6.qmd
             - pages/Bloque3/MAcss2.qmd
+
+          - section: "Semana 7"
+            contents: 
+            - pages/Bloque3/ReactI.qmd
+            - pages/Bloque3/ps.qmd
+
           - text: "Próximamente..."
 
       - section: "Bloque IV Comunicación"
