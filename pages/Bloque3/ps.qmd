@@ -13,7 +13,7 @@ affiliation: "Hyperloop UPV"
 ## Objetivo
 Desarrollar una pequeña aplicación web para gestionar una lista de tareas utilizando **HTML, CSS y JavaScript**, trabajando directamente con el **DOM**.
 
-[base](pc-ac.html)
+[base](ps-ac.html)
 
 ---
 
