@@ -70,6 +70,12 @@ website:
             contents: 
             - pages/Bloque3/ReactI.qmd
             - pages/Bloque3/ps.qmd
+          
+          - section: "Semana 9"
+            contents: 
+            - pages/Bloque3/Intermedio.qmd
+            - pages/Bloque3/MARef.qmd
+
 
           - text: "Próximamente..."
 
