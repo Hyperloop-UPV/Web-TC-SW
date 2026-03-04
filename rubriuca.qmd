@@ -28,19 +28,19 @@ library(kableExtra)
 # VARIABLES GENERALES
 # ===============================
 titulo_rubrica  <- "Rúbrica de Evaluación"
-nombre_tarea   <- "Web de Hyperloop II"
-nombre_alumno  <- "Pau Minguet Micó"
+nombre_tarea   <- "Ejecicios JS"
+nombre_alumno  <- "Daniel Zanon Barney"
 comentarios    <- "
 
-Has abusado mucho de la notación para redefinir el estilo predeterminado de las etiquetas. Es mejor utilizar siempre clases e ID. Muy buen uso de los selectores por propiedad y el pseudoselector de el link.
+En el ejercicio 3 se debeía de imprimir también el array por pantalla, en el código subido a GitHub, lo has encapsulado dentro de la función `arr2`. No se deben encapuslar los array en funciones.
 
-No has usado ni una clase en toda la tarea.
+El ejercicio 7 está mal: el metodo `.push()` de los arrays devuelve la nueva longitud del array. En tu código en la línea 21: `const arrFinal =arrCubosFiltrados.push(21);` está añadiendo el número `21` al array `arrCubosFiltrados` mientras que `arrFinal` se corresponde con la longitud de `arrCubosFiltrados` (incluyendo el 21). La respuesta correcta era `let arrFinal = [...arrCubosFiltrados, 21];`
 
+En lo que respecta al formato del documento, es convención en JS insertar un espacio entre los operadores: NO `x%2==0` sino  `x % 2 === 0`. 
 
 ---
 
-Dominio completo de propiedades CSS, pero todavía tienes margen de mejora en el uso de selectores básicos.
-
+En general bien, todavía hay margen de mejora en lo que respecta al uso de los array, muy buen uso de las funciones `filter` y `map`.
 "
 ```
 
@@ -61,7 +61,7 @@ notas <- tibble(
     "Documentación / Claridad",
     "Funcionalidad"
   ),
-  puntuacion = c(7.5, NA, 9.5, 10, 9)
+  puntuacion = c(NA, 6, 7, 7, 8.5)
 )
 ```
 

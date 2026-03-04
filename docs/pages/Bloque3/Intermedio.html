@@ -8,7 +8,7 @@
 
 <meta name="author" content="Javier Ribal del Río">
 
-<title>DOM – Training Center SW</title>
+<title>React III – Training Center SW</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -284,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Bloque III Interacción</li><li class="breadcrumb-item"><a href="../../pages/Bloque3/DOM.html">Semana 6</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque3/DOM.html">DOM</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Bloque III Interacción</li><li class="breadcrumb-item"><a href="../../pages/Bloque3/Intermedio.html">Semana 9</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque3/Intermedio.html">React III</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -469,16 +469,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
  <span class="menu-text">Semana 6</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque3/DOM.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../pages/Bloque3/DOM.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">DOM</span></a>
   </div>
 </li>
@@ -521,16 +521,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
  <span class="menu-text">Semana 9</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque3/Intermedio.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/Bloque3/Intermedio.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">React III</span></a>
   </div>
 </li>
@@ -569,34 +569,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#qué-es-el-dom" id="toc-qué-es-el-dom" class="nav-link active" data-scroll-target="#qué-es-el-dom">¿Qué es el DOM?</a></li>
-  <li><a href="#el-dom-como-árbol" id="toc-el-dom-como-árbol" class="nav-link" data-scroll-target="#el-dom-como-árbol">El DOM como árbol</a></li>
-  <li><a href="#acceso-al-dom-desde-javascript" id="toc-acceso-al-dom-desde-javascript" class="nav-link" data-scroll-target="#acceso-al-dom-desde-javascript">Acceso al DOM desde JavaScript</a></li>
-  <li><a href="#selectores" id="toc-selectores" class="nav-link" data-scroll-target="#selectores">Selectores</a>
+  <li><a href="#controlled-inputs" id="toc-controlled-inputs" class="nav-link active" data-scroll-target="#controlled-inputs"><em>Controlled Inputs</em></a>
   <ul>
-  <li><a href="#por-id" id="toc-por-id" class="nav-link" data-scroll-target="#por-id">Por ID</a></li>
-  <li><a href="#por-etiqueta" id="toc-por-etiqueta" class="nav-link" data-scroll-target="#por-etiqueta">Por etiqueta</a></li>
-  <li><a href="#por-clase" id="toc-por-clase" class="nav-link" data-scroll-target="#por-clase">Por clase</a></li>
+  <li><a href="#motivación" id="toc-motivación" class="nav-link" data-scroll-target="#motivación">Motivación</a></li>
+  <li><a href="#qué-es-un-controlled-input" id="toc-qué-es-un-controlled-input" class="nav-link" data-scroll-target="#qué-es-un-controlled-input">¿Qué es un controlled input?</a></li>
+  <li><a href="#estructura-del-componente-controlled" id="toc-estructura-del-componente-controlled" class="nav-link" data-scroll-target="#estructura-del-componente-controlled">Estructura del componente controlled</a>
+  <ul class="collapse">
+  <li><a href="#análisis-del-ejemplo" id="toc-análisis-del-ejemplo" class="nav-link" data-scroll-target="#análisis-del-ejemplo">Análisis del ejemplo</a></li>
   </ul></li>
-  <li><a href="#leer-y-modificar-elementos" id="toc-leer-y-modificar-elementos" class="nav-link" data-scroll-target="#leer-y-modificar-elementos">Leer y modificar elementos</a></li>
-  <li><a href="#eventos" id="toc-eventos" class="nav-link" data-scroll-target="#eventos">Eventos</a></li>
-  <li><a href="#ejemplo-contador-con-botón" id="toc-ejemplo-contador-con-botón" class="nav-link" data-scroll-target="#ejemplo-contador-con-botón">Ejemplo: contador con botón</a>
+  <li><a href="#ejemplo-formulario" id="toc-ejemplo-formulario" class="nav-link" data-scroll-target="#ejemplo-formulario">Ejemplo Formulario</a></li>
+  </ul></li>
+  <li><a href="#hooks-repaso" id="toc-hooks-repaso" class="nav-link" data-scroll-target="#hooks-repaso">Hooks (Repaso)</a></li>
+  <li><a href="#useeffect" id="toc-useeffect" class="nav-link" data-scroll-target="#useeffect"><code>useEffect</code></a>
   <ul>
-  <li><a href="#html" id="toc-html" class="nav-link" data-scroll-target="#html">HTML</a></li>
-  <li><a href="#javascript" id="toc-javascript" class="nav-link" data-scroll-target="#javascript">JavaScript</a></li>
+  <li><a href="#métodos-de-uso-de-useeffect" id="toc-métodos-de-uso-de-useeffect" class="nav-link" data-scroll-target="#métodos-de-uso-de-useeffect">Métodos de uso de <code>useEffect</code></a>
+  <ul class="collapse">
+  <li><a href="#sin-array-de-dependencias" id="toc-sin-array-de-dependencias" class="nav-link" data-scroll-target="#sin-array-de-dependencias">1. Sin array de dependencias</a></li>
+  <li><a href="#con-array-vacío" id="toc-con-array-vacío" class="nav-link" data-scroll-target="#con-array-vacío">2. Con array vacío</a></li>
+  <li><a href="#con-dependencias-específicas" id="toc-con-dependencias-específicas" class="nav-link" data-scroll-target="#con-dependencias-específicas">3. Con dependencias específicas</a></li>
   </ul></li>
-  <li><a href="#más-ejemplos" id="toc-más-ejemplos" class="nav-link" data-scroll-target="#más-ejemplos">Más ejemplos</a></li>
+  </ul></li>
+  <li><a href="#fetch" id="toc-fetch" class="nav-link" data-scroll-target="#fetch"><code>fetch()</code></a>
+  <ul>
+  <li><a href="#ejemplo-mínimo-de-fetch" id="toc-ejemplo-mínimo-de-fetch" class="nav-link" data-scroll-target="#ejemplo-mínimo-de-fetch">Ejemplo mínimo de <code>fetch</code></a></li>
+  <li><a href="#fetch-dentro-de-useeffect" id="toc-fetch-dentro-de-useeffect" class="nav-link" data-scroll-target="#fetch-dentro-de-useeffect"><code>fetch()</code> dentro de <code>useEffect</code></a></li>
+  <li><a href="#ejemplo-integrado" id="toc-ejemplo-integrado" class="nav-link" data-scroll-target="#ejemplo-integrado">Ejemplo integrado</a></li>
+  <li><a href="#flujo-conceptual" id="toc-flujo-conceptual" class="nav-link" data-scroll-target="#flujo-conceptual">Flujo conceptual</a></li>
+  <li><a href="#advertencia-importante" id="toc-advertencia-importante" class="nav-link" data-scroll-target="#advertencia-importante">Advertencia importante</a></li>
+  </ul></li>
+  <li><a href="#async-y-await" id="toc-async-y-await" class="nav-link" data-scroll-target="#async-y-await"><code>async</code> y <code>await</code></a>
+  <ul>
+  <li><a href="#qué-significa-async" id="toc-qué-significa-async" class="nav-link" data-scroll-target="#qué-significa-async">¿Qué significa <code>async</code>?</a></li>
+  <li><a href="#qué-significa-await" id="toc-qué-significa-await" class="nav-link" data-scroll-target="#qué-significa-await">¿Qué significa <code>await</code>?</a></li>
+  <li><a href="#ejemplo-básico-con-fetch" id="toc-ejemplo-básico-con-fetch" class="nav-link" data-scroll-target="#ejemplo-básico-con-fetch">Ejemplo básico con <code>fetch</code></a></li>
+  <li><a href="#async-await-dentro-de-useeffect" id="toc-async-await-dentro-de-useeffect" class="nav-link" data-scroll-target="#async-await-dentro-de-useeffect"><code>async / await</code> dentro de <code>useEffect</code></a></li>
+  <li><a href="#ejemplo-completo" id="toc-ejemplo-completo" class="nav-link" data-scroll-target="#ejemplo-completo">Ejemplo completo</a></li>
+  <li><a href="#por-qué-no-hacer-directamente" id="toc-por-qué-no-hacer-directamente" class="nav-link" data-scroll-target="#por-qué-no-hacer-directamente">¿Por qué no hacer directamente?</a></li>
+  <li><a href="#flujo-mental-con-async-await" id="toc-flujo-mental-con-async-await" class="nav-link" data-scroll-target="#flujo-mental-con-async-await">Flujo mental con <code>async / await</code></a></li>
+  </ul></li>
+  <li><a href="#ejemplo-con-la-pokeapi" id="toc-ejemplo-con-la-pokeapi" class="nav-link" data-scroll-target="#ejemplo-con-la-pokeapi">Ejemplo con la Pokeapi</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="DOM.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="dom.html"><i class="bi bi-file-slides"></i>Presentación</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="Intermedio.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="intermedio.html"><i class="bi bi-file-slides"></i>Presentación</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Bloque III Interacción</li><li class="breadcrumb-item"><a href="../../pages/Bloque3/DOM.html">Semana 6</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque3/DOM.html">DOM</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Bloque III Interacción</li><li class="breadcrumb-item"><a href="../../pages/Bloque3/Intermedio.html">Semana 9</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque3/Intermedio.html">React III</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">DOM</h1>
-<p class="subtitle lead">Árbol de DOM, selectores</p>
+<h1 class="title">React III</h1>
+<p class="subtitle lead"><em>Controlled fields</em>, <code>useEffect</code></p>
 </div>
 
 
@@ -613,7 +635,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">19 de diciembre de 2025</p>
+      <p class="date">27 de febrero de 2026</p>
     </div>
   </div>
   
@@ -631,109 +653,392 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="qué-es-el-dom" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es-el-dom">¿Qué es el DOM?</h2>
-<p>El DOM (Document Object Model) es la <strong>representación en memoria</strong> que el navegador crea a partir del HTML.</p>
+<p><strong>Contenido</strong></p>
 <ul>
-<li>El HTML es estático</li>
-<li>El DOM es dinámico</li>
-<li>JavaScript interactúa con el DOM, no con el HTML original</li>
+<li><em>Controlled Inputs</em></li>
+<li>Concepto de Hook</li>
+<li><em>Hook</em> <code>useEffect</code></li>
+<li>Introducción a API para la descarga de datos</li>
 </ul>
+<section id="controlled-inputs" class="level2">
+<h2 class="anchored" data-anchor-id="controlled-inputs"><em>Controlled Inputs</em></h2>
+<section id="motivación" class="level3">
+<h3 class="anchored" data-anchor-id="motivación">Motivación</h3>
+<p>Hasta ahora se ha trabajado con eventos capturando acciones del usuario.</p>
+<p>Sin embargo, al trabajar con formularios surge una cuestión fundamental:</p>
 <blockquote class="blockquote">
-<p>El DOM es la página web viva dentro del navegador.</p>
+<p>¿Quién controla el valor del input?<br>
+¿El DOM o React?</p>
 </blockquote>
+<p>Recordemos que en HTML puro o, el valor de un <code>&lt;input&gt;</code> está gestionado directamente por el DOM.</p>
+<p>En React, podemos hacer que el valor del input esté controlado por el estado del componente.</p>
+<p>A esto lo llamamos <strong>controlled input</strong>.</p>
 </section>
-<section id="el-dom-como-árbol" class="level2">
-<h2 class="anchored" data-anchor-id="el-dom-como-árbol">El DOM como árbol</h2>
-<p>El DOM tiene estructura de <strong>árbol</strong> (grafo):</p>
+<section id="qué-es-un-controlled-input" class="level3">
+<h3 class="anchored" data-anchor-id="qué-es-un-controlled-input">¿Qué es un controlled input?</h3>
+<p>Un <em>controlled input</em> es un elemento de formulario cuyo valor:</p>
 <ul>
-<li>Cada etiqueta HTML es un nodo</li>
-<li>Los nodos tienen relaciones (padre, hijos, hermanos)</li>
+<li>Está almacenado en el estado del componente</li>
+<li>Se actualiza mediante un evento (<code>onChange</code>)</li>
+<li>Se renderiza utilizando ese mismo estado</li>
 </ul>
-<p>Ejemplo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Título<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="dt">&gt;</span>Click<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Representación conceptual:</p>
-<pre><code>document
- └─ body
-    ├─ h1
-    └─ button</code></pre>
+<p><strong>Única fuente de verdad (<em>single source of truth</em>).</strong></p>
 </section>
-<section id="acceso-al-dom-desde-javascript" class="level2">
-<h2 class="anchored" data-anchor-id="acceso-al-dom-desde-javascript">Acceso al DOM desde JavaScript</h2>
-<p>El navegador nos proporciona el objeto global <code>document</code>, que permite:</p>
+<section id="estructura-del-componente-controlled" class="level3">
+<h3 class="anchored" data-anchor-id="estructura-del-componente-controlled">Estructura del componente controlled</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> { useState } <span class="im">from</span> <span class="st">"react"</span><span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">function</span> <span class="fu">FormularioNombre</span>() {</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="kw">const</span> [nombre<span class="op">,</span> setNombre] <span class="op">=</span> <span class="fu">useState</span>(<span class="st">""</span>)<span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="kw">function</span> <span class="fu">manejarCambio</span>(<span class="bu">event</span>) {</span>
+<span id="cb1-7"><a href="#cb1-7"></a>    <span class="fu">setNombre</span>(<span class="bu">event</span><span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span>)<span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>  }</span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a>  <span class="cf">return</span> (</span>
+<span id="cb1-11"><a href="#cb1-11"></a>    <span class="kw">&lt;div&gt;</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>      <span class="kw">&lt;input</span> <span class="ot">type</span><span class="op">=</span><span class="st">"text"</span> </span>
+<span id="cb1-13"><a href="#cb1-13"></a>       <span class="ot">value</span><span class="op">=</span><span class="va">{</span>nombre<span class="va">}</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>        <span class="ot">onChange</span><span class="op">=</span><span class="va">{</span>manejarCambio<span class="va">}</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a>      <span class="kw">/&gt;</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a>      <span class="kw">&lt;p&gt;</span>El nombre introducido es: <span class="va">{</span>nombre<span class="va">}</span><span class="kw">&lt;/p&gt;</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a>  )<span class="op">;</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="análisis-del-ejemplo" class="level4">
+<h4 class="anchored" data-anchor-id="análisis-del-ejemplo">Análisis del ejemplo</h4>
+<p>El valor del input se sincroniza con el estado</p>
+<ol type="1">
+<li>Declaramos una variable de estado: nombre</li>
+<li>Asociamos el atributo value del input a ese estado</li>
+<li>Capturamos el evento onChange</li>
+<li>Actualizamos el estado con setNombre</li>
+</ol>
+<p>Cada vez que el estado cambia: El componente se vuelve a ejecutar El JSX se vuelve a generar El valor del input se sincroniza con el estado</p>
+</section>
+</section>
+<section id="ejemplo-formulario" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-formulario">Ejemplo Formulario</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { useState } <span class="im">from</span> <span class="st">"react"</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">FormularioSimple</span>() {</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [email<span class="op">,</span> setEmail] <span class="op">=</span> <span class="fu">useState</span>(<span class="st">""</span>)<span class="op">;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">handleChange</span>(<span class="bu">event</span>) {</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">setEmail</span>(<span class="bu">event</span><span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span>)<span class="op">;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">handleSubmit</span>(<span class="bu">event</span>) {</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">event</span><span class="op">.</span><span class="fu">preventDefault</span>()<span class="op">;</span>   <span class="co">// Evita la recarga del navegador</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Formulario enviado"</span>)<span class="op">;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Email:"</span><span class="op">,</span> email)<span class="op">;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">setEmail</span>(<span class="st">""</span>)<span class="op">;</span>  <span class="co">// Limpieza opcional del campo</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;form</span> <span class="ot">onSubmit</span><span class="op">=</span><span class="va">{</span>handleSubmit<span class="va">}</span><span class="kw">&gt;</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;input</span> </span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="ot">type</span><span class="op">=</span><span class="st">"email"</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        <span class="ot">value</span><span class="op">=</span><span class="va">{</span>email<span class="va">}</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        <span class="ot">onChange</span><span class="op">=</span><span class="va">{</span>handleChange<span class="va">}</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>      <span class="kw">/&gt;</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;button</span> <span class="ot">type</span><span class="op">=</span><span class="st">"submit"</span><span class="kw">&gt;</span>Enviar<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/form&gt;</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Referencia: <a href="https://es.react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable">https://es.react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable</a></p>
+</section>
+</section>
+<section id="hooks-repaso" class="level2">
+<h2 class="anchored" data-anchor-id="hooks-repaso">Hooks (Repaso)</h2>
 <ul>
-<li>Buscar elementos</li>
-<li>Leer su contenido</li>
-<li>Modificar la interfaz</li>
+<li>Función especial que permite modificar las propiedades internas de los componentes</li>
+<li>Características avanzadas</li>
+<li>Modificación del <code>life-cycle</code></li>
+<li>Normalmente forma <code>use____</code></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="at">body</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="selectores" class="level2">
-<h2 class="anchored" data-anchor-id="selectores">Selectores</h2>
-<section id="por-id" class="level3">
-<h3 class="anchored" data-anchor-id="por-id">Por ID</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"count"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">"#count"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="useeffect" class="level2">
+<h2 class="anchored" data-anchor-id="useeffect"><code>useEffect</code></h2>
+<ul>
+<li><code>useEffect</code> es un Hook que permite ejecutar efectos secundarios dentro de un componente funcional.</li>
+<li>Un efecto secundario es cualquier operación que no sea simplemente devolver JSX (por ejemplo: peticiones a un servidor, temporizadores, suscripciones).</li>
+<li>Se ejecuta después de que el componente se renderiza en el DOM.</li>
+</ul>
+<section id="métodos-de-uso-de-useeffect" class="level3">
+<h3 class="anchored" data-anchor-id="métodos-de-uso-de-useeffect">Métodos de uso de <code>useEffect</code></h3>
+<section id="sin-array-de-dependencias" class="level4">
+<h4 class="anchored" data-anchor-id="sin-array-de-dependencias">1. Sin array de dependencias</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Se ejecuta en cada render"</span>)<span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Comportamiento:</strong></p>
+<ul>
+<li>Se ejecuta después de cada renderizado.</li>
+<li>No existe control sobre la frecuencia.</li>
+<li>Puede generar bucles si modifica estado sin control.</li>
+</ul>
+<p><strong>Interpretación conceptual:</strong></p>
+<p>El efecto acompaña siempre al render.</p>
 </section>
-<section id="por-etiqueta" class="level3">
-<h3 class="anchored" data-anchor-id="por-etiqueta">Por etiqueta</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">"button"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="con-array-vacío" class="level4">
+<h4 class="anchored" data-anchor-id="con-array-vacío">2. Con array vacío</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Se ejecuta solo una vez"</span>)<span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>}<span class="op">,</span> [])<span class="op">;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Comportamiento:</strong></p>
+<ul>
+<li>Se ejecuta únicamente tras el primer render.</li>
+<li>Equivalente conceptual al “montaje” del componente.</li>
+</ul>
+<p><strong>Uso habitual:</strong></p>
+<ul>
+<li>Peticiones a servidor</li>
+<li>Inicializaciones</li>
+<li>Suscripciones</li>
+</ul>
+<p><strong>Interpretación conceptual:</strong></p>
+<p>El efecto ocurre una única vez al crear el componente.</p>
 </section>
-<section id="por-clase" class="level3">
-<h3 class="anchored" data-anchor-id="por-clase">Por clase</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">".item"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">querySelectorAll</span>(<span class="st">".item"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Notas: - <code>querySelector</code> devuelve el <strong>primer</strong> elemento - <code>querySelectorAll</code> devuelve una <strong>lista</strong> - Usan la misma sintaxis que CSS</p>
-</section>
-</section>
-<section id="leer-y-modificar-elementos" class="level2">
-<h2 class="anchored" data-anchor-id="leer-y-modificar-elementos">Leer y modificar elementos</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>element<span class="op">.</span><span class="at">textContent</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>element<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> <span class="st">"Nuevo texto"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>element<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"active"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>element<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">"active"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="eventos" class="level2">
-<h2 class="anchored" data-anchor-id="eventos">Eventos</h2>
-<p>El DOM permite reaccionar a acciones del usuario mediante eventos.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"click"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// código a ejecutar</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Flujo típico:</p>
-<pre><code>Usuario → Evento → JavaScript → DOM actualizado</code></pre>
-</section>
-<section id="ejemplo-contador-con-botón" class="level2">
-<h2 class="anchored" data-anchor-id="ejemplo-contador-con-botón">Ejemplo: contador con botón</h2>
-<section id="html" class="level3">
-<h3 class="anchored" data-anchor-id="html">HTML</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="ot"> id</span><span class="op">=</span><span class="st">"count"</span><span class="dt">&gt;</span>0<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"btn"</span><span class="dt">&gt;</span>Sumar 1<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="javascript" class="level3">
-<h3 class="anchored" data-anchor-id="javascript">JavaScript</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> count <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> countEl <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">"#count"</span>)<span class="op">;</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> btn <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">"#btn"</span>)<span class="op">;</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>btn<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"click"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  count<span class="op">++;</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  countEl<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> count<span class="op">;</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
+<section id="con-dependencias-específicas" class="level4">
+<h4 class="anchored" data-anchor-id="con-dependencias-específicas">3. Con dependencias específicas</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Se ejecuta cuando cambia contador"</span>)<span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>}<span class="op">,</span> [contador])<span class="op">;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Comportamiento:</strong></p>
+<ul>
+<li>Se ejecuta tras el primer render.</li>
+<li>Se vuelve a ejecutar cuando cambia alguna variable del array.</li>
+</ul>
+<p><strong>Interpretación conceptual:</strong></p>
+<p>El efecto depende del estado indicado.</p>
+<p>React compara el valor anterior con el nuevo y decide si debe ejecutar el efecto.</p>
 </section>
 </section>
-<section id="más-ejemplos" class="level2">
-<h2 class="anchored" data-anchor-id="más-ejemplos">Más ejemplos</h2>
-<p><a href="Ejemplos/Ej1.html">Ej1: Show input</a></p>
-<p><a href="Ejemplos/Ej2.html">Ej2: Par e Impar</a></p>
-<p><a href="Ejemplos/Ej3.html">Ej3: Toggle</a></p>
-<p><a href="Ejemplos/Ej4.html">Ej4: Creación dinámica</a></p>
-<p><a href="Ejemplos/Ej5.html">Ej5: Validación básica</a></p>
+</section>
+<section id="fetch" class="level2">
+<h2 class="anchored" data-anchor-id="fetch"><code>fetch()</code></h2>
+<p>Hasta ahora nuestros componentes eran completamente locales.</p>
+<p>Sin embargo, en aplicaciones reales necesitamos:</p>
+<ul>
+<li>Descargar datos<br>
+</li>
+<li>Conectarnos a servidores<br>
+</li>
+<li>Trabajar con APIs externas</li>
+</ul>
+<p>Para ello utilizamos <code>fetch()</code>.</p>
+<section id="ejemplo-mínimo-de-fetch" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-mínimo-de-fetch">Ejemplo mínimo de <code>fetch</code></h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch</span>(<span class="st">"https://pokeapi.co/api/v2/pokemon/1"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>(response <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">json</span>())</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>(data <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(data))<span class="op">;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Utiliza las <em>Promises</em></p>
+<p>Interpretación simple:</p>
+<ol type="1">
+<li>Se hace una petición a una URL<br>
+</li>
+<li>Se transforma la respuesta a formato JSON<br>
+</li>
+<li>Se accede a los datos</li>
+</ol>
+</section>
+<section id="fetch-dentro-de-useeffect" class="level3">
+<h3 class="anchored" data-anchor-id="fetch-dentro-de-useeffect"><code>fetch()</code> dentro de <code>useEffect</code></h3>
+<p>En React, lo habitual es realizar la descarga cuando el componente se monta.</p>
+<p>Para ello:</p>
+<ul>
+<li>Utilizamos <code>useEffect</code></li>
+<li>Añadimos array vacío <code>[]</code></li>
+<li>Guardamos los datos en el estado</li>
+</ul>
+</section>
+<section id="ejemplo-integrado" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-integrado">Ejemplo integrado</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { useState<span class="op">,</span> useEffect } <span class="im">from</span> <span class="st">"react"</span><span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Pokemon</span>() {</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [pokemon<span class="op">,</span> setPokemon] <span class="op">=</span> <span class="fu">useState</span>(<span class="kw">null</span>)<span class="op">;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fetch</span>(<span class="st">"https://pokeapi.co/api/v2/pokemon/1"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>(response <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">json</span>())</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>(data <span class="kw">=&gt;</span> <span class="fu">setPokemon</span>(data))<span class="op">;</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span> [])<span class="op">;</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>pokemon) <span class="cf">return </span><span class="kw">&lt;p&gt;</span>Cargando...<span class="kw">&lt;/p&gt;</span><span class="op">;</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;h2&gt;</span><span class="va">{</span>pokemon<span class="op">.</span><span class="at">name</span><span class="va">}</span><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;img</span> </span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>        <span class="ot">src</span><span class="op">=</span><span class="va">{</span>pokemon<span class="op">.</span><span class="at">sprites</span><span class="op">.</span><span class="at">front_default</span><span class="va">}</span> </span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>        <span class="ot">alt</span><span class="op">=</span><span class="va">{</span>pokemon<span class="op">.</span><span class="at">name</span><span class="va">}</span> </span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>      <span class="kw">/&gt;</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="flujo-conceptual" class="level3">
+<h3 class="anchored" data-anchor-id="flujo-conceptual">Flujo conceptual</h3>
+<ol type="1">
+<li>Render inicial<br>
+</li>
+<li>Se ejecuta <code>useEffect</code><br>
+</li>
+<li>Se lanza la petición<br>
+</li>
+<li>Se actualiza el estado<br>
+</li>
+<li>Nuevo render con los datos</li>
+</ol>
+</section>
+<section id="advertencia-importante" class="level3">
+<h3 class="anchored" data-anchor-id="advertencia-importante">Advertencia importante</h3>
+<p>Si eliminamos el array vacío:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fetch</span>(<span class="st">"https://pokeapi.co/api/v2/pokemon/1"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">then</span>(res <span class="kw">=&gt;</span> res<span class="op">.</span><span class="fu">json</span>())</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">then</span>(data <span class="kw">=&gt;</span> <span class="fu">setPokemon</span>(data))<span class="op">;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>El efecto se ejecutará en cada render.</p>
+<p>Como actualizar estado provoca render, se generará un bucle infinito.</p>
+<p><code>useEffect</code> conecta React con el exterior.<br>
+<code>fetch()</code> permite traer datos del exterior.<br>
+El estado vuelve a controlar el render.</p>
+<p>En la siguiente sección formalizaremos esto utilizando <code>async / await</code>.</p>
+</section>
+</section>
+<section id="async-y-await" class="level2">
+<h2 class="anchored" data-anchor-id="async-y-await"><code>async</code> y <code>await</code></h2>
+<p>Hasta ahora hemos utilizado <code>fetch()</code> con encadenamiento.</p>
+<p>Existe una forma más clara y estructurada de escribir código asíncrono:</p>
+<ul>
+<li><code>async</code></li>
+<li><code>await</code></li>
+</ul>
+<p>Su objetivo es hacer que el código sea más legible.</p>
+<section id="qué-significa-async" class="level3">
+<h3 class="anchored" data-anchor-id="qué-significa-async">¿Qué significa <code>async</code>?</h3>
+<ul>
+<li>Se coloca delante de una función</li>
+<li>Indica que la función trabajará con operaciones asíncronas</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">ejemplo</span>() {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Función asíncrona"</span>)<span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="qué-significa-await" class="level3">
+<h3 class="anchored" data-anchor-id="qué-significa-await">¿Qué significa <code>await</code>?</h3>
+<ul>
+<li>Solo puede utilizarse dentro de una función <code>async</code></li>
+<li>Detiene la ejecución hasta que la operación finaliza</li>
+<li>Hace que el código se lea de forma secuencial</li>
+</ul>
+</section>
+<section id="ejemplo-básico-con-fetch" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-básico-con-fetch">Ejemplo básico con <code>fetch</code></h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">obtenerPokemon</span>() {</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> response <span class="op">=</span> <span class="cf">await</span> <span class="fu">fetch</span>(</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://pokeapi.co/api/v2/pokemon/1"</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> data <span class="op">=</span> <span class="cf">await</span> response<span class="op">.</span><span class="fu">json</span>()<span class="op">;</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(data)<span class="op">;</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Interpretación conceptual:</p>
+<ol type="1">
+<li>Se realiza la petición</li>
+<li>Se espera la respuesta</li>
+<li>Se transforma a JSON</li>
+<li>Se trabaja con los datos</li>
+</ol>
+<p>El código se lee de arriba hacia abajo.</p>
+</section>
+<section id="async-await-dentro-de-useeffect" class="level3">
+<h3 class="anchored" data-anchor-id="async-await-dentro-de-useeffect"><code>async / await</code> dentro de <code>useEffect</code></h3>
+<p>En React, lo habitual es declarar una función interna y ejecutarla.</p>
+</section>
+<section id="ejemplo-completo" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-completo">Ejemplo completo</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { useState<span class="op">,</span> useEffect } <span class="im">from</span> <span class="st">"react"</span><span class="op">;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Pokemon</span>() {</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [pokemon<span class="op">,</span> setPokemon] <span class="op">=</span> <span class="fu">useState</span>(<span class="kw">null</span>)<span class="op">;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">async</span> <span class="kw">function</span> <span class="fu">fetchData</span>() {</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> response <span class="op">=</span> <span class="cf">await</span> <span class="fu">fetch</span>(</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"https://pokeapi.co/api/v2/pokemon/1"</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>      )<span class="op">;</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> data <span class="op">=</span> <span class="cf">await</span> response<span class="op">.</span><span class="fu">json</span>()<span class="op">;</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">setPokemon</span>(data)<span class="op">;</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fetchData</span>()<span class="op">;</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span> [])<span class="op">;</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>pokemon) <span class="cf">return </span><span class="kw">&lt;p&gt;</span>Cargando...<span class="kw">&lt;/p&gt;</span><span class="op">;</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;h2&gt;</span><span class="va">{</span>pokemon<span class="op">.</span><span class="at">name</span><span class="va">}</span><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;img</span> </span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>        <span class="ot">src</span><span class="op">=</span><span class="va">{</span>pokemon<span class="op">.</span><span class="at">sprites</span><span class="op">.</span><span class="at">front_default</span><span class="va">}</span> </span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>        <span class="ot">alt</span><span class="op">=</span><span class="va">{</span>pokemon<span class="op">.</span><span class="at">name</span><span class="va">}</span> </span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>      <span class="kw">/&gt;</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="por-qué-no-hacer-directamente" class="level3">
+<h3 class="anchored" data-anchor-id="por-qué-no-hacer-directamente">¿Por qué no hacer directamente?</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">useEffect</span>(<span class="kw">async</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">...</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>}<span class="op">,</span> [])<span class="op">;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Porque <code>useEffect</code> no debe recibir una función asíncrona directamente.</p>
+<p>Por eso declaramos la función dentro y luego la ejecutamos.</p>
+</section>
+<section id="flujo-mental-con-async-await" class="level3">
+<h3 class="anchored" data-anchor-id="flujo-mental-con-async-await">Flujo mental con <code>async / await</code></h3>
+<ol type="1">
+<li>Render inicial<br>
+</li>
+<li>Se ejecuta <code>useEffect</code><br>
+</li>
+<li>Se llama a la función asíncrona<br>
+</li>
+<li><code>await</code> espera la respuesta<br>
+</li>
+<li>Se actualiza el estado<br>
+</li>
+<li>Nuevo render</li>
+</ol>
+<p><code>async / await</code> no cambia lo que hace el programa.</p>
+<p>Solo cambia la forma de escribirlo:</p>
+<p>Más claro.<br>
+Más estructurado.<br>
+Más fácil de mantener.</p>
+</section>
+</section>
+<section id="ejemplo-con-la-pokeapi" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-con-la-pokeapi">Ejemplo con la Pokeapi</h2>
+<p><a href="https://pokeapi.co/">Poke-API</a></p>
+<p><a href="./PokeAPI-Example.zip">Download Code</a></p>
 
 
 </section>

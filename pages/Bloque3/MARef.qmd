@@ -1,0 +1,21 @@
+---
+title: "MA: *Uncontrolled fields* y `useRef`"
+author: "Javier Ribal del Río"
+date: "2025-03-02"
+date-modified: today
+affiliation: "Hyperloop UPV"
+---
+
+Por el momento hemos visto dos *hooks* `useState` y `useEffect`, pero recordemos que en React existen más tipos de *hooks* que por ser menos útiles y debido a la falta de tiempo no son explicados, no obstante si hay alguno digno de mención es `useRef` o las referencias. 
+
+Una `ref` es una referencia mutable que permite acceder directamente a un elemento del DOM o almacenar un valor persistente sin provocar un re-render del componente. El siguiente video ilustra su uso. Es un poco largo pero sirve para repasar los otros hooks.
+
+{{< video https://www.youtube.com/watch?v=t2ypzz6gJm0 >}}
+
+---
+
+Con las `ref` podemos introducir los *uncontrolled fields* que nos permiten trabajar de otra forma con los formularios.
+
+{{< video https://www.youtube.com/watch?v=X2O7Wfmkuzw >}}
+
+Se prefiere la segunda implementación (la que no utiliza referencias) sobre la primera.

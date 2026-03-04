@@ -641,3 +641,10 @@ Solo cambia la forma de escribirlo:
 Más claro.  
 Más estructurado.  
 Más fácil de mantener.
+
+
+## Ejemplo con la Pokeapi
+
+[Poke-API](https://pokeapi.co/)
+
+[Download Code](./PokeAPI-Example.zip)
