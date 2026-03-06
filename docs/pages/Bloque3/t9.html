@@ -8,7 +8,7 @@
 
 <meta name="author" content="Javier Ribal del Río">
 
-<title>Preparación del entorno de trabajo – Training Center SW</title>
+<title>T6: Romancero Gitano I – Training Center SW</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -78,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../style/main.css">
 </head>
 
-<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -243,370 +278,53 @@ ul.task-list li input[type="checkbox"] {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/Bloque1/bloque1.html">Bloque I Introducción</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque1/entorno.html">Semana 0</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque1/entorno.html">Preparación del entorno de trabajo</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
-</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
-      <a href="../../index.html" class="sidebar-logo-link">
-      <img src="../../public/logo-text.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="../../public/logo-text.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
-      </a>
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../../">Training Center SW</a> 
-        <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
-</div>
-    </div>
-      </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Programa TC</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../pages/Bloque1/bloque1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bloque I Introducción</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Semana 0</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque1/entorno.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Preparación del entorno de trabajo</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">Semana 1</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque1/html.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">HTML</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque1/t1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T1: Web de HL I</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque1/MAhtml2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">MA: Mas HTML</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque1/t1a.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TA1: Mi CV I</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Semana 2</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque1/css.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CSS</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque1/t2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T2: Web de HL II</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque1/MAcss.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">MA: Selectores y Pseudoselectores</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque1/t2a.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TA2: Mi CV II</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
- <span class="menu-text">Bloque II Programación</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">Repaso Intensivo</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque2/intensivo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Repaso Intensivo JS</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque2/ti.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TI: Ejercicios JS</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque2/MAclases.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">MA: Clases ES6</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque2/tia.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TAI: La objetización de las personas</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
- <span class="menu-text">Bloque III Interacción</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
- <span class="menu-text">Semana 6</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque3/DOM.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">DOM</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque3/t6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T6: Romancero Gitano I</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque3/MAcss2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">MA: CSS Flex y CSS</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
- <span class="menu-text">Semana 7</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque3/ReactI.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">React I</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque3/ps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Proyecto Subsistema</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
- <span class="menu-text">Semana 9</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque3/Intermedio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">React III</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque3/MARef.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">MA: <em>Uncontrolled fields</em> y <code>useRef</code></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
- <span class="menu-text">Semana 10</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
-<<<<<<< HEAD
-=======
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque3/ReactIV.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">React IV</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
->>>>>>> 8e10774 (feat: explicacion semana 10 (#4))
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque3/ReactIV.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">React IV</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque3/t10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T10: Quiz app!</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Bloque IV Comunicación</span></span>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/rubric.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rúbrica de evaluación</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
-<p><img src="https://i.imgur.com/jbGUd7N.png" class="img-fluid"><br><br><br> © Javier Ribal del Río <br> 2025 - Hyperloop UPV</p>
-</div></div></nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#ide" id="toc-ide" class="nav-link active" data-scroll-target="#ide">IDE</a>
+  <li><a href="#objetivo-de-la-tarea" id="toc-objetivo-de-la-tarea" class="nav-link active" data-scroll-target="#objetivo-de-la-tarea">Objetivo de la tarea</a></li>
+  <li><a href="#estructura-html" id="toc-estructura-html" class="nav-link" data-scroll-target="#estructura-html">Estructura HTML</a></li>
+  <li><a href="#javascript" id="toc-javascript" class="nav-link" data-scroll-target="#javascript">JavaScript</a>
   <ul>
-  <li><a href="#qué-es-una-ide" id="toc-qué-es-una-ide" class="nav-link" data-scroll-target="#qué-es-una-ide">¿Qué es una IDE?</a></li>
-  <li><a href="#cuántas-ide-existen" id="toc-cuántas-ide-existen" class="nav-link" data-scroll-target="#cuántas-ide-existen">¿Cuántas IDE existen?</a></li>
-  <li><a href="#qué-ide-utilizaremos-nosotros" id="toc-qué-ide-utilizaremos-nosotros" class="nav-link" data-scroll-target="#qué-ide-utilizaremos-nosotros">¿Qué IDE utilizaremos nosotros?</a>
-  <ul class="collapse">
-  <li><a href="#instalación-de-vscode" id="toc-instalación-de-vscode" class="nav-link" data-scroll-target="#instalación-de-vscode">Instalación de VScode</a></li>
-  <li><a href="#familiarizarse-con-vscode" id="toc-familiarizarse-con-vscode" class="nav-link" data-scroll-target="#familiarizarse-con-vscode">Familiarizarse con VSCode</a></li>
+  <li><a href="#datos" id="toc-datos" class="nav-link" data-scroll-target="#datos">Datos</a></li>
+  <li><a href="#manipulación-del-dom" id="toc-manipulación-del-dom" class="nav-link" data-scroll-target="#manipulación-del-dom">Manipulación del DOM</a></li>
   </ul></li>
-  <li><a href="#extensiones" id="toc-extensiones" class="nav-link" data-scroll-target="#extensiones">Extensiones</a>
-  <ul class="collapse">
-  <li><a href="#liveserver" id="toc-liveserver" class="nav-link" data-scroll-target="#liveserver">LiveServer</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#node.js-y-npm" id="toc-node.js-y-npm" class="nav-link" data-scroll-target="#node.js-y-npm">Node.JS y NPM</a>
+  <li><a href="#css" id="toc-css" class="nav-link" data-scroll-target="#css">CSS</a>
   <ul>
-  <li><a href="#qué-es-node-js" id="toc-qué-es-node-js" class="nav-link" data-scroll-target="#qué-es-node-js">¿Qué es node JS?</a></li>
-  <li><a href="#qué-es-npm" id="toc-qué-es-npm" class="nav-link" data-scroll-target="#qué-es-npm">¿Qué es NPM?</a></li>
+  <li><a href="#palabras-clave-y-colores-asociados" id="toc-palabras-clave-y-colores-asociados" class="nav-link" data-scroll-target="#palabras-clave-y-colores-asociados">Palabras clave y colores asociados</a></li>
   </ul></li>
-  <li><a href="#git-y-github" id="toc-git-y-github" class="nav-link" data-scroll-target="#git-y-github">Git y GitHub</a>
+  <li><a href="#extra-opcional-símbolo-aurora" id="toc-extra-opcional-símbolo-aurora" class="nav-link" data-scroll-target="#extra-opcional-símbolo-aurora">Extra opcional: símbolo <em>aurora</em> 🌈</a>
   <ul>
-  <li><a href="#qué-es-git" id="toc-qué-es-git" class="nav-link" data-scroll-target="#qué-es-git">¿Qué es Git?</a></li>
-  <li><a href="#qué-es-github" id="toc-qué-es-github" class="nav-link" data-scroll-target="#qué-es-github">¿Qué es GitHub?</a></li>
-  <li><a href="#git-frente-github" id="toc-git-frente-github" class="nav-link" data-scroll-target="#git-frente-github">Git frente GitHub</a></li>
-  <li><a href="#uso-de-git-y-github" id="toc-uso-de-git-y-github" class="nav-link" data-scroll-target="#uso-de-git-y-github">Uso de Git y GitHub</a></li>
-  <li><a href="#instalación-de-git-y-cuenta-de-github" id="toc-instalación-de-git-y-cuenta-de-github" class="nav-link" data-scroll-target="#instalación-de-git-y-cuenta-de-github">Instalación de Git y Cuenta de GitHub</a></li>
-  <li><a href="#diagrama-de-trabajo-de-git" id="toc-diagrama-de-trabajo-de-git" class="nav-link" data-scroll-target="#diagrama-de-trabajo-de-git">Diagrama de trabajo de Git</a>
+  <li><a href="#css-necesario-para-el-extra" id="toc-css-necesario-para-el-extra" class="nav-link" data-scroll-target="#css-necesario-para-el-extra">CSS necesario para el extra</a></li>
+  </ul></li>
+  <li><a href="#consejos" id="toc-consejos" class="nav-link" data-scroll-target="#consejos">Consejos</a>
+  <ul>
+  <li><a href="#centrado-de-la-página-layout-clásico" id="toc-centrado-de-la-página-layout-clásico" class="nav-link" data-scroll-target="#centrado-de-la-página-layout-clásico">Centrado de la página (layout clásico)</a></li>
+  <li><a href="#animación-del-cambio-de-color" id="toc-animación-del-cambio-de-color" class="nav-link" data-scroll-target="#animación-del-cambio-de-color">Animación del cambio de color</a></li>
+  <li><a href="#búsqueda-de-una-palabra" id="toc-búsqueda-de-una-palabra" class="nav-link" data-scroll-target="#búsqueda-de-una-palabra">Búsqueda de una palabra</a></li>
+  <li><a href="#generación-del-color-aleatorio" id="toc-generación-del-color-aleatorio" class="nav-link" data-scroll-target="#generación-del-color-aleatorio">Generación del color aleatorio</a></li>
+  <li><a href="#conteo-versos-y-estrofas" id="toc-conteo-versos-y-estrofas" class="nav-link" data-scroll-target="#conteo-versos-y-estrofas">Conteo versos y estrofas</a>
   <ul class="collapse">
-  <li><a href="#git-en-vscode" id="toc-git-en-vscode" class="nav-link" data-scroll-target="#git-en-vscode">Git en VScode</a></li>
+  <li><a href="#conteo-de-versos" id="toc-conteo-de-versos" class="nav-link" data-scroll-target="#conteo-de-versos">Conteo de versos</a></li>
+  <li><a href="#conteo-de-estrofas" id="toc-conteo-de-estrofas" class="nav-link" data-scroll-target="#conteo-de-estrofas">Conteo de estrofas</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#recomendaciones-para-afrontar-la-tarea" id="toc-recomendaciones-para-afrontar-la-tarea" class="nav-link" data-scroll-target="#recomendaciones-para-afrontar-la-tarea">Recomendaciones para afrontar la tarea</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="entorno.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="entorno-reveal.html"><i class="bi bi-file-slides"></i>Presentación</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="t9.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/Bloque1/bloque1.html">Bloque I Introducción</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque1/entorno.html">Semana 0</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque1/entorno.html">Preparación del entorno de trabajo</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Preparación del entorno de trabajo</h1>
-<p class="subtitle lead">Instalación del VSCode, Extensión LiveServer, NodeJS, Git y GitHub</p>
+<h1 class="title">T6: Romancero Gitano I</h1>
 </div>
 
 
@@ -623,14 +341,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">11 de octubre de 2025</p>
+      <p class="date">19 de diciembre de 2025</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">7 de marzo de 2026</p>
+      <p class="date-modified">4 de marzo de 2026</p>
     </div>
   </div>
     
@@ -641,132 +359,196 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Contenido</strong></p>
+<section id="objetivo-de-la-tarea" class="level2">
+<h2 class="anchored" data-anchor-id="objetivo-de-la-tarea">Objetivo de la tarea</h2>
+<p>El objetivo de esta tarea es aplicar los conceptos básicos de HTML, CSS y JavaScript (DOM) para crear una página web interactiva que muestre poemas del <em>Romancero gitano</em> de Federico García Lorca y modifique su apariencia visual en función de las diferentes metáforas.</p>
+<p><a href="romancero_gitano_web_interactiva.html">Resultado esperado</a></p>
+</section>
+<section id="estructura-html" class="level2">
+<h2 class="anchored" data-anchor-id="estructura-html">Estructura HTML</h2>
+<p>El documento HTML debe:</p>
 <ul>
-<li>Concepto de IDE</li>
-<li>Instalación del <strong>Visual Studio Code</strong> (VSCode)</li>
-<li>Configuración del VSCode, extensión LiveServer</li>
-<li>Instalación de NodeJS y <code>npm</code></li>
-<li>Introducción a Git y GitHub</li>
-</ul>
-<section id="ide" class="level2">
-<h2 class="anchored" data-anchor-id="ide">IDE</h2>
-<section id="qué-es-una-ide" class="level3">
-<h3 class="anchored" data-anchor-id="qué-es-una-ide">¿Qué es una IDE?</h3>
-<p>Las Integrated development environment (IDE) son aplicaciones diseñadas para facilitar la programación a los programadores.</p>
-<p>Aunque no hay una lista de características propias de las IDE, suelen tener características comunes, por ejemplo:</p>
-<ul>
-<li><em>Debugger</em> integrado en la interfaz</li>
-<li>Gestor de archivos</li>
-<li><em>Editor de código inteligente</em>: autocompletados</li>
-</ul>
-</section>
-<section id="cuántas-ide-existen" class="level3">
-<h3 class="anchored" data-anchor-id="cuántas-ide-existen">¿Cuántas IDE existen?</h3>
-<ul>
-<li>Android Studio</li>
-<li>RStudio</li>
-<li>Eclipse</li>
-</ul>
-</section>
-<section id="qué-ide-utilizaremos-nosotros" class="level3">
-<h3 class="anchored" data-anchor-id="qué-ide-utilizaremos-nosotros">¿Qué IDE utilizaremos nosotros?</h3>
-<p>Principalmente trabajaremos con VSCode una IDE de proposito general que configuraremos para el desarrollo frontend</p>
-<section id="instalación-de-vscode" class="level4">
-<h4 class="anchored" data-anchor-id="instalación-de-vscode">Instalación de VScode</h4>
-<p><img src="../../img/S0-01.png" class="img-fluid"></p>
-<p><a href="https://code.visualstudio.com/download">Enlace</a></p>
-</section>
-<section id="familiarizarse-con-vscode" class="level4">
-<h4 class="anchored" data-anchor-id="familiarizarse-con-vscode">Familiarizarse con VSCode</h4>
-<p><img src="../../img/S0-02.png" class="img-fluid"></p>
-<p><strong>Barra lateral:</strong></p>
-<ul>
-<li>Explorador de archivos</li>
-<li>Menú de Git</li>
-<li>Menú de extensiones</li>
-<li>Buscar</li>
-<li><em>Debugger</em></li>
-</ul>
-<p><strong>Editor o área de edición:</strong> componente más importante de la IDE, lugar donde se escribe el código.</p>
-</section>
-</section>
-<section id="extensiones" class="level3">
-<h3 class="anchored" data-anchor-id="extensiones">Extensiones</h3>
-<p>Las extensiones son aplicaciones software desarolladas por empresas o por particulares para modificar o agregar una nueva funcionalidad a las IDE. Pueden ir desde pequeñas modificaciones del tema o de la UI, o incorporar nuevas funcionalidades como la interacción con bases de datos.</p>
-<section id="liveserver" class="level4">
-<h4 class="anchored" data-anchor-id="liveserver">LiveServer</h4>
-<p>Nosotros para el transcurso del curso utilizaremos la extensión Liveserver que nos permitirá desplegar comodamente un pequeño servidor para la programación con HTML (Ahondaremos más la próxima semana)</p>
-<section id="instalación-de-liveserver" class="level5">
-<h5 class="anchored" data-anchor-id="instalación-de-liveserver">Instalación de LiveServer</h5>
-<p><img src="../../img/S0-03.png" class="img-fluid"></p>
+<li>Estar correctamente estructurado (<code>&lt;!DOCTYPE&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>).</li>
+<li>Contener un <strong>contenedor principal</strong> centrado horizontalmente.</li>
+<li>Incluir, en este orden:
 <ol type="1">
-<li>Entrar en el menú de extensiones</li>
-<li>Buscar por <em>liveserver</em></li>
-<li>Seleccionar extensión</li>
-<li>Instalar</li>
+<li>Un elemento para mostrar <strong>información métrica</strong> del poema (número de estrofas y versos).</li>
+<li>Un elemento para el <strong>título del poema</strong>.</li>
+<li>Un elemento para el <strong>texto del poema</strong>, respetando los saltos de verso utilizando la etiqueta <code>&lt;pre&gt;</code>.</li>
+<li>Un <strong>botón</strong> que permita cambiar de poema.</li>
+</ol></li>
+</ul>
+<p>No debe utilizarse ningún <em>framework</em> ni librería externa.</p>
+</section>
+<section id="javascript" class="level2">
+<h2 class="anchored" data-anchor-id="javascript">JavaScript</h2>
+<section id="datos" class="level3">
+<h3 class="anchored" data-anchor-id="datos">Datos</h3>
+<p>En JavaScript se debe definir un <strong>array de objetos</strong>, donde cada objeto represente un poema y tenga al menos:</p>
+<ul>
+<li>Un título.</li>
+<li>El texto del poema como una cadena de texto, usando saltos de línea para los versos.</li>
+</ul>
+<p>El cambio de poema debe hacerse recorriendo este array de forma cíclica (cola circular) mediante el botón.</p>
+<p><a href="poemas.js">Descargar poemas</a> (click derecho guardar enlace como)</p>
+</section>
+<section id="manipulación-del-dom" class="level3">
+<h3 class="anchored" data-anchor-id="manipulación-del-dom">Manipulación del DOM</h3>
+<p>El comportamiento de la página debe implementarse <strong>exclusivamente con DOM nativo</strong>, cumpliendo lo siguiente:</p>
+<ul>
+<li>Todas las funciones deben declararse como <strong>arrow functions</strong>.</li>
+<li>Al pulsar el botón:
+<ul>
+<li>Se actualiza el título.</li>
+<li>Se actualiza el texto del poema.</li>
+<li>Se modifica el formato del fondo.</li>
+<li>Se recalculan y muestran:
+<ul>
+<li>Número de versos.</li>
+<li>Número de estrofas (bloques separados por líneas en blanco).</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>El cálculo debe realizarse a partir del texto del poema, no con valores predefinidos.</p>
+</section>
+</section>
+<section id="css" class="level2">
+<h2 class="anchored" data-anchor-id="css">CSS</h2>
+<p>Lorca utiliza las metáforas y la alegoría como elemento principal sobre el que construye sus poemas, al analizar profundamente descubrimos que siempre recurre a las mismas metáforas.</p>
+<p>El color no se utiliza aquí solo como elemento decorativo, sino como un recurso semántico: cada color representa un símbolo literario presente en el poema.</p>
+<p>Desde el punto de vista técnico: - Los <strong>colores de fondo y de texto</strong> deben definirse en <strong>clases CSS</strong>. - JavaScript no decide colores, únicamente decide qué clase aplicar según el contenido del poema.</p>
+<section id="palabras-clave-y-colores-asociados" class="level3">
+<h3 class="anchored" data-anchor-id="palabras-clave-y-colores-asociados">Palabras clave y colores asociados</h3>
+<p>Se debe detectar el texto del poema las siguientes <strong>palabras clave</strong> y aplicar el <strong>color de fondo correspondiente</strong>:</p>
+<ul>
+<li><strong>guardia civil</strong> → fondo <strong>verde militar</strong></li>
+<li><strong>sangre</strong> → fondo <strong>granate oscuro</strong></li>
+<li><strong>caballo</strong> → fondo <strong>color tierra</strong></li>
+<li><strong>cuchillo / navaja</strong> → fondo <strong>plateado</strong></li>
+</ul>
+<p>El color del texto debe elegirse siempre de forma que exista <strong>contraste suficiente</strong> con el fondo y se garantice la legibilidad.</p>
+<p>Si el poema contiene varias palabras clave, solo debe aplicarse <strong>un único estilo</strong>, siguiendo un orden de prioridad definido previamente.</p>
+<p>Si el poema no contiene ninguna de estas palabras, se aplicará un <strong>estilo por defecto</strong> con colores aleatorios.</p>
+</section>
+</section>
+<section id="extra-opcional-símbolo-aurora" class="level2">
+<h2 class="anchored" data-anchor-id="extra-opcional-símbolo-aurora">Extra opcional: símbolo <em>aurora</em> 🌈</h2>
+<p>De forma <strong>voluntaria</strong>, se puede añadir el símbolo <strong><code>aurora</code></strong>, que tendrá <strong>prioridad absoluta sobre todos los demás</strong>.</p>
+<p>Cuando el poema contenga la palabra <code>aurora</code>, el fondo debe mostrar un <strong>degradado animado</strong>.</p>
+<section id="css-necesario-para-el-extra" class="level3">
+<h3 class="anchored" data-anchor-id="css-necesario-para-el-extra">CSS necesario para el extra</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.aurora</span> {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span><span class="ch">:</span> <span class="fu">linear-gradient(</span><span class="dv">120</span><span class="dt">deg</span><span class="op">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cn">#ff005d</span><span class="op">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cn">#ff9f1c</span><span class="op">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cn">#ffee32</span><span class="op">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cn">#3cff00</span><span class="op">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cn">#00e5ff</span><span class="op">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cn">#7a00ff</span><span class="op">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cn">#ff00c8</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">)</span><span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-size</span><span class="ch">:</span> <span class="dv">600</span><span class="dt">%</span> <span class="dv">600</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">animation</span><span class="ch">:</span> <span class="dv">aurora 10</span><span class="dt">s</span> <span class="dv">linear</span> <span class="dv">infinite</span><span class="op">;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">black</span><span class="op">;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="im">@keyframes</span> aurora {</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="dv">0%</span>   { <span class="kw">background-position</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">%</span> <span class="dv">50</span><span class="dt">%</span><span class="op">;</span> }</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="dv">50%</span>  { <span class="kw">background-position</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span> <span class="dv">50</span><span class="dt">%</span><span class="op">;</span> }</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="dv">100%</span> { <span class="kw">background-position</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">%</span> <span class="dv">50</span><span class="dt">%</span><span class="op">;</span> }</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="consejos" class="level2">
+<h2 class="anchored" data-anchor-id="consejos">Consejos</h2>
+<section id="centrado-de-la-página-layout-clásico" class="level3">
+<h3 class="anchored" data-anchor-id="centrado-de-la-página-layout-clásico">Centrado de la página (layout clásico)</h3>
+<p>Toda la página debe estar centrada <strong>horizontalmente</strong>.</p>
+<p>El centrado se consigue mediante:</p>
+<ul>
+<li>Un contenedor con un ancho máximo definido.</li>
+<li>Márgenes automáticos a izquierda y derecha.</li>
+</ul>
+<p>Desde el punto de vista conceptual:</p>
+<ul>
+<li><code>margin: 0 auto</code> <strong>no centra texto</strong>, centra <strong>bloques</strong>.</li>
+<li>El navegador reparte automáticamente el espacio sobrante a ambos lados del contenedor.</li>
+</ul>
+</section>
+<section id="animación-del-cambio-de-color" class="level3">
+<h3 class="anchored" data-anchor-id="animación-del-cambio-de-color">Animación del cambio de color</h3>
+<p>Para evitar que los cambios de color sean bruscos, se utiliza la propiedad <strong><code>transition</code></strong> en CSS.</p>
+<p>Esta propiedad indica al navegador que los cambios en determinadas propiedades visuales deben hacerse de forma progresiva.</p>
+<p>Ejemplo conceptual:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>body {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">transition</span><span class="ch">:</span> <span class="dv">background-color 0.6</span><span class="dt">s</span><span class="op">,</span> <span class="dv">color</span> <span class="dv">0.6</span><span class="dt">s</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Gracias a esta transición: - Cuando JavaScript cambia una clase o un color, - el navegador interpola automáticamente entre el color anterior y el nuevo.</p>
+<p>No es necesario programar animaciones en JavaScript: <strong>CSS se encarga de todo el efecto visual</strong>.</p>
+</section>
+<section id="búsqueda-de-una-palabra" class="level3">
+<h3 class="anchored" data-anchor-id="búsqueda-de-una-palabra">Búsqueda de una palabra</h3>
+<p>Para buscar si determinada palabra determinada se debe utilizar la función <code>includes</code> de la clase string</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">"hoy nieva"</span><span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>texto<span class="op">.</span><span class="fu">includes</span>(<span class="st">"nieva"</span>)<span class="op">;</span>    <span class="co">//TRUE</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>texto<span class="op">.</span><span class="fu">includes</span>(<span class="st">"llueve"</span>)<span class="op">;</span>   <span class="co">//FALSE</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="generación-del-color-aleatorio" class="level3">
+<h3 class="anchored" data-anchor-id="generación-del-color-aleatorio">Generación del color aleatorio</h3>
+<p>Para la generacióndel color aleatorio de puede utilizar la siguiente función</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> randomColor <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="st">'#'</span> <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">16777215</span>)<span class="op">.</span><span class="fu">toString</span>(<span class="dv">16</span>)<span class="op">;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="conteo-versos-y-estrofas" class="level3">
+<h3 class="anchored" data-anchor-id="conteo-versos-y-estrofas">Conteo versos y estrofas</h3>
+<p>El recuento de versos y estrofas debe hacerse <strong>a partir del texto del poema</strong>, no con valores escritos a mano. A continuación se dan algunas <strong>pistas técnicas</strong> para abordar este problema.</p>
+<section id="conteo-de-versos" class="level4">
+<h4 class="anchored" data-anchor-id="conteo-de-versos">Conteo de versos</h4>
+<p>Un verso puede considerarse, a efectos prácticos en esta tarea, como <strong>una línea de texto no vacía</strong>.</p>
+<p>Una estrategia habitual consiste en: - Separar el texto por saltos de línea. - Eliminar las líneas vacías o formadas solo por espacios. - Contar cuántas líneas válidas quedan.</p>
+<p>Ejemplo orientativo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> versos <span class="op">=</span> texto</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">split</span>(<span class="st">'</span><span class="sc">\n</span><span class="st">'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filter</span>(linea <span class="kw">=&gt;</span> linea<span class="op">.</span><span class="fu">trim</span>() <span class="op">!==</span> <span class="st">''</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="at">length</span><span class="op">;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Este enfoque es suficiente para la mayoría de los poemas del <em>Romancero gitano</em> y evita errores frecuentes.</p>
+</section>
+<section id="conteo-de-estrofas" class="level4">
+<h4 class="anchored" data-anchor-id="conteo-de-estrofas">Conteo de estrofas</h4>
+<p>Una estrofa puede entenderse como un <strong>bloque de versos separado de otros bloques por una línea en blanco</strong>.</p>
+<p>Una posible estrategia es: - Separar el texto usando dos (o más) saltos de línea consecutivos. - Eliminar bloques vacíos. - Contar los bloques resultantes.</p>
+<p>Ejemplo orientativo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> estrofas <span class="op">=</span> texto</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">split</span>(<span class="ss">/</span><span class="sc">\n\s*\n</span><span class="ss">/</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filter</span>(bloque <span class="kw">=&gt;</span> bloque<span class="op">.</span><span class="fu">trim</span>() <span class="op">!==</span> <span class="st">''</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="at">length</span><span class="op">;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Entrega:</strong> un único archivo HTML funcional.</p>
+</section>
+</section>
+</section>
+<section id="recomendaciones-para-afrontar-la-tarea" class="level2">
+<h2 class="anchored" data-anchor-id="recomendaciones-para-afrontar-la-tarea">Recomendaciones para afrontar la tarea</h2>
+<p>Al enfrentarnos a un proyecto de cierta complejitud, el como afrontarlo resulta de cricial para el desarollo del mismo por ello a a continuación dejo un esquema de implementación modular. Sería mejor no utilizarlo, pero puede ser un buen punto de partida si no se sabe como empezar la app, no es el único proceso de implementación válido ni es más correcto que cualquier otro</p>
+<ol type="1">
+<li>Estructura de HTML básica contadores de versos y estrofas <em>placeholders</em> de poema y título y botón</li>
+<li>Formateo CSS parte estática: centrado, tamaño (todo lo que no sea color)</li>
+<li>Definir clases con colores predeterminados</li>
+<li>Lógica interna con JS</li>
 </ol>
 <ul>
-<li>Al concluir la instalación debería de aparecer en la parte derecha de la barra de estado (barra interior)</li>
+<li>Buscar palabra</li>
+<li>Contar estrofas</li>
+<li>Conteo versos</li>
+<li>Selección de clase</li>
+<li>Generar color aleatorio si procede</li>
 </ul>
-</section>
-</section>
-</section>
-</section>
-<section id="node.js-y-npm" class="level2">
-<h2 class="anchored" data-anchor-id="node.js-y-npm">Node.JS y NPM</h2>
-<section id="qué-es-node-js" class="level3">
-<h3 class="anchored" data-anchor-id="qué-es-node-js">¿Qué es node JS?</h3>
-<p><strong>Node.js</strong> es un <strong>entorno de ejecución de JavaScript</strong> basado en el motor V8 de Google Chrome.<br>
-Permite ejecutar código JavaScript directamente en el sistema operativo, sin depender de un navegador.<br>
-De este modo, el mismo lenguaje puede usarse tanto en el frontend como en el backend.</p>
-</section>
-<section id="qué-es-npm" class="level3">
-<h3 class="anchored" data-anchor-id="qué-es-npm">¿Qué es NPM?</h3>
-<p><strong>NPM (Node Package Manager)</strong> es el gestor de paquetes de Node.js.<br>
-Facilita la instalación, actualización y gestión de librerías que amplían las funcionalidades de los proyectos.</p>
-<p>Descarga node y npm <a href="https://nodejs.org">nodejs.org</a></p>
-</section>
-</section>
-<section id="git-y-github" class="level2">
-<h2 class="anchored" data-anchor-id="git-y-github">Git y GitHub</h2>
-<section id="qué-es-git" class="level3">
-<h3 class="anchored" data-anchor-id="qué-es-git">¿Qué es Git?</h3>
-<p>Git es un sistema de control de versiones distribuido. Permite registrar los cambios de un proyecto, volver a versiones anteriores y trabajar de forma colaborativa sin sobrescribir el trabajo de otros. Cada usuario dispone de una copia completa del repositorio, lo que facilita el trabajo sin conexión.</p>
-</section>
-<section id="qué-es-github" class="level3">
-<h3 class="anchored" data-anchor-id="qué-es-github">¿Qué es GitHub?</h3>
-<p>GitHub es una plataforma en la nube que utiliza Git para almacenar y gestionar proyectos. Permite compartir código, colaborar con otros desarrolladores y mantener un control de versiones centralizado.</p>
-</section>
-<section id="git-frente-github" class="level3">
-<h3 class="anchored" data-anchor-id="git-frente-github">Git frente GitHub</h3>
-<ul>
-<li><p>Git es la herramienta de control de versiones.(Software Libre, Linux Fundation)</p></li>
-<li><p>GitHub es la plataforma online donde se alojan los repositorios y se facilita el trabajo en equipo. (Coporativa Microsoft)</p></li>
-</ul>
-</section>
-<section id="uso-de-git-y-github" class="level3">
-<h3 class="anchored" data-anchor-id="uso-de-git-y-github">Uso de Git y GitHub</h3>
-<p>En Hyperloop UPV, tanto en los subsistemas de Software y Firmware utilizamos GitHub como herramienta de gestión de código.</p>
-<p>Nosotros en el TC, también trataremos de facilitarnos con esta herramienta</p>
-</section>
-<section id="instalación-de-git-y-cuenta-de-github" class="level3">
-<h3 class="anchored" data-anchor-id="instalación-de-git-y-cuenta-de-github">Instalación de Git y Cuenta de GitHub</h3>
-<ul>
-<li><a href="git-scm.com/install/">Instalación de Git</a></li>
-<li><a href="https://github.com/">Cuenta de GitHub</a></li>
-</ul>
-</section>
-<section id="diagrama-de-trabajo-de-git" class="level3">
-<h3 class="anchored" data-anchor-id="diagrama-de-trabajo-de-git">Diagrama de trabajo de Git</h3>
-<p><img src="../../img/mapa-git.png" class="img-fluid"></p>
-<section id="git-en-vscode" class="level4">
-<h4 class="anchored" data-anchor-id="git-en-vscode">Git en VScode</h4>
-<p><img src="../../img/S0-04.png" class="img-fluid"></p>
+<ol start="5" type="1">
+<li>Integración con DOM</li>
+</ol>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -150,11 +150,71 @@
     ]
   },
   {
+<<<<<<< HEAD
+=======
+    "objectID": "pages/Bloque3/dom.html#qué-es-el-dom",
+    "href": "pages/Bloque3/dom.html#qué-es-el-dom",
+    "title": "DOM",
+    "section": "¿Qué es el DOM?",
+    "text": "¿Qué es el DOM?\nEl DOM (Document Object Model) es la representación en memoria que el navegador crea a partir del HTML.\n\nEl HTML es estático\nEl DOM es dinámico\nJavaScript interactúa con el DOM, no con el HTML original\n\n\nEl DOM es la página web viva dentro del navegador."
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#el-dom-como-árbol",
+    "href": "pages/Bloque3/dom.html#el-dom-como-árbol",
+    "title": "DOM",
+    "section": "El DOM como árbol",
+    "text": "El DOM como árbol\nEl DOM tiene estructura de árbol (grafo):\n\nCada etiqueta HTML es un nodo\nLos nodos tienen relaciones (padre, hijos, hermanos)\n\nEjemplo:\n&lt;body&gt;\n  &lt;h1&gt;Título&lt;/h1&gt;\n  &lt;button&gt;Click&lt;/button&gt;\n&lt;/body&gt;"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#acceso-al-dom-desde-javascript",
+    "href": "pages/Bloque3/dom.html#acceso-al-dom-desde-javascript",
+    "title": "DOM",
+    "section": "Acceso al DOM desde JavaScript",
+    "text": "Acceso al DOM desde JavaScript\nEl navegador nos proporciona el objeto global document, que permite:\n\nBuscar elementos\nLeer su contenido\nModificar la interfaz\n\ndocument\ndocument.body"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#selectores",
+    "href": "pages/Bloque3/dom.html#selectores",
+    "title": "DOM",
+    "section": "Selectores",
+    "text": "Selectores\nPor ID\ndocument.getElementById(\"count\")\ndocument.querySelector(\"#count\")\nPor etiqueta\ndocument.querySelector(\"button\")"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#leer-y-modificar-elementos",
+    "href": "pages/Bloque3/dom.html#leer-y-modificar-elementos",
+    "title": "DOM",
+    "section": "Leer y modificar elementos",
+    "text": "Leer y modificar elementos\nelement.textContent\nelement.textContent = \"Nuevo texto\"\nelement.classList.add(\"active\")\nelement.classList.remove(\"active\")"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#eventos",
+    "href": "pages/Bloque3/dom.html#eventos",
+    "title": "DOM",
+    "section": "Eventos",
+    "text": "Eventos\nEl DOM permite reaccionar a acciones del usuario mediante eventos.\nbutton.addEventListener(\"click\", () =&gt; {\n  // código a ejecutar\n});\nFlujo típico:\nUsuario → Evento → JavaScript → DOM actualizado"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#ejemplo-contador-con-botón",
+    "href": "pages/Bloque3/dom.html#ejemplo-contador-con-botón",
+    "title": "DOM",
+    "section": "Ejemplo: contador con botón",
+    "text": "Ejemplo: contador con botón\nHTML\n&lt;h1 id=\"count\"&gt;0&lt;/h1&gt;\n&lt;button id=\"btn\"&gt;Sumar 1&lt;/button&gt;\nJavaScript\nlet count = 0;\n\nconst countEl = document.querySelector(\"#count\");\nconst btn = document.querySelector(\"#btn\");\n\nbtn.addEventListener(\"click\", () =&gt; {\n  count++;\n  countEl.textContent = count;\n});"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#más-ejemplos",
+    "href": "pages/Bloque3/dom.html#más-ejemplos",
+    "title": "DOM",
+    "section": "Más ejemplos",
+    "text": "Más ejemplos\nEj1: Show input\nEj2: Par e Impar\nEj3: Toggle\nEj4: Creación dinámica\nEj5: Validación básica"
+  },
+  {
+>>>>>>> 8e10774 (feat: explicacion semana 10 (#4))
     "objectID": "pages/Bloque3/MAcss2.html",
     "href": "pages/Bloque3/MAcss2.html",
     "title": "MA: CSS Flex y CSS",
     "section": "",
     "text": "Además de las propiedades estudiadas de CSS también hay algunas críticas que debido a la falta de tiempo no se han podido explicar como es el caso de display a continuación estos dos vídeos profundizan en los modos flex y grid formas diferentes de diseñar la estructura de la página",
+<<<<<<< HEAD
     "crumbs": [
       "Bloque III Interacción",
       "Semana 6",
@@ -386,6 +446,106 @@
     "objectID": "pages/Bloque2/intensivo.html",
     "href": "pages/Bloque2/intensivo.html",
     "title": "Repaso Intensivo JS",
+=======
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "MA: CSS Flex y CSS"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/ReactIV.html",
+    "href": "pages/Bloque3/ReactIV.html",
+    "title": "React IV",
+    "section": "",
+    "text": "Contenido",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 10",
+      "React IV"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/ReactIV.html#ecosistema-node",
+    "href": "pages/Bloque3/ReactIV.html#ecosistema-node",
+    "title": "React IV",
+    "section": "Ecosistema Node",
+    "text": "Ecosistema Node\nHasta ahora hemos trabajado únicamente con React y JavaScript.\nSin embargo, en el desarrollo real de aplicaciones es muy común utilizar librerías externas, para ello podemos recurrir Node.JS.\nReact está diseñado para funcionar dentro de un ecosistema de paquetes.\nEjemplos habituales:\n\nReact Router → navegación\nAxios → peticiones HTTP\nChart.js → gráficas\nZustand / Redux → gestión de estado\nLibrerías de UI: Tailwind, Bootstrap, Booswatch",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 10",
+      "React IV"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/ReactIV.html#npm",
+    "href": "pages/Bloque3/ReactIV.html#npm",
+    "title": "React IV",
+    "section": "npm",
+    "text": "npm\nnpm (Node Package Manager) es el sistema que permite instalar y gestionar librerías de JavaScript. Como su nombre indica, está desarrollado por Node.JS\nCada proyecto tiene un archivo:\npackage.json\nEn este archivo se registran las dependencias del proyecto.\nEjemplo:\n{\n  \"dependencies\": {\n    \"react\": \"^18.0.0\",\n    \"react-router-dom\": \"^6.0.0\"\n  }\n}\n\nInstalación de paquetes\nLas librerías se instalan desde la terminal.\nnpm install react-router-dom\nEsto hace tres cosas:\n\nDescarga el paquete\nLo guarda en node_modules (capreta donde se guardan las librerías externas)\nAñade la dependencia en package.json",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 10",
+      "React IV"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/ReactIV.html#react-router",
+    "href": "pages/Bloque3/ReactIV.html#react-router",
+    "title": "React IV",
+    "section": "React Router",
+    "text": "React Router\nEn una aplicación web tradicional cada enlace carga una página nueva.\nEn React normalmente trabajamos con Single Page Applications (SPA).\nEn una SPA:\n\nel navegador no recarga la página\nReact cambia los componentes que se muestran\n\nPara gestionar esto utilizamos React Router.\nRealmente es la misma página, solo que el usuario lo percibe como distintas páginas\nEl usuario percibirá que el sitio web está divido en diferentes subpáginas\n\n/\npokemons\npokemons/pikachu\n\n\nComponentes principales de React Router\nLos elementos fundamentales son:\n\nBrowserRouter\nRoutes\nRoute\nLink\n\nEjemplo básico:\nimport { BrowserRouter, Routes, Route } from \"react-router-dom\";\n\nfunction App() {\n  return (\n    &lt;BrowserRouter&gt;\n\n      &lt;Routes&gt;\n\n        &lt;Route path=\"/\" element={&lt;Home /&gt;} /&gt;\n\n        &lt;Route path=\"/pokemons\" element={&lt;PokemonList /&gt;} /&gt;\n\n      &lt;/Routes&gt;\n\n    &lt;/BrowserRouter&gt;\n  );\n}\nElementos del código\n\nBrowserRouter\nEs el componente que activa el sistema de navegación de React Router. Utiliza la API de historial del navegador para cambiar la URL sin recargar la página.\nRoutes\nEs el contenedor donde se definen todas las rutas de la aplicación. React Router examina las rutas dentro de este componente para decidir qué componente mostrar.\nRoute\nDefine una ruta concreta de la aplicación.\n\n\npath\nIndica la URL que activa la ruta.\nEjemplo: / corresponde a la página principal.\nelement\nEs el componente de React que se renderiza cuando la URL coincide con el path.\n&lt;Home /&gt;\nComponente que se muestra cuando el usuario accede a la ruta /.\n&lt;PokemonList /&gt;\nComponente que se muestra cuando el usuario accede a la ruta /pokemons.\n\n\n\nNavegación\nPara navegar entre páginas utilizamos el componente Link.\nimport { Link } from \"react-router-dom\";\n\n&lt;Link to=\"/\"&gt;Inicio&lt;/Link&gt;\n\n&lt;Link to=\"/pokemon\"&gt;Pokemon&lt;/Link&gt;\nA diferencia de &lt;a&gt;:\n\nno recarga la página\nReact cambia el componente visible\n\n\n\nParámetros dinámicos\nPodemos crear rutas dinámicas.\nEjemplo:\n/pokemon/25\n/pokemon/7\nDefinición de la ruta:\n&lt;Route path=\"/pokemon/:id\" element={&lt;PokemonDetail /&gt;} /&gt;\n\nuseParams\nPara acceder al parámetro utilizamos el hook useParams de React Router.\nimport { useParams } from \"react-router-dom\";\n\nfunction PokemonDetail() {\n\n  const { id } = useParams();\n\n  return &lt;p&gt;Pokemon {id}&lt;/p&gt;;\n\n}\nEste parámetro puede utilizarse para realizar peticiones a una API.",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 10",
+      "React IV"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/ReactIV.html#context-api",
+    "href": "pages/Bloque3/ReactIV.html#context-api",
+    "title": "React IV",
+    "section": "Context API",
+    "text": "Context API\nEn aplicaciones grandes aparece un problema frecuente.\nMuchos componentes necesitan acceder a la misma información.\nPor ejemplo:\n\nusuario\ntema visual\nidioma\nconfiguración\n\nSi pasamos la información mediante props, los datos deben atravesar muchos componentes.\nRepresentación conceptual:\nApp\n └ Layout\n    └ Page\n       └ Component\nSi todos necesitan user, debemos pasar la prop continuamente.\nEste problema se conoce como prop drilling.\n\nContext\nReact proporciona una solución llamada Context.\nContext permite compartir información entre múltiples componentes sin pasar props manualmente.\nEl proceso tiene tres pasos:\n\nCrear el contexto\nProveer el contexto\nConsumir el contexto\n\n\nCrear un contexto\nimport { createContext } from \"react\";\n\nconst UserContext = createContext();\nEsto crea un contenedor que puede almacenar información compartida.\n\n\nProvider\nEl Provider permite que los componentes hijos accedan al contexto.\n&lt;UserContext.Provider value={user}&gt;\n\n  &lt;App /&gt;\n\n&lt;/UserContext.Provider&gt;\nTodos los componentes dentro del Provider pueden acceder al valor.\n\n\nConsumir el contexto\nPara acceder al contexto utilizamos el hook useContext.\nimport { useContext } from \"react\";\n\nconst user = useContext(UserContext);\nEl componente obtiene directamente el valor almacenado en el contexto.\n\n\nEjemplo completo\nimport { createContext, useContext } from \"react\";\n\nconst UserContext = createContext();\n\nfunction App() {\n\n  const user = { name: \"Javier\" };\n\n  return (\n\n    &lt;UserContext.Provider value={user}&gt;\n\n      &lt;Profile /&gt;\n\n    &lt;/UserContext.Provider&gt;\n\n  );\n}\n\nfunction Profile() {\n\n  const user = useContext(UserContext);\n\n  return &lt;h1&gt;{user.name}&lt;/h1&gt;;\n\n}",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 10",
+      "React IV"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/presentacion-reactIV.html#ecosistema-node",
+    "href": "pages/Bloque3/presentacion-reactIV.html#ecosistema-node",
+    "title": "React IV",
+    "section": "Ecosistema Node",
+    "text": "Ecosistema Node\nHasta ahora hemos trabajado únicamente con React y JavaScript.\nSin embargo, en el desarrollo real de aplicaciones es muy común utilizar librerías externas, para ello podemos recurrir Node.JS.\nReact está diseñado para funcionar dentro de un ecosistema de paquetes."
+  },
+  {
+    "objectID": "pages/Bloque3/presentacion-reactIV.html#npm",
+    "href": "pages/Bloque3/presentacion-reactIV.html#npm",
+    "title": "React IV",
+    "section": "npm",
+    "text": "npm\nnpm (Node Package Manager) es el sistema que permite instalar y gestionar librerías de JavaScript. Como su nombre indica, está desarrollado por Node.JS\nCada proyecto tiene un archivo:\npackage.json\nEn este archivo se registran las dependencias del proyecto."
+  },
+  {
+    "objectID": "pages/Bloque3/presentacion-reactIV.html#react-router",
+    "href": "pages/Bloque3/presentacion-reactIV.html#react-router",
+    "title": "React IV",
+    "section": "React Router",
+    "text": "React Router\nEn una aplicación web tradicional cada enlace carga una página nueva.\nEn React normalmente trabajamos con Single Page Applications (SPA).\nEn una SPA:\n\nel navegador no recarga la página\nReact cambia los componentes que se muestran\n\nPara gestionar esto utilizamos React Router.\nRealmente es la misma página, solo que el usuario lo percibe como distintas páginas"
+  },
+  {
+    "objectID": "pages/Bloque3/presentacion-reactIV.html#context-api",
+    "href": "pages/Bloque3/presentacion-reactIV.html#context-api",
+    "title": "React IV",
+    "section": "Context API",
+    "text": "Context API\nEn aplicaciones grandes aparece un problema frecuente.\nMuchos componentes necesitan acceder a la misma información.\nPor ejemplo:\n\nusuario\ntema visual\nidioma\nconfiguración\n\nSi pasamos la información mediante props, los datos deben atravesar muchos componentes."
+  },
+  {
+    "objectID": "pages/Bloque3/ps.html",
+    "href": "pages/Bloque3/ps.html",
+    "title": "Proyecto Subsistema",
+>>>>>>> 8e10774 (feat: explicacion semana 10 (#4))
     "section": "",
     "text": "Contenido\nRepaso intensivo de JavaScript, tiene como objetivo dar una introducción del lenguaje, a usuarios que ya tengan experiencia previa programando.\nDescargar archivo de código (click derecho guardar enlace como)",
     "crumbs": [
@@ -1421,6 +1581,7 @@
     "title": "MA: Uncontrolled fields y useRef",
     "section": "",
     "text": "Por el momento hemos visto dos hooks useState y useEffect, pero recordemos que en React existen más tipos de hooks que por ser menos útiles y debido a la falta de tiempo no son explicados, no obstante si hay alguno digno de mención es useRef o las referencias.\nUna ref es una referencia mutable que permite acceder directamente a un elemento del DOM o almacenar un valor persistente sin provocar un re-render del componente. El siguiente video ilustra su uso. Es un poco largo pero sirve para repasar los otros hooks.\n\n\nCon las ref podemos introducir los uncontrolled fields que nos permiten trabajar de otra forma con los formularios.\n\nSe prefiere la segunda implementación (la que no utiliza referencias) sobre la primera.",
+<<<<<<< HEAD
     "crumbs": [
       "Bloque III Interacción",
       "Semana 9",
@@ -1589,7 +1750,69 @@
       "Bloque III Interacción",
       "Semana 6",
       "DOM"
+=======
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 9",
+      "MA: *Uncontrolled fields* y `useRef`"
+>>>>>>> 8e10774 (feat: explicacion semana 10 (#4))
     ]
+  },
+  {
+    "objectID": "pages/Bloque3/t9.html",
+    "href": "pages/Bloque3/t9.html",
+    "title": "T6: Romancero Gitano I",
+    "section": "",
+    "text": "El objetivo de esta tarea es aplicar los conceptos básicos de HTML, CSS y JavaScript (DOM) para crear una página web interactiva que muestre poemas del Romancero gitano de Federico García Lorca y modifique su apariencia visual en función de las diferentes metáforas.\nResultado esperado"
+  },
+  {
+    "objectID": "pages/Bloque3/t9.html#objetivo-de-la-tarea",
+    "href": "pages/Bloque3/t9.html#objetivo-de-la-tarea",
+    "title": "T6: Romancero Gitano I",
+    "section": "",
+    "text": "El objetivo de esta tarea es aplicar los conceptos básicos de HTML, CSS y JavaScript (DOM) para crear una página web interactiva que muestre poemas del Romancero gitano de Federico García Lorca y modifique su apariencia visual en función de las diferentes metáforas.\nResultado esperado"
+  },
+  {
+    "objectID": "pages/Bloque3/t9.html#estructura-html",
+    "href": "pages/Bloque3/t9.html#estructura-html",
+    "title": "T6: Romancero Gitano I",
+    "section": "Estructura HTML",
+    "text": "Estructura HTML\nEl documento HTML debe:\n\nEstar correctamente estructurado (&lt;!DOCTYPE&gt;, &lt;html&gt;, &lt;head&gt;, &lt;body&gt;).\nContener un contenedor principal centrado horizontalmente.\nIncluir, en este orden:\n\nUn elemento para mostrar información métrica del poema (número de estrofas y versos).\nUn elemento para el título del poema.\nUn elemento para el texto del poema, respetando los saltos de verso utilizando la etiqueta &lt;pre&gt;.\nUn botón que permita cambiar de poema.\n\n\nNo debe utilizarse ningún framework ni librería externa."
+  },
+  {
+    "objectID": "pages/Bloque3/t9.html#javascript",
+    "href": "pages/Bloque3/t9.html#javascript",
+    "title": "T6: Romancero Gitano I",
+    "section": "JavaScript",
+    "text": "JavaScript\n\nDatos\nEn JavaScript se debe definir un array de objetos, donde cada objeto represente un poema y tenga al menos:\n\nUn título.\nEl texto del poema como una cadena de texto, usando saltos de línea para los versos.\n\nEl cambio de poema debe hacerse recorriendo este array de forma cíclica (cola circular) mediante el botón.\nDescargar poemas (click derecho guardar enlace como)\n\n\nManipulación del DOM\nEl comportamiento de la página debe implementarse exclusivamente con DOM nativo, cumpliendo lo siguiente:\n\nTodas las funciones deben declararse como arrow functions.\nAl pulsar el botón:\n\nSe actualiza el título.\nSe actualiza el texto del poema.\nSe modifica el formato del fondo.\nSe recalculan y muestran:\n\nNúmero de versos.\nNúmero de estrofas (bloques separados por líneas en blanco).\n\n\n\nEl cálculo debe realizarse a partir del texto del poema, no con valores predefinidos."
+  },
+  {
+    "objectID": "pages/Bloque3/t9.html#css",
+    "href": "pages/Bloque3/t9.html#css",
+    "title": "T6: Romancero Gitano I",
+    "section": "CSS",
+    "text": "CSS\nLorca utiliza las metáforas y la alegoría como elemento principal sobre el que construye sus poemas, al analizar profundamente descubrimos que siempre recurre a las mismas metáforas.\nEl color no se utiliza aquí solo como elemento decorativo, sino como un recurso semántico: cada color representa un símbolo literario presente en el poema.\nDesde el punto de vista técnico: - Los colores de fondo y de texto deben definirse en clases CSS. - JavaScript no decide colores, únicamente decide qué clase aplicar según el contenido del poema.\n\nPalabras clave y colores asociados\nSe debe detectar el texto del poema las siguientes palabras clave y aplicar el color de fondo correspondiente:\n\nguardia civil → fondo verde militar\nsangre → fondo granate oscuro\ncaballo → fondo color tierra\ncuchillo / navaja → fondo plateado\n\nEl color del texto debe elegirse siempre de forma que exista contraste suficiente con el fondo y se garantice la legibilidad.\nSi el poema contiene varias palabras clave, solo debe aplicarse un único estilo, siguiendo un orden de prioridad definido previamente.\nSi el poema no contiene ninguna de estas palabras, se aplicará un estilo por defecto con colores aleatorios."
+  },
+  {
+    "objectID": "pages/Bloque3/t9.html#extra-opcional-símbolo-aurora",
+    "href": "pages/Bloque3/t9.html#extra-opcional-símbolo-aurora",
+    "title": "T6: Romancero Gitano I",
+    "section": "Extra opcional: símbolo aurora 🌈",
+    "text": "Extra opcional: símbolo aurora 🌈\nDe forma voluntaria, se puede añadir el símbolo aurora, que tendrá prioridad absoluta sobre todos los demás.\nCuando el poema contenga la palabra aurora, el fondo debe mostrar un degradado animado.\n\nCSS necesario para el extra\n.aurora {\n  background: linear-gradient(120deg,\n    #ff005d,\n    #ff9f1c,\n    #ffee32,\n    #3cff00,\n    #00e5ff,\n    #7a00ff,\n    #ff00c8\n  );\n  background-size: 600% 600%;\n  animation: aurora 10s linear infinite;\n  color: black;\n}\n\n@keyframes aurora {\n  0%   { background-position: 0% 50%; }\n  50%  { background-position: 100% 50%; }\n  100% { background-position: 0% 50%; }\n}"
+  },
+  {
+    "objectID": "pages/Bloque3/t9.html#consejos",
+    "href": "pages/Bloque3/t9.html#consejos",
+    "title": "T6: Romancero Gitano I",
+    "section": "Consejos",
+    "text": "Consejos\n\nCentrado de la página (layout clásico)\nToda la página debe estar centrada horizontalmente.\nEl centrado se consigue mediante:\n\nUn contenedor con un ancho máximo definido.\nMárgenes automáticos a izquierda y derecha.\n\nDesde el punto de vista conceptual:\n\nmargin: 0 auto no centra texto, centra bloques.\nEl navegador reparte automáticamente el espacio sobrante a ambos lados del contenedor.\n\n\n\nAnimación del cambio de color\nPara evitar que los cambios de color sean bruscos, se utiliza la propiedad transition en CSS.\nEsta propiedad indica al navegador que los cambios en determinadas propiedades visuales deben hacerse de forma progresiva.\nEjemplo conceptual:\nbody {\n  transition: background-color 0.6s, color 0.6s;\n}\nGracias a esta transición: - Cuando JavaScript cambia una clase o un color, - el navegador interpola automáticamente entre el color anterior y el nuevo.\nNo es necesario programar animaciones en JavaScript: CSS se encarga de todo el efecto visual.\n\n\nBúsqueda de una palabra\nPara buscar si determinada palabra determinada se debe utilizar la función includes de la clase string\n\ntexto = \"hoy nieva\";\n\ntexto.includes(\"nieva\");    //TRUE\ntexto.includes(\"llueve\");   //FALSE\n\n\nGeneración del color aleatorio\nPara la generacióndel color aleatorio de puede utilizar la siguiente función\nconst randomColor = () =&gt; '#' + Math.floor(Math.random() * 16777215).toString(16);\n\n\nConteo versos y estrofas\nEl recuento de versos y estrofas debe hacerse a partir del texto del poema, no con valores escritos a mano. A continuación se dan algunas pistas técnicas para abordar este problema.\n\nConteo de versos\nUn verso puede considerarse, a efectos prácticos en esta tarea, como una línea de texto no vacía.\nUna estrategia habitual consiste en: - Separar el texto por saltos de línea. - Eliminar las líneas vacías o formadas solo por espacios. - Contar cuántas líneas válidas quedan.\nEjemplo orientativo:\nconst versos = texto\n  .split('\\n')\n  .filter(linea =&gt; linea.trim() !== '')\n  .length;\nEste enfoque es suficiente para la mayoría de los poemas del Romancero gitano y evita errores frecuentes.\n\n\nConteo de estrofas\nUna estrofa puede entenderse como un bloque de versos separado de otros bloques por una línea en blanco.\nUna posible estrategia es: - Separar el texto usando dos (o más) saltos de línea consecutivos. - Eliminar bloques vacíos. - Contar los bloques resultantes.\nEjemplo orientativo:\nconst estrofas = texto\n  .split(/\\n\\s*\\n/)\n  .filter(bloque =&gt; bloque.trim() !== '')\n  .length;\nEntrega: un único archivo HTML funcional."
+  },
+  {
+    "objectID": "pages/Bloque3/t9.html#recomendaciones-para-afrontar-la-tarea",
+    "href": "pages/Bloque3/t9.html#recomendaciones-para-afrontar-la-tarea",
+    "title": "T6: Romancero Gitano I",
+    "section": "Recomendaciones para afrontar la tarea",
+    "text": "Recomendaciones para afrontar la tarea\nAl enfrentarnos a un proyecto de cierta complejitud, el como afrontarlo resulta de cricial para el desarollo del mismo por ello a a continuación dejo un esquema de implementación modular. Sería mejor no utilizarlo, pero puede ser un buen punto de partida si no se sabe como empezar la app, no es el único proceso de implementación válido ni es más correcto que cualquier otro\n\nEstructura de HTML básica contadores de versos y estrofas placeholders de poema y título y botón\nFormateo CSS parte estática: centrado, tamaño (todo lo que no sea color)\nDefinir clases con colores predeterminados\nLógica interna con JS\n\n\nBuscar palabra\nContar estrofas\nConteo versos\nSelección de clase\nGenerar color aleatorio si procede\n\n\nIntegración con DOM"
   },
   {
     "objectID": "pages/Bloque3/reactI.html#sintaxis-jsx",
