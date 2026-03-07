@@ -79,10 +79,7 @@ website:
           - section: "Semana 10"
             contents: 
             - pages/Bloque3/ReactIV.qmd
-
-
-
-          - text: "Próximamente..."
+            - pages/Bloque3/t10.qmd
 
       - section: "Bloque IV Comunicación"
 

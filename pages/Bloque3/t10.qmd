@@ -1,0 +1,160 @@
+---
+title: "T10: Quiz app!"
+author: "Javier Ribal del Río"
+date: "2026-02-06"
+date-modified: today
+affiliation: "Hyperloop UPV"
+---
+
+## Objetivo
+
+Desarrollar una aplicación React que permita al usuario realizar un
+**quiz de cultura general** utilizando preguntas obtenidas desde una API
+pública.
+
+[https://astonishing-douhua-44213e.netlify.app/](https://astonishing-douhua-44213e.netlify.app/)
+
+
+La aplicación debe mostrar preguntas, permitir seleccionar respuestas y
+calcular la puntuación final.
+
+------------------------------------------------------------------------
+
+# API a utilizar
+
+Utilizaremos la siguiente API:
+
+https://the-trivia-api.com/api/questions?limit=10
+
+Ejemplo de respuesta:
+
+``` json
+{
+  "question": "What is the capital of France?",
+  "correctAnswer": "Paris",
+  "incorrectAnswers": ["Madrid", "Rome", "Berlin"]
+}
+```
+
+------------------------------------------------------------------------
+
+# Requisitos técnicos
+
+La aplicación debe utilizar:
+
+-   Componentes funcionales de React
+-   `useState`
+-   `useEffect`
+-   Consumo de API con `fetch`
+
+No se deben utilizar librerías externas.
+
+------------------------------------------------------------------------
+
+# Estructura mínima del proyecto
+
+La aplicación debe estar organizada al menos con esta estructura:
+
+    src
+     ├─ components
+     │   ├─ Question.jsx
+     │   └─ Answers.jsx
+     ├─ pages
+     │   └─ Quiz.jsx
+     ├─ App.jsx
+     └─ main.jsx
+
+------------------------------------------------------------------------
+
+# Funcionalidades obligatorias
+
+## 1. Cargar preguntas desde la API
+
+Cuando la aplicación se inicia debe obtener **10 preguntas** desde la
+API.
+
+Para ello se debe usar:
+
+-   `fetch`
+-   `useEffect`
+
+Mientras se cargan los datos se debe mostrar:
+
+    Loading...
+
+
+## 2. Mostrar la pregunta actual
+
+La aplicación debe mostrar:
+
+-   número de pregunta
+-   texto de la pregunta
+
+Ejemplo:
+
+    Question 3
+    What is the capital of France?
+
+
+## 3. Mostrar las posibles respuestas
+
+Cada pregunta tiene:
+
+-   1 respuesta correcta
+-   3 respuestas incorrectas
+
+Se deben mostrar **las 4 respuestas como botones**.
+
+Ejemplo:
+
+    Paris
+    Rome
+    Madrid
+    Berlin
+
+
+## 4. Seleccionar una respuesta
+
+Cuando el usuario hace clic en una respuesta:
+
+-   la opción debe quedar **marcada visualmente**
+-   la selección debe guardarse en el estado del componente
+
+
+## 5. Pasar a la siguiente pregunta
+
+Debe existir un botón:
+
+    Next
+
+Este botón:
+
+-   solo se puede pulsar cuando el usuario ha seleccionado una respuesta
+-   pasa a la siguiente pregunta
+
+
+## 6. Calcular la puntuación
+
+Cuando el usuario responde una pregunta:
+
+-   si la respuesta es correcta → sumar **1 punto**
+
+
+## 7. Mostrar el resultado final
+
+Al terminar el quiz debe mostrarse:
+
+    Quiz finished!
+    Your score: X / 10
+
+
+# Uso de estado (`useState`)
+
+La aplicación debe utilizar varios estados. Por ejemplo:
+
+    questions
+    currentQuestion
+    selectedAnswer
+    score
+    showResult
+
