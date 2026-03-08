@@ -6,8 +6,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.34">
 
   <meta name="author" content="Javier Ribal del Río">
   <meta name="dcterms.date" content="2026-02-27">
@@ -96,7 +96,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -249,7 +249,7 @@ Javier Ribal del Río
 <section class="slide level2">
 
 <h3 id="estructura-del-componente-controlled">Estructura del componente controlled</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-code-line-numbers="|4|6,7,8|4,13|6,7,8,14|1,16"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb1-1"><a></a><span class="im">import</span> { useState } <span class="im">from</span> <span class="st">"react"</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb1" data-code-line-numbers="|4|6,7,8|4,13|6,7,8,14|1,16"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb1-1"><a></a><span class="im">import</span> { useState } <span class="im">from</span> <span class="st">"react"</span><span class="op">;</span></span>
 <span id="cb1-2"><a></a><span class="kw">function</span> <span class="fu">FormularioNombre</span>() {</span>
 <span id="cb1-3"><a></a></span>
 <span id="cb1-4"><a></a>  <span class="kw">const</span> [nombre<span class="op">,</span> setNombre] <span class="op">=</span> <span class="fu">useState</span>(<span class="st">""</span>)<span class="op">;</span></span>
@@ -267,7 +267,7 @@ Javier Ribal del Río
 <span id="cb1-16"><a></a>      <span class="kw">&lt;p&gt;</span>El nombre introducido es: <span class="va">{</span>nombre<span class="va">}</span><span class="kw">&lt;/p&gt;</span></span>
 <span id="cb1-17"><a></a>    <span class="kw">&lt;/div&gt;</span></span>
 <span id="cb1-18"><a></a>  )<span class="op">;</span></span>
-<span id="cb1-19"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-19"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2">
 
@@ -287,7 +287,7 @@ Javier Ribal del Río
 <section class="slide level2">
 
 <h3 id="ejemplo-formulario">Ejemplo Formulario</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb2-1"><a></a><span class="im">import</span> { useState } <span class="im">from</span> <span class="st">"react"</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb2-1"><a></a><span class="im">import</span> { useState } <span class="im">from</span> <span class="st">"react"</span><span class="op">;</span></span>
 <span id="cb2-2"><a></a></span>
 <span id="cb2-3"><a></a><span class="kw">function</span> <span class="fu">FormularioSimple</span>() {</span>
 <span id="cb2-4"><a></a></span>
@@ -316,7 +316,7 @@ Javier Ribal del Río
 <span id="cb2-27"><a></a>      <span class="kw">&lt;button</span> <span class="ot">type</span><span class="op">=</span><span class="st">"submit"</span><span class="kw">&gt;</span>Enviar<span class="kw">&lt;/button&gt;</span></span>
 <span id="cb2-28"><a></a>    <span class="kw">&lt;/form&gt;</span></span>
 <span id="cb2-29"><a></a>  )<span class="op">;</span></span>
-<span id="cb2-30"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-30"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2">
 
@@ -343,9 +343,9 @@ Javier Ribal del Río
 
 <h3 id="métodos-de-uso-de-useeffect">Métodos de uso de <code>useEffect</code></h3>
 <h4 id="sin-array-de-dependencias">1. Sin array de dependencias</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb3-1"><a></a><span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb3-1"><a></a><span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
 <span id="cb3-2"><a></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Se ejecuta en cada render"</span>)<span class="op">;</span></span>
-<span id="cb3-3"><a></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-3"><a></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Comportamiento:</strong></p>
 <ul>
 <li>Se ejecuta después de cada renderizado.</li>
@@ -358,9 +358,9 @@ Javier Ribal del Río
 <section class="slide level2">
 
 <h4 id="con-array-vacío">2. Con array vacío</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb4-1"><a></a><span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb4-1"><a></a><span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
 <span id="cb4-2"><a></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Se ejecuta solo una vez"</span>)<span class="op">;</span></span>
-<span id="cb4-3"><a></a>}<span class="op">,</span> [])<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-3"><a></a>}<span class="op">,</span> [])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Comportamiento:</strong></p>
 <ul>
 <li>Se ejecuta únicamente tras el primer render.</li>
@@ -381,9 +381,9 @@ Javier Ribal del Río
 <section class="slide level2">
 
 <h4 id="con-dependencias-específicas">3. Con dependencias específicas</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb5-1"><a></a><span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb5-1"><a></a><span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
 <span id="cb5-2"><a></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Se ejecuta cuando cambia contador"</span>)<span class="op">;</span></span>
-<span id="cb5-3"><a></a>}<span class="op">,</span> [contador])<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-3"><a></a>}<span class="op">,</span> [contador])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Comportamiento:</strong></p>
 <ul>
 <li>Se ejecuta tras el primer render.</li>
@@ -412,9 +412,9 @@ Javier Ribal del Río
 <section class="slide level2">
 
 <h3 id="ejemplo-mínimo-de-fetch">Ejemplo mínimo de <code>fetch</code></h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb6-1"><a></a><span class="fu">fetch</span>(<span class="st">"https://pokeapi.co/api/v2/pokemon/1"</span>)</span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb6-1"><a></a><span class="fu">fetch</span>(<span class="st">"https://pokeapi.co/api/v2/pokemon/1"</span>)</span>
 <span id="cb6-2"><a></a>  <span class="op">.</span><span class="fu">then</span>(response <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">json</span>())</span>
-<span id="cb6-3"><a></a>  <span class="op">.</span><span class="fu">then</span>(data <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(data))<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-3"><a></a>  <span class="op">.</span><span class="fu">then</span>(data <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(data))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Utiliza las <em>Promises</em></p>
 </section>
 <section class="slide level2">
@@ -442,7 +442,7 @@ Javier Ribal del Río
 <section class="slide level2">
 
 <h3 id="ejemplo-integrado">Ejemplo integrado</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb7-1"><a></a><span class="im">import</span> { useState<span class="op">,</span> useEffect } <span class="im">from</span> <span class="st">"react"</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb7-1"><a></a><span class="im">import</span> { useState<span class="op">,</span> useEffect } <span class="im">from</span> <span class="st">"react"</span><span class="op">;</span></span>
 <span id="cb7-2"><a></a></span>
 <span id="cb7-3"><a></a><span class="kw">function</span> <span class="fu">Pokemon</span>() {</span>
 <span id="cb7-4"><a></a></span>
@@ -467,7 +467,7 @@ Javier Ribal del Río
 <span id="cb7-23"><a></a>      <span class="kw">/&gt;</span></span>
 <span id="cb7-24"><a></a>    <span class="kw">&lt;/div&gt;</span></span>
 <span id="cb7-25"><a></a>  )<span class="op">;</span></span>
-<span id="cb7-26"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-26"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2">
 
@@ -488,11 +488,11 @@ Javier Ribal del Río
 
 <h3 id="advertencia-importante">Advertencia importante</h3>
 <p>Si eliminamos el array vacío:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb8-1"><a></a><span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb8-1"><a></a><span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
 <span id="cb8-2"><a></a>  <span class="fu">fetch</span>(<span class="st">"https://pokeapi.co/api/v2/pokemon/1"</span>)</span>
 <span id="cb8-3"><a></a>    <span class="op">.</span><span class="fu">then</span>(res <span class="kw">=&gt;</span> res<span class="op">.</span><span class="fu">json</span>())</span>
 <span id="cb8-4"><a></a>    <span class="op">.</span><span class="fu">then</span>(data <span class="kw">=&gt;</span> <span class="fu">setPokemon</span>(data))<span class="op">;</span></span>
-<span id="cb8-5"><a></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-5"><a></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>El efecto se ejecutará en cada render.</p>
 <p>Como actualizar estado provoca render, se generará un bucle infinito.</p>
 </section>
@@ -520,9 +520,9 @@ El estado vuelve a controlar el render.</p>
 <li>Se coloca delante de una función</li>
 <li>Indica que la función trabajará con operaciones asíncronas</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb9-1"><a></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">ejemplo</span>() {</span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb9-1"><a></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">ejemplo</span>() {</span>
 <span id="cb9-2"><a></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Función asíncrona"</span>)<span class="op">;</span></span>
-<span id="cb9-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2">
 
@@ -536,7 +536,7 @@ El estado vuelve a controlar el render.</p>
 <section class="slide level2">
 
 <h3 id="ejemplo-básico-con-fetch">Ejemplo básico con <code>fetch</code></h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb10-1"><a></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">obtenerPokemon</span>() {</span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb10-1"><a></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">obtenerPokemon</span>() {</span>
 <span id="cb10-2"><a></a></span>
 <span id="cb10-3"><a></a>  <span class="kw">const</span> response <span class="op">=</span> <span class="cf">await</span> <span class="fu">fetch</span>(</span>
 <span id="cb10-4"><a></a>    <span class="st">"https://pokeapi.co/api/v2/pokemon/1"</span></span>
@@ -545,7 +545,7 @@ El estado vuelve a controlar el render.</p>
 <span id="cb10-7"><a></a>  <span class="kw">const</span> data <span class="op">=</span> <span class="cf">await</span> response<span class="op">.</span><span class="fu">json</span>()<span class="op">;</span></span>
 <span id="cb10-8"><a></a></span>
 <span id="cb10-9"><a></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(data)<span class="op">;</span></span>
-<span id="cb10-10"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-10"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2">
 
@@ -566,7 +566,7 @@ El estado vuelve a controlar el render.</p>
 <section class="slide level2">
 
 <h3 id="ejemplo-completo">Ejemplo completo</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb11-1"><a></a><span class="im">import</span> { useState<span class="op">,</span> useEffect } <span class="im">from</span> <span class="st">"react"</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb11-1"><a></a><span class="im">import</span> { useState<span class="op">,</span> useEffect } <span class="im">from</span> <span class="st">"react"</span><span class="op">;</span></span>
 <span id="cb11-2"><a></a></span>
 <span id="cb11-3"><a></a><span class="kw">function</span> <span class="fu">Pokemon</span>() {</span>
 <span id="cb11-4"><a></a></span>
@@ -600,14 +600,14 @@ El estado vuelve a controlar el render.</p>
 <span id="cb11-32"><a></a>      <span class="kw">/&gt;</span></span>
 <span id="cb11-33"><a></a>    <span class="kw">&lt;/div&gt;</span></span>
 <span id="cb11-34"><a></a>  )<span class="op">;</span></span>
-<span id="cb11-35"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-35"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2">
 
 <h3 id="por-qué-no-hacer-directamente">¿Por qué no hacer directamente?</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb12-1"><a></a><span class="fu">useEffect</span>(<span class="kw">async</span> () <span class="kw">=&gt;</span> {</span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb12-1"><a></a><span class="fu">useEffect</span>(<span class="kw">async</span> () <span class="kw">=&gt;</span> {</span>
 <span id="cb12-2"><a></a>  <span class="op">...</span></span>
-<span id="cb12-3"><a></a>}<span class="op">,</span> [])<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-3"><a></a>}<span class="op">,</span> [])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Porque <code>useEffect</code> no debe recibir una función asíncrona directamente.</p>
 <p>Por eso declaramos la función dentro y luego la ejecutamos.</p>
 </section>
@@ -840,7 +840,7 @@ Más fácil de mantener.</p>
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -914,14 +914,13 @@ Más fácil de mantener.</p>
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
             }
-          }
-          return codeEl.innerText;
+            return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

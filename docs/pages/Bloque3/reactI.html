@@ -6,8 +6,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.34">
 
   <meta name="author" content="Javier Ribal del Río">
   <meta name="dcterms.date" content="2026-01-16">
@@ -96,7 +96,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -246,34 +246,34 @@ Javier Ribal del Río
 
 <h3 id="qué-nos-ofrece-la-sintaxis-jsx">¿Qué nos ofrece la sintaxis JSX?</h3>
 <h4 id="almacenar-una-etiqueta-como-una-variable">Almacenar una etiqueta como una variable</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a></a><span class="kw">const</span> title <span class="op">=</span> <span class="op">&lt;</span>h1<span class="op">&gt;</span>Web del TC de SW<span class="op">&lt;/</span>h1<span class="op">&gt;;</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a></a><span class="kw">const</span> title <span class="op">=</span> <span class="op">&lt;</span>h1<span class="op">&gt;</span>Web del TC de SW<span class="op">&lt;/</span>h1<span class="op">&gt;;</span></span>
 <span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a><span class="kw">const</span> driveIndication <span class="op">=</span> (drives)<span class="op">?</span> <span class="op">&lt;</span>p<span class="op">&gt;</span>Puede conducir<span class="op">&lt;/</span>p<span class="op">&gt;</span> <span class="op">:</span> <span class="op">&lt;</span>p<span class="op">&gt;</span>No puede conducir<span class="op">&lt;/</span>p<span class="op">&gt;;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-3"><a></a><span class="kw">const</span> driveIndication <span class="op">=</span> (drives)<span class="op">?</span> <span class="op">&lt;</span>p<span class="op">&gt;</span>Puede conducir<span class="op">&lt;/</span>p<span class="op">&gt;</span> <span class="op">:</span> <span class="op">&lt;</span>p<span class="op">&gt;</span>No puede conducir<span class="op">&lt;/</span>p<span class="op">&gt;;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>De esta forma la variable <code>title</code> se corresponde con una etiqueta que contiene el título. Sin embargo, como podemos podemos <em>utilizar</em> está etiqueta una vez la hemos definido como una variable.</p>
 <h4 id="renderizar-etiquetas-dentro-de-etiquetas">Renderizar etiquetas dentro de etiquetas</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb2-1"><a></a><span class="kw">const</span> title <span class="op">= </span><span class="kw">&lt;h1&gt;</span>Web del TC de SW<span class="kw">&lt;/h1&gt;</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb2-1"><a></a><span class="kw">const</span> title <span class="op">= </span><span class="kw">&lt;h1&gt;</span>Web del TC de SW<span class="kw">&lt;/h1&gt;</span><span class="op">;</span></span>
 <span id="cb2-2"><a></a></span>
-<span id="cb2-3"><a></a><span class="kw">const</span> page <span class="op">= </span><span class="kw">&lt;div&gt;</span><span class="va">{</span>title<span class="va">}</span><span class="kw">&lt;/div&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-3"><a></a><span class="kw">const</span> page <span class="op">= </span><span class="kw">&lt;div&gt;</span><span class="va">{</span>title<span class="va">}</span><span class="kw">&lt;/div&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>De esta forma estámos encapsulando la etiqueta <code>h1</code> dentro del <code>div</code>.</p>
 </section>
 <section class="slide level2">
 
 <h4 id="renderizar-con-el-map">Renderizar con el map</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb3-1"><a></a><span class="kw">const</span> profeAsi<span class="op">=</span> [[<span class="st">"Rosa"</span><span class="op">,</span> <span class="st">"Macro I"</span>]<span class="op">,</span> [<span class="st">"Gabriela"</span><span class="op">,</span> <span class="st">"FSO"</span>]<span class="op">,</span>[<span class="st">"Yolanda"</span><span class="op">,</span><span class="st">"LTP"</span>]<span class="op">,</span> [<span class="st">"Ferrán"</span><span class="op">,</span> <span class="st">"EM"</span>]<span class="op">,</span> [<span class="st">"Pepe"</span><span class="op">,</span> <span class="st">"TCO"</span>]]<span class="op">;</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb3-1"><a></a><span class="kw">const</span> profeAsi<span class="op">=</span> [[<span class="st">"Rosa"</span><span class="op">,</span> <span class="st">"Macro I"</span>]<span class="op">,</span> [<span class="st">"Gabriela"</span><span class="op">,</span> <span class="st">"FSO"</span>]<span class="op">,</span>[<span class="st">"Yolanda"</span><span class="op">,</span><span class="st">"LTP"</span>]<span class="op">,</span> [<span class="st">"Ferrán"</span><span class="op">,</span> <span class="st">"EM"</span>]<span class="op">,</span> [<span class="st">"Pepe"</span><span class="op">,</span> <span class="st">"TCO"</span>]]<span class="op">;</span></span>
 <span id="cb3-2"><a></a></span>
 <span id="cb3-3"><a></a><span class="co">// Array de li Asignatura: nombre profesor</span></span>
 <span id="cb3-4"><a></a><span class="kw">const</span> itemsProfAsi <span class="op">=</span>  profeAsi<span class="op">.</span><span class="fu">map</span>(x <span class="kw">=&gt; &lt;li&gt;</span><span class="va">{</span>x[<span class="dv">1</span>]<span class="va">}</span>: <span class="va">{</span>x[<span class="dv">0</span>]<span class="va">}</span><span class="kw">&lt;/li&gt;</span>)<span class="op">;</span></span>
 <span id="cb3-5"><a></a></span>
-<span id="cb3-6"><a></a><span class="kw">const</span> listaProfesoresAsignatura <span class="op">= </span><span class="kw">&lt;ul&gt;</span><span class="va">{</span>itemsProfAsi<span class="va">}</span><span class="kw">&lt;/ul&gt;</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-6"><a></a><span class="kw">const</span> listaProfesoresAsignatura <span class="op">= </span><span class="kw">&lt;ul&gt;</span><span class="va">{</span>itemsProfAsi<span class="va">}</span><span class="kw">&lt;/ul&gt;</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2">
 
 <h4 id="renderizar-con-el-map-1">Renderizar con el map</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb4-1"><a></a><span class="kw">const</span> profeAsi<span class="op">=</span> [[<span class="st">"Rosa"</span><span class="op">,</span> <span class="st">"Macro I"</span>]<span class="op">,</span> [<span class="st">"Gabriela"</span><span class="op">,</span> <span class="st">"FSO"</span>]<span class="op">,</span> [<span class="st">"Yolanda"</span><span class="op">,</span><span class="st">"LTP"</span>]<span class="op">,</span> [<span class="st">"Ferrán"</span><span class="op">,</span> <span class="st">"EM"</span>]<span class="op">,</span> [<span class="st">"Pepe"</span><span class="op">,</span> <span class="st">"TCO"</span>]]<span class="op">;</span></span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb4-1"><a></a><span class="kw">const</span> profeAsi<span class="op">=</span> [[<span class="st">"Rosa"</span><span class="op">,</span> <span class="st">"Macro I"</span>]<span class="op">,</span> [<span class="st">"Gabriela"</span><span class="op">,</span> <span class="st">"FSO"</span>]<span class="op">,</span> [<span class="st">"Yolanda"</span><span class="op">,</span><span class="st">"LTP"</span>]<span class="op">,</span> [<span class="st">"Ferrán"</span><span class="op">,</span> <span class="st">"EM"</span>]<span class="op">,</span> [<span class="st">"Pepe"</span><span class="op">,</span> <span class="st">"TCO"</span>]]<span class="op">;</span></span>
 <span id="cb4-2"><a></a></span>
 <span id="cb4-3"><a></a><span class="kw">const</span> listaProfesoresAsignatura <span class="op">= </span><span class="kw">&lt;ul&gt;</span></span>
 <span id="cb4-4"><a></a><span class="va">{</span>profeAsi<span class="op">.</span><span class="fu">map</span>((x<span class="op">,</span>i) <span class="kw">=&gt; &lt;li</span> <span class="ot">key</span><span class="op">=</span><span class="va">{</span>i<span class="va">}</span><span class="kw">&gt;</span><span class="va">{</span>x[<span class="dv">1</span>]<span class="va">}</span>: <span class="va">{</span>x[<span class="dv">0</span>]<span class="va">}</span><span class="kw">&lt;/li&gt;</span>)<span class="va">}</span></span>
-<span id="cb4-5"><a></a><span class="kw">&lt;/ul&gt;</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-5"><a></a><span class="kw">&lt;/ul&gt;</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="react" class="slide level2">
 <h2>React</h2>
@@ -290,22 +290,22 @@ Javier Ribal del Río
 
 <h3 id="componente-react">Componente React</h3>
 <p>Los componentes de React los definimos como unidades reutilizables y modulares que se implementan de esta forma: una función que devuelve un objeto de JSX</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a></a><span class="kw">function</span> <span class="fu">Saludo</span>() {</span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a></a><span class="kw">function</span> <span class="fu">Saludo</span>() {</span>
 <span id="cb5-2"><a></a>  <span class="cf">return</span> <span class="op">&lt;</span>h1<span class="op">&gt;</span>Hola<span class="op">,</span> mundo<span class="op">&lt;/</span>h1<span class="op">&gt;;</span></span>
-<span id="cb5-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Podemos renderizar nuestro componente <code>Saludo</code> asumiendo que se comporta como una etiqueta html. Recordemos que no lo es.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a></a><span class="dt">&lt;</span><span class="kw">main</span><span class="dt">&gt;</span></span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a></a><span class="dt">&lt;</span><span class="kw">main</span><span class="dt">&gt;</span></span>
 <span id="cb6-2"><a></a>  <span class="dt">&lt;</span><span class="kw">Saludo</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
-<span id="cb6-3"><a></a><span class="dt">&lt;/</span><span class="kw">main</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-3"><a></a><span class="dt">&lt;/</span><span class="kw">main</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2">
 
 <p>Dentro de este componente podemos incluir lógica propia de JavaScript, de forma que al definir componente podemos dotarlo de lógica interna.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a></a><span class="kw">function</span> <span class="fu">DivNúmeroAleatorio</span>() {</span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a></a><span class="kw">function</span> <span class="fu">DivNúmeroAleatorio</span>() {</span>
 <span id="cb7-2"><a></a></span>
 <span id="cb7-3"><a></a>  <span class="kw">let</span> n <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">;</span></span>
 <span id="cb7-4"><a></a>  <span class="cf">return</span> <span class="op">&lt;</span>div className<span class="op">=</span><span class="st">"n-random"</span><span class="op">&gt;</span>{n}<span class="op">&lt;/</span>div<span class="op">&gt;;</span></span>
-<span id="cb7-5"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-5"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2">
 
@@ -321,22 +321,22 @@ Javier Ribal del Río
 <section class="slide level2">
 
 <h4 id="ejemplo-1-uso-de-props-forma-explícita">Ejemplo 1: uso de <code>props</code> (forma explícita)</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb8-1"><a></a><span class="kw">function</span> <span class="fu">Saludo</span>(props) {</span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb8-1"><a></a><span class="kw">function</span> <span class="fu">Saludo</span>(props) {</span>
 <span id="cb8-2"><a></a>  <span class="cf">return </span><span class="kw">&lt;h1&gt;</span>Hola, <span class="va">{</span>props<span class="op">.</span><span class="at">nombre</span><span class="va">}</span><span class="kw">&lt;/h1&gt;</span><span class="op">;</span></span>
-<span id="cb8-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Uso del componente:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb9-1"><a></a><span class="fu">&lt;Saludo</span> <span class="ot">nombre</span><span class="op">=</span><span class="st">"Rosa"</span> <span class="fu">/&gt;</span></span>
-<span id="cb9-2"><a></a><span class="fu">&lt;Saludo</span> <span class="ot">nombre</span><span class="op">=</span><span class="st">"Gabriela"</span> <span class="fu">/&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb9-1"><a></a><span class="fu">&lt;Saludo</span> <span class="ot">nombre</span><span class="op">=</span><span class="st">"Rosa"</span> <span class="fu">/&gt;</span></span>
+<span id="cb9-2"><a></a><span class="fu">&lt;Saludo</span> <span class="ot">nombre</span><span class="op">=</span><span class="st">"Gabriela"</span> <span class="fu">/&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2">
 
 <h4 id="ejemplo-2-props-desestructuradas-sintaxis-javascript">Ejemplo 2: props desestructuradas (sintaxis JavaScript)</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb10-1"><a></a><span class="kw">function</span> <span class="fu">Saludo</span>({ nombre }) {</span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb10-1"><a></a><span class="kw">function</span> <span class="fu">Saludo</span>({ nombre }) {</span>
 <span id="cb10-2"><a></a>  <span class="cf">return </span><span class="kw">&lt;h1&gt;</span>Hola, <span class="va">{</span>nombre<span class="va">}</span><span class="kw">&lt;/h1&gt;</span><span class="op">;</span></span>
-<span id="cb10-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Uso del componente (idéntico al anterior):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb11-1"><a></a><span class="fu">&lt;Saludo</span> <span class="ot">nombre</span><span class="op">=</span><span class="st">"Rosa"</span> <span class="fu">/&gt;</span></span>
-<span id="cb11-2"><a></a><span class="fu">&lt;Saludo</span> <span class="ot">nombre</span><span class="op">=</span><span class="st">"Gabriela"</span> <span class="fu">/&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb11-1"><a></a><span class="fu">&lt;Saludo</span> <span class="ot">nombre</span><span class="op">=</span><span class="st">"Rosa"</span> <span class="fu">/&gt;</span></span>
+<span id="cb11-2"><a></a><span class="fu">&lt;Saludo</span> <span class="ot">nombre</span><span class="op">=</span><span class="st">"Gabriela"</span> <span class="fu">/&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2">
 
@@ -346,7 +346,7 @@ Javier Ribal del Río
 <section class="slide level2">
 
 <h4 id="ejemplo-básico-de-evento">Ejemplo básico de evento</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb12-1"><a></a><span class="kw">function</span> <span class="fu">BotonSaludo</span>() {</span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource jsx number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb12-1"><a></a><span class="kw">function</span> <span class="fu">BotonSaludo</span>() {</span>
 <span id="cb12-2"><a></a></span>
 <span id="cb12-3"><a></a>  <span class="kw">function</span> <span class="fu">manejarClick</span>() {</span>
 <span id="cb12-4"><a></a>    <span class="fu">alert</span>(<span class="st">"Hola desde React"</span>)<span class="op">;</span></span>
@@ -357,15 +357,15 @@ Javier Ribal del Río
 <span id="cb12-9"><a></a>      Saludar</span>
 <span id="cb12-10"><a></a>    <span class="kw">&lt;/button&gt;</span></span>
 <span id="cb12-11"><a></a>  )<span class="op">;</span></span>
-<span id="cb12-12"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-12"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2">
 
 <h4 id="paso-de-funciones-como-eventos">Paso de funciones como eventos</h4>
 <p>La función asociada al evento <strong>no se ejecuta al renderizar el componente</strong>, sino únicamente cuando ocurre el evento; es decir la pasamos como un ciudadano de primera clase.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a></a><span class="op">&lt;</span>button onClick<span class="op">=</span>{manejarClick}<span class="op">&gt;</span>Saludar<span class="op">&lt;/</span>button<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a></a><span class="op">&lt;</span>button onClick<span class="op">=</span>{manejarClick}<span class="op">&gt;</span>Saludar<span class="op">&lt;/</span>button<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Incorrecto:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb14-1"><a></a><span class="op">&lt;</span>button onClick<span class="op">=</span>{<span class="fu">manejarClick</span>()}<span class="op">&gt;</span>Saludar<span class="op">&lt;/</span>button<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb14-1"><a></a><span class="op">&lt;</span>button onClick<span class="op">=</span>{<span class="fu">manejarClick</span>()}<span class="op">&gt;</span>Saludar<span class="op">&lt;/</span>button<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2">
 
@@ -533,7 +533,7 @@ Javier Ribal del Río
 
 <h3 id="creación-de-la-aplicación">Creación de la aplicación</h3>
 <p>Para crear una nueva aplicación React utilizando un framework, se ejecuta el siguiente comando en la terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a></a><span class="ex">npm</span> create vite@latest</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a></a><span class="ex">npm</span> create vite@latest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Este comando genera:</p>
 <ul>
 <li>Una estructura inicial del proyecto</li>
@@ -743,7 +743,7 @@ Javier Ribal del Río
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -817,14 +817,13 @@ Javier Ribal del Río
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
             }
-          }
-          return codeEl.innerText;
+            return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
