@@ -1,0 +1,9 @@
+---
+title: "MA: Entorno"
+author: "Javier Ribal del Río"
+date: "2025-03-02"
+date-modified: today
+affiliation: "Hyperloop UPV"
+---
+
+Tanto trabajando con React como con JavaScript puede ser útil leer propiedades del navegador, así como almacenar información en los dispositivos locales.

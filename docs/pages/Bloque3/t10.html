@@ -8,7 +8,7 @@
 
 <meta name="author" content="Javier Ribal del Río">
 
-<title>Proyecto Subsistema – Training Center SW</title>
+<title>T10: Quiz app! – Training Center SW</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -249,7 +284,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Bloque III Interacción</li><li class="breadcrumb-item"><a href="../../pages/Bloque3/ReactI.html">Semana 7</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque3/ps.html">Proyecto Subsistema</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Bloque III Interacción</li><li class="breadcrumb-item"><a href="../../pages/Bloque3/ReactIV.html">Semana 10</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque3/t10.html">T10: Quiz app!</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -463,13 +498,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Semana 7</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../pages/Bloque3/ReactI.html" class="sidebar-item-text sidebar-link">
@@ -478,7 +513,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque3/ps.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../pages/Bloque3/ps.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Proyecto Subsistema</span></a>
   </div>
 </li>
@@ -509,35 +544,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
  <span class="menu-text">Semana 10</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
-<<<<<<< HEAD
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque3/ReactIV.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">React IV</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-=======
-<<<<<<< HEAD
-=======
->>>>>>> main
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque3/ReactIV.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">React IV</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
->>>>>>> 8e10774 (feat: explicacion semana 10 (#4))
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../pages/Bloque3/ReactIV.html" class="sidebar-item-text sidebar-link">
@@ -546,7 +559,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque3/t10.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/Bloque3/t10.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">T10: Quiz app!</span></a>
   </div>
 </li>
@@ -577,21 +590,30 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#objetivo" id="toc-objetivo" class="nav-link active" data-scroll-target="#objetivo">Objetivo</a></li>
-  <li><a href="#qué-se-quiere-hacer" id="toc-qué-se-quiere-hacer" class="nav-link" data-scroll-target="#qué-se-quiere-hacer">Qué se quiere hacer</a></li>
+  <li><a href="#api-a-utilizar" id="toc-api-a-utilizar" class="nav-link" data-scroll-target="#api-a-utilizar">API a utilizar</a></li>
   <li><a href="#requisitos-técnicos" id="toc-requisitos-técnicos" class="nav-link" data-scroll-target="#requisitos-técnicos">Requisitos técnicos</a></li>
-  <li><a href="#importante" id="toc-importante" class="nav-link" data-scroll-target="#importante">Importante</a></li>
-  <li><a href="#no-es-necesario" id="toc-no-es-necesario" class="nav-link" data-scroll-target="#no-es-necesario">No es necesario</a></li>
-  <li><a href="#entregable" id="toc-entregable" class="nav-link" data-scroll-target="#entregable">Entregable</a></li>
+  <li><a href="#estructura-mínima-del-proyecto" id="toc-estructura-mínima-del-proyecto" class="nav-link" data-scroll-target="#estructura-mínima-del-proyecto">Estructura mínima del proyecto</a></li>
+  <li><a href="#funcionalidades-obligatorias" id="toc-funcionalidades-obligatorias" class="nav-link" data-scroll-target="#funcionalidades-obligatorias">Funcionalidades obligatorias</a>
+  <ul>
+  <li><a href="#cargar-preguntas-desde-la-api" id="toc-cargar-preguntas-desde-la-api" class="nav-link" data-scroll-target="#cargar-preguntas-desde-la-api">1. Cargar preguntas desde la API</a></li>
+  <li><a href="#mostrar-la-pregunta-actual" id="toc-mostrar-la-pregunta-actual" class="nav-link" data-scroll-target="#mostrar-la-pregunta-actual">2. Mostrar la pregunta actual</a></li>
+  <li><a href="#mostrar-las-posibles-respuestas" id="toc-mostrar-las-posibles-respuestas" class="nav-link" data-scroll-target="#mostrar-las-posibles-respuestas">3. Mostrar las posibles respuestas</a></li>
+  <li><a href="#seleccionar-una-respuesta" id="toc-seleccionar-una-respuesta" class="nav-link" data-scroll-target="#seleccionar-una-respuesta">4. Seleccionar una respuesta</a></li>
+  <li><a href="#pasar-a-la-siguiente-pregunta" id="toc-pasar-a-la-siguiente-pregunta" class="nav-link" data-scroll-target="#pasar-a-la-siguiente-pregunta">5. Pasar a la siguiente pregunta</a></li>
+  <li><a href="#calcular-la-puntuación" id="toc-calcular-la-puntuación" class="nav-link" data-scroll-target="#calcular-la-puntuación">6. Calcular la puntuación</a></li>
+  <li><a href="#mostrar-el-resultado-final" id="toc-mostrar-el-resultado-final" class="nav-link" data-scroll-target="#mostrar-el-resultado-final">7. Mostrar el resultado final</a></li>
+  </ul></li>
+  <li><a href="#uso-de-estado-usestate" id="toc-uso-de-estado-usestate" class="nav-link" data-scroll-target="#uso-de-estado-usestate">Uso de estado (<code>useState</code>)</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="ps.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="t10.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Bloque III Interacción</li><li class="breadcrumb-item"><a href="../../pages/Bloque3/ReactI.html">Semana 7</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque3/ps.html">Proyecto Subsistema</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Bloque III Interacción</li><li class="breadcrumb-item"><a href="../../pages/Bloque3/ReactIV.html">Semana 10</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque3/t10.html">T10: Quiz app!</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Proyecto Subsistema</h1>
+<h1 class="title">T10: Quiz app!</h1>
 </div>
 
 
@@ -608,7 +630,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">19 de diciembre de 2025</p>
+      <p class="date">6 de febrero de 2026</p>
     </div>
   </div>
   
@@ -628,60 +650,126 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="objetivo" class="level2">
 <h2 class="anchored" data-anchor-id="objetivo">Objetivo</h2>
-<p>Desarrollar una pequeña aplicación web para gestionar una lista de tareas utilizando <strong>HTML, CSS y JavaScript</strong>, trabajando directamente con el <strong>DOM</strong>.</p>
-<p><a href="ps-ac.html">base</a></p>
+<p>Desarrollar una aplicación React que permita al usuario realizar un <strong>quiz de cultura general</strong> utilizando preguntas obtenidas desde una API pública.</p>
+<p><a href="https://astonishing-douhua-44213e.netlify.app/">https://astonishing-douhua-44213e.netlify.app/</a></p>
+<p>La aplicación debe mostrar preguntas, permitir seleccionar respuestas y calcular la puntuación final.</p>
 <hr>
 </section>
-<section id="qué-se-quiere-hacer" class="level2">
-<h2 class="anchored" data-anchor-id="qué-se-quiere-hacer">Qué se quiere hacer</h2>
-<ul>
-<li>Crear una página web que permita añadir tareas.</li>
-<li>Cada tarea debe tener:
-<ul>
-<li>Un texto descriptivo.</li>
-<li>Un responsable (Software, Hardware, Partners, Otros).</li>
-</ul></li>
-<li>Las tareas deben mostrarse en una lista.</li>
-<li>Al hacer click sobre una tarea, esta debe eliminarse.</li>
-<li>La página no debe recargarse al añadir o eliminar tareas.</li>
-</ul>
+<section id="api-a-utilizar" class="level1">
+<h1>API a utilizar</h1>
+<p>Utilizaremos la siguiente API:</p>
+<p>https://the-trivia-api.com/api/questions?limit=10</p>
+<p>Ejemplo de respuesta:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"question"</span><span class="fu">:</span> <span class="st">"What is the capital of France?"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"correctAnswer"</span><span class="fu">:</span> <span class="st">"Paris"</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"incorrectAnswers"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"Madrid"</span><span class="ot">,</span> <span class="st">"Rome"</span><span class="ot">,</span> <span class="st">"Berlin"</span><span class="ot">]</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
-<section id="requisitos-técnicos" class="level2">
-<h2 class="anchored" data-anchor-id="requisitos-técnicos">Requisitos técnicos</h2>
+<section id="requisitos-técnicos" class="level1">
+<h1>Requisitos técnicos</h1>
+<p>La aplicación debe utilizar:</p>
 <ul>
-<li>La lógica debe implementarse <strong>manipulando el DOM directamente</strong> (<code>document.createElement</code>, <code>appendChild</code>, <code>addEventListener</code>, etc.).</li>
-<li>HTML básico para la estructura.</li>
-<li><strong>CSS libre</strong>, se espera que se use de forma creativa para mejorar el diseño.</li>
-<li>JavaScript en un archivo separado o en un <code>&lt;script&gt;</code>.</li>
+<li>Componentes funcionales de React</li>
+<li><code>useState</code></li>
+<li><code>useEffect</code></li>
+<li>Consumo de API con <code>fetch</code></li>
 </ul>
+<p>No se deben utilizar librerías externas.</p>
 <hr>
 </section>
-<section id="importante" class="level2">
-<h2 class="anchored" data-anchor-id="importante">Importante</h2>
-<ul>
-<li>La solución mínima funcional es sencilla.</li>
-<li><strong>Se espera que el alumnado mejore notablemente el aspecto visual usando CSS</strong>.</li>
-<li>El diseño, la usabilidad y la presentación formarán parte de la evaluación.</li>
-<li>Aquellos que completen la funcionalidad básica de la tarea podrán preguntarle al profesor como mejorar la tarea o que agregar para ampliar funcionalidades</li>
-</ul>
+<section id="estructura-mínima-del-proyecto" class="level1">
+<h1>Estructura mínima del proyecto</h1>
+<p>La aplicación debe estar organizada al menos con esta estructura:</p>
+<pre><code>src
+ ├─ components
+ │   ├─ Question.jsx
+ │   └─ Answers.jsx
+ ├─ pages
+ │   └─ Quiz.jsx
+ ├─ App.jsx
+ └─ main.jsx</code></pre>
 <hr>
 </section>
-<section id="no-es-necesario" class="level2">
-<h2 class="anchored" data-anchor-id="no-es-necesario">No es necesario</h2>
+<section id="funcionalidades-obligatorias" class="level1">
+<h1>Funcionalidades obligatorias</h1>
+<section id="cargar-preguntas-desde-la-api" class="level2">
+<h2 class="anchored" data-anchor-id="cargar-preguntas-desde-la-api">1. Cargar preguntas desde la API</h2>
+<p>Cuando la aplicación se inicia debe obtener <strong>10 preguntas</strong> desde la API.</p>
+<p>Para ello se debe usar:</p>
 <ul>
-<li>Guardar las tareas al recargar la página.</li>
-<li>Autenticación de usuarios.</li>
-<li>Base de datos o backend.</li>
+<li><code>fetch</code></li>
+<li><code>useEffect</code></li>
 </ul>
-<hr>
+<p>Mientras se cargan los datos se debe mostrar:</p>
+<pre><code>Loading...</code></pre>
 </section>
-<section id="entregable" class="level2">
-<h2 class="anchored" data-anchor-id="entregable">Entregable</h2>
+<section id="mostrar-la-pregunta-actual" class="level2">
+<h2 class="anchored" data-anchor-id="mostrar-la-pregunta-actual">2. Mostrar la pregunta actual</h2>
+<p>La aplicación debe mostrar:</p>
 <ul>
-<li>Archivos <code>index.html</code>, <code>script.js</code> y <code>style.css</code>.</li>
-<li>El proyecto debe poder abrirse directamente en el navegador.</li>
+<li>número de pregunta</li>
+<li>texto de la pregunta</li>
 </ul>
+<p>Ejemplo:</p>
+<pre><code>Question 3
+What is the capital of France?</code></pre>
+</section>
+<section id="mostrar-las-posibles-respuestas" class="level2">
+<h2 class="anchored" data-anchor-id="mostrar-las-posibles-respuestas">3. Mostrar las posibles respuestas</h2>
+<p>Cada pregunta tiene:</p>
+<ul>
+<li>1 respuesta correcta</li>
+<li>3 respuestas incorrectas</li>
+</ul>
+<p>Se deben mostrar <strong>las 4 respuestas como botones</strong>.</p>
+<p>Ejemplo:</p>
+<pre><code>Paris
+Rome
+Madrid
+Berlin</code></pre>
+</section>
+<section id="seleccionar-una-respuesta" class="level2">
+<h2 class="anchored" data-anchor-id="seleccionar-una-respuesta">4. Seleccionar una respuesta</h2>
+<p>Cuando el usuario hace clic en una respuesta:</p>
+<ul>
+<li>la opción debe quedar <strong>marcada visualmente</strong></li>
+<li>la selección debe guardarse en el estado del componente</li>
+</ul>
+</section>
+<section id="pasar-a-la-siguiente-pregunta" class="level2">
+<h2 class="anchored" data-anchor-id="pasar-a-la-siguiente-pregunta">5. Pasar a la siguiente pregunta</h2>
+<p>Debe existir un botón:</p>
+<pre><code>Next</code></pre>
+<p>Este botón:</p>
+<ul>
+<li>solo se puede pulsar cuando el usuario ha seleccionado una respuesta</li>
+<li>pasa a la siguiente pregunta</li>
+</ul>
+</section>
+<section id="calcular-la-puntuación" class="level2">
+<h2 class="anchored" data-anchor-id="calcular-la-puntuación">6. Calcular la puntuación</h2>
+<p>Cuando el usuario responde una pregunta:</p>
+<ul>
+<li>si la respuesta es correcta → sumar <strong>1 punto</strong></li>
+</ul>
+</section>
+<section id="mostrar-el-resultado-final" class="level2">
+<h2 class="anchored" data-anchor-id="mostrar-el-resultado-final">7. Mostrar el resultado final</h2>
+<p>Al terminar el quiz debe mostrarse:</p>
+<pre><code>Quiz finished!
+Your score: X / 10</code></pre>
+</section>
+</section>
+<section id="uso-de-estado-usestate" class="level1">
+<h1>Uso de estado (<code>useState</code>)</h1>
+<p>La aplicación debe utilizar varios estados. Por ejemplo:</p>
+<pre><code>questions
+currentQuestion
+selectedAnswer
+score
+showResult</code></pre>
 
 
 </section>
