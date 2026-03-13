@@ -89,6 +89,10 @@ website:
 >>>>>>> 8e10774 (feat: explicacion semana 10 (#4))
 
       - section: "Bloque IV Comunicación"
+        contents:
+          - section: "Semana 11"
+            contents: 
+            - pages/Bloque4/protocolos.qmd
 
       - pages/rubric.qmd
 
