@@ -1,0 +1,581 @@
+---
+title: "Protocolos de Comunicación"
+subtitle: "HTTP, WebSockets, Hooks personalizados y Recharts"
+author: "Javier Ribal del Río"
+date: "2026-03-13"
+date-modified: today
+affiliation: "Hyperloop UPV"
+
+format:
+  html: default
+  revealjs: 
+    history: false
+    chalkboard: true
+    output-file: Protocolos.html
+    parallax-background-image: ../../img/fondo.png
+    parallax-background-size: "cover" 
+  pdf: default
+format-links: 
+  - pdf
+  - format: revealjs
+    text: Presentación
+    icon: file-slides
+---
+
+**Contenido**
+
+- HTTP básico para desarrollo web
+- Métodos GET, POST, PUT, DELETE, HEAD
+- WebSockets
+- Hook personalizado para conexión en tiempo real
+- Gráficas con Recharts
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+## HTTP 
+### ¿Qué es HTTP?
+
+HTTP (*HyperText Transfer Protocol*) es el protocolo fundamental de la web.
+
+Define cómo:
+
+- El cliente (navegador o app)
+- Solicita recursos
+- A un servidor
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+Modelo conceptual:
+
+```
+Cliente → Solicitud HTTP → Servidor
+Cliente ← Respuesta HTTP ← Servidor
+```
+
+HTTP es **sin estado (stateless)**.
+
+Cada petición es independiente.
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### Componentes de una petición
+
+Una petición HTTP contiene:
+
+- Método
+- URL
+- Cabeceras (*headers*)
+- Cuerpo (*body*, opcional)
+
+Ejemplo conceptual:
+
+```
+GET /users HTTP/1.1
+Host: api.example.com
+Authorization: Bearer token
+```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### Métodos HTTP principales
+
+#### GET
+
+- Solicita datos
+- No modifica el servidor
+- Debe ser idempotente
+
+Ejemplo:
+
+```
+GET /users
+```
+
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+Uso típico en React:
+
+```jsx
+fetch("/api/users")
+```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### POST
+
+- Envía datos al servidor
+- Crea recursos nuevos
+- Tiene cuerpo
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+Ejemplo:
+
+```jsx
+fetch("/api/users", {
+  method: "POST",
+  body: JSON.stringify({ name: "Ana" }),
+  headers: { "Content-Type": "application/json" }
+});
+```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### PUT
+
+- Actualiza completamente un recurso existente
+- Idempotente
+
+```
+PUT /users/3
+```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### DELETE
+
+- Elimina un recurso
+
+```
+DELETE /users/3
+```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### HEAD
+
+- Igual que GET
+- No devuelve cuerpo
+- Solo cabeceras
+
+Se utiliza para:
+
+- Comprobar existencia
+- Tamaño
+- Metadatos
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+## HTTP vs Comunicación en tiempo real
+
+HTTP funciona bajo el modelo:
+
+> Petición → Respuesta → Fin
+
+Si queremos datos continuamente:
+
+- Debemos repetir peticiones
+- Introduce latencia
+- Ineficiente
+
+Solución: **WebSockets**
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+## WebSockets
+
+WebSockets permiten comunicación bidireccional persistente.
+
+Características:
+
+- Conexión permanente
+- Cliente y servidor pueden enviar datos
+- Baja latencia
+- Ideal para tiempo real
+
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+Ejemplos:
+
+- Chats
+- Juegos online
+- Telemetría
+- Trading
+- Sistemas IoT
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### Flujo conceptual
+
+```
+Cliente ↔ Servidor
+     conexión abierta
+```
+
+No se crea una nueva conexión por mensaje.
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### Creación de un WebSocket en JavaScript
+
+```jsx
+const socket = new WebSocket("ws://localhost:8080");
+```
+
+Eventos principales:
+
+- `onopen`
+- `onmessage`
+- `onclose`
+- `onerror`
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### Recepción de mensajes
+
+```js
+socket.onmessage = (event) => {
+  console.log("Mensaje:", event.data);
+};
+```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### Envío de mensajes
+
+```js
+socket.send("Hola servidor");
+```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+## Hook Personalizado
+
+Si usamos WebSockets directamente dentro del componente:
+
+- Mezclamos lógica de conexión con renderizado
+- Código difícil de reutilizar
+- Problemas de ciclo de vida
+
+Solución: **Hook personalizado**
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### Hook personalizado
+
+Un hook personalizado es:
+
+> Una función que utiliza hooks internos para encapsular lógica reutilizable
+
+Convención:
+
+```
+useNombre()
+```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### Hook `useWebSocket`
+
+```jsx
+import { useEffect, useState } from "react";
+
+export function useWebSocket(url) {
+
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+
+    const socket = new WebSocket(url);
+
+    socket.onmessage = (event) => {
+      setData(event.data);
+    };
+
+    return () => socket.close();
+
+  }, [url]);
+
+  return data;
+}
+```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### Análisis conceptual
+
+- Se crea la conexión al montar
+- Se actualiza el estado al recibir datos
+- Se cierra al desmontar
+- El componente solo consume datos
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### Uso del hook
+
+```jsx
+function Monitor() {
+
+  const data = useWebSocket("ws://localhost:8080");
+
+  return (
+    <div>
+      <h2>Datos en tiempo real</h2>
+      <p>{data}</p>
+    </div>
+  );
+}
+```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+Flujo:
+
+1. Componente se renderiza  
+2. Hook abre conexión  
+3. Llegan datos  
+4. Estado cambia  
+5. Nuevo render  
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+## Visualización de datos
+
+En aplicaciones reales no basta con mostrar texto.
+
+Necesitamos:
+
+- Gráficas
+- Paneles de control
+- Visualización clara
+
+Una librería popular para React es **Recharts**.
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+## Recharts
+
+Recharts es una librería basada en:
+
+- Componentes React
+- SVG
+- Composición declarativa
+
+Instalación:
+
+```bash
+npm install recharts
+```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### Ejemplo básico
+
+```jsx
+import {
+  LineChart, Line, XAxis, YAxis,
+  CartesianGrid, Tooltip
+} from "recharts";
+
+const data = [
+  { t: 1, v: 10 },
+  { t: 2, v: 15 },
+  { t: 3, v: 8 }
+];
+
+function Grafica() {
+  return (
+    <LineChart width={400} height={300} data={data}>
+      <CartesianGrid stroke="#ccc" />
+      <XAxis dataKey="t" />
+      <YAxis />
+      <Tooltip />
+      <Line type="monotone" dataKey="v" stroke="#8884d8" />
+    </LineChart>
+  );
+}
+```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### Interpretación
+
+Cada objeto representa un punto.
+
+```
+{ t: 1, v: 10 }
+```
+
+- `t` → eje X
+- `v` → eje Y
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+## Integración completa
+
+WebSocket + Hook + Recharts
+
+Objetivo:
+
+> Visualizar datos en tiempo real
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### Ejemplo conceptual
+
+```jsx
+function Dashboard() {
+
+  const data = useWebSocket("ws://localhost:8080");
+
+  const chartData = data
+    ? JSON.parse(data)
+    : [];
+
+  return (
+    <LineChart width={500} height={300} data={chartData}>
+      <XAxis dataKey="time" />
+      <YAxis />
+      <Tooltip />
+      <Line dataKey="value" stroke="#82ca9d" />
+    </LineChart>
+  );
+}
+```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### Flujo completo de una app moderna
+
+```
+Servidor → WebSocket → Hook → Estado → React → Gráfica
+```
+
+Arquitectura típica de sistemas en tiempo real.
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+## Material
+
+Servidor de testing de _Python_: [Enlace](Server.py).
+
+Instalar `websockets` con `pip install websockets` 
+
+Tester de prueba: [Enlace](tester_http_ws_basic.html) (click derecho guardar enlace como)
+
+[https://recharts.github.io/](https://recharts.github.io/)
