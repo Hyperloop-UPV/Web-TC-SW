@@ -8,7 +8,7 @@
 
 <meta name="author" content="Javier Ribal del Río">
 
-<title>T2: Web de HL II – Training Center SW</title>
+<title>Protocolos de Comunicación – Training Center SW</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -249,7 +284,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/Bloque1/bloque1.html">Bloque I Introducción</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque1/css.html">Semana 2</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque1/t2.html">T2: Web de HL II</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Bloque IV Comunicación</li><li class="breadcrumb-item"><a href="../../pages/Bloque4/protocolos.html">Semana 11</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque4/protocolos.html">Protocolos de Comunicación</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -283,11 +318,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../pages/Bloque1/bloque1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bloque I Introducción</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -342,13 +377,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Semana 2</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../pages/Bloque1/css.html" class="sidebar-item-text sidebar-link">
@@ -357,7 +392,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque1/t2.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../pages/Bloque1/t2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">T2: Web de HL II</span></a>
   </div>
 </li>
@@ -516,17 +551,6 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
-<<<<<<< HEAD
-=======
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque3/ReactIV.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">React IV</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
->>>>>>> 8e10774 (feat: explicacion semana 10 (#4))
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../pages/Bloque3/ReactIV.html" class="sidebar-item-text sidebar-link">
@@ -545,25 +569,25 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true">
  <span class="menu-text">Bloque IV Comunicación</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true">
  <span class="menu-text">Semana 11</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/Bloque4/protocolos.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/Bloque4/protocolos.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Protocolos de Comunicación</span></a>
   </div>
 </li>
@@ -585,15 +609,61 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="t2.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#http" id="toc-http" class="nav-link active" data-scroll-target="#http">HTTP</a>
+  <ul>
+  <li><a href="#qué-es-http" id="toc-qué-es-http" class="nav-link" data-scroll-target="#qué-es-http">¿Qué es HTTP?</a></li>
+  <li><a href="#componentes-de-una-petición" id="toc-componentes-de-una-petición" class="nav-link" data-scroll-target="#componentes-de-una-petición">Componentes de una petición</a></li>
+  <li><a href="#métodos-http-principales" id="toc-métodos-http-principales" class="nav-link" data-scroll-target="#métodos-http-principales">Métodos HTTP principales</a>
+  <ul class="collapse">
+  <li><a href="#get" id="toc-get" class="nav-link" data-scroll-target="#get">GET</a></li>
+  </ul></li>
+  <li><a href="#post" id="toc-post" class="nav-link" data-scroll-target="#post">POST</a></li>
+  <li><a href="#put" id="toc-put" class="nav-link" data-scroll-target="#put">PUT</a></li>
+  <li><a href="#delete" id="toc-delete" class="nav-link" data-scroll-target="#delete">DELETE</a></li>
+  <li><a href="#head" id="toc-head" class="nav-link" data-scroll-target="#head">HEAD</a></li>
+  </ul></li>
+  <li><a href="#http-vs-comunicación-en-tiempo-real" id="toc-http-vs-comunicación-en-tiempo-real" class="nav-link" data-scroll-target="#http-vs-comunicación-en-tiempo-real">HTTP vs Comunicación en tiempo real</a></li>
+  <li><a href="#websockets" id="toc-websockets" class="nav-link" data-scroll-target="#websockets">WebSockets</a>
+  <ul>
+  <li><a href="#flujo-conceptual" id="toc-flujo-conceptual" class="nav-link" data-scroll-target="#flujo-conceptual">Flujo conceptual</a></li>
+  <li><a href="#creación-de-un-websocket-en-javascript" id="toc-creación-de-un-websocket-en-javascript" class="nav-link" data-scroll-target="#creación-de-un-websocket-en-javascript">Creación de un WebSocket en JavaScript</a></li>
+  <li><a href="#recepción-de-mensajes" id="toc-recepción-de-mensajes" class="nav-link" data-scroll-target="#recepción-de-mensajes">Recepción de mensajes</a></li>
+  <li><a href="#envío-de-mensajes" id="toc-envío-de-mensajes" class="nav-link" data-scroll-target="#envío-de-mensajes">Envío de mensajes</a></li>
+  </ul></li>
+  <li><a href="#hook-personalizado" id="toc-hook-personalizado" class="nav-link" data-scroll-target="#hook-personalizado">Hook Personalizado</a>
+  <ul>
+  <li><a href="#hook-personalizado-1" id="toc-hook-personalizado-1" class="nav-link" data-scroll-target="#hook-personalizado-1">Hook personalizado</a></li>
+  <li><a href="#hook-usewebsocket" id="toc-hook-usewebsocket" class="nav-link" data-scroll-target="#hook-usewebsocket">Hook <code>useWebSocket</code></a></li>
+  <li><a href="#análisis-conceptual" id="toc-análisis-conceptual" class="nav-link" data-scroll-target="#análisis-conceptual">Análisis conceptual</a></li>
+  <li><a href="#uso-del-hook" id="toc-uso-del-hook" class="nav-link" data-scroll-target="#uso-del-hook">Uso del hook</a></li>
+  </ul></li>
+  <li><a href="#visualización-de-datos" id="toc-visualización-de-datos" class="nav-link" data-scroll-target="#visualización-de-datos">Visualización de datos</a></li>
+  <li><a href="#recharts" id="toc-recharts" class="nav-link" data-scroll-target="#recharts">Recharts</a>
+  <ul>
+  <li><a href="#ejemplo-básico" id="toc-ejemplo-básico" class="nav-link" data-scroll-target="#ejemplo-básico">Ejemplo básico</a></li>
+  <li><a href="#interpretación" id="toc-interpretación" class="nav-link" data-scroll-target="#interpretación">Interpretación</a></li>
+  </ul></li>
+  <li><a href="#integración-completa" id="toc-integración-completa" class="nav-link" data-scroll-target="#integración-completa">Integración completa</a>
+  <ul>
+  <li><a href="#ejemplo-conceptual" id="toc-ejemplo-conceptual" class="nav-link" data-scroll-target="#ejemplo-conceptual">Ejemplo conceptual</a></li>
+  <li><a href="#flujo-completo-de-una-app-moderna" id="toc-flujo-completo-de-una-app-moderna" class="nav-link" data-scroll-target="#flujo-completo-de-una-app-moderna">Flujo completo de una app moderna</a></li>
+  </ul></li>
+  <li><a href="#material" id="toc-material" class="nav-link" data-scroll-target="#material">Material</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="protocolos.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="Protocolos.html"><i class="bi bi-file-slides"></i>Presentación</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/Bloque1/bloque1.html">Bloque I Introducción</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque1/css.html">Semana 2</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque1/t2.html">T2: Web de HL II</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Bloque IV Comunicación</li><li class="breadcrumb-item"><a href="../../pages/Bloque4/protocolos.html">Semana 11</a></li><li class="breadcrumb-item"><a href="../../pages/Bloque4/protocolos.html">Protocolos de Comunicación</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">T2: Web de HL II</h1>
+<h1 class="title">Protocolos de Comunicación</h1>
+<p class="subtitle lead">HTTP, WebSockets, Hooks personalizados y Recharts</p>
 </div>
 
 
@@ -610,7 +680,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">5 de diciembre de 2025</p>
+      <p class="date">13 de marzo de 2026</p>
     </div>
   </div>
   
@@ -628,14 +698,339 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>El objetivo de esta tarea, es poner en práctica lo aprendido en clase para ello vamos a formatear la web de nuestro equipo de Hyperloop, (tarea de la semana pasada).</p>
-<p>Se debe formatear para que quede como está <a href="t2-solu.html">Web</a>, cuanto más se parezca mejor.</p>
-<p><strong>Notas:</strong></p>
-<p>La hoja de estilos debe de estar incluida en el la etiqueta <code>&lt;style&gt;</code> del <code>&lt;head&gt;</code>.</p>
-<p>Para conseguir que los bordes de la <code>table</code>, <code>td</code>, <code>tr</code>… colapsen (que solo haya un borde y no dos) se debe utilizar la propiedad <code>border-collapse</code>.</p>
-<p>Si no se realizó la T1, puede utilizar <a href="t1-solu.html">este archivo html</a> como base (click derechao guardar enlace como).</p>
+<p><strong>Contenido</strong></p>
+<ul>
+<li>HTTP básico para desarrollo web</li>
+<li>Métodos GET, POST, PUT, DELETE, HEAD</li>
+<li>WebSockets</li>
+<li>Hook personalizado para conexión en tiempo real</li>
+<li>Gráficas con Recharts</li>
+</ul>
+<section id="http" class="level2">
+<h2 class="anchored" data-anchor-id="http">HTTP</h2>
+<section id="qué-es-http" class="level3">
+<h3 class="anchored" data-anchor-id="qué-es-http">¿Qué es HTTP?</h3>
+<p>HTTP (<em>HyperText Transfer Protocol</em>) es el protocolo fundamental de la web.</p>
+<p>Define cómo:</p>
+<ul>
+<li>El cliente (navegador o app)</li>
+<li>Solicita recursos</li>
+<li>A un servidor</li>
+</ul>
+<p>Modelo conceptual:</p>
+<pre><code>Cliente → Solicitud HTTP → Servidor
+Cliente ← Respuesta HTTP ← Servidor</code></pre>
+<p>HTTP es <strong>sin estado (stateless)</strong>.</p>
+<p>Cada petición es independiente.</p>
+</section>
+<section id="componentes-de-una-petición" class="level3">
+<h3 class="anchored" data-anchor-id="componentes-de-una-petición">Componentes de una petición</h3>
+<p>Una petición HTTP contiene:</p>
+<ul>
+<li>Método</li>
+<li>URL</li>
+<li>Cabeceras (<em>headers</em>)</li>
+<li>Cuerpo (<em>body</em>, opcional)</li>
+</ul>
+<p>Ejemplo conceptual:</p>
+<pre><code>GET /users HTTP/1.1
+Host: api.example.com
+Authorization: Bearer token</code></pre>
+</section>
+<section id="métodos-http-principales" class="level3">
+<h3 class="anchored" data-anchor-id="métodos-http-principales">Métodos HTTP principales</h3>
+<section id="get" class="level4">
+<h4 class="anchored" data-anchor-id="get">GET</h4>
+<ul>
+<li>Solicita datos</li>
+<li>No modifica el servidor</li>
+<li>Debe ser idempotente</li>
+</ul>
+<p>Ejemplo:</p>
+<pre><code>GET /users</code></pre>
+<p>Uso típico en React:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch</span>(<span class="st">"/api/users"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="post" class="level3">
+<h3 class="anchored" data-anchor-id="post">POST</h3>
+<ul>
+<li>Envía datos al servidor</li>
+<li>Crea recursos nuevos</li>
+<li>Tiene cuerpo</li>
+</ul>
+<p>Ejemplo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch</span>(<span class="st">"/api/users"</span><span class="op">,</span> {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">method</span><span class="op">:</span> <span class="st">"POST"</span><span class="op">,</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">body</span><span class="op">:</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>({ <span class="dt">name</span><span class="op">:</span> <span class="st">"Ana"</span> })<span class="op">,</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">headers</span><span class="op">:</span> { <span class="st">"Content-Type"</span><span class="op">:</span> <span class="st">"application/json"</span> }</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="put" class="level3">
+<h3 class="anchored" data-anchor-id="put">PUT</h3>
+<ul>
+<li>Actualiza completamente un recurso existente</li>
+<li>Idempotente</li>
+</ul>
+<pre><code>PUT /users/3</code></pre>
+</section>
+<section id="delete" class="level3">
+<h3 class="anchored" data-anchor-id="delete">DELETE</h3>
+<ul>
+<li>Elimina un recurso</li>
+</ul>
+<pre><code>DELETE /users/3</code></pre>
+</section>
+<section id="head" class="level3">
+<h3 class="anchored" data-anchor-id="head">HEAD</h3>
+<ul>
+<li>Igual que GET</li>
+<li>No devuelve cuerpo</li>
+<li>Solo cabeceras</li>
+</ul>
+<p>Se utiliza para:</p>
+<ul>
+<li>Comprobar existencia</li>
+<li>Tamaño</li>
+<li>Metadatos</li>
+</ul>
+</section>
+</section>
+<section id="http-vs-comunicación-en-tiempo-real" class="level2">
+<h2 class="anchored" data-anchor-id="http-vs-comunicación-en-tiempo-real">HTTP vs Comunicación en tiempo real</h2>
+<p>HTTP funciona bajo el modelo:</p>
+<blockquote class="blockquote">
+<p>Petición → Respuesta → Fin</p>
+</blockquote>
+<p>Si queremos datos continuamente:</p>
+<ul>
+<li>Debemos repetir peticiones</li>
+<li>Introduce latencia</li>
+<li>Ineficiente</li>
+</ul>
+<p>Solución: <strong>WebSockets</strong></p>
+</section>
+<section id="websockets" class="level2">
+<h2 class="anchored" data-anchor-id="websockets">WebSockets</h2>
+<p>WebSockets permiten comunicación bidireccional persistente.</p>
+<p>Características:</p>
+<ul>
+<li>Conexión permanente</li>
+<li>Cliente y servidor pueden enviar datos</li>
+<li>Baja latencia</li>
+<li>Ideal para tiempo real</li>
+</ul>
+<p>Ejemplos:</p>
+<ul>
+<li>Chats</li>
+<li>Juegos online</li>
+<li>Telemetría</li>
+<li>Trading</li>
+<li>Sistemas IoT</li>
+</ul>
+<section id="flujo-conceptual" class="level3">
+<h3 class="anchored" data-anchor-id="flujo-conceptual">Flujo conceptual</h3>
+<pre><code>Cliente ↔ Servidor
+     conexión abierta</code></pre>
+<p>No se crea una nueva conexión por mensaje.</p>
+</section>
+<section id="creación-de-un-websocket-en-javascript" class="level3">
+<h3 class="anchored" data-anchor-id="creación-de-un-websocket-en-javascript">Creación de un WebSocket en JavaScript</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> socket <span class="op">=</span> <span class="kw">new</span> <span class="bu">WebSocket</span>(<span class="st">"ws://localhost:8080"</span>)<span class="op">;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Eventos principales:</p>
+<ul>
+<li><code>onopen</code></li>
+<li><code>onmessage</code></li>
+<li><code>onclose</code></li>
+<li><code>onerror</code></li>
+</ul>
+</section>
+<section id="recepción-de-mensajes" class="level3">
+<h3 class="anchored" data-anchor-id="recepción-de-mensajes">Recepción de mensajes</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>socket<span class="op">.</span><span class="at">onmessage</span> <span class="op">=</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Mensaje:"</span><span class="op">,</span> <span class="bu">event</span><span class="op">.</span><span class="at">data</span>)<span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="envío-de-mensajes" class="level3">
+<h3 class="anchored" data-anchor-id="envío-de-mensajes">Envío de mensajes</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>socket<span class="op">.</span><span class="fu">send</span>(<span class="st">"Hola servidor"</span>)<span class="op">;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="hook-personalizado" class="level2">
+<h2 class="anchored" data-anchor-id="hook-personalizado">Hook Personalizado</h2>
+<p>Si usamos WebSockets directamente dentro del componente:</p>
+<ul>
+<li>Mezclamos lógica de conexión con renderizado</li>
+<li>Código difícil de reutilizar</li>
+<li>Problemas de ciclo de vida</li>
+</ul>
+<p>Solución: <strong>Hook personalizado</strong></p>
+<section id="hook-personalizado-1" class="level3">
+<h3 class="anchored" data-anchor-id="hook-personalizado-1">Hook personalizado</h3>
+<p>Un hook personalizado es:</p>
+<blockquote class="blockquote">
+<p>Una función que utiliza hooks internos para encapsular lógica reutilizable</p>
+</blockquote>
+<p>Convención:</p>
+<pre><code>useNombre()</code></pre>
+</section>
+<section id="hook-usewebsocket" class="level3">
+<h3 class="anchored" data-anchor-id="hook-usewebsocket">Hook <code>useWebSocket</code></h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { useEffect<span class="op">,</span> useState } <span class="im">from</span> <span class="st">"react"</span><span class="op">;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="kw">function</span> <span class="fu">useWebSocket</span>(url) {</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [data<span class="op">,</span> setData] <span class="op">=</span> <span class="fu">useState</span>(<span class="kw">null</span>)<span class="op">;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">useEffect</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> socket <span class="op">=</span> <span class="kw">new</span> <span class="bu">WebSocket</span>(url)<span class="op">;</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    socket<span class="op">.</span><span class="at">onmessage</span> <span class="op">=</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">setData</span>(<span class="bu">event</span><span class="op">.</span><span class="at">data</span>)<span class="op">;</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    }<span class="op">;</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> () <span class="kw">=&gt;</span> socket<span class="op">.</span><span class="fu">close</span>()<span class="op">;</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span> [url])<span class="op">;</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> data<span class="op">;</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="análisis-conceptual" class="level3">
+<h3 class="anchored" data-anchor-id="análisis-conceptual">Análisis conceptual</h3>
+<ul>
+<li>Se crea la conexión al montar</li>
+<li>Se actualiza el estado al recibir datos</li>
+<li>Se cierra al desmontar</li>
+<li>El componente solo consume datos</li>
+</ul>
+</section>
+<section id="uso-del-hook" class="level3">
+<h3 class="anchored" data-anchor-id="uso-del-hook">Uso del hook</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Monitor</span>() {</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> data <span class="op">=</span> <span class="fu">useWebSocket</span>(<span class="st">"ws://localhost:8080"</span>)<span class="op">;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;h2&gt;</span>Datos en tiempo real<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;p&gt;</span><span class="va">{</span>data<span class="va">}</span><span class="kw">&lt;/p&gt;</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Flujo:</p>
+<ol type="1">
+<li>Componente se renderiza<br>
+</li>
+<li>Hook abre conexión<br>
+</li>
+<li>Llegan datos<br>
+</li>
+<li>Estado cambia<br>
+</li>
+<li>Nuevo render</li>
+</ol>
+</section>
+</section>
+<section id="visualización-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="visualización-de-datos">Visualización de datos</h2>
+<p>En aplicaciones reales no basta con mostrar texto.</p>
+<p>Necesitamos:</p>
+<ul>
+<li>Gráficas</li>
+<li>Paneles de control</li>
+<li>Visualización clara</li>
+</ul>
+<p>Una librería popular para React es <strong>Recharts</strong>.</p>
+</section>
+<section id="recharts" class="level2">
+<h2 class="anchored" data-anchor-id="recharts">Recharts</h2>
+<p>Recharts es una librería basada en:</p>
+<ul>
+<li>Componentes React</li>
+<li>SVG</li>
+<li>Composición declarativa</li>
+</ul>
+<p>Instalación:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install recharts</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="ejemplo-básico" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-básico">Ejemplo básico</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  LineChart<span class="op">,</span> Line<span class="op">,</span> XAxis<span class="op">,</span> YAxis<span class="op">,</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  CartesianGrid<span class="op">,</span> Tooltip</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>} <span class="im">from</span> <span class="st">"recharts"</span><span class="op">;</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> data <span class="op">=</span> [</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  { <span class="dt">t</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">v</span><span class="op">:</span> <span class="dv">10</span> }<span class="op">,</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  { <span class="dt">t</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">v</span><span class="op">:</span> <span class="dv">15</span> }<span class="op">,</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  { <span class="dt">t</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">v</span><span class="op">:</span> <span class="dv">8</span> }</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>]<span class="op">;</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Grafica</span>() {</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;LineChart</span> <span class="ot">width</span><span class="op">=</span><span class="va">{</span><span class="dv">400</span><span class="va">}</span> <span class="ot">height</span><span class="op">=</span><span class="va">{</span><span class="dv">300</span><span class="va">}</span> <span class="ot">data</span><span class="op">=</span><span class="va">{</span>data<span class="va">}</span><span class="fu">&gt;</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">&lt;CartesianGrid</span> <span class="ot">stroke</span><span class="op">=</span><span class="st">"#ccc"</span> <span class="fu">/&gt;</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">&lt;XAxis</span> <span class="ot">dataKey</span><span class="op">=</span><span class="st">"t"</span> <span class="fu">/&gt;</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">&lt;YAxis</span> <span class="fu">/&gt;</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>      <span class="fu">&lt;Tooltip</span> <span class="fu">/&gt;</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">&lt;Line</span> <span class="ot">type</span><span class="op">=</span><span class="st">"monotone"</span> <span class="ot">dataKey</span><span class="op">=</span><span class="st">"v"</span> <span class="ot">stroke</span><span class="op">=</span><span class="st">"#8884d8"</span> <span class="fu">/&gt;</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;/LineChart&gt;</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="interpretación" class="level3">
+<h3 class="anchored" data-anchor-id="interpretación">Interpretación</h3>
+<p>Cada objeto representa un punto.</p>
+<pre><code>{ t: 1, v: 10 }</code></pre>
+<ul>
+<li><code>t</code> → eje X</li>
+<li><code>v</code> → eje Y</li>
+</ul>
+</section>
+</section>
+<section id="integración-completa" class="level2">
+<h2 class="anchored" data-anchor-id="integración-completa">Integración completa</h2>
+<p>WebSocket + Hook + Recharts</p>
+<p>Objetivo:</p>
+<blockquote class="blockquote">
+<p>Visualizar datos en tiempo real</p>
+</blockquote>
+<section id="ejemplo-conceptual" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-conceptual">Ejemplo conceptual</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Dashboard</span>() {</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> data <span class="op">=</span> <span class="fu">useWebSocket</span>(<span class="st">"ws://localhost:8080"</span>)<span class="op">;</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> chartData <span class="op">=</span> data</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">?</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">parse</span>(data)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span> []<span class="op">;</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;LineChart</span> <span class="ot">width</span><span class="op">=</span><span class="va">{</span><span class="dv">500</span><span class="va">}</span> <span class="ot">height</span><span class="op">=</span><span class="va">{</span><span class="dv">300</span><span class="va">}</span> <span class="ot">data</span><span class="op">=</span><span class="va">{</span>chartData<span class="va">}</span><span class="fu">&gt;</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">&lt;XAxis</span> <span class="ot">dataKey</span><span class="op">=</span><span class="st">"time"</span> <span class="fu">/&gt;</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">&lt;YAxis</span> <span class="fu">/&gt;</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">&lt;Tooltip</span> <span class="fu">/&gt;</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">&lt;Line</span> <span class="ot">dataKey</span><span class="op">=</span><span class="st">"value"</span> <span class="ot">stroke</span><span class="op">=</span><span class="st">"#82ca9d"</span> <span class="fu">/&gt;</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;/LineChart&gt;</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="flujo-completo-de-una-app-moderna" class="level3">
+<h3 class="anchored" data-anchor-id="flujo-completo-de-una-app-moderna">Flujo completo de una app moderna</h3>
+<pre><code>Servidor → WebSocket → Hook → Estado → React → Gráfica</code></pre>
+<p>Arquitectura típica de sistemas en tiempo real.</p>
+</section>
+</section>
+<section id="material" class="level2">
+<h2 class="anchored" data-anchor-id="material">Material</h2>
+<p>Servidor de testing de <em>Python</em>: <a href="Server.py">Enlace</a>.</p>
+<p>Instalar <code>websockets</code> con <code>pip install websockets</code></p>
+<p>Tester de prueba: <a href="tester_http_ws_basic.html">Enlace</a> (click derecho guardar enlace como)</p>
+<p><a href="https://recharts.github.io/">https://recharts.github.io/</a></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
