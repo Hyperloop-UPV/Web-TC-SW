@@ -82,6 +82,10 @@ website:
 
             - pages/Bloque3/t10.qmd
       - section: "Bloque IV Comunicación"
+        contents:
+          - section: "Semana 11"
+            contents: 
+            - pages/Bloque4/protocolos.qmd
 
       - pages/rubric.qmd
 

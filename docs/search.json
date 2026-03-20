@@ -115,7 +115,12 @@
     "href": "pages/Bloque3/DOM.html",
     "title": "DOM",
     "section": "",
+<<<<<<< HEAD
     "text": "El DOM (Document Object Model) es la representación en memoria que el navegador crea a partir del HTML.\n\nEl HTML es estático\nEl DOM es dinámico\nJavaScript interactúa con el DOM, no con el HTML original\n\n\nEl DOM es la página web viva dentro del navegador.",
+=======
+<<<<<<< HEAD
+    "text": "Desarrollar una aplicación React que permita al usuario realizar un quiz de cultura general utilizando preguntas obtenidas desde una API pública.\nhttps://astonishing-douhua-44213e.netlify.app/\nLa aplicación debe mostrar preguntas, permitir seleccionar respuestas y calcular la puntuación final.",
+>>>>>>> main
     "crumbs": [
       "Bloque III Interacción",
       "Semana 6",
@@ -152,6 +157,201 @@
     "title": "MA: CSS Flex y CSS",
     "section": "",
     "text": "Además de las propiedades estudiadas de CSS también hay algunas críticas que debido a la falta de tiempo no se han podido explicar como es el caso de display a continuación estos dos vídeos profundizan en los modos flex y grid formas diferentes de diseñar la estructura de la página",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/DOM.html#selectores",
+    "href": "pages/Bloque3/DOM.html#selectores",
+    "title": "DOM",
+    "section": "Selectores",
+    "text": "Selectores\n\nPor ID\ndocument.getElementById(\"count\")\ndocument.querySelector(\"#count\")\n\n\nPor etiqueta\ndocument.querySelector(\"button\")\n\n\nPor clase\ndocument.querySelector(\".item\")\ndocument.querySelectorAll(\".item\")\nNotas: - querySelector devuelve el primer elemento - querySelectorAll devuelve una lista - Usan la misma sintaxis que CSS",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/DOM.html#leer-y-modificar-elementos",
+    "href": "pages/Bloque3/DOM.html#leer-y-modificar-elementos",
+    "title": "DOM",
+    "section": "Leer y modificar elementos",
+    "text": "Leer y modificar elementos\nelement.textContent\nelement.textContent = \"Nuevo texto\"\nelement.classList.add(\"active\")\nelement.classList.remove(\"active\")",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/DOM.html#eventos",
+    "href": "pages/Bloque3/DOM.html#eventos",
+    "title": "DOM",
+    "section": "Eventos",
+    "text": "Eventos\nEl DOM permite reaccionar a acciones del usuario mediante eventos.\nbutton.addEventListener(\"click\", () =&gt; {\n  // código a ejecutar\n});\nFlujo típico:\nUsuario → Evento → JavaScript → DOM actualizado",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/DOM.html#ejemplo-contador-con-botón",
+    "href": "pages/Bloque3/DOM.html#ejemplo-contador-con-botón",
+    "title": "DOM",
+    "section": "Ejemplo: contador con botón",
+    "text": "Ejemplo: contador con botón\n\nHTML\n&lt;h1 id=\"count\"&gt;0&lt;/h1&gt;\n&lt;button id=\"btn\"&gt;Sumar 1&lt;/button&gt;\n\n\nJavaScript\nlet count = 0;\n\nconst countEl = document.querySelector(\"#count\");\nconst btn = document.querySelector(\"#btn\");\n\nbtn.addEventListener(\"click\", () =&gt; {\n  count++;\n  countEl.textContent = count;\n});",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/DOM.html#más-ejemplos",
+    "href": "pages/Bloque3/DOM.html#más-ejemplos",
+    "title": "DOM",
+    "section": "Más ejemplos",
+    "text": "Más ejemplos\nEj1: Show input\nEj2: Par e Impar\nEj3: Toggle\nEj4: Creación dinámica\nEj5: Validación básica",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#qué-es-el-dom",
+    "href": "pages/Bloque3/dom.html#qué-es-el-dom",
+    "title": "DOM",
+    "section": "¿Qué es el DOM?",
+    "text": "¿Qué es el DOM?\nEl DOM (Document Object Model) es la representación en memoria que el navegador crea a partir del HTML.\n\nEl HTML es estático\nEl DOM es dinámico\nJavaScript interactúa con el DOM, no con el HTML original\n\n\nEl DOM es la página web viva dentro del navegador."
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#el-dom-como-árbol",
+    "href": "pages/Bloque3/dom.html#el-dom-como-árbol",
+    "title": "DOM",
+    "section": "El DOM como árbol",
+    "text": "El DOM como árbol\nEl DOM tiene estructura de árbol (grafo):\n\nCada etiqueta HTML es un nodo\nLos nodos tienen relaciones (padre, hijos, hermanos)\n\nEjemplo:\n&lt;body&gt;\n  &lt;h1&gt;Título&lt;/h1&gt;\n  &lt;button&gt;Click&lt;/button&gt;\n&lt;/body&gt;"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#acceso-al-dom-desde-javascript",
+    "href": "pages/Bloque3/dom.html#acceso-al-dom-desde-javascript",
+    "title": "DOM",
+    "section": "Acceso al DOM desde JavaScript",
+    "text": "Acceso al DOM desde JavaScript\nEl navegador nos proporciona el objeto global document, que permite:\n\nBuscar elementos\nLeer su contenido\nModificar la interfaz\n\ndocument\ndocument.body"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#selectores",
+    "href": "pages/Bloque3/dom.html#selectores",
+    "title": "DOM",
+    "section": "Selectores",
+    "text": "Selectores\nPor ID\ndocument.getElementById(\"count\")\ndocument.querySelector(\"#count\")\nPor etiqueta\ndocument.querySelector(\"button\")"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#leer-y-modificar-elementos",
+    "href": "pages/Bloque3/dom.html#leer-y-modificar-elementos",
+    "title": "DOM",
+    "section": "Leer y modificar elementos",
+    "text": "Leer y modificar elementos\nelement.textContent\nelement.textContent = \"Nuevo texto\"\nelement.classList.add(\"active\")\nelement.classList.remove(\"active\")"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#eventos",
+    "href": "pages/Bloque3/dom.html#eventos",
+    "title": "DOM",
+    "section": "Eventos",
+    "text": "Eventos\nEl DOM permite reaccionar a acciones del usuario mediante eventos.\nbutton.addEventListener(\"click\", () =&gt; {\n  // código a ejecutar\n});\nFlujo típico:\nUsuario → Evento → JavaScript → DOM actualizado"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#ejemplo-contador-con-botón",
+    "href": "pages/Bloque3/dom.html#ejemplo-contador-con-botón",
+    "title": "DOM",
+    "section": "Ejemplo: contador con botón",
+    "text": "Ejemplo: contador con botón\nHTML\n&lt;h1 id=\"count\"&gt;0&lt;/h1&gt;\n&lt;button id=\"btn\"&gt;Sumar 1&lt;/button&gt;\nJavaScript\nlet count = 0;\n\nconst countEl = document.querySelector(\"#count\");\nconst btn = document.querySelector(\"#btn\");\n\nbtn.addEventListener(\"click\", () =&gt; {\n  count++;\n  countEl.textContent = count;\n});"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#más-ejemplos",
+    "href": "pages/Bloque3/dom.html#más-ejemplos",
+    "title": "DOM",
+    "section": "Más ejemplos",
+    "text": "Más ejemplos\nEj1: Show input\nEj2: Par e Impar\nEj3: Toggle\nEj4: Creación dinámica\nEj5: Validación básica"
+  },
+  {
+    "objectID": "pages/Bloque3/MARef.html",
+    "href": "pages/Bloque3/MARef.html",
+    "title": "MA: Uncontrolled fields y useRef",
+    "section": "",
+<<<<<<< HEAD
+    "text": "Por el momento hemos visto dos hooks useState y useEffect, pero recordemos que en React existen más tipos de hooks que por ser menos útiles y debido a la falta de tiempo no son explicados, no obstante si hay alguno digno de mención es useRef o las referencias.\nUna ref es una referencia mutable que permite acceder directamente a un elemento del DOM o almacenar un valor persistente sin provocar un re-render del componente. El siguiente video ilustra su uso. Es un poco largo pero sirve para repasar los otros hooks.\n\n\nCon las ref podemos introducir los uncontrolled fields que nos permiten trabajar de otra forma con los formularios.\n\nSe prefiere la segunda implementación (la que no utiliza referencias) sobre la primera.",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 9",
+      "MA: *Uncontrolled fields* y `useRef`"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/t6.html",
+    "href": "pages/Bloque3/t6.html",
+    "title": "T6: Romancero Gitano I",
+    "section": "",
+    "text": "El objetivo de esta tarea es aplicar los conceptos básicos de HTML, CSS y JavaScript (DOM) para crear una página web interactiva que muestre poemas del Romancero gitano de Federico García Lorca y modifique su apariencia visual en función de las diferentes metáforas.\nResultado esperado",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "T6: Romancero Gitano I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/t6.html#objetivo-de-la-tarea",
+    "href": "pages/Bloque3/t6.html#objetivo-de-la-tarea",
+    "title": "T6: Romancero Gitano I",
+    "section": "",
+    "text": "El objetivo de esta tarea es aplicar los conceptos básicos de HTML, CSS y JavaScript (DOM) para crear una página web interactiva que muestre poemas del Romancero gitano de Federico García Lorca y modifique su apariencia visual en función de las diferentes metáforas.\nResultado esperado",
+=======
+    "text": "Además de las propiedades estudiadas de CSS también hay algunas críticas que debido a la falta de tiempo no se han podido explicar como es el caso de display a continuación estos dos vídeos profundizan en los modos flex y grid formas diferentes de diseñar la estructura de la página",
+<<<<<<< HEAD
+=======
+    "text": "El DOM (Document Object Model) es la representación en memoria que el navegador crea a partir del HTML.\n\nEl HTML es estático\nEl DOM es dinámico\nJavaScript interactúa con el DOM, no con el HTML original\n\n\nEl DOM es la página web viva dentro del navegador.",
+>>>>>>> e3c3469 (feat:  varios)
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/DOM.html#qué-es-el-dom",
+    "href": "pages/Bloque3/DOM.html#qué-es-el-dom",
+    "title": "DOM",
+    "section": "",
+    "text": "El DOM (Document Object Model) es la representación en memoria que el navegador crea a partir del HTML.\n\nEl HTML es estático\nEl DOM es dinámico\nJavaScript interactúa con el DOM, no con el HTML original\n\n\nEl DOM es la página web viva dentro del navegador.",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/DOM.html#el-dom-como-árbol",
+    "href": "pages/Bloque3/DOM.html#el-dom-como-árbol",
+    "title": "DOM",
+    "section": "El DOM como árbol",
+    "text": "El DOM como árbol\nEl DOM tiene estructura de árbol (grafo):\n\nCada etiqueta HTML es un nodo\nLos nodos tienen relaciones (padre, hijos, hermanos)\n\nEjemplo:\n&lt;body&gt;\n  &lt;h1&gt;Título&lt;/h1&gt;\n  &lt;button&gt;Click&lt;/button&gt;\n&lt;/body&gt;\nRepresentación conceptual:\ndocument\n └─ body\n    ├─ h1\n    └─ button",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/DOM.html#acceso-al-dom-desde-javascript",
+    "href": "pages/Bloque3/DOM.html#acceso-al-dom-desde-javascript",
+    "title": "DOM",
+    "section": "Acceso al DOM desde JavaScript",
+    "text": "Acceso al DOM desde JavaScript\nEl navegador nos proporciona el objeto global document, que permite:\n\nBuscar elementos\nLeer su contenido\nModificar la interfaz\n\ndocument\ndocument.body",
     "crumbs": [
       "Bloque III Interacción",
       "Semana 6",
@@ -383,9 +583,131 @@
     ]
   },
   {
+<<<<<<< HEAD
+    "objectID": "pages/Bloque3/intermedio.html#useeffect",
+    "href": "pages/Bloque3/intermedio.html#useeffect",
+    "title": "React III",
+    "section": "useEffect",
+    "text": "useEffect\n\nuseEffect es un Hook que permite ejecutar efectos secundarios dentro de un componente funcional.\nUn efecto secundario es cualquier operación que no sea simplemente devolver JSX (por ejemplo: peticiones a un servidor, temporizadores, suscripciones).\nSe ejecuta después de que el componente se renderiza en el DOM."
+  },
+  {
+    "objectID": "pages/Bloque3/intermedio.html#fetch",
+    "href": "pages/Bloque3/intermedio.html#fetch",
+    "title": "React III",
+    "section": "fetch()",
+    "text": "fetch()\nHasta ahora nuestros componentes eran completamente locales.\nSin embargo, en aplicaciones reales necesitamos:\n\nDescargar datos\n\nConectarnos a servidores\n\nTrabajar con APIs externas\n\nPara ello utilizamos fetch()."
+  },
+  {
+    "objectID": "pages/Bloque3/intermedio.html#async-y-await",
+    "href": "pages/Bloque3/intermedio.html#async-y-await",
+    "title": "React III",
+    "section": "async y await",
+    "text": "async y await\nHasta ahora hemos utilizado fetch() con encadenamiento.\nExiste una forma más clara y estructurada de escribir código asíncrono:\n\nasync\nawait\n\nSu objetivo es hacer que el código sea más legible."
+  },
+  {
+    "objectID": "pages/Bloque3/intermedio.html#ejemplo-con-la-pokeapi",
+    "href": "pages/Bloque3/intermedio.html#ejemplo-con-la-pokeapi",
+    "title": "React III",
+    "section": "Ejemplo con la Pokeapi",
+    "text": "Ejemplo con la Pokeapi\nPoke-API\nDownload Code"
+  },
+  {
+    "objectID": "pages/Bloque2/intensivo.html",
+    "href": "pages/Bloque2/intensivo.html",
+    "title": "Repaso Intensivo JS",
+=======
+>>>>>>> main
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "T6: Romancero Gitano I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/t6.html#estructura-html",
+    "href": "pages/Bloque3/t6.html#estructura-html",
+    "title": "T6: Romancero Gitano I",
+    "section": "Estructura HTML",
+    "text": "Estructura HTML\nEl documento HTML debe:\n\nEstar correctamente estructurado (&lt;!DOCTYPE&gt;, &lt;html&gt;, &lt;head&gt;, &lt;body&gt;).\nContener un contenedor principal centrado horizontalmente.\nIncluir, en este orden:\n\nUn elemento para mostrar información métrica del poema (número de estrofas y versos).\nUn elemento para el título del poema.\nUn elemento para el texto del poema, respetando los saltos de verso utilizando la etiqueta &lt;pre&gt;.\nUn botón que permita cambiar de poema.\n\n\nNo debe utilizarse ningún framework ni librería externa.",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "T6: Romancero Gitano I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/t6.html#javascript",
+    "href": "pages/Bloque3/t6.html#javascript",
+    "title": "T6: Romancero Gitano I",
+    "section": "JavaScript",
+    "text": "JavaScript\n\nDatos\nEn JavaScript se debe definir un array de objetos, donde cada objeto represente un poema y tenga al menos:\n\nUn título.\nEl texto del poema como una cadena de texto, usando saltos de línea para los versos.\n\nEl cambio de poema debe hacerse recorriendo este array de forma cíclica (cola circular) mediante el botón.\nDescargar poemas (click derecho guardar enlace como)\n\n\nManipulación del DOM\nEl comportamiento de la página debe implementarse exclusivamente con DOM nativo, cumpliendo lo siguiente:\n\nTodas las funciones deben declararse como arrow functions.\nAl pulsar el botón:\n\nSe actualiza el título.\nSe actualiza el texto del poema.\nSe modifica el formato del fondo.\nSe recalculan y muestran:\n\nNúmero de versos.\nNúmero de estrofas (bloques separados por líneas en blanco).\n\n\n\nEl cálculo debe realizarse a partir del texto del poema, no con valores predefinidos.",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "T6: Romancero Gitano I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/t6.html#css",
+    "href": "pages/Bloque3/t6.html#css",
+    "title": "T6: Romancero Gitano I",
+    "section": "CSS",
+    "text": "CSS\nLorca utiliza las metáforas y la alegoría como elemento principal sobre el que construye sus poemas, al analizar profundamente descubrimos que siempre recurre a las mismas metáforas.\nEl color no se utiliza aquí solo como elemento decorativo, sino como un recurso semántico: cada color representa un símbolo literario presente en el poema.\nDesde el punto de vista técnico: - Los colores de fondo y de texto deben definirse en clases CSS. - JavaScript no decide colores, únicamente decide qué clase aplicar según el contenido del poema.\n\nPalabras clave y colores asociados\nSe debe detectar el texto del poema las siguientes palabras clave y aplicar el color de fondo correspondiente:\n\nguardia civil → fondo verde militar\nsangre → fondo granate oscuro\ncaballo → fondo color tierra\ncuchillo / navaja → fondo plateado\n\nEl color del texto debe elegirse siempre de forma que exista contraste suficiente con el fondo y se garantice la legibilidad.\nSi el poema contiene varias palabras clave, solo debe aplicarse un único estilo, siguiendo un orden de prioridad definido previamente.\nSi el poema no contiene ninguna de estas palabras, se aplicará un estilo por defecto con colores aleatorios.",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "T6: Romancero Gitano I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/t6.html#extra-opcional-símbolo-aurora",
+    "href": "pages/Bloque3/t6.html#extra-opcional-símbolo-aurora",
+    "title": "T6: Romancero Gitano I",
+    "section": "Extra opcional: símbolo aurora 🌈",
+    "text": "Extra opcional: símbolo aurora 🌈\nDe forma voluntaria, se puede añadir el símbolo aurora, que tendrá prioridad absoluta sobre todos los demás.\nCuando el poema contenga la palabra aurora, el fondo debe mostrar un degradado animado.\n\nCSS necesario para el extra\n.aurora {\n  background: linear-gradient(120deg,\n    #ff005d,\n    #ff9f1c,\n    #ffee32,\n    #3cff00,\n    #00e5ff,\n    #7a00ff,\n    #ff00c8\n  );\n  background-size: 600% 600%;\n  animation: aurora 10s linear infinite;\n  color: black;\n}\n\n@keyframes aurora {\n  0%   { background-position: 0% 50%; }\n  50%  { background-position: 100% 50%; }\n  100% { background-position: 0% 50%; }\n}",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "T6: Romancero Gitano I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/t6.html#consejos",
+    "href": "pages/Bloque3/t6.html#consejos",
+    "title": "T6: Romancero Gitano I",
+    "section": "Consejos",
+    "text": "Consejos\n\nCentrado de la página (layout clásico)\nToda la página debe estar centrada horizontalmente.\nEl centrado se consigue mediante:\n\nUn contenedor con un ancho máximo definido.\nMárgenes automáticos a izquierda y derecha.\n\nDesde el punto de vista conceptual:\n\nmargin: 0 auto no centra texto, centra bloques.\nEl navegador reparte automáticamente el espacio sobrante a ambos lados del contenedor.\n\n\n\nAnimación del cambio de color\nPara evitar que los cambios de color sean bruscos, se utiliza la propiedad transition en CSS.\nEsta propiedad indica al navegador que los cambios en determinadas propiedades visuales deben hacerse de forma progresiva.\nEjemplo conceptual:\nbody {\n  transition: background-color 0.6s, color 0.6s;\n}\nGracias a esta transición: - Cuando JavaScript cambia una clase o un color, - el navegador interpola automáticamente entre el color anterior y el nuevo.\nNo es necesario programar animaciones en JavaScript: CSS se encarga de todo el efecto visual.\n\n\nBúsqueda de una palabra\nPara buscar si determinada palabra determinada se debe utilizar la función includes de la clase string\n\ntexto = \"hoy nieva\";\n\ntexto.includes(\"nieva\");    //TRUE\ntexto.includes(\"llueve\");   //FALSE\n\n\nGeneración del color aleatorio\nPara la generacióndel color aleatorio de puede utilizar la siguiente función\nconst randomColor = () =&gt; '#' + Math.floor(Math.random() * 16777215).toString(16);\n\n\nConteo versos y estrofas\nEl recuento de versos y estrofas debe hacerse a partir del texto del poema, no con valores escritos a mano. A continuación se dan algunas pistas técnicas para abordar este problema.\n\nConteo de versos\nUn verso puede considerarse, a efectos prácticos en esta tarea, como una línea de texto no vacía.\nUna estrategia habitual consiste en: - Separar el texto por saltos de línea. - Eliminar las líneas vacías o formadas solo por espacios. - Contar cuántas líneas válidas quedan.\nEjemplo orientativo:\nconst versos = texto\n  .split('\\n')\n  .filter(linea =&gt; linea.trim() !== '')\n  .length;\nEste enfoque es suficiente para la mayoría de los poemas del Romancero gitano y evita errores frecuentes.\n\n\nConteo de estrofas\nUna estrofa puede entenderse como un bloque de versos separado de otros bloques por una línea en blanco.\nUna posible estrategia es: - Separar el texto usando dos (o más) saltos de línea consecutivos. - Eliminar bloques vacíos. - Contar los bloques resultantes.\nEjemplo orientativo:\nconst estrofas = texto\n  .split(/\\n\\s*\\n/)\n  .filter(bloque =&gt; bloque.trim() !== '')\n  .length;\nEntrega: un único archivo HTML funcional.",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "T6: Romancero Gitano I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/t6.html#recomendaciones-para-afrontar-la-tarea",
+    "href": "pages/Bloque3/t6.html#recomendaciones-para-afrontar-la-tarea",
+    "title": "T6: Romancero Gitano I",
+    "section": "Recomendaciones para afrontar la tarea",
+    "text": "Recomendaciones para afrontar la tarea\nAl enfrentarnos a un proyecto de cierta complejitud, el como afrontarlo resulta de cricial para el desarollo del mismo por ello a a continuación dejo un esquema de implementación modular. Sería mejor no utilizarlo, pero puede ser un buen punto de partida si no se sabe como empezar la app, no es el único proceso de implementación válido ni es más correcto que cualquier otro\n\nEstructura de HTML básica contadores de versos y estrofas placeholders de poema y título y botón\nFormateo CSS parte estática: centrado, tamaño (todo lo que no sea color)\nDefinir clases con colores predeterminados\nLógica interna con JS\n\n\nBuscar palabra\nContar estrofas\nConteo versos\nSelección de clase\nGenerar color aleatorio si procede\n\n\nIntegración con DOM",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 6",
+      "T6: Romancero Gitano I"
+    ]
+  },
+  {
     "objectID": "pages/Bloque3/ps.html",
     "href": "pages/Bloque3/ps.html",
     "title": "Proyecto Subsistema",
+<<<<<<< HEAD
+=======
+>>>>>>> 8e10774 (feat: explicacion semana 10 (#4))
+=======
+    "objectID": "pages/Bloque3/ps.html",
+    "href": "pages/Bloque3/ps.html",
+    "title": "Proyecto Subsistema",
+>>>>>>> e3c3469 (feat:  varios)
+>>>>>>> main
     "section": "",
     "text": "Desarrollar una pequeña aplicación web para gestionar una lista de tareas utilizando HTML, CSS y JavaScript, trabajando directamente con el DOM.\nbase",
     "crumbs": [
@@ -467,9 +789,15 @@
     ]
   },
   {
+<<<<<<< HEAD
     "objectID": "pages/Bloque2/intensivo.html",
     "href": "pages/Bloque2/intensivo.html",
     "title": "Repaso Intensivo JS",
+=======
+    "objectID": "pages/Bloque2/MAclases.html",
+    "href": "pages/Bloque2/MAclases.html",
+    "title": "MA: Clases ES6",
+>>>>>>> main
     "section": "",
     "text": "Contenido\nRepaso intensivo de clases en JavaScript (ES6+), orientado a usuarios con experiencia previa en programación y familiarizados con funciones, objetos y arrays.",
     "crumbs": [
@@ -758,7 +1086,16 @@
     "href": "pages/Bloque1/css.html",
     "title": "CSS",
     "section": "",
+<<<<<<< HEAD
     "text": "Contenido",
+=======
+<<<<<<< HEAD
+    "text": "Por el momento hemos visto dos hooks useState y useEffect, pero recordemos que en React existen más tipos de hooks que por ser menos útiles y debido a la falta de tiempo no son explicados, no obstante si hay alguno digno de mención es useRef o las referencias.\nUna ref es una referencia mutable que permite acceder directamente a un elemento del DOM o almacenar un valor persistente sin provocar un re-render del componente. El siguiente video ilustra su uso. Es un poco largo pero sirve para repasar los otros hooks.\n\n\nCon las ref podemos introducir los uncontrolled fields que nos permiten trabajar de otra forma con los formularios.\n\nSe prefiere la segunda implementación (la que no utiliza referencias) sobre la primera.",
+<<<<<<< HEAD
+=======
+    "text": "Contenido",
+>>>>>>> e3c3469 (feat:  varios)
+>>>>>>> main
     "crumbs": [
       "Bloque I Introducción",
       "Semana 2",
@@ -869,6 +1206,115 @@
     "objectID": "pages/Bloque1/bloque1.html",
     "href": "pages/Bloque1/bloque1.html",
     "title": "Bloque I Introducción",
+<<<<<<< HEAD
+=======
+    "section": "",
+    "text": "El objetivo del bloque 1 es sentar la base para la realización del curso, aprendiendo las competencias mínimas para realizar el curso.\nEn este bloque se hará una introducción: las herramientas de trabajo, el lenguaje de marcado HTML que permite crear páginas web estáticas y el lenguaje de programación de CSS que nos permite formatear webs previamente construidas.\nEste bloque se compone de 3 semanas, 2 tareas de clase y dos tareas voluntarias.",
+    "crumbs": [
+      "Bloque I Introducción"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/bloque1.html#contenido",
+    "href": "pages/Bloque1/bloque1.html#contenido",
+    "title": "Bloque I Introducción",
+    "section": "Contenido",
+    "text": "Contenido\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nFecha\nContenido\nContenido de la clase\nTarea Clase\nMaterial Extra\nTarea Extra\n\n\n\n\n0\n21/11/2025\nIntroducción\nPresentación TC, VSCode, Git, LiveShare y GitHub\n-\n-\n-\n\n\n1\n28/11/2025\nHTML\nEstructura básica, links, listas, tablas, form, img, div, span\nWeb HL I\nEtiquetas: HTML5, video, iframe\nMi porfolio I\n\n\n2\n05/12/2025\nCSS\nEstilos básicos, clases, id, archivos externos\nWeb HL II\nSelectores y Pseudoclases\nMi porfolio II",
+    "crumbs": [
+      "Bloque I Introducción"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/bloque1.html#material",
+    "href": "pages/Bloque1/bloque1.html#material",
+    "title": "Bloque I Introducción",
+    "section": "Material",
+    "text": "Material\n\nMDN (Mozilla Developer Network), HTML y CSS\nW3Schools HTML y CSS\nVisual Studio Code Manual VSCode\nCSS tricks CSS Avanzado",
+    "crumbs": [
+      "Bloque I Introducción"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/t2a.html",
+    "href": "pages/Bloque1/t2a.html",
+    "title": "TA2: Mi CV II",
+    "section": "",
+    "text": "En la tarea previa definimos nuestra identidad digital, ahora es un buen momento dándole un toque personal con ayuda de CSS.\nSi no se realizó la T1A puede utilizar el CV de Antonio Machado como base sobre la que trabajar. (Click derecho guadrar enlace como)\nImportante: la hoja de estilos debe ser definida como un archivo externo.\nEl objetivo de esta tarea es evaluar, las habilidades de diseño y de investigación, por lo que no hay ningún ejemplo al que imitar. Siguiendo ese objetivo se le recomienda al alumno que investigue y descubrá el máximo número de propiedades CSS.",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 2",
+      "TA2: Mi CV II"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/ehtml.html#estructura-básica-de-las-páginas-web",
+    "href": "pages/Bloque1/ehtml.html#estructura-básica-de-las-páginas-web",
+    "title": "HTML",
+    "section": "Estructura básica de las páginas web",
+    "text": "Estructura básica de las páginas web\n¿Qué es una página web?\nUna página web es un documento digital accesible desde un navegador, compuesto por HTML, CSS y, cuando es necesario, JavaScript. Representa la unidad básica de contenido o interacción dentro de un sitio web y puede integrar tanto información estática como elementos dinámicos."
+  },
+  {
+    "objectID": "pages/Bloque1/ehtml.html#html5",
+    "href": "pages/Bloque1/ehtml.html#html5",
+    "title": "HTML",
+    "section": "HTML5",
+    "text": "HTML5\n¿Qué es HTML?\nHTML es un lenguaje de marcas que permite definir la estructura y el contenido de un documento para la web. Mediante un conjunto de etiquetas, el desarrollador describe elementos como textos, imágenes, enlaces o formularios, indicando su función dentro de la página. Es la base sobre la que posteriormente se aplican estilos (CSS) y comportamientos dinámicos (JavaScript)."
+  },
+  {
+    "objectID": "pages/Bloque1/ehtml.html#primer-repo-de-git",
+    "href": "pages/Bloque1/ehtml.html#primer-repo-de-git",
+    "title": "HTML",
+    "section": "Primer repo de Git",
+    "text": "Primer repo de Git\n\nIniciar sesión en cuenta de GitHub\nBarra superior derecha, Símbolo + &gt; New Repo\nRepository Name\nDescription of the repo\nVisibility\nAdd README\nCrear repositorio"
+  },
+  {
+    "objectID": "pages/Bloque1/html.html",
+    "href": "pages/Bloque1/html.html",
+    "title": "HTML",
+    "section": "",
+    "text": "Contenido",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 1",
+      "HTML"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/html.html#estructura-básica-de-las-páginas-web",
+    "href": "pages/Bloque1/html.html#estructura-básica-de-las-páginas-web",
+    "title": "HTML",
+    "section": "Estructura básica de las páginas web",
+    "text": "Estructura básica de las páginas web\n\n¿Qué es una página web?\nUna página web es un documento digital accesible desde un navegador, compuesto por HTML, CSS y, cuando es necesario, JavaScript. Representa la unidad básica de contenido o interacción dentro de un sitio web y puede integrar tanto información estática como elementos dinámicos.\n\n\n¿Qué partes tiene una página web? (externas)",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 1",
+      "HTML"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/html.html#html5",
+    "href": "pages/Bloque1/html.html#html5",
+    "title": "HTML",
+    "section": "HTML5",
+    "text": "HTML5\n\n¿Qué es HTML?\nHTML es un lenguaje de marcas que permite definir la estructura y el contenido de un documento para la web. Mediante un conjunto de etiquetas, el desarrollador describe elementos como textos, imágenes, enlaces o formularios, indicando su función dentro de la página. Es la base sobre la que posteriormente se aplican estilos (CSS) y comportamientos dinámicos (JavaScript).\n\n\nEstructura básica\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n\n&lt;/head&gt;\n\n&lt;body&gt;\n\n  &lt;p&gt;Clase 1 del TC&lt;/p&gt;\n  \n&lt;/body&gt;\n&lt;/html&gt;\nEn el código aparecen varias etiquetas HTML, y cada una tiene una etiqueta de apertura y una etiqueta de cierre (por ejemplo, &lt;p&gt; y &lt;/p&gt;).\nEstas etiquetas delimitan y organizan el contenido del documento:\n- &lt;head&gt; agrupa la información del documento,\n- &lt;body&gt; contiene lo que verá el usuario,\n- &lt;p&gt; define un párrafo.\nLa función de las etiquetas es indicar al navegador qué es cada parte del documento y cómo debe interpretarla.\n\n\nHead\nSe corresponde con la cabecera de la pestaña, principalmente solo se modifica el logotipo y el contenido de esta.\nTambién se utiliza para almacenar los metadatos de la web, así como scripts de JavaScript y hojas de estilo de CSS.\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n\n  &lt;title&gt; Web del TC &lt;/title&gt;\n\n&lt;/head&gt;\n\n&lt;body&gt;\n\n  &lt;p&gt;Clase 1 del TC&lt;/p&gt;\n  \n&lt;/body&gt;\n&lt;/html&gt;\n\n\nBody\nSe corresponde con todo el contenido de la página dentro podemos utilizar multitud de etiquetas, acontinuación expondremos las más importantes.\nHasta el momento hemos trabajado únicamente con etiquietas invividuales, pero pronto veremos como podemos juntar varias etiquetas simples para obtener estructuras más complejas como tablas o formularios.\nTodo el código mostrado a partir de ahora se asume que esta correctamente ubicado dentro de una etiqueta body\n\n&lt;p&gt; Paragraph\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;p&gt;\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;/p&gt;\n\n\n&lt;br&gt; Break Line\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\nullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;p&gt;\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\n  &lt;br&gt;&lt;/br&gt;\n  ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;/p&gt;\n\n\n&lt;ul&gt; Unordered list\n\nFrancisco de Quevedo\nLope de Vega\nGóngora\n\n&lt;ul&gt;\n  &lt;li&gt;Francisco de Quevedo&lt;/li&gt;\n  &lt;li&gt;Lope de Vega&lt;/li&gt;\n  &lt;li&gt;Góngora&lt;/li&gt;\n&lt;/ul&gt;\n\n\n&lt;ol&gt; Ordered list\n\nRecepción\nDiscurso del Rector\nDespedida\n\n&lt;ol&gt;\n  &lt;li&gt;Recepción &lt;/li&gt;\n  &lt;li&gt;Discruso del Rector&lt;/li&gt;\n  &lt;li&gt;Despedida&lt;/li&gt;\n&lt;/ol&gt;\n\n\n&lt;h#&gt; Headings\n&lt;h1&gt;Título 1&lt;/h1&gt;\n&lt;h2&gt;Título 2&lt;/h2&gt;\n&lt;h3&gt;Título 3&lt;/h3&gt;\n&lt;h4&gt;Título 4&lt;/h4&gt;\n&lt;h5&gt;Título 5&lt;/h5&gt;\n&lt;h6&gt;Título 6&lt;/h6&gt;\n\n\n&lt;div&gt; Divisor y &lt;span&gt; Span\nEtiquetas contenedores, utilizadas para agrupar otras etiquetas, no presentan ningún efecto visible intrínsico, salvo que tras utilizar &lt;div&gt; se produce un salto de línea. Por lo que utilizaremos &lt;div&gt; para agrupar grandes grupos de etiquetas y &lt;span&gt; para fragementos más pequeños\n\n&lt;div&gt;\n&lt;div&gt;\n  &lt;h2&gt;Capítulo 2 &lt;/h2&gt;\n  &lt;p&gt;\n    Mio Cid Ruy Díaz por Burgos entró,&lt;br&gt;&lt;/br&gt;\n    en su conpaña sessaenta pendones.&lt;br&gt;&lt;/br&gt;\n    Exiénlo ver mugieres e varones,&lt;br&gt;&lt;/br&gt;\n    burgeses e burgesas por las finiestras son,&lt;br&gt;&lt;/br&gt;\n    plorando de los ojos, tanto avién el dolor,&lt;br&gt;&lt;/br&gt;\n    de las sus bocas todos dizían una razón:&lt;br&gt;&lt;/br&gt;\n    — ¡Dios, qué buen vassallo, si oviesse buen señor!—\n  &lt;/p&gt;\n&lt;/div&gt;\n\n\n\n&lt;strong&gt; Strong, &lt;i&gt; Italic\nNegrita Itálica Negrita e Itálica\n&lt;strong&gt;Negrita&lt;/strong&gt;\n&lt;i&gt;Itálica&lt;/i&gt;\n&lt;strong&gt;&lt;i&gt; Negrita e Itálica&lt;/i&gt;&lt;/strong&gt;\n\n\nComentario\nEtiqueta invisible\n&lt;p&gt;Etiqueta invisible&lt;/p&gt;\n\n&lt;!-- Soy un comenario --&gt;\n\n\nTablas\n\n\n\n\nProducto\n\n\nCantidad\n\n\nPrecio (€)\n\n\n\n\n\n\nManzanas\n\n\n10\n\n\n3,50\n\n\n\n\nNaranjas\n\n\n8\n\n\n4,00\n\n\n\n\nPlátanos\n\n\n6\n\n\n2,80\n\n\n\n\n\n\nTotal\n\n\n24\n\n\n10,30\n\n\n\n\n&lt;table&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Producto&lt;/th&gt;\n      &lt;th&gt;Cantidad&lt;/th&gt;\n      &lt;th&gt;Precio (€)&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Manzanas&lt;/td&gt;\n      &lt;td&gt;10&lt;/td&gt;\n      &lt;td&gt;3,50&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Naranjas&lt;/td&gt;\n      &lt;td&gt;8&lt;/td&gt;\n      &lt;td&gt;4,00&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Plátanos&lt;/td&gt;\n      &lt;td&gt;6&lt;/td&gt;\n      &lt;td&gt;2,80&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n\n  &lt;tfoot&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Total&lt;/td&gt;\n      &lt;td&gt;24&lt;/td&gt;\n      &lt;td&gt;10,30&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tfoot&gt;\n&lt;/table&gt;\n\n\n&lt;a&gt; Link\nHyperloopUPV\n&lt;!-- ¿Qué pasa con la URL --&gt;\n&lt;a&gt;Hyperloop UPV&lt;/a&gt;\n\nPropiedades HTML\nLas etiquetas o elementos html disponen de atributos que nos permiten modificar su comportamiento interno.\nEn el caso de las etiquetas &lt;a&gt; debemos de especificar en los atributos la referncia en cuestión\n  &lt;a href=\"https://hyperloopupv.com/\"&gt; HyperloopUPV &lt;/a&gt;\n\n\n\n&lt;img&gt; Image\n\n\n\n“Plaza de la Reina”\n\n\n&lt;img src=\"../pr.jpg\" alt=\"Plaza con una fuente en el centro alrdedor casetas y fincas\"&gt;\n\n\n&lt;form&gt; Forms\nAmpliamente utilizados en HTML, trabajan sobre la etiqueta &lt;input&gt; la cual tiene muchos tipos.\n\n&lt;input type=\"text\"&gt;\n\nNombre: \n\n&lt;form&gt;\n\n  &lt;label for=\"first-name\"&gt;Nombre:&lt;/label&gt;\n\n  &lt;input type=\"text\" name=\"first-name\"/&gt;\n&lt;/form&gt;\n\n\n&lt;input type=\"number\"&gt;\n\nEdad: \n\n&lt;form&gt;\n\n  &lt;label for=\"age\"&gt;Edad:&lt;/label&gt;\n\n  &lt;input type=\"number\" name=\"age\" /&gt;\n&lt;/form&gt;\n\n\n&lt;input type=\"radio\"&gt;\n\nSubsistema:   Software   Firmware \n\n&lt;form&gt;\n\n  &lt;label for=\"sub\"&gt;Subsistema: &lt;/label&gt;&lt;br /&gt;\n  &lt;input type=\"radio\" name=\"sub\" value=\"software\" /&gt; Software &lt;br /&gt;\n  &lt;input type=\"radio\" name=\"sub\" value=\"firmware\" /&gt; Firmware &lt;br /&gt;\n\n&lt;/form&gt;\n\n\n&lt;input type=\"submit\"&gt;\n\nNombre:  \n\n\n&lt;form&gt;\n\n  &lt;label for=\"first-name\"&gt;Nombre:&lt;/label&gt;\n  &lt;input type=\"text\" name=\"first-name\"/&gt;\n\n  &lt;br/&gt;\n\n  &lt;input type=\"submit\"/&gt;\n&lt;/form&gt;\n\n\n\n&lt;button&gt; Button\nPor ahora no los utilizaremos, pero es importante saber que existen\n\nSuscribirse\n\n&lt;button&gt;Suscribirse&lt;/button&gt;",
+    "crumbs": [
+<<<<<<< HEAD
+      "Bloque III Interacción",
+      "Semana 6",
+      "DOM"
+=======
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 9",
+      "MA: *Uncontrolled fields* y `useRef`"
+>>>>>>> 8e10774 (feat: explicacion semana 10 (#4))
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/t9.html",
+    "href": "pages/Bloque3/t9.html",
+    "title": "T6: Romancero Gitano I",
+>>>>>>> main
     "section": "",
     "text": "El objetivo del bloque 1 es sentar la base para la realización del curso, aprendiendo las competencias mínimas para realizar el curso.\nEn este bloque se hará una introducción: las herramientas de trabajo, el lenguaje de marcado HTML que permite crear páginas web estáticas y el lenguaje de programación de CSS que nos permite formatear webs previamente construidas.\nEste bloque se compone de 3 semanas, 2 tareas de clase y dos tareas voluntarias.",
     "crumbs": [
@@ -965,6 +1411,53 @@
     ]
   },
   {
+<<<<<<< HEAD
+    "objectID": "pages/Bloque1/html.html#primer-repo-de-git",
+    "href": "pages/Bloque1/html.html#primer-repo-de-git",
+    "title": "HTML",
+    "section": "Primer repo de Git",
+    "text": "Primer repo de Git\n\nIniciar sesión en cuenta de GitHub\nBarra superior derecha, Símbolo + &gt; New Repo\nRepository Name\nDescription of the repo\nVisibility\nAdd README\nCrear repositorio\n\n\n\nDesde la ventana del repositorio creado\nCode &lt;&gt; &gt; Clone &gt; HTTPS &gt; Copiar URL\nDesde VScode\nClonar repositorio (si no aparece F1, paleta de comandos Clonar Repositorio)\nPegar la URL del repo\nPresionar intro (equivalente a git clone)\n\n\n\nRealizar cambios\nDesde la barra derecha seleccionar menú de Git (3 nodos interconectados por dos aristas)\nAgregar presionando el + los archivos a la staging area (equivalente a git add &lt;file&gt;)\nEscribir mensaje de commit y presionar botón de confirmación (equivalente a git commit)\n\n\nUna vez se hayan realizados todos los commits deseados presionar la rueda de sincronización en la barra de estado. Este último cambio es equivalente a ejecutar git pull y git push.\npush sube los cambios al repositorio remoto pull actualiza los cambios de repositorio remoto por el local",
+    "crumbs": [
+=======
+    "objectID": "pages/Bloque3/reactI.html#sintaxis-jsx",
+    "href": "pages/Bloque3/reactI.html#sintaxis-jsx",
+    "title": "React I",
+    "section": "Sintaxis JSX",
+    "text": "Sintaxis JSX\n¿Qué es la sintaxis JSX?\n\nJSX (JavaScript XML) es una extensión de JavaScript utilizada en React.\n\nPermite escribir estructuras similares a HTML directamente dentro del código JavaScript.\n\nFacilita la creación y lectura de interfaces de usuario, integrando lógica y presentación.\n\nAunque su apariencia es HTML, JSX se transpila a JavaScript puro antes de ejecutarse en el navegador.\nForma cómoda de almacenar etiquetas html como variables de JS"
+=======
+>>>>>>> main
+      "Bloque I Introducción",
+      "Semana 1",
+      "HTML"
+    ]
+  },
+  {
+<<<<<<< HEAD
+    "objectID": "pages/Bloque1/t1.html",
+    "href": "pages/Bloque1/t1.html",
+    "title": "T1: Web de HL I",
+    "section": "",
+    "text": "La primera tarea de esta semana consiste en diseñar una página web para el equipo de generación espontánea llamado Hyperloop UPV, la web debe de ser realizada en un archivo HTML y debe de constar por lo menos de los siguientes apartados y estructura\n\nTítulo principal de la página &lt;h1&gt;\nVarios secciones cada una introducida por un título &lt;h2&gt; (si es necesario hacer &lt;h3&gt;)\n\nDescripción del equipo\nLista desordenada de los subsistemas\nLista de Partners por orden de importancia (UPV, )\nUn día en Hyperloop (nótese el título del apartado en cursiva)\n\nBreve descripción de lo que hacemos en el equipo, alguna foto\n\nMiembros\n\nUna tabla de miembros por subsistema (inventarse los datos)\n\nFormulario para solicitar unirse al equipo que solicite\n\nNombre\nApellido\nCurso (radius button)\nBotón de enviar\n\nLink a la web del TC de SW y a la oficial del equipo\n\nCada sección debe de estar contenido en un div de la siguiente forma\n\n&lt;div&gt;\n\n  &lt;h2&gt;Títlo de sección&lt;/h2&gt;\n\n  &lt;Contenido de la sección /&gt;\n\n&lt;/div&gt;\nBase: Web",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 1",
+      "T1: Web de HL I"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque1/MAhtml2.html",
+    "href": "pages/Bloque1/MAhtml2.html",
+    "title": "MA: Mas HTML",
+    "section": "",
+    "text": "Durante la explicación de teoría vista esta semana en clase nos hemos introducido en las etiquetas básicas de HTML.\nA continuación una selección de etiquetas que no hemos visto en clase, pero resulta interesante conocer, puesto que en determinadas ocasiones son útiles. Cada ítem de la lista es un enlace a la documentación de Mozilla donde está explicado el funcionamiento de la etiqueta de forma exhaustiva. No hay que conocer todos los aspectos de cada etiqueta, basta con tener una idea general de como funcionan.\n\ninput types. Muy importante conocer todos los tipos de inputs\ncode\niframe. Útil y ampliamente extendida\nhr. Línea horizontal\nfigure y figcaption. Permite insertar figura y pie de figura.\naudio. Insertar un audio en la página web.\nvideo. Insertar un audio en la página web.\nheader, main, footer. Son como &lt;div&gt; pero ya con usos por defecto preasignados.",
+    "crumbs": [
+      "Bloque I Introducción",
+      "Semana 1",
+      "MA: Mas HTML"
+    ]
+  },
+  {
+=======
     "objectID": "pages/Bloque1/html.html#primer-repo-de-git",
     "href": "pages/Bloque1/html.html#primer-repo-de-git",
     "title": "HTML",
@@ -975,6 +1468,7 @@
       "Semana 1",
       "HTML"
     ]
+>>>>>>> e3c3469 (feat:  varios)
   },
   {
     "objectID": "pages/Bloque1/t1.html",
@@ -1001,6 +1495,7 @@
     ]
   },
   {
+>>>>>>> main
     "objectID": "pages/Bloque1/entorno-reveal.html#ide",
     "href": "pages/Bloque1/entorno-reveal.html#ide",
     "title": "Preparación del entorno de trabajo",
@@ -1569,7 +2064,11 @@
     "href": "pages/Bloque3/t10.html#objetivo",
     "title": "T10: Quiz app!",
     "section": "",
+<<<<<<< HEAD
     "text": "Por el momento hemos visto dos hooks useState y useEffect, pero recordemos que en React existen más tipos de hooks que por ser menos útiles y debido a la falta de tiempo no son explicados, no obstante si hay alguno digno de mención es useRef o las referencias.\nUna ref es una referencia mutable que permite acceder directamente a un elemento del DOM o almacenar un valor persistente sin provocar un re-render del componente. El siguiente video ilustra su uso. Es un poco largo pero sirve para repasar los otros hooks.\n\n\nCon las ref podemos introducir los uncontrolled fields que nos permiten trabajar de otra forma con los formularios.\n\nSe prefiere la segunda implementación (la que no utiliza referencias) sobre la primera.",
+=======
+    "text": "Desarrollar una aplicación React que permita al usuario realizar un quiz de cultura general utilizando preguntas obtenidas desde una API pública.\nhttps://astonishing-douhua-44213e.netlify.app/\nLa aplicación debe mostrar preguntas, permitir seleccionar respuestas y calcular la puntuación final.",
+>>>>>>> main
     "crumbs": [
       "Bloque III Interacción",
       "Semana 10",
@@ -1735,9 +2234,15 @@
     "section": "HTTP",
     "text": "HTTP\n\n¿Qué es HTTP?\nHTTP (HyperText Transfer Protocol) es el protocolo fundamental de la web.\nDefine cómo:\n\nEl cliente (navegador o app)\nSolicita recursos\nA un servidor\n\nModelo conceptual:\nCliente → Solicitud HTTP → Servidor\nCliente ← Respuesta HTTP ← Servidor\nHTTP es sin estado (stateless).\nCada petición es independiente.\n\n\nComponentes de una petición\nUna petición HTTP contiene:\n\nMétodo\nURL\nCabeceras (headers)\nCuerpo (body, opcional)\n\nEjemplo conceptual:\nGET /users HTTP/1.1\nHost: api.example.com\nAuthorization: Bearer token\n\n\nMétodos HTTP principales\n\nGET\n\nSolicita datos\nNo modifica el servidor\nDebe ser idempotente\n\nEjemplo:\nGET /users\nUso típico en React:\nfetch(\"/api/users\")\n\n\n\nPOST\n\nEnvía datos al servidor\nCrea recursos nuevos\nTiene cuerpo\n\nEjemplo:\nfetch(\"/api/users\", {\n  method: \"POST\",\n  body: JSON.stringify({ name: \"Ana\" }),\n  headers: { \"Content-Type\": \"application/json\" }\n});\n\n\nPUT\n\nActualiza completamente un recurso existente\nIdempotente\n\nPUT /users/3\n\n\nDELETE\n\nElimina un recurso\n\nDELETE /users/3\n\n\nHEAD\n\nIgual que GET\nNo devuelve cuerpo\nSolo cabeceras\n\nSe utiliza para:\n\nComprobar existencia\nTamaño\nMetadatos",
     "crumbs": [
+<<<<<<< HEAD
       "Bloque III Interacción",
       "Semana 6",
       "DOM"
+=======
+      "Bloque IV Comunicación",
+      "Semana 11",
+      "Protocolos de Comunicación"
+>>>>>>> main
     ]
   },
   {
