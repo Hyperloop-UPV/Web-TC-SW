@@ -14,11 +14,65 @@ A lo largo de los años en *Hyperloop-UPV* hemos tratado de desarrollar nuestro 
 
 ### Fundamentos físicos
 
-Podemos dividir la bancada de pruebas en 3 componentes:
+#### Componentes
 
-- **Carro *Booster***: módulo de tracción móvil compuesto por un bastidor de cuatro ruedas y un EMS^[Un imán.] que es propulsad
-- ***Track***: vía de 50 metros por la que circula el Carro *Booster*
-- **Sección *booster***: sección del *track* por la que el al pasar Carro *Booster* lo impulsa.
+Podemos dividir la bancada de pruebas en 4 componentes:
+
+- **Carro *booster*** (o Carro): módulo de tracción móvil compuesto por un bastidor de cuatro ruedas y un EMS^[Un imán.] que es propulsado por la sección 
+- ***Track***: vía de 50 metros por la que circula el Carro *booster*
+  - **Sección *booster***: sección del *track* por la que el al pasar Carro *booster* lo impulsa.
+- **Armario *booster***: lugar donde se almacenan los supercondensadores y las resistencias que generan el campo magnético que impulsa al Carro *booster*  en la Sección *booster*
+
+#### Variables
+
+Trabajaremos como todas la variables asumiendo que son escalares.
+
+##### Carro *Booster*
+
+- Posición: ubicación física del Carro en el *Track*. $s$ medida en $\mathrm{m}$ y $s \in[0,50]$.
+  - Asumiremos que la Sección *booster* se encuentra ubicada entre $s=2$ y $s =4$
+- Velocidad: cambio de la posición del Carro respecto al tiempo. $v$ medida en $\mathrm{km/h}$
+- Aceleración: cambio de la velocidad del Carro respecto al tiempo. $a$ medida en $\mathrm{m/s^2}$
+- Masa: masa total del Carro *booster*. $m$ medida en $\mathrm{kg}$ 
+- Fuerza: fuerza neta aplicada sobre el Carro, resultado del empuje del *booster* y de las fuerzas de frenado u oposición al movimiento. $F$ medida en $\mathrm{N}$. Por convenio, $F>0$ si actúa en el sentido de avance (dirección creciente de $s$) y $F<0$ en caso contrario.
+
+##### Armario *Booster*
+
+- Tensión: diferencia de potencial eléctrico suministrada por el sistema de almacenamiento de energía. $V$ medida en $\mathrm{V}$
+- Intensidad: corriente eléctrica que circula por el sistema para generar el campo magnético del *booster*. $I$ medida en $\mathrm{A}$
+
+
+##### Otras consideraciones
+
+Asumiremos que:
+
+- El movimiento únicamente es horizontal
+$$
+\begin{aligned}
+g &= 9.81\,\mathrm{m/s^2} \\ 
+F = m \cdot a \\
+|\vec{N}| &= |\vec{P}| = m g \\
+F_\text{rozamiento} &= \mu|\vec{N}| \\
+\mu &=
+\begin{cases}
+0, & \text{si el Carro no está frenando} \\
+0.5, & \text{si el Carro está frenando}
+\end{cases}
+\end{aligned}
+$$
+
+#### Funcionamiento
+
+- Partiremos de un estado inicial de espera `IDLE` donde $s=0; a = 0; v = 0; V= 0; I = 0$;
+- Se dará la orden de precarga `PRECHARGE` donde todas las variables se mantendrán a 0 menos $V$ que empezará a aumentar hasta alcanzar $V =400$
+- Cuando $V=400$ entramos al estado de `READY`, donde la bancada está lista para operar
+- Cuando se inicie la prueba, el carro adquirirá una $v_\text{base} = 4$ que mantendrá en todo momento hasta que frene. `RUNNING`  $a = 0; V= 400$
+- Al entrar en la Sección *Booster* la velocidad y aceleración del Carro se verán incrementadas. `Boosting`. Durnate el funcionamiento del *Booster* la Intensidad se modificará 
+- Una vez haya salido de la Sección *Booster* ($s > 4$) mantendrá una velocidad constante de $v = 25$ hasta que el POD llegue al final del *track* ($s=50$) o bien sea frenado. `RUNNING`
+- Frenado: al lanzar la orden de Frenado `BRAKING` el Carro comenzará a disminuir su velocidad hasta $v = 0$ o llegar al final del *track*
+
+
+
 
 
 ## Objetivos de aprendizaje
@@ -36,15 +90,46 @@ El objetivo del proyecto final consiste en desarrollar una bancada de pruebas pa
 
 Se deberá implementar un emulador de la bancada *booster*, el emulador estará compuesto por dos partes:
 
-- Frontent: se conecta al backend y muestra datos sobre la bancada
+- Frontend: se conecta al backend y muestra datos sobre la bancada
 - Backend: emulación de la bancada *booster*. (**Se permite hacer uso del backend de ejemplo**)
 
 
 
-### Creación de una GUI o Frontend
+## Frontend
 
-La *Graphical User Interface* (GUI) o Frontend, debe de conectarse al backend via utilizando los protocolos `http` y `websockets`. 
+La *Graphical User Interface* (GUI) o Frontend, debe de conectarse al backend utilizando los protocolos `http` y `websockets`. 
 
-#### Especificacciones de la GUI
+### Especificacciones de la GUI
 
-1. Una sección con gráficas que nos permita visualizar las siguiente variables
+1. Una sección con gráficas que nos permita visualizar las siguientes varibles
+
+- $V$
+- $a$
+- $v$
+- $F$ (Habrá que calcularla en el Frontend)
+- $I$
+
+2. Una sección que nos permita mediante botones enviar ordenes al simulador
+
+- `PRECHARGE`: inicia la precarga
+- `START`: inicia el movimiento del Carro
+- `BREAK`: frena el Carro
+- `RESET`: reinicia el dimulador
+
+3. Una sección que nos permita ver los mensajes que envía el simulador al *Front*, los mensajes harán referencia al estado del simulador, por ejemplo : *V = 400V precharge completed sucessfully* 
+
+4. Una sección que nos permita calcular la distancia óptima para presionar el freno mediante una llamada a API
+
+5. Inclusión de un modelo 3D del Carro *Booster*
+
+### Implementación 
+
+#### Notas Generales
+
+- Se debe desarollar una aplicación Web utilizando React
+- Se debe utilizar preferiblemente Typescript o en su defecto JavaScript
+- Se recomienda el uso de librerías de estilo como *tailwind* o *bootsrap*, así mismo se recomienda el uso de librerías de componentes, en especial *shadcn*
+
+
+#### Gráficas (1) y 
+
