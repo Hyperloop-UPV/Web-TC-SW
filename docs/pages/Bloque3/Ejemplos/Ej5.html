@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Validación</title>
+<style>
+  .error { color: red; }
+  .ok { color: green; }
+</style>
+</head>
+<body>
+
+<input type="number" id="edad" placeholder="Edad">
+<button id="validar">Validar</button>
+<p id="mensaje"></p>
+
+<script>
+  const edad = document.getElementById("edad");
+  const mensaje = document.getElementById("mensaje");
+
+  document.getElementById("validar").addEventListener("click", () => {
+    mensaje.className = "";
+
+    if (edad.value >= 18) {
+      mensaje.textContent = "Mayor de edad";
+      mensaje.classList.add("ok");
+    } else {
+      mensaje.textContent = "Menor de edad";
+      mensaje.classList.add("error");
+    }
+  });
+</script>
+
+</body>
+</html>

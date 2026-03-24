@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Condicional y clases</title>
+<style>
+  body { font-family: Arial; padding: 20px; }
+  .par { color: green; }
+  .impar { color: red; }
+</style>
+</head>
+<body>
+
+<p id="numero">0</p>
+<button id="sumar">Sumar 1</button>
+
+<script>
+  let contador = 0;
+  const p = document.getElementById("numero");
+  const boton = document.getElementById("sumar");
+
+  boton.addEventListener("click", () => {
+    contador++;
+    p.textContent = contador;
+
+    p.classList.remove("par", "impar");
+    if (contador % 2 === 0) {
+      p.classList.add("par");
+    } else {
+      p.classList.add("impar");
+    }
+  });
+</script>
+
+</body>
+</html>

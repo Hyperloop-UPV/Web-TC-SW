@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lista de tareas</title>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <h1>Lista de tareas</h1>
+
+  <form id="taskForm">
+    <label>
+      Tarea:
+      <input id="taskInput" type="text" required />
+    </label>
+
+    <label>
+      Responsable:
+      <select id="responsable">
+        <option value="Software">Software</option>
+        <option value="Hardware">Hardware</option>
+        <option value="Partners">Partners</option>
+        <option value="Otros">Otros</option>
+      </select>
+    </label>
+
+    <button type="submit">Añadir</button>
+  </form>
+
+  <h2>Tareas</h2>
+  <ul id="taskList"></ul>
+
+  <script>
+    $(function () {
+      // Añadir tarea
+      $("#taskForm").on("submit", function (e) {
+        e.preventDefault();
+
+        const tarea = $("#taskInput").val().trim();
+        const responsable = $("#responsable").val();
+
+        if (!tarea) return;
+
+        const texto = tarea + " (" + responsable + ")";
+        const $li = $("<li></li>").text(texto);
+
+        $("#taskList").append($li);
+        $("#taskInput").val("").focus();
+      });
+
+      // Eliminar tarea al hacer click
+      $("#taskList").on("click", "li", function () {
+        $(this).remove();
+      });
+    });
+  </script>
+
+</body>
+</html>

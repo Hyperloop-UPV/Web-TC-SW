@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Input y mostrar</title>
+<style>
+  body { font-family: Arial; padding: 20px; }
+  #resultado { margin-top: 10px; font-weight: bold; color: darkblue; }
+</style>
+</head>
+<body>
+
+<input type="text" id="texto" placeholder="Escribe algo">
+<button id="btn">Mostrar</button>
+
+<div id="resultado"></div>
+
+<script>
+  const input = document.getElementById("texto");
+  const boton = document.getElementById("btn");
+  const resultado = document.getElementById("resultado");
+
+  boton.addEventListener("click", () => {
+    resultado.textContent = input.value;
+  });
+</script>
+
+</body>
+</html>

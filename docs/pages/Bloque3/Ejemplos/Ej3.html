@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Toggle DOM</title>
+<style>
+  .caja {
+    width: 150px;
+    height: 150px;
+    background: lightgray;
+    transition: 0.3s;
+  }
+  .activa {
+    background: steelblue;
+    border-radius: 50%;
+  }
+</style>
+</head>
+<body>
+
+<div id="caja" class="caja"></div>
+<button id="toggle">Cambiar estilo</button>
+
+<script>
+  const caja = document.getElementById("caja");
+  document.getElementById("toggle").addEventListener("click", () => {
+    caja.classList.toggle("activa");
+  });
+</script>
+
+</body>
+</html>

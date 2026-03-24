@@ -1,0 +1,50 @@
+---
+title: "Proyecto Final"
+author: "Javier Ribal del Río"
+date: "2026-03-27"
+date-modified: today
+affiliation: "Hyperloop UPV"
+---
+
+## Contextualización de la tarea
+
+El Hyperloop es una tecnología que se basa en la eficiencia energética; para ello se introduce lo que a día de hoy conocemos como *booster*, un módulo de infraestructura que confiere energía al pod para su propulsión. Al externalizar la potencia de la cápsula al carril, se logra un sistema más verde y sostenible, reduciendo el peso del vehículo y optimizando el consumo eléctrico mediante una gestión inteligente de la energía.
+
+A lo largo de los años en *Hyperloop-UPV* hemos tratado de desarrollar nuestro propio *booster*, uno de los problemas que identificamos a la hora de desarrollarlo es que para poder hacer pruebas era necesario disponer del POD completo. Por ello, este año hemos diseñado una bancada de pruebas^[Sistema estructural diseñado para el montaje rígido de prototipos o componentes, equipado con sensores para la medición de parámetros operativos y la simulación de condiciones de carga controladas.] que nos permite validar el funcionamiento del *booster* de forma sencilla.
+
+### Fundamentos físicos
+
+Podemos dividir la bancada de pruebas en 3 componentes:
+
+- **Carro *Booster***: módulo de tracción móvil compuesto por un bastidor de cuatro ruedas y un EMS^[Un imán.] que es propulsad
+- ***Track***: vía de 50 metros por la que circula el Carro *Booster*
+- **Sección *booster***: sección del *track* por la que el al pasar Carro *Booster* lo impulsa.
+
+
+## Objetivos de aprendizaje
+
+El objetivo principal de la tarea es poner en práctica el contenido aprendido durante el *training center* de Software, el diseño de UI dinámicas para el control de telemetría del vehículo. Asimismo, el proyecto se realizará en colaboración con otros subsistemas, para potenciar el trabajo en equipo y la comunicación entre los subsistemas, simulando así un *miniequipo* de Hyperloop.
+
+
+## Descripción general de la tarea
+
+El objetivo del proyecto final consiste en desarrollar una bancada de pruebas para el *booster* (de ahora en adelante bancada *booster*). Los alumnos de los diferentes subsistemas del Training Center tienen asignadas diferentes tareas interrelacionadas entre sí, donde será necesario que todos cooperen de manera coordinada para cumplir con los requisitos técnicos y alcanzar el objetivo final de la tarea.
+
+
+
+## Descripción de la tarea de Software
+
+Se deberá implementar un emulador de la bancada *booster*, el emulador estará compuesto por dos partes:
+
+- Frontent: se conecta al backend y muestra datos sobre la bancada
+- Backend: emulación de la bancada *booster*. (**Se permite hacer uso del backend de ejemplo**)
+
+
+
+### Creación de una GUI o Frontend
+
+La *Graphical User Interface* (GUI) o Frontend, debe de conectarse al backend via utilizando los protocolos `http` y `websockets`. 
+
+#### Especificacciones de la GUI
+
+1. Una sección con gráficas que nos permita visualizar las siguiente variables
