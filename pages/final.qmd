@@ -67,12 +67,12 @@ $$
 - Se dará la orden de precarga `PRECHARGE` donde todas las variables se mantendrán a 0 menos $V$ que empezará a aumentar hasta alcanzar $V =400$
 - Cuando $V=400$ entramos al estado de `READY`, donde la bancada está lista para operar
 - Cuando se inicie la prueba, el carro adquirirá una $v_\text{base} = 4$ que mantendrá en todo momento hasta que frene. `RUNNING`  $a = 0; V= 400$
-- Al entrar en la Sección *Booster* la velocidad y aceleración del Carro se verán incrementadas. `Boosting`. Durnate el funcionamiento del *Booster* la Intensidad se modificará 
+- Al entrar en la Sección *Booster* la velocidad y aceleración del Carro se verán incrementadas. `BOOSTING`. Durnate el funcionamiento del *Booster* la Intensidad se modificará 
 - Una vez haya salido de la Sección *Booster* ($s > 4$) mantendrá una velocidad constante de $v = 25$ hasta que el POD llegue al final del *track* ($s=50$) o bien sea frenado. `RUNNING`
-- Frenado: al lanzar la orden de Frenado `BRAKING` el Carro comenzará a disminuir su velocidad hasta $v = 0$ o llegar al final del *track*
-
-
-
+- Frenado: al lanzar la orden de Frenado `BRAKING` el Carro comenzará a disminuir su velocidad hasta $v = 0$ o llegar al final del *track*. 
+  - Si el Carro llega a detenerse antes de alcanzar el final del *track* ($s \le 50$), se informará mediante un mensaje
+  - En caso de que el Carro llegará al final del *track* y $v = 0$ será detenido por el *mechanical stopper*^[Plancha de metal que asegura que el Carro *booster* no salga del *track*.], también se informará con un mensaje.
+- Una vez el Carro reste detenido `STOPPED` todas las variables de mantendran a 0 salvo la posición.
 
 
 ## Objetivos de aprendizaje
@@ -93,11 +93,17 @@ Se deberá implementar un emulador de la bancada *booster*, el emulador estará 
 - Frontend: se conecta al backend y muestra datos sobre la bancada
 - Backend: emulación de la bancada *booster*. (**Se permite hacer uso del backend de ejemplo**)
 
+### Evaluación de la tarea
+
+Los requesitos mínimos para evaluar la tarea es realizar un el frontend incluyendo las 5 funcionalidades detalladas en el apartado anterior.
+
+Aquellos que deseen aspirar a nota extra podrán entregar también su propio backend que cumpla con las especificaciones de la tarea.
+
 
 
 ## Frontend
 
-La *Graphical User Interface* (GUI) o Frontend, debe de conectarse al backend utilizando los protocolos `http` y `websockets`. 
+La *Graphical User Interface* (GUI) o frontend, debe de conectarse al backend utilizando los protocolos `http` y `websockets`. 
 
 ### Especificacciones de la GUI
 
@@ -106,8 +112,11 @@ La *Graphical User Interface* (GUI) o Frontend, debe de conectarse al backend ut
 - $V$
 - $a$
 - $v$
-- $F$ (Habrá que calcularla en el Frontend)
+- $F$ (Habrá que calcularla en el Frontend. Usar 2ª Ley de Newton)
 - $I$
+
+- Además, de una cronograma con los estados establecidos.
+
 
 2. Una sección que nos permita mediante botones enviar ordenes al simulador
 
@@ -131,5 +140,31 @@ La *Graphical User Interface* (GUI) o Frontend, debe de conectarse al backend ut
 - Se recomienda el uso de librerías de estilo como *tailwind* o *bootsrap*, así mismo se recomienda el uso de librerías de componentes, en especial *shadcn*
 
 
-#### Gráficas (1) y 
+#### Gráficas (1) y Mensajes (3)
 
+El Backend expondrá en el puerto `5001` un protocolo `websockets` con ruta `backend/stream` que se corresponderá con el flujo de datos envidados del cliente a servidor; es decir utilizaremos Websockets únicamente para leer datos. De la información transmitida por `ws` obtendremos tanto los datos que habrá que mostrar en la gráfica.
+
+El área de las gráficas debe de ser dinámico.
+
+
+#### Botones (2)
+
+Al ser presionados mandarán una orden utilizando una petición `HTTP-POST` al backend utilizando el siguiente formato. El botón de `START` debe de estar acompañado de un `input` numérico que permita especificar la altura 
+
+
+La orden se dirigirá al siguiente enpoint `/api/command` la cual estará en el puerto `8001`. El servidor tras recibir la orden devolvera el código 200 indicando que todo ha sido correcto y se enviará un mensaje via `websockets`.
+
+
+#### *Cálculo* de la posición óptima para presionar el freno (4)
+
+Sección con un formulario que permitirá indicar el peso  del vehículo y a cuanta distancia se desea acabar del fin de la vía.  Al presionar el botón de *submit* el frontend realizará una petición tipo `GET - HTTP` a `/api/calculate` con los *query parameters* `m` y `d` que se corresponde con la masa del Carro y la distancia deseada, respectivamente
+
+
+#### Inclusión del modelo 3D
+
+Se debe incluir un modelo 3D del Carro *booster* diseñado por el subsistema de *Mechanics*, debe de ser interáctivo, no debe de tratarse de una fotografía. ^[No se incluye una descripción más externa porque el desafio de este apartado es ver, vuestras habilidades para seleccionar la forma óptima]
+
+
+### Recomendaciones
+
+- El objetivo de la tarea es diseñar un panel de control, por lo que sería interesante que haya una única vista, donde no se pueda hacer *scroll que lo concentre todo
