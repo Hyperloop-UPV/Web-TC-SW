@@ -79,15 +79,8 @@ website:
           - section: "Semana 10"
             contents: 
             - pages/Bloque3/ReactIV.qmd
-<<<<<<< HEAD
+
             - pages/Bloque3/t10.qmd
-=======
-
-
-
-          - text: "Próximamente..."
->>>>>>> 8e10774 (feat: explicacion semana 10 (#4))
-
       - section: "Bloque IV Comunicación"
         contents:
           - section: "Semana 11"
@@ -95,6 +88,7 @@ website:
             - pages/Bloque4/protocolos.qmd
 
       - pages/rubric.qmd
+      - pages/final.qmd
 
     footer: "![](https://i.imgur.com/jbGUd7N.png)<br><br><br> © Javier Ribal del Río <br> 2025 - Hyperloop UPV"
   repo-url: https://github.com/HyperloopUPV-H8/Web-TC-SW

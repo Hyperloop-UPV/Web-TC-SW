@@ -42,80 +42,186 @@
     "text": "Evaluación Notas Generales\nEvaluación previa realizada por el profesor antes de la presentación, la podeis leer para valorar vosotros los fallos y calificarlos según vuestro criterio\n\nIvan Martínez Enguix\nPor algún motivo tiene los tamaños de todo muy distorsionado, habrá que preguntarle durante la presentación, seguramente mientras acababa de programar modificaría el zoom de la preview\n\nDiseño Estructural\nEstéticamente está bien, gestiona el espacio de una manera correcta pero mejorable, podría haber puesto un overflow pero en general bastante bien distribuido. Destacar el uso del &lt;footer&gt;.\nEn relación al código en general está bastante bien aunque tiene algunos fallos importantes. Siendo estos algunos de los más destacables.\n\n&lt;div id=\"titulo\"&gt;&lt;h1&gt;&lt;strong&gt;Lista de tareas&lt;/strong&gt;&lt;/h1&gt;&lt;/div&gt;\n\nMal uso del &lt;form&gt; y de la etiqueta &lt;label&gt;, (personalmente me sorprende que la aplicación funcione con esto tal y como está)\n  &lt;!--Div con los dos campos que rellenar--&gt;\n        &lt;div class=\"elflex\"&gt;\n\n            &lt;!--DOS FORMS???!!!!--&gt;\n            &lt;form class=\"losforms\"&gt;\n                &lt;label for=\"first-name\"&gt;Nombre:&lt;/label&gt;\n                &lt;input type=\"text\" name=\"first-name\" class=\"losforms\" id=\"nomtarea\"/&gt;\n            &lt;/form&gt;\n\n            &lt;!--Desplegable y boton--&gt;\n            &lt;form class=\"losforms\"&gt;\n                 &lt;!-- LABEL QUE APUNTA AL BOTÓN DE SUBMTI--&gt;\n                &lt;label for=\"elinput\"&gt;Responsable: &lt;/label&gt;\n                &lt;select name=\"Responsable:\" id=\"desplegable\" class=\"losforms\"&gt;\n                    &lt;option value=\"Software\"&gt;Software&lt;/option&gt;\n                    &lt;option value=\"Hardware\"&gt;Hardware&lt;/option&gt;\n                    &lt;option value=\"Partners\"&gt;Partners&lt;/option&gt;\n                    &lt;option value=\"Otros\"&gt;Otros&lt;/option&gt;\n                &lt;/select&gt;\n                &lt;input type=\"submit\" value=\"Añadir\" id=\"elinput\" class=\"losforms\" /&gt;\n            &lt;/form&gt;\n        &lt;/div&gt;\nPuntuación: 6.8, aunque el HTML tiene varios errores garrafales la estructura es correcta y el resto del HTML está bastante bien\n\n\nDiseño Formato\nUso muy bueno de las propiedades y de los selectores/pseudoselectores de CSS. Domina funciones avanzadas como el flex, el degradado en el fondo, así como configurar correctamente las propiedades de la foto del pie de sitio.\nUtiliza una buena paleta de colores que incluye el AZUL y el VERDE, colores complementarios siguiendo la teoría de color.\nAbusa del uso de los píxeles como unidades de medida, (aunque en el TC tampoco hemos visto más). Hubiera faltado formatear mejor los botones.\nPor último en relación a la hoja de estilos podría haber agrupados varias propiedades en una única clase y aplicarla indistintamente o haber definido una variable de CSS\nPuntuación: 7.5, muy buen diseño y uso de los selectores cosas mejorables en la hoja de estilos pero en general bien. Obiando lo del zoom está todo correcto\n\n\nFuncionalidad\nIncorpora todas las funcionalidades básicas, sin embargo presenta algunos errores, y bugs críticos:\n\nAñadir dos veces la misma tarea\nAñadir tareas sin especificar texto\nAl presionar el botón de intro en el &lt;input&gt; de la tarea se recarga el sitio web (esto por la mala configuración del formulario)\n\nNo mucho más que añadir.\nPuntuación 5.5: cumple con lo mínimo y presenta muchos bugs\n\n\nProgramación\nCódigo JS correcto, no maneja el DOM de la forma más eficiente, aun así parece que no acaba de comprender el paso de variables de las funiones de ES6.\nAunque el manejo del DOM no es el del todo correcto, lo ha solucionado con de una forma muy creativa jugando con selectores CSS. Aun así presenta código innecesario\n    const btn = document.getElementById(\"elinput\");\nconst subsistema = document.getElementById(\"desplegable\");\nconst lista = document.getElementById(\"listado\");\nconst tarea = document.getElementById(\"nomtarea\");\n\n//Recoge la información del campo escrito y desplegable y los enseña por pantalla en la lista de tareas\nbtn.addEventListener(\"click\",(event1)=&gt;{\n\n    event1.preventDefault();\n    const li = document.createElement(\"li\");\n    li.textContent = tarea.value + \" (\" + subsistema.value + \")\";\n    // AÑADIR NEGRITA AQUÍ\n    lista.appendChild(li);\n    tarea.value = null\n});\n\n//Detecta sobre que elemento de la lista estamos haciendo click y lo elimina\nlista.addEventListener(\"click\", function(event2) {\n\n    if (event2.target.tagName === \"LI\") {\n        event2.target.remove();\n    }\n});\n\n// TODO ESTO SOBRA SE PODRÍA AÑADIR NEGRITA  DIRECTAMENTE AL LI\n//Cuando se pasa por encima de una tarea \nlista.addEventListener(\"mouseover\", function(event3) {\n\n    if (event3.target.tagName === \"LI\") {\n        event3.target.classList.add(\"negrita\");\n    }\n});\nPuntuación: 7.5: En general bien sería interesante que almacenará las tareas, aunque tal y como lo ha planteado no le hacía falta\n\n\nDocumentación\nHay comentarios en el HTML y en JS, en el CSS no. Tampoco hay documntación, pero ha usado git aunque sus mensajes de log no son los más correctos.\nPuntuación: 7\n\n\nObservaciones\nPor algún motivo hay 3 fotos en la misma carpeta que los ficheros de código (dos paisajes y una fotografía de Shrek [Sí, el ogro verde de dreamworks])\n\n\nPreguntas técnicas\n\nPreguntarle lo que es un flex\nPreguntarle a que se corresponde la variable listado de su código\n\n\n\n\nPau Minguet Micó\nHa hecho dos versiones una con DOM y otra con React, así en general evaluaremos la de React pero hay que destacar que el código JS del DOM está correcto. (Es más correcta la solución de DOM a nivel de programación pero valoaremos la de React más positivamente)\n\nDiseño Estructural\nNo se distingue lo que es HTML de lo que no, lo cual no es malo, distribuye el espacio de forma mediocre aunque no mal del todo.\nEn general está bien no utiliza la etiqueta &lt;header/&gt; para la cabecera y utiliza la propiedad style para introducir estilos con la sintaxis JSX, lo cual según mi criterio no es del todo correcto, sin embargo aquí lo hace dos veces por lo que podría haber introducido una clase.\n                &lt;span className=\"item-text\" style={{ textDecoration: checked ? \"line-through\" : \"none\" }}&gt;{item.text}&lt;/span&gt;\n                &lt;span className=\"item-responsible\" style={{ textDecoration: checked ? \"line-through\" : \"none\" }}&gt;{item.responsible}&lt;/span&gt;\nFaltaría añadir un label para el checkbox para que si haces click en el texto se marque la casilla Puntuación:8\n\n\nDiseño Formato\nImpresionante, luce el CSS, aunque hay cosas que no acaban de agradar, el alumno maneja correctamente las propiedades CSS juega perfectamente con los flex y trabaja los efectos y animaciones de forma sencilla, la web es casi responsive. Lo único que no me gusta es que con la imagen de fondo no podemos evaluar su totalment paleta de colores, aun así los colores mostrados son correctos.\nAdemás incorpora iconos y letras importadas de CSS, así como checkbox muy customizadas.\nMe llama especialmente la atención el uso de las propiedades CSS, le preguntaremos mucho sobre esto, hay un par de propiedades muy especificas.\nPuntuación: 9\n\n\nFuncionalidad\nIncorpora todas las funcionalidades básicas, sin embargo presenta algunos errores\n\nAñadir dos veces la misma tarea\n\nIncorpora la posibilidad de marcar una tarea sin eliminarla, así como la posibilidad de editar la tarea, lo cual no es el del todo fácil.\nPuntuación 8: incluye lo mínimo y funcionalidades\n\n\nProgramación\nUtiliza React. Buen diseño de componentes generalmente utiliza correctamente las props y el state (aun no lo hemos visto en el TC) aun así presenta algunos errores de metodología (los cuales serán trabajados en el TC posteriormente).\nEl error más destable es utilizar el DOM, pero bueno lo hace de forma correcta y en susitución de los controlled-inputs (que tampoco los hemos visto en el TC).\nimport ListItem from \"./ListItem\";\nimport EditItem from \"./EditItem\";\nimport { useState } from \"react\";\nimport \"../styles/TaskList.css\";\n\nconst TaskList = ({ items, updateList }) =&gt; {\n\n    // Stores the index of the task that is being edited\n    const [editIndex, setEditIndex] = useState(-1);\n\n    // When the user clicks on a task, it will be removed from the list\n    const handleClick = item =&gt; {\n        updateList(items.filter(n =&gt; !(n.text === item.text && n.responsible === item.responsible)));\n    };\n\n    // When the user clicks on the save button in the EditItem component, this function will be called to update the task in the list\n    const handleSave = () =&gt; {\n        const text = document.querySelector(\".edit-text\").value;\n        const responsible = document.querySelector(\".edit-select\").value;\n        if (text !== \"\") {\n            const newItems = [...items];\n            newItems[editIndex] = { text, responsible };\n            updateList(newItems);\n            setEditIndex(-1);\n        }\n    }\n\n    // MUY FEO ESTO\n    return (\n        &lt;div className=\"task-list\"&gt;\n            {items.map((item, i) =&gt; (\n                // Just one of the items will be in edit mode\n                editIndex === i ? (\n                    &lt;EditItem key={i} item={item} onSave={handleSave} onCancel={() =&gt; setEditIndex(-1)} /&gt;\n                ) : (\n                    &lt;ListItem \n                        key={i} \n                        onClick={() =&gt; handleClick(item)} \n                        item={item} \n                        setEditIndex={setEditIndex} \n                        pos={i} \n                    /&gt;\n                )\n            ))}\n        &lt;/div&gt;\n    );\n};\n\nexport default TaskList;\nPuntuación: 9\n\n\nDocumentación\nHay comentarios en JSX pero no en CSS. No hay documentación uso correcto de Git y Git Hub se ha hecho una PR a si mismo, trabaja con ramas y utiliza convenctional commits. No presenta documentación.\nPuntuación 8:\n\n\nEsfuerzo\nMe ha ido enseñando distintas versiones de la web me ha ido preguntando por mi opinión y ha ido haciendo casos de mis sugerencias\n\n\nPreguntas técnicas\n\nPreguntarle lo que es un flex y sus propiedades\nPreguntarle el diagrama de componentes de su app\n\n\n\n\nDaniel Zanón Barney\nTengo dudas respecto a este alumno sus tares han sido bastante malas y en clase me transmite la sensación de que no se ha enterado de mucho durante el TC y tengo mis sospechas de que el trabajo está hecho en una gran parte con IA, su tarea presenta un error se lo indicaremos y le diremos que lo corrija en directo.\nEl error es que no llama bien al método get de texto, utiliza una mayúscula en vez de una minúscula."
   },
   {
-    "objectID": "pages/Bloque3/ReactI.html",
-    "href": "pages/Bloque3/ReactI.html",
-    "title": "React I",
+    "objectID": "pages/Bloque4/protocolos.html",
+    "href": "pages/Bloque4/protocolos.html",
+    "title": "Protocolos de Comunicación",
     "section": "",
     "text": "Contenido",
     "crumbs": [
-      "Bloque III Interacción",
-      "Semana 7",
-      "React I"
+      "Bloque IV Comunicación",
+      "Semana 11",
+      "Protocolos de Comunicación"
     ]
   },
   {
-    "objectID": "pages/Bloque3/ReactI.html#sintaxis-jsx",
-    "href": "pages/Bloque3/ReactI.html#sintaxis-jsx",
-    "title": "React I",
-    "section": "Sintaxis JSX",
-    "text": "Sintaxis JSX\n\n¿Qué es la sintaxis JSX?\n\nJSX (JavaScript XML) es una extensión de JavaScript utilizada en React.\n\nPermite escribir estructuras similares a HTML directamente dentro del código JavaScript.\n\nFacilita la creación y lectura de interfaces de usuario, integrando lógica y presentación.\n\nAunque su apariencia es HTML, JSX se transpila a JavaScript puro antes de ejecutarse en el navegador.\nForma cómoda de almacenar etiquetas html como variables de JS\n\n\n\n¿Qué nos ofrece la sintaxis JSX?\n\nAlmacenar una etiqueta como una variable\nconst title = &lt;h1&gt;Web del TC de SW&lt;/h1&gt;;\n\nconst driveIndication = (drives)? &lt;p&gt;Puede conducir&lt;/p&gt; : &lt;p&gt;No puede conducir&lt;/p&gt;;\nDe esta forma la variable title se corresponde con una etiqueta que contiene el título. Sin embargo, como podemos podemos utilizar está etiqueta una vez la hemos definido como una variable.\n\n\nRenderizar etiquetas dentro de etiquetas\nconst title = &lt;h1&gt;Web del TC de SW&lt;/h1&gt;;\n\nconst page = &lt;div&gt;{title}&lt;/div&gt;\nDe esta forma estámos encapsulando la etiqueta h1 dentro del div.\n\n\nRenderizar con el map\nconst profeAsi= [[\"Rosa\", \"Macro I\"], [\"Gabriela\", \"FSO\"],[\"Yolanda\",\"LTP\"], [\"Ferrán\", \"EM\"], [\"Pepe\", \"TCO\"]];\n\n// Array de li Asignatura: nombre profesor\nconst itemsProfAsi =  profeAsi.map(x =&gt; &lt;li&gt;{x[1]}: {x[0]}&lt;/li&gt;);\n\nconst listaProfesoresAsignatura = &lt;ul&gt;{itemsProfAsi}&lt;/ul&gt;;\n\n\nRenderizar con el map\nconst profeAsi= [[\"Rosa\", \"Macro I\"], [\"Gabriela\", \"FSO\"], [\"Yolanda\",\"LTP\"], [\"Ferrán\", \"EM\"], [\"Pepe\", \"TCO\"]];\n\nconst listaProfesoresAsignatura = &lt;ul&gt;\n{profeAsi.map((x,i) =&gt; &lt;li key={i}&gt;{x[1]}: {x[0]}&lt;/li&gt;)}\n&lt;/ul&gt;;",
+    "objectID": "pages/Bloque4/protocolos.html#http",
+    "href": "pages/Bloque4/protocolos.html#http",
+    "title": "Protocolos de Comunicación",
+    "section": "HTTP",
+    "text": "HTTP\n\n¿Qué es HTTP?\nHTTP (HyperText Transfer Protocol) es el protocolo fundamental de la web.\nDefine cómo:\n\nEl cliente (navegador o app)\nSolicita recursos\nA un servidor\n\nModelo conceptual:\nCliente → Solicitud HTTP → Servidor\nCliente ← Respuesta HTTP ← Servidor\nHTTP es sin estado (stateless).\nCada petición es independiente.\n\n\nComponentes de una petición\nUna petición HTTP contiene:\n\nMétodo\nURL\nCabeceras (headers)\nCuerpo (body, opcional)\n\nEjemplo conceptual:\nGET /users HTTP/1.1\nHost: api.example.com\nAuthorization: Bearer token\n\n\nMétodos HTTP principales\n\nGET\n\nSolicita datos\nNo modifica el servidor\nDebe ser idempotente\n\nEjemplo:\nGET /users\nUso típico en React:\nfetch(\"/api/users\")\n\n\n\nPOST\n\nEnvía datos al servidor\nCrea recursos nuevos\nTiene cuerpo\n\nEjemplo:\nfetch(\"/api/users\", {\n  method: \"POST\",\n  body: JSON.stringify({ name: \"Ana\" }),\n  headers: { \"Content-Type\": \"application/json\" }\n});\n\n\nPUT\n\nActualiza completamente un recurso existente\nIdempotente\n\nPUT /users/3\n\n\nDELETE\n\nElimina un recurso\n\nDELETE /users/3\n\n\nHEAD\n\nIgual que GET\nNo devuelve cuerpo\nSolo cabeceras\n\nSe utiliza para:\n\nComprobar existencia\nTamaño\nMetadatos",
     "crumbs": [
-      "Bloque III Interacción",
-      "Semana 7",
-      "React I"
+      "Bloque IV Comunicación",
+      "Semana 11",
+      "Protocolos de Comunicación"
     ]
   },
   {
-    "objectID": "pages/Bloque3/ReactI.html#react",
-    "href": "pages/Bloque3/ReactI.html#react",
-    "title": "React I",
-    "section": "React",
-    "text": "React\n\nMotivación\nHasta el momento hemos trabajado únicamente con HTML5, el cual a pesar de ser muy eficaz, presenta el inconveniente de que no implementa ninguna clase de lógica. Es decir, si queremos repetir alguna estructura previamente definida deberemos copiarla y pegarla. Otro problema, de HTML puro es la complejidad que requiere el manejo del DOM, como ya se vio en la semana anterior.\nBajo este pretexto, introducimos el framework React diseñado por Meta.\n\n\nBases de React\nReact es un componente basado en la sintaxis JS y en la programación funcional introducida en ES6.\n\n\nComponente React\nLos componentes de React los definimos como unidades reutilizables y modulares que se implementan de esta forma: una función que devuelve un objeto de JSX\nfunction Saludo() {\n  return &lt;h1&gt;Hola, mundo&lt;/h1&gt;;\n}\nPodemos renderizar nuestro componente Saludo asumiendo que se comporta como una etiqueta html. Recordemos que no lo es.\n&lt;main&gt;\n  &lt;Saludo /&gt;\n&lt;/main&gt;\nDentro de este componente podemos incluir lógica propia de JavaScript, de forma que al definir componente podemos dotarlo de lógica interna.\nfunction DivNúmeroAleatorio() {\n\n  let n = Math.random();\n  return &lt;div className=\"n-random\"&gt;{n}&lt;/div&gt;;\n}\n*Nótese que aunque JS utilice camelCase para el nombre de las funciones, con React utilizaremos PascalCase para definir los componentes puesto que a pesar de que se trata de funciones, trabajaremos con ellas como si fuesen clases.\n\n\nProps en React\nHasta ahora, los componentes definidos siempre devuelven el mismo contenido. Sin embargo, para que un componente sea realmente reutilizable, necesitamos poder pasarle información desde el exterior.\nEn React, esta información se transmite mediante props (properties).\nLas props se definen como los parámetros de entrada de un componente y permiten personalizar su comportamiento o su contenido sin modificar su definición interna.\n\nEjemplo 1: uso de props (forma explícita)\nfunction Saludo(props) {\n  return &lt;h1&gt;Hola, {props.nombre}&lt;/h1&gt;;\n}\nUso del componente:\n&lt;Saludo nombre=\"Rosa\" /&gt;\n&lt;Saludo nombre=\"Gabriela\" /&gt;\n\n\nEjemplo 2: props desestructuradas (sintaxis JavaScript)\nfunction Saludo({ nombre }) {\n  return &lt;h1&gt;Hola, {nombre}&lt;/h1&gt;;\n}\nUso del componente (idéntico al anterior):\n&lt;Saludo nombre=\"Rosa\" /&gt;\n&lt;Saludo nombre=\"Gabriela\" /&gt;\n\n\n\nEventos en React\nEn React, el manejo de eventos se basa en los eventos del DOM, pero utilizando una sintaxis propia de JSX y siguiendo el estilo de JavaScript.\n\nEjemplo básico de evento\nfunction BotonSaludo() {\n\n  function manejarClick() {\n    alert(\"Hola desde React\");\n  }\n\n  return (\n    &lt;button onClick={manejarClick}&gt;\n      Saludar\n    &lt;/button&gt;\n  );\n}\n\n\nPaso de funciones como eventos\nLa función asociada al evento no se ejecuta al renderizar el componente, sino únicamente cuando ocurre el evento; es decir la pasamos como un ciudadano de primera clase.\n&lt;button onClick={manejarClick}&gt;Saludar&lt;/button&gt;\nIncorrecto:\n&lt;button onClick={manejarClick()}&gt;Saludar&lt;/button&gt;\n\n\nEventos más habituales en React\nReact soporta la mayoría de los eventos del DOM, adaptados a la sintaxis JSX. A continuación se listan los eventos más utilizados, clasificados por tipo.\n\nEventos de ratón\n\nonClick\nonDoubleClick\nonMouseEnter\nonMouseLeave\nonMouseMove\nonMouseDown\nonMouseUp\n\n\n\nEventos de teclado\n\nonKeyDown\nonKeyUp\nonKeyPress\n\n\n\nEventos de formularios\n\nonChange\nonSubmit\nonFocus\nonBlur\nonInput\nonReset\n\n\n\nEventos de carga y ciclo del elemento\n\nonLoad\nonError\n\n\n\nEventos de selección y portapapeles\n\nonSelect\nonCopy\nonCut\nonPaste\n\n\n\nEventos táctiles (dispositivos móviles)\n\nonTouchStart\nonTouchMove\nonTouchEnd\nonTouchCancel\n\n\n\n\n\nCiclo de vida de los componentes y renderizado en React\nEn React, los componentes no se renderizan directamente sobre el DOM real, sino que siguen un proceso intermedio que permite optimizar las actualizaciones de la interfaz.\nLa idea clave es que la interfaz se organiza como un árbol de componentes, análogo al árbol del DOM, pero a un nivel de abstracción superior.\n\nEl árbol de componentes\nCuando una aplicación React se ejecuta:\n\nCada componente genera otros componentes o elementos JSX.\nReact construye un árbol de componentes, donde:\n\nEl componente raíz suele ser App\nCada componente hijo ocupa una rama del árbol\n\n\nEste árbol de componentes se corresponde conceptualmente con el árbol del DOM, aunque no es el DOM real.\n\n\nProceso de renderizado\nEl proceso general es el siguiente:\n\nReact ejecuta un componente (función).\nEl componente devuelve JSX.\nEl JSX se transforma en una representación interna del árbol.\nReact compara este árbol con el anterior.\nSolo se actualizan en el DOM real los nodos que han cambiado.\n\nDe esta forma, React minimiza el acceso directo al DOM, que es una operación costosa.\n\n\nCiclo de vida (visión simplificada)\nDesde un punto de vista conceptual, un componente pasa por tres fases:\n\nMontaje\n\nEl componente se crea y se inserta en el DOM.\n\nActualización\n\nEl componente se vuelve a renderizar cuando cambian sus datos.\n\nDesmontaje\n\nEl componente se elimina del DOM.\n\n\nEn componentes funcionales modernos, este ciclo se gestiona de forma implícita mediante el renderizado y, más adelante, mediante hooks.\n\n\nRelación con el DOM\n\nEn JavaScript puro:\n\nSe modifica el DOM directamente.\n\nEn React:\n\nSe describe cómo debe ser la interfaz.\nReact decide el cuándo y el cómo modificar el DOM.\n\n\nEl desarrollador no recorre ni manipula el árbol del DOM, sino que trabaja sobre el árbol de componentes.",
+    "objectID": "pages/Bloque4/protocolos.html#http-vs-comunicación-en-tiempo-real",
+    "href": "pages/Bloque4/protocolos.html#http-vs-comunicación-en-tiempo-real",
+    "title": "Protocolos de Comunicación",
+    "section": "HTTP vs Comunicación en tiempo real",
+    "text": "HTTP vs Comunicación en tiempo real\nHTTP funciona bajo el modelo:\n\nPetición → Respuesta → Fin\n\nSi queremos datos continuamente:\n\nDebemos repetir peticiones\nIntroduce latencia\nIneficiente\n\nSolución: WebSockets",
     "crumbs": [
-      "Bloque III Interacción",
-      "Semana 7",
-      "React I"
+      "Bloque IV Comunicación",
+      "Semana 11",
+      "Protocolos de Comunicación"
     ]
   },
   {
-    "objectID": "pages/Bloque3/ReactI.html#creación-de-una-reactjs-app",
-    "href": "pages/Bloque3/ReactI.html#creación-de-una-reactjs-app",
-    "title": "React I",
-    "section": "Creación de una ReactJS app",
-    "text": "Creación de una ReactJS app\nEl desarrollo de aplicaciones web modernas requiere coordinar múltiples elementos: estructura del proyecto, gestión de dependencias, compilación del código y ejecución en el navegador.\nUn framework de desarrollo proporciona un entorno de trabajo preconfigurado que organiza estos elementos y establece una forma estándar de trabajar.\n\n¿Para qué sirve un framework?\nUn framework permite al desarrollador:\n\nEvitar configuraciones manuales complejas\nSeguir una estructura común de proyecto\nAutomatizar tareas repetitivas\nCentrarse en la lógica de la aplicación y no en la infraestructura\n\nEn lugar de partir de un proyecto vacío, el framework ofrece una base funcional sobre la que desarrollar.\n\n\nFramework y React\nReact se encarga de definir cómo se construye la interfaz, pero no gestiona por sí mismo:\n\nLa estructura de archivos\nEl arranque de la aplicación\nLa compilación del código\nEl servidor de desarrollo\n\nPor ello, React se apoya en un framework que orquesta el entorno de ejecución.\n\n\nCreación de la aplicación\nPara crear una nueva aplicación React utilizando un framework, se ejecuta el siguiente comando en la terminal:\nnpm create vite@latest\nEste comando genera:\n\nUna estructura inicial del proyecto\nLa configuración necesaria para trabajar con React\nUn entorno listo para el desarrollo",
+    "objectID": "pages/Bloque4/protocolos.html#websockets",
+    "href": "pages/Bloque4/protocolos.html#websockets",
+    "title": "Protocolos de Comunicación",
+    "section": "WebSockets",
+    "text": "WebSockets\nWebSockets permiten comunicación bidireccional persistente.\nCaracterísticas:\n\nConexión permanente\nCliente y servidor pueden enviar datos\nBaja latencia\nIdeal para tiempo real\n\nEjemplos:\n\nChats\nJuegos online\nTelemetría\nTrading\nSistemas IoT\n\n\nFlujo conceptual\nCliente ↔ Servidor\n     conexión abierta\nNo se crea una nueva conexión por mensaje.\n\n\nCreación de un WebSocket en JavaScript\nconst socket = new WebSocket(\"ws://localhost:8080\");\nEventos principales:\n\nonopen\nonmessage\nonclose\nonerror\n\n\n\nRecepción de mensajes\nsocket.onmessage = (event) =&gt; {\n  console.log(\"Mensaje:\", event.data);\n};\n\n\nEnvío de mensajes\nsocket.send(\"Hola servidor\");",
     "crumbs": [
-      "Bloque III Interacción",
-      "Semana 7",
-      "React I"
+      "Bloque IV Comunicación",
+      "Semana 11",
+      "Protocolos de Comunicación"
     ]
   },
   {
-    "objectID": "pages/Bloque3/reactI.html#sintaxis-jsx",
-    "href": "pages/Bloque3/reactI.html#sintaxis-jsx",
-    "title": "React I",
-    "section": "Sintaxis JSX",
-    "text": "Sintaxis JSX\n¿Qué es la sintaxis JSX?\n\nJSX (JavaScript XML) es una extensión de JavaScript utilizada en React.\n\nPermite escribir estructuras similares a HTML directamente dentro del código JavaScript.\n\nFacilita la creación y lectura de interfaces de usuario, integrando lógica y presentación.\n\nAunque su apariencia es HTML, JSX se transpila a JavaScript puro antes de ejecutarse en el navegador.\nForma cómoda de almacenar etiquetas html como variables de JS"
+    "objectID": "pages/Bloque4/protocolos.html#hook-personalizado",
+    "href": "pages/Bloque4/protocolos.html#hook-personalizado",
+    "title": "Protocolos de Comunicación",
+    "section": "Hook Personalizado",
+    "text": "Hook Personalizado\nSi usamos WebSockets directamente dentro del componente:\n\nMezclamos lógica de conexión con renderizado\nCódigo difícil de reutilizar\nProblemas de ciclo de vida\n\nSolución: Hook personalizado\n\nHook personalizado\nUn hook personalizado es:\n\nUna función que utiliza hooks internos para encapsular lógica reutilizable\n\nConvención:\nuseNombre()\n\n\nHook useWebSocket\nimport { useEffect, useState } from \"react\";\n\nexport function useWebSocket(url) {\n\n  const [data, setData] = useState(null);\n\n  useEffect(() =&gt; {\n\n    const socket = new WebSocket(url);\n\n    socket.onmessage = (event) =&gt; {\n      setData(event.data);\n    };\n\n    return () =&gt; socket.close();\n\n  }, [url]);\n\n  return data;\n}\n\n\nAnálisis conceptual\n\nSe crea la conexión al montar\nSe actualiza el estado al recibir datos\nSe cierra al desmontar\nEl componente solo consume datos\n\n\n\nUso del hook\nfunction Monitor() {\n\n  const data = useWebSocket(\"ws://localhost:8080\");\n\n  return (\n    &lt;div&gt;\n      &lt;h2&gt;Datos en tiempo real&lt;/h2&gt;\n      &lt;p&gt;{data}&lt;/p&gt;\n    &lt;/div&gt;\n  );\n}\nFlujo:\n\nComponente se renderiza\n\nHook abre conexión\n\nLlegan datos\n\nEstado cambia\n\nNuevo render",
+    "crumbs": [
+      "Bloque IV Comunicación",
+      "Semana 11",
+      "Protocolos de Comunicación"
+    ]
   },
   {
-    "objectID": "pages/Bloque3/reactI.html#react",
-    "href": "pages/Bloque3/reactI.html#react",
-    "title": "React I",
-    "section": "React",
-    "text": "React\nMotivación\nHasta el momento hemos trabajado únicamente con HTML5, el cual a pesar de ser muy eficaz, presenta el inconveniente de que no implementa ninguna clase de lógica. Es decir, si queremos repetir alguna estructura previamente definida deberemos copiarla y pegarla. Otro problema, de HTML puro es la complejidad que requiere el manejo del DOM, como ya se vio en la semana anterior.\nBajo este pretexto, introducimos el framework React diseñado por Meta."
+    "objectID": "pages/Bloque4/protocolos.html#visualización-de-datos",
+    "href": "pages/Bloque4/protocolos.html#visualización-de-datos",
+    "title": "Protocolos de Comunicación",
+    "section": "Visualización de datos",
+    "text": "Visualización de datos\nEn aplicaciones reales no basta con mostrar texto.\nNecesitamos:\n\nGráficas\nPaneles de control\nVisualización clara\n\nUna librería popular para React es Recharts.",
+    "crumbs": [
+      "Bloque IV Comunicación",
+      "Semana 11",
+      "Protocolos de Comunicación"
+    ]
   },
   {
-    "objectID": "pages/Bloque3/reactI.html#creación-de-una-reactjs-app",
-    "href": "pages/Bloque3/reactI.html#creación-de-una-reactjs-app",
-    "title": "React I",
-    "section": "Creación de una ReactJS app",
-    "text": "Creación de una ReactJS app\nEl desarrollo de aplicaciones web modernas requiere coordinar múltiples elementos: estructura del proyecto, gestión de dependencias, compilación del código y ejecución en el navegador.\nUn framework de desarrollo proporciona un entorno de trabajo preconfigurado que organiza estos elementos y establece una forma estándar de trabajar."
+    "objectID": "pages/Bloque4/protocolos.html#recharts",
+    "href": "pages/Bloque4/protocolos.html#recharts",
+    "title": "Protocolos de Comunicación",
+    "section": "Recharts",
+    "text": "Recharts\nRecharts es una librería basada en:\n\nComponentes React\nSVG\nComposición declarativa\n\nInstalación:\nnpm install recharts\n\nEjemplo básico\nimport {\n  LineChart, Line, XAxis, YAxis,\n  CartesianGrid, Tooltip\n} from \"recharts\";\n\nconst data = [\n  { t: 1, v: 10 },\n  { t: 2, v: 15 },\n  { t: 3, v: 8 }\n];\n\nfunction Grafica() {\n  return (\n    &lt;LineChart width={400} height={300} data={data}&gt;\n      &lt;CartesianGrid stroke=\"#ccc\" /&gt;\n      &lt;XAxis dataKey=\"t\" /&gt;\n      &lt;YAxis /&gt;\n      &lt;Tooltip /&gt;\n      &lt;Line type=\"monotone\" dataKey=\"v\" stroke=\"#8884d8\" /&gt;\n    &lt;/LineChart&gt;\n  );\n}\n\n\nInterpretación\nCada objeto representa un punto.\n{ t: 1, v: 10 }\n\nt → eje X\nv → eje Y",
+    "crumbs": [
+      "Bloque IV Comunicación",
+      "Semana 11",
+      "Protocolos de Comunicación"
+    ]
   },
   {
-    "objectID": "pages/Bloque3/DOM.html",
-    "href": "pages/Bloque3/DOM.html",
-    "title": "DOM",
+    "objectID": "pages/Bloque4/protocolos.html#integración-completa",
+    "href": "pages/Bloque4/protocolos.html#integración-completa",
+    "title": "Protocolos de Comunicación",
+    "section": "Integración completa",
+    "text": "Integración completa\nWebSocket + Hook + Recharts\nObjetivo:\n\nVisualizar datos en tiempo real\n\n\nEjemplo conceptual\nfunction Dashboard() {\n\n  const data = useWebSocket(\"ws://localhost:8080\");\n\n  const chartData = data\n    ? JSON.parse(data)\n    : [];\n\n  return (\n    &lt;LineChart width={500} height={300} data={chartData}&gt;\n      &lt;XAxis dataKey=\"time\" /&gt;\n      &lt;YAxis /&gt;\n      &lt;Tooltip /&gt;\n      &lt;Line dataKey=\"value\" stroke=\"#82ca9d\" /&gt;\n    &lt;/LineChart&gt;\n  );\n}\n\n\nFlujo completo de una app moderna\nServidor → WebSocket → Hook → Estado → React → Gráfica\nArquitectura típica de sistemas en tiempo real.",
+    "crumbs": [
+      "Bloque IV Comunicación",
+      "Semana 11",
+      "Protocolos de Comunicación"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque4/protocolos.html#material",
+    "href": "pages/Bloque4/protocolos.html#material",
+    "title": "Protocolos de Comunicación",
+    "section": "Material",
+    "text": "Material\nServidor de testing de Python: Enlace.\nInstalar websockets con pip install websockets\nTester de prueba: Enlace (click derecho guardar enlace como)\nhttps://recharts.github.io/",
+    "crumbs": [
+      "Bloque IV Comunicación",
+      "Semana 11",
+      "Protocolos de Comunicación"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque4/Protocolos.html#http",
+    "href": "pages/Bloque4/Protocolos.html#http",
+    "title": "Protocolos de Comunicación",
+    "section": "HTTP",
+    "text": "HTTP\n¿Qué es HTTP?\nHTTP (HyperText Transfer Protocol) es el protocolo fundamental de la web.\nDefine cómo:\n\nEl cliente (navegador o app)\nSolicita recursos\nA un servidor"
+  },
+  {
+    "objectID": "pages/Bloque4/Protocolos.html#http-vs-comunicación-en-tiempo-real",
+    "href": "pages/Bloque4/Protocolos.html#http-vs-comunicación-en-tiempo-real",
+    "title": "Protocolos de Comunicación",
+    "section": "HTTP vs Comunicación en tiempo real",
+    "text": "HTTP vs Comunicación en tiempo real\nHTTP funciona bajo el modelo:\n\nPetición → Respuesta → Fin\n\nSi queremos datos continuamente:\n\nDebemos repetir peticiones\nIntroduce latencia\nIneficiente\n\nSolución: WebSockets"
+  },
+  {
+    "objectID": "pages/Bloque4/Protocolos.html#websockets",
+    "href": "pages/Bloque4/Protocolos.html#websockets",
+    "title": "Protocolos de Comunicación",
+    "section": "WebSockets",
+    "text": "WebSockets\nWebSockets permiten comunicación bidireccional persistente.\nCaracterísticas:\n\nConexión permanente\nCliente y servidor pueden enviar datos\nBaja latencia\nIdeal para tiempo real"
+  },
+  {
+    "objectID": "pages/Bloque4/Protocolos.html#hook-personalizado",
+    "href": "pages/Bloque4/Protocolos.html#hook-personalizado",
+    "title": "Protocolos de Comunicación",
+    "section": "Hook Personalizado",
+    "text": "Hook Personalizado\nSi usamos WebSockets directamente dentro del componente:\n\nMezclamos lógica de conexión con renderizado\nCódigo difícil de reutilizar\nProblemas de ciclo de vida\n\nSolución: Hook personalizado"
+  },
+  {
+    "objectID": "pages/Bloque4/Protocolos.html#visualización-de-datos",
+    "href": "pages/Bloque4/Protocolos.html#visualización-de-datos",
+    "title": "Protocolos de Comunicación",
+    "section": "Visualización de datos",
+    "text": "Visualización de datos\nEn aplicaciones reales no basta con mostrar texto.\nNecesitamos:\n\nGráficas\nPaneles de control\nVisualización clara\n\nUna librería popular para React es Recharts."
+  },
+  {
+    "objectID": "pages/Bloque4/Protocolos.html#recharts",
+    "href": "pages/Bloque4/Protocolos.html#recharts",
+    "title": "Protocolos de Comunicación",
+    "section": "Recharts",
+    "text": "Recharts\nRecharts es una librería basada en:\n\nComponentes React\nSVG\nComposición declarativa\n\nInstalación:\nnpm install recharts"
+  },
+  {
+    "objectID": "pages/Bloque4/Protocolos.html#integración-completa",
+    "href": "pages/Bloque4/Protocolos.html#integración-completa",
+    "title": "Protocolos de Comunicación",
+    "section": "Integración completa",
+    "text": "Integración completa\nWebSocket + Hook + Recharts\nObjetivo:\n\nVisualizar datos en tiempo real"
+  },
+  {
+    "objectID": "pages/Bloque4/Protocolos.html#material",
+    "href": "pages/Bloque4/Protocolos.html#material",
+    "title": "Protocolos de Comunicación",
+    "section": "Material",
+    "text": "Material\nServidor de testing de Python: Enlace.\nInstalar websockets con pip install websockets\nTester de prueba: Enlace (click derecho guardar enlace como)\nhttps://recharts.github.io/"
+  },
+  {
+    "objectID": "pages/Bloque3/t10.html",
+    "href": "pages/Bloque3/t10.html",
+    "title": "T10: Quiz app!",
     "section": "",
-<<<<<<< HEAD
+    "text": "Desarrollar una aplicación React que permita al usuario realizar un quiz de cultura general utilizando preguntas obtenidas desde una API pública.\nhttps://astonishing-douhua-44213e.netlify.app/\nLa aplicación debe mostrar preguntas, permitir seleccionar respuestas y calcular la puntuación final.",
+    "crumbs": [
+      "Bloque III Interacción",
+      "Semana 10",
+      "T10: Quiz app!"
+    ]
+  },
+  {
+    "objectID": "pages/Bloque3/t10.html#objetivo",
+    "href": "pages/Bloque3/t10.html#objetivo",
+    "title": "T10: Quiz app!",
+    "section": "",
     "text": "Desarrollar una aplicación React que permita al usuario realizar un quiz de cultura general utilizando preguntas obtenidas desde una API pública.\nhttps://astonishing-douhua-44213e.netlify.app/\nLa aplicación debe mostrar preguntas, permitir seleccionar respuestas y calcular la puntuación final.",
     "crumbs": [
       "Bloque III Interacción",
@@ -208,231 +314,60 @@
     ]
   },
   {
-<<<<<<< HEAD
-=======
-    "objectID": "pages/Bloque3/dom.html#qué-es-el-dom",
-    "href": "pages/Bloque3/dom.html#qué-es-el-dom",
-    "title": "DOM",
-    "section": "¿Qué es el DOM?",
-    "text": "¿Qué es el DOM?\nEl DOM (Document Object Model) es la representación en memoria que el navegador crea a partir del HTML.\n\nEl HTML es estático\nEl DOM es dinámico\nJavaScript interactúa con el DOM, no con el HTML original\n\n\nEl DOM es la página web viva dentro del navegador."
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#el-dom-como-árbol",
-    "href": "pages/Bloque3/dom.html#el-dom-como-árbol",
-    "title": "DOM",
-    "section": "El DOM como árbol",
-    "text": "El DOM como árbol\nEl DOM tiene estructura de árbol (grafo):\n\nCada etiqueta HTML es un nodo\nLos nodos tienen relaciones (padre, hijos, hermanos)\n\nEjemplo:\n&lt;body&gt;\n  &lt;h1&gt;Título&lt;/h1&gt;\n  &lt;button&gt;Click&lt;/button&gt;\n&lt;/body&gt;"
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#acceso-al-dom-desde-javascript",
-    "href": "pages/Bloque3/dom.html#acceso-al-dom-desde-javascript",
-    "title": "DOM",
-    "section": "Acceso al DOM desde JavaScript",
-    "text": "Acceso al DOM desde JavaScript\nEl navegador nos proporciona el objeto global document, que permite:\n\nBuscar elementos\nLeer su contenido\nModificar la interfaz\n\ndocument\ndocument.body"
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#selectores",
-    "href": "pages/Bloque3/dom.html#selectores",
-    "title": "DOM",
-    "section": "Selectores",
-    "text": "Selectores\nPor ID\ndocument.getElementById(\"count\")\ndocument.querySelector(\"#count\")\nPor etiqueta\ndocument.querySelector(\"button\")"
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#leer-y-modificar-elementos",
-    "href": "pages/Bloque3/dom.html#leer-y-modificar-elementos",
-    "title": "DOM",
-    "section": "Leer y modificar elementos",
-    "text": "Leer y modificar elementos\nelement.textContent\nelement.textContent = \"Nuevo texto\"\nelement.classList.add(\"active\")\nelement.classList.remove(\"active\")"
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#eventos",
-    "href": "pages/Bloque3/dom.html#eventos",
-    "title": "DOM",
-    "section": "Eventos",
-    "text": "Eventos\nEl DOM permite reaccionar a acciones del usuario mediante eventos.\nbutton.addEventListener(\"click\", () =&gt; {\n  // código a ejecutar\n});\nFlujo típico:\nUsuario → Evento → JavaScript → DOM actualizado"
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#ejemplo-contador-con-botón",
-    "href": "pages/Bloque3/dom.html#ejemplo-contador-con-botón",
-    "title": "DOM",
-    "section": "Ejemplo: contador con botón",
-    "text": "Ejemplo: contador con botón\nHTML\n&lt;h1 id=\"count\"&gt;0&lt;/h1&gt;\n&lt;button id=\"btn\"&gt;Sumar 1&lt;/button&gt;\nJavaScript\nlet count = 0;\n\nconst countEl = document.querySelector(\"#count\");\nconst btn = document.querySelector(\"#btn\");\n\nbtn.addEventListener(\"click\", () =&gt; {\n  count++;\n  countEl.textContent = count;\n});"
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#más-ejemplos",
-    "href": "pages/Bloque3/dom.html#más-ejemplos",
-    "title": "DOM",
-    "section": "Más ejemplos",
-    "text": "Más ejemplos\nEj1: Show input\nEj2: Par e Impar\nEj3: Toggle\nEj4: Creación dinámica\nEj5: Validación básica"
-  },
-  {
->>>>>>> 8e10774 (feat: explicacion semana 10 (#4))
-    "objectID": "pages/Bloque3/MAcss2.html",
-    "href": "pages/Bloque3/MAcss2.html",
-    "title": "MA: CSS Flex y CSS",
+    "objectID": "pages/Bloque3/t9.html",
+    "href": "pages/Bloque3/t9.html",
+    "title": "T6: Romancero Gitano I",
     "section": "",
-    "text": "Además de las propiedades estudiadas de CSS también hay algunas críticas que debido a la falta de tiempo no se han podido explicar como es el caso de display a continuación estos dos vídeos profundizan en los modos flex y grid formas diferentes de diseñar la estructura de la página",
-<<<<<<< HEAD
-=======
-    "text": "El DOM (Document Object Model) es la representación en memoria que el navegador crea a partir del HTML.\n\nEl HTML es estático\nEl DOM es dinámico\nJavaScript interactúa con el DOM, no con el HTML original\n\n\nEl DOM es la página web viva dentro del navegador.",
->>>>>>> e3c3469 (feat:  varios)
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 6",
-      "DOM"
-    ]
+    "text": "El objetivo de esta tarea es aplicar los conceptos básicos de HTML, CSS y JavaScript (DOM) para crear una página web interactiva que muestre poemas del Romancero gitano de Federico García Lorca y modifique su apariencia visual en función de las diferentes metáforas.\nResultado esperado"
   },
   {
-    "objectID": "pages/Bloque3/DOM.html#qué-es-el-dom",
-    "href": "pages/Bloque3/DOM.html#qué-es-el-dom",
-    "title": "DOM",
+    "objectID": "pages/Bloque3/t9.html#objetivo-de-la-tarea",
+    "href": "pages/Bloque3/t9.html#objetivo-de-la-tarea",
+    "title": "T6: Romancero Gitano I",
     "section": "",
-    "text": "El DOM (Document Object Model) es la representación en memoria que el navegador crea a partir del HTML.\n\nEl HTML es estático\nEl DOM es dinámico\nJavaScript interactúa con el DOM, no con el HTML original\n\n\nEl DOM es la página web viva dentro del navegador.",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 6",
-      "DOM"
-    ]
+    "text": "El objetivo de esta tarea es aplicar los conceptos básicos de HTML, CSS y JavaScript (DOM) para crear una página web interactiva que muestre poemas del Romancero gitano de Federico García Lorca y modifique su apariencia visual en función de las diferentes metáforas.\nResultado esperado"
   },
   {
-    "objectID": "pages/Bloque3/DOM.html#el-dom-como-árbol",
-    "href": "pages/Bloque3/DOM.html#el-dom-como-árbol",
-    "title": "DOM",
-    "section": "El DOM como árbol",
-    "text": "El DOM como árbol\nEl DOM tiene estructura de árbol (grafo):\n\nCada etiqueta HTML es un nodo\nLos nodos tienen relaciones (padre, hijos, hermanos)\n\nEjemplo:\n&lt;body&gt;\n  &lt;h1&gt;Título&lt;/h1&gt;\n  &lt;button&gt;Click&lt;/button&gt;\n&lt;/body&gt;\nRepresentación conceptual:\ndocument\n └─ body\n    ├─ h1\n    └─ button",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 6",
-      "DOM"
-    ]
+    "objectID": "pages/Bloque3/t9.html#estructura-html",
+    "href": "pages/Bloque3/t9.html#estructura-html",
+    "title": "T6: Romancero Gitano I",
+    "section": "Estructura HTML",
+    "text": "Estructura HTML\nEl documento HTML debe:\n\nEstar correctamente estructurado (&lt;!DOCTYPE&gt;, &lt;html&gt;, &lt;head&gt;, &lt;body&gt;).\nContener un contenedor principal centrado horizontalmente.\nIncluir, en este orden:\n\nUn elemento para mostrar información métrica del poema (número de estrofas y versos).\nUn elemento para el título del poema.\nUn elemento para el texto del poema, respetando los saltos de verso utilizando la etiqueta &lt;pre&gt;.\nUn botón que permita cambiar de poema.\n\n\nNo debe utilizarse ningún framework ni librería externa."
   },
   {
-    "objectID": "pages/Bloque3/DOM.html#acceso-al-dom-desde-javascript",
-    "href": "pages/Bloque3/DOM.html#acceso-al-dom-desde-javascript",
-    "title": "DOM",
-    "section": "Acceso al DOM desde JavaScript",
-    "text": "Acceso al DOM desde JavaScript\nEl navegador nos proporciona el objeto global document, que permite:\n\nBuscar elementos\nLeer su contenido\nModificar la interfaz\n\ndocument\ndocument.body",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 6",
-      "DOM"
-    ]
+    "objectID": "pages/Bloque3/t9.html#javascript",
+    "href": "pages/Bloque3/t9.html#javascript",
+    "title": "T6: Romancero Gitano I",
+    "section": "JavaScript",
+    "text": "JavaScript\n\nDatos\nEn JavaScript se debe definir un array de objetos, donde cada objeto represente un poema y tenga al menos:\n\nUn título.\nEl texto del poema como una cadena de texto, usando saltos de línea para los versos.\n\nEl cambio de poema debe hacerse recorriendo este array de forma cíclica (cola circular) mediante el botón.\nDescargar poemas (click derecho guardar enlace como)\n\n\nManipulación del DOM\nEl comportamiento de la página debe implementarse exclusivamente con DOM nativo, cumpliendo lo siguiente:\n\nTodas las funciones deben declararse como arrow functions.\nAl pulsar el botón:\n\nSe actualiza el título.\nSe actualiza el texto del poema.\nSe modifica el formato del fondo.\nSe recalculan y muestran:\n\nNúmero de versos.\nNúmero de estrofas (bloques separados por líneas en blanco).\n\n\n\nEl cálculo debe realizarse a partir del texto del poema, no con valores predefinidos."
   },
   {
-    "objectID": "pages/Bloque3/DOM.html#selectores",
-    "href": "pages/Bloque3/DOM.html#selectores",
-    "title": "DOM",
-    "section": "Selectores",
-    "text": "Selectores\n\nPor ID\ndocument.getElementById(\"count\")\ndocument.querySelector(\"#count\")\n\n\nPor etiqueta\ndocument.querySelector(\"button\")\n\n\nPor clase\ndocument.querySelector(\".item\")\ndocument.querySelectorAll(\".item\")\nNotas: - querySelector devuelve el primer elemento - querySelectorAll devuelve una lista - Usan la misma sintaxis que CSS",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 6",
-      "DOM"
-    ]
+    "objectID": "pages/Bloque3/t9.html#css",
+    "href": "pages/Bloque3/t9.html#css",
+    "title": "T6: Romancero Gitano I",
+    "section": "CSS",
+    "text": "CSS\nLorca utiliza las metáforas y la alegoría como elemento principal sobre el que construye sus poemas, al analizar profundamente descubrimos que siempre recurre a las mismas metáforas.\nEl color no se utiliza aquí solo como elemento decorativo, sino como un recurso semántico: cada color representa un símbolo literario presente en el poema.\nDesde el punto de vista técnico: - Los colores de fondo y de texto deben definirse en clases CSS. - JavaScript no decide colores, únicamente decide qué clase aplicar según el contenido del poema.\n\nPalabras clave y colores asociados\nSe debe detectar el texto del poema las siguientes palabras clave y aplicar el color de fondo correspondiente:\n\nguardia civil → fondo verde militar\nsangre → fondo granate oscuro\ncaballo → fondo color tierra\ncuchillo / navaja → fondo plateado\n\nEl color del texto debe elegirse siempre de forma que exista contraste suficiente con el fondo y se garantice la legibilidad.\nSi el poema contiene varias palabras clave, solo debe aplicarse un único estilo, siguiendo un orden de prioridad definido previamente.\nSi el poema no contiene ninguna de estas palabras, se aplicará un estilo por defecto con colores aleatorios."
   },
   {
-    "objectID": "pages/Bloque3/DOM.html#leer-y-modificar-elementos",
-    "href": "pages/Bloque3/DOM.html#leer-y-modificar-elementos",
-    "title": "DOM",
-    "section": "Leer y modificar elementos",
-    "text": "Leer y modificar elementos\nelement.textContent\nelement.textContent = \"Nuevo texto\"\nelement.classList.add(\"active\")\nelement.classList.remove(\"active\")",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 6",
-      "DOM"
-    ]
+    "objectID": "pages/Bloque3/t9.html#extra-opcional-símbolo-aurora",
+    "href": "pages/Bloque3/t9.html#extra-opcional-símbolo-aurora",
+    "title": "T6: Romancero Gitano I",
+    "section": "Extra opcional: símbolo aurora 🌈",
+    "text": "Extra opcional: símbolo aurora 🌈\nDe forma voluntaria, se puede añadir el símbolo aurora, que tendrá prioridad absoluta sobre todos los demás.\nCuando el poema contenga la palabra aurora, el fondo debe mostrar un degradado animado.\n\nCSS necesario para el extra\n.aurora {\n  background: linear-gradient(120deg,\n    #ff005d,\n    #ff9f1c,\n    #ffee32,\n    #3cff00,\n    #00e5ff,\n    #7a00ff,\n    #ff00c8\n  );\n  background-size: 600% 600%;\n  animation: aurora 10s linear infinite;\n  color: black;\n}\n\n@keyframes aurora {\n  0%   { background-position: 0% 50%; }\n  50%  { background-position: 100% 50%; }\n  100% { background-position: 0% 50%; }\n}"
   },
   {
-    "objectID": "pages/Bloque3/DOM.html#eventos",
-    "href": "pages/Bloque3/DOM.html#eventos",
-    "title": "DOM",
-    "section": "Eventos",
-    "text": "Eventos\nEl DOM permite reaccionar a acciones del usuario mediante eventos.\nbutton.addEventListener(\"click\", () =&gt; {\n  // código a ejecutar\n});\nFlujo típico:\nUsuario → Evento → JavaScript → DOM actualizado",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 6",
-      "DOM"
-    ]
+    "objectID": "pages/Bloque3/t9.html#consejos",
+    "href": "pages/Bloque3/t9.html#consejos",
+    "title": "T6: Romancero Gitano I",
+    "section": "Consejos",
+    "text": "Consejos\n\nCentrado de la página (layout clásico)\nToda la página debe estar centrada horizontalmente.\nEl centrado se consigue mediante:\n\nUn contenedor con un ancho máximo definido.\nMárgenes automáticos a izquierda y derecha.\n\nDesde el punto de vista conceptual:\n\nmargin: 0 auto no centra texto, centra bloques.\nEl navegador reparte automáticamente el espacio sobrante a ambos lados del contenedor.\n\n\n\nAnimación del cambio de color\nPara evitar que los cambios de color sean bruscos, se utiliza la propiedad transition en CSS.\nEsta propiedad indica al navegador que los cambios en determinadas propiedades visuales deben hacerse de forma progresiva.\nEjemplo conceptual:\nbody {\n  transition: background-color 0.6s, color 0.6s;\n}\nGracias a esta transición: - Cuando JavaScript cambia una clase o un color, - el navegador interpola automáticamente entre el color anterior y el nuevo.\nNo es necesario programar animaciones en JavaScript: CSS se encarga de todo el efecto visual.\n\n\nBúsqueda de una palabra\nPara buscar si determinada palabra determinada se debe utilizar la función includes de la clase string\n\ntexto = \"hoy nieva\";\n\ntexto.includes(\"nieva\");    //TRUE\ntexto.includes(\"llueve\");   //FALSE\n\n\nGeneración del color aleatorio\nPara la generacióndel color aleatorio de puede utilizar la siguiente función\nconst randomColor = () =&gt; '#' + Math.floor(Math.random() * 16777215).toString(16);\n\n\nConteo versos y estrofas\nEl recuento de versos y estrofas debe hacerse a partir del texto del poema, no con valores escritos a mano. A continuación se dan algunas pistas técnicas para abordar este problema.\n\nConteo de versos\nUn verso puede considerarse, a efectos prácticos en esta tarea, como una línea de texto no vacía.\nUna estrategia habitual consiste en: - Separar el texto por saltos de línea. - Eliminar las líneas vacías o formadas solo por espacios. - Contar cuántas líneas válidas quedan.\nEjemplo orientativo:\nconst versos = texto\n  .split('\\n')\n  .filter(linea =&gt; linea.trim() !== '')\n  .length;\nEste enfoque es suficiente para la mayoría de los poemas del Romancero gitano y evita errores frecuentes.\n\n\nConteo de estrofas\nUna estrofa puede entenderse como un bloque de versos separado de otros bloques por una línea en blanco.\nUna posible estrategia es: - Separar el texto usando dos (o más) saltos de línea consecutivos. - Eliminar bloques vacíos. - Contar los bloques resultantes.\nEjemplo orientativo:\nconst estrofas = texto\n  .split(/\\n\\s*\\n/)\n  .filter(bloque =&gt; bloque.trim() !== '')\n  .length;\nEntrega: un único archivo HTML funcional."
   },
   {
-    "objectID": "pages/Bloque3/DOM.html#ejemplo-contador-con-botón",
-    "href": "pages/Bloque3/DOM.html#ejemplo-contador-con-botón",
-    "title": "DOM",
-    "section": "Ejemplo: contador con botón",
-    "text": "Ejemplo: contador con botón\n\nHTML\n&lt;h1 id=\"count\"&gt;0&lt;/h1&gt;\n&lt;button id=\"btn\"&gt;Sumar 1&lt;/button&gt;\n\n\nJavaScript\nlet count = 0;\n\nconst countEl = document.querySelector(\"#count\");\nconst btn = document.querySelector(\"#btn\");\n\nbtn.addEventListener(\"click\", () =&gt; {\n  count++;\n  countEl.textContent = count;\n});",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 6",
-      "DOM"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque3/DOM.html#más-ejemplos",
-    "href": "pages/Bloque3/DOM.html#más-ejemplos",
-    "title": "DOM",
-    "section": "Más ejemplos",
-    "text": "Más ejemplos\nEj1: Show input\nEj2: Par e Impar\nEj3: Toggle\nEj4: Creación dinámica\nEj5: Validación básica",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 6",
-      "DOM"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#qué-es-el-dom",
-    "href": "pages/Bloque3/dom.html#qué-es-el-dom",
-    "title": "DOM",
-    "section": "¿Qué es el DOM?",
-    "text": "¿Qué es el DOM?\nEl DOM (Document Object Model) es la representación en memoria que el navegador crea a partir del HTML.\n\nEl HTML es estático\nEl DOM es dinámico\nJavaScript interactúa con el DOM, no con el HTML original\n\n\nEl DOM es la página web viva dentro del navegador."
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#el-dom-como-árbol",
-    "href": "pages/Bloque3/dom.html#el-dom-como-árbol",
-    "title": "DOM",
-    "section": "El DOM como árbol",
-    "text": "El DOM como árbol\nEl DOM tiene estructura de árbol (grafo):\n\nCada etiqueta HTML es un nodo\nLos nodos tienen relaciones (padre, hijos, hermanos)\n\nEjemplo:\n&lt;body&gt;\n  &lt;h1&gt;Título&lt;/h1&gt;\n  &lt;button&gt;Click&lt;/button&gt;\n&lt;/body&gt;"
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#acceso-al-dom-desde-javascript",
-    "href": "pages/Bloque3/dom.html#acceso-al-dom-desde-javascript",
-    "title": "DOM",
-    "section": "Acceso al DOM desde JavaScript",
-    "text": "Acceso al DOM desde JavaScript\nEl navegador nos proporciona el objeto global document, que permite:\n\nBuscar elementos\nLeer su contenido\nModificar la interfaz\n\ndocument\ndocument.body"
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#selectores",
-    "href": "pages/Bloque3/dom.html#selectores",
-    "title": "DOM",
-    "section": "Selectores",
-    "text": "Selectores\nPor ID\ndocument.getElementById(\"count\")\ndocument.querySelector(\"#count\")\nPor etiqueta\ndocument.querySelector(\"button\")"
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#leer-y-modificar-elementos",
-    "href": "pages/Bloque3/dom.html#leer-y-modificar-elementos",
-    "title": "DOM",
-    "section": "Leer y modificar elementos",
-    "text": "Leer y modificar elementos\nelement.textContent\nelement.textContent = \"Nuevo texto\"\nelement.classList.add(\"active\")\nelement.classList.remove(\"active\")"
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#eventos",
-    "href": "pages/Bloque3/dom.html#eventos",
-    "title": "DOM",
-    "section": "Eventos",
-    "text": "Eventos\nEl DOM permite reaccionar a acciones del usuario mediante eventos.\nbutton.addEventListener(\"click\", () =&gt; {\n  // código a ejecutar\n});\nFlujo típico:\nUsuario → Evento → JavaScript → DOM actualizado"
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#ejemplo-contador-con-botón",
-    "href": "pages/Bloque3/dom.html#ejemplo-contador-con-botón",
-    "title": "DOM",
-    "section": "Ejemplo: contador con botón",
-    "text": "Ejemplo: contador con botón\nHTML\n&lt;h1 id=\"count\"&gt;0&lt;/h1&gt;\n&lt;button id=\"btn\"&gt;Sumar 1&lt;/button&gt;\nJavaScript\nlet count = 0;\n\nconst countEl = document.querySelector(\"#count\");\nconst btn = document.querySelector(\"#btn\");\n\nbtn.addEventListener(\"click\", () =&gt; {\n  count++;\n  countEl.textContent = count;\n});"
-  },
-  {
-    "objectID": "pages/Bloque3/dom.html#más-ejemplos",
-    "href": "pages/Bloque3/dom.html#más-ejemplos",
-    "title": "DOM",
-    "section": "Más ejemplos",
-    "text": "Más ejemplos\nEj1: Show input\nEj2: Par e Impar\nEj3: Toggle\nEj4: Creación dinámica\nEj5: Validación básica"
+    "objectID": "pages/Bloque3/t9.html#recomendaciones-para-afrontar-la-tarea",
+    "href": "pages/Bloque3/t9.html#recomendaciones-para-afrontar-la-tarea",
+    "title": "T6: Romancero Gitano I",
+    "section": "Recomendaciones para afrontar la tarea",
+    "text": "Recomendaciones para afrontar la tarea\nAl enfrentarnos a un proyecto de cierta complejitud, el como afrontarlo resulta de cricial para el desarollo del mismo por ello a a continuación dejo un esquema de implementación modular. Sería mejor no utilizarlo, pero puede ser un buen punto de partida si no se sabe como empezar la app, no es el único proceso de implementación válido ni es más correcto que cualquier otro\n\nEstructura de HTML básica contadores de versos y estrofas placeholders de poema y título y botón\nFormateo CSS parte estática: centrado, tamaño (todo lo que no sea color)\nDefinir clases con colores predeterminados\nLógica interna con JS\n\n\nBuscar palabra\nContar estrofas\nConteo versos\nSelección de clase\nGenerar color aleatorio si procede\n\n\nIntegración con DOM"
   },
   {
     "objectID": "pages/Bloque3/MARef.html",
@@ -543,143 +478,9 @@
     ]
   },
   {
-<<<<<<< HEAD
-    "objectID": "pages/Bloque3/intermedio.html#useeffect",
-    "href": "pages/Bloque3/intermedio.html#useeffect",
-    "title": "React III",
-    "section": "useEffect",
-    "text": "useEffect\n\nuseEffect es un Hook que permite ejecutar efectos secundarios dentro de un componente funcional.\nUn efecto secundario es cualquier operación que no sea simplemente devolver JSX (por ejemplo: peticiones a un servidor, temporizadores, suscripciones).\nSe ejecuta después de que el componente se renderiza en el DOM."
-  },
-  {
-    "objectID": "pages/Bloque3/intermedio.html#fetch",
-    "href": "pages/Bloque3/intermedio.html#fetch",
-    "title": "React III",
-    "section": "fetch()",
-    "text": "fetch()\nHasta ahora nuestros componentes eran completamente locales.\nSin embargo, en aplicaciones reales necesitamos:\n\nDescargar datos\n\nConectarnos a servidores\n\nTrabajar con APIs externas\n\nPara ello utilizamos fetch()."
-  },
-  {
-    "objectID": "pages/Bloque3/intermedio.html#async-y-await",
-    "href": "pages/Bloque3/intermedio.html#async-y-await",
-    "title": "React III",
-    "section": "async y await",
-    "text": "async y await\nHasta ahora hemos utilizado fetch() con encadenamiento.\nExiste una forma más clara y estructurada de escribir código asíncrono:\n\nasync\nawait\n\nSu objetivo es hacer que el código sea más legible."
-  },
-  {
-    "objectID": "pages/Bloque3/intermedio.html#ejemplo-con-la-pokeapi",
-    "href": "pages/Bloque3/intermedio.html#ejemplo-con-la-pokeapi",
-    "title": "React III",
-    "section": "Ejemplo con la Pokeapi",
-    "text": "Ejemplo con la Pokeapi\nPoke-API\nDownload Code"
-  },
-  {
-    "objectID": "pages/Bloque2/intensivo.html",
-    "href": "pages/Bloque2/intensivo.html",
-    "title": "Repaso Intensivo JS",
-=======
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 6",
-      "MA: CSS Flex y CSS"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque3/ReactIV.html",
-    "href": "pages/Bloque3/ReactIV.html",
-    "title": "React IV",
-    "section": "",
-    "text": "Contenido",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 10",
-      "React IV"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque3/ReactIV.html#ecosistema-node",
-    "href": "pages/Bloque3/ReactIV.html#ecosistema-node",
-    "title": "React IV",
-    "section": "Ecosistema Node",
-    "text": "Ecosistema Node\nHasta ahora hemos trabajado únicamente con React y JavaScript.\nSin embargo, en el desarrollo real de aplicaciones es muy común utilizar librerías externas, para ello podemos recurrir Node.JS.\nReact está diseñado para funcionar dentro de un ecosistema de paquetes.\nEjemplos habituales:\n\nReact Router → navegación\nAxios → peticiones HTTP\nChart.js → gráficas\nZustand / Redux → gestión de estado\nLibrerías de UI: Tailwind, Bootstrap, Booswatch",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 10",
-      "React IV"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque3/ReactIV.html#npm",
-    "href": "pages/Bloque3/ReactIV.html#npm",
-    "title": "React IV",
-    "section": "npm",
-    "text": "npm\nnpm (Node Package Manager) es el sistema que permite instalar y gestionar librerías de JavaScript. Como su nombre indica, está desarrollado por Node.JS\nCada proyecto tiene un archivo:\npackage.json\nEn este archivo se registran las dependencias del proyecto.\nEjemplo:\n{\n  \"dependencies\": {\n    \"react\": \"^18.0.0\",\n    \"react-router-dom\": \"^6.0.0\"\n  }\n}\n\nInstalación de paquetes\nLas librerías se instalan desde la terminal.\nnpm install react-router-dom\nEsto hace tres cosas:\n\nDescarga el paquete\nLo guarda en node_modules (capreta donde se guardan las librerías externas)\nAñade la dependencia en package.json",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 10",
-      "React IV"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque3/ReactIV.html#react-router",
-    "href": "pages/Bloque3/ReactIV.html#react-router",
-    "title": "React IV",
-    "section": "React Router",
-    "text": "React Router\nEn una aplicación web tradicional cada enlace carga una página nueva.\nEn React normalmente trabajamos con Single Page Applications (SPA).\nEn una SPA:\n\nel navegador no recarga la página\nReact cambia los componentes que se muestran\n\nPara gestionar esto utilizamos React Router.\nRealmente es la misma página, solo que el usuario lo percibe como distintas páginas\nEl usuario percibirá que el sitio web está divido en diferentes subpáginas\n\n/\npokemons\npokemons/pikachu\n\n\nComponentes principales de React Router\nLos elementos fundamentales son:\n\nBrowserRouter\nRoutes\nRoute\nLink\n\nEjemplo básico:\nimport { BrowserRouter, Routes, Route } from \"react-router-dom\";\n\nfunction App() {\n  return (\n    &lt;BrowserRouter&gt;\n\n      &lt;Routes&gt;\n\n        &lt;Route path=\"/\" element={&lt;Home /&gt;} /&gt;\n\n        &lt;Route path=\"/pokemons\" element={&lt;PokemonList /&gt;} /&gt;\n\n      &lt;/Routes&gt;\n\n    &lt;/BrowserRouter&gt;\n  );\n}\nElementos del código\n\nBrowserRouter\nEs el componente que activa el sistema de navegación de React Router. Utiliza la API de historial del navegador para cambiar la URL sin recargar la página.\nRoutes\nEs el contenedor donde se definen todas las rutas de la aplicación. React Router examina las rutas dentro de este componente para decidir qué componente mostrar.\nRoute\nDefine una ruta concreta de la aplicación.\n\n\npath\nIndica la URL que activa la ruta.\nEjemplo: / corresponde a la página principal.\nelement\nEs el componente de React que se renderiza cuando la URL coincide con el path.\n&lt;Home /&gt;\nComponente que se muestra cuando el usuario accede a la ruta /.\n&lt;PokemonList /&gt;\nComponente que se muestra cuando el usuario accede a la ruta /pokemons.\n\n\n\nNavegación\nPara navegar entre páginas utilizamos el componente Link.\nimport { Link } from \"react-router-dom\";\n\n&lt;Link to=\"/\"&gt;Inicio&lt;/Link&gt;\n\n&lt;Link to=\"/pokemon\"&gt;Pokemon&lt;/Link&gt;\nA diferencia de &lt;a&gt;:\n\nno recarga la página\nReact cambia el componente visible\n\n\n\nParámetros dinámicos\nPodemos crear rutas dinámicas.\nEjemplo:\n/pokemon/25\n/pokemon/7\nDefinición de la ruta:\n&lt;Route path=\"/pokemon/:id\" element={&lt;PokemonDetail /&gt;} /&gt;\n\nuseParams\nPara acceder al parámetro utilizamos el hook useParams de React Router.\nimport { useParams } from \"react-router-dom\";\n\nfunction PokemonDetail() {\n\n  const { id } = useParams();\n\n  return &lt;p&gt;Pokemon {id}&lt;/p&gt;;\n\n}\nEste parámetro puede utilizarse para realizar peticiones a una API.",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 10",
-      "React IV"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque3/ReactIV.html#context-api",
-    "href": "pages/Bloque3/ReactIV.html#context-api",
-    "title": "React IV",
-    "section": "Context API",
-    "text": "Context API\nEn aplicaciones grandes aparece un problema frecuente.\nMuchos componentes necesitan acceder a la misma información.\nPor ejemplo:\n\nusuario\ntema visual\nidioma\nconfiguración\n\nSi pasamos la información mediante props, los datos deben atravesar muchos componentes.\nRepresentación conceptual:\nApp\n └ Layout\n    └ Page\n       └ Component\nSi todos necesitan user, debemos pasar la prop continuamente.\nEste problema se conoce como prop drilling.\n\nContext\nReact proporciona una solución llamada Context.\nContext permite compartir información entre múltiples componentes sin pasar props manualmente.\nEl proceso tiene tres pasos:\n\nCrear el contexto\nProveer el contexto\nConsumir el contexto\n\n\nCrear un contexto\nimport { createContext } from \"react\";\n\nconst UserContext = createContext();\nEsto crea un contenedor que puede almacenar información compartida.\n\n\nProvider\nEl Provider permite que los componentes hijos accedan al contexto.\n&lt;UserContext.Provider value={user}&gt;\n\n  &lt;App /&gt;\n\n&lt;/UserContext.Provider&gt;\nTodos los componentes dentro del Provider pueden acceder al valor.\n\n\nConsumir el contexto\nPara acceder al contexto utilizamos el hook useContext.\nimport { useContext } from \"react\";\n\nconst user = useContext(UserContext);\nEl componente obtiene directamente el valor almacenado en el contexto.\n\n\nEjemplo completo\nimport { createContext, useContext } from \"react\";\n\nconst UserContext = createContext();\n\nfunction App() {\n\n  const user = { name: \"Javier\" };\n\n  return (\n\n    &lt;UserContext.Provider value={user}&gt;\n\n      &lt;Profile /&gt;\n\n    &lt;/UserContext.Provider&gt;\n\n  );\n}\n\nfunction Profile() {\n\n  const user = useContext(UserContext);\n\n  return &lt;h1&gt;{user.name}&lt;/h1&gt;;\n\n}",
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 10",
-      "React IV"
-    ]
-  },
-  {
-    "objectID": "pages/Bloque3/presentacion-reactIV.html#ecosistema-node",
-    "href": "pages/Bloque3/presentacion-reactIV.html#ecosistema-node",
-    "title": "React IV",
-    "section": "Ecosistema Node",
-    "text": "Ecosistema Node\nHasta ahora hemos trabajado únicamente con React y JavaScript.\nSin embargo, en el desarrollo real de aplicaciones es muy común utilizar librerías externas, para ello podemos recurrir Node.JS.\nReact está diseñado para funcionar dentro de un ecosistema de paquetes."
-  },
-  {
-    "objectID": "pages/Bloque3/presentacion-reactIV.html#npm",
-    "href": "pages/Bloque3/presentacion-reactIV.html#npm",
-    "title": "React IV",
-    "section": "npm",
-    "text": "npm\nnpm (Node Package Manager) es el sistema que permite instalar y gestionar librerías de JavaScript. Como su nombre indica, está desarrollado por Node.JS\nCada proyecto tiene un archivo:\npackage.json\nEn este archivo se registran las dependencias del proyecto."
-  },
-  {
-    "objectID": "pages/Bloque3/presentacion-reactIV.html#react-router",
-    "href": "pages/Bloque3/presentacion-reactIV.html#react-router",
-    "title": "React IV",
-    "section": "React Router",
-    "text": "React Router\nEn una aplicación web tradicional cada enlace carga una página nueva.\nEn React normalmente trabajamos con Single Page Applications (SPA).\nEn una SPA:\n\nel navegador no recarga la página\nReact cambia los componentes que se muestran\n\nPara gestionar esto utilizamos React Router.\nRealmente es la misma página, solo que el usuario lo percibe como distintas páginas"
-  },
-  {
-    "objectID": "pages/Bloque3/presentacion-reactIV.html#context-api",
-    "href": "pages/Bloque3/presentacion-reactIV.html#context-api",
-    "title": "React IV",
-    "section": "Context API",
-    "text": "Context API\nEn aplicaciones grandes aparece un problema frecuente.\nMuchos componentes necesitan acceder a la misma información.\nPor ejemplo:\n\nusuario\ntema visual\nidioma\nconfiguración\n\nSi pasamos la información mediante props, los datos deben atravesar muchos componentes."
-  },
-  {
     "objectID": "pages/Bloque3/ps.html",
     "href": "pages/Bloque3/ps.html",
     "title": "Proyecto Subsistema",
->>>>>>> 8e10774 (feat: explicacion semana 10 (#4))
-=======
-    "objectID": "pages/Bloque3/ps.html",
-    "href": "pages/Bloque3/ps.html",
-    "title": "Proyecto Subsistema",
->>>>>>> e3c3469 (feat:  varios)
     "section": "",
     "text": "Desarrollar una pequeña aplicación web para gestionar una lista de tareas utilizando HTML, CSS y JavaScript, trabajando directamente con el DOM.\nbase",
     "crumbs": [
@@ -1052,12 +853,7 @@
     "href": "pages/Bloque1/css.html",
     "title": "CSS",
     "section": "",
-<<<<<<< HEAD
-    "text": "Por el momento hemos visto dos hooks useState y useEffect, pero recordemos que en React existen más tipos de hooks que por ser menos útiles y debido a la falta de tiempo no son explicados, no obstante si hay alguno digno de mención es useRef o las referencias.\nUna ref es una referencia mutable que permite acceder directamente a un elemento del DOM o almacenar un valor persistente sin provocar un re-render del componente. El siguiente video ilustra su uso. Es un poco largo pero sirve para repasar los otros hooks.\n\n\nCon las ref podemos introducir los uncontrolled fields que nos permiten trabajar de otra forma con los formularios.\n\nSe prefiere la segunda implementación (la que no utiliza referencias) sobre la primera.",
-<<<<<<< HEAD
-=======
     "text": "Contenido",
->>>>>>> e3c3469 (feat:  varios)
     "crumbs": [
       "Bloque I Introducción",
       "Semana 2",
@@ -1258,81 +1054,6 @@
     "section": "HTML5",
     "text": "HTML5\n\n¿Qué es HTML?\nHTML es un lenguaje de marcas que permite definir la estructura y el contenido de un documento para la web. Mediante un conjunto de etiquetas, el desarrollador describe elementos como textos, imágenes, enlaces o formularios, indicando su función dentro de la página. Es la base sobre la que posteriormente se aplican estilos (CSS) y comportamientos dinámicos (JavaScript).\n\n\nEstructura básica\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n\n&lt;/head&gt;\n\n&lt;body&gt;\n\n  &lt;p&gt;Clase 1 del TC&lt;/p&gt;\n  \n&lt;/body&gt;\n&lt;/html&gt;\nEn el código aparecen varias etiquetas HTML, y cada una tiene una etiqueta de apertura y una etiqueta de cierre (por ejemplo, &lt;p&gt; y &lt;/p&gt;).\nEstas etiquetas delimitan y organizan el contenido del documento:\n- &lt;head&gt; agrupa la información del documento,\n- &lt;body&gt; contiene lo que verá el usuario,\n- &lt;p&gt; define un párrafo.\nLa función de las etiquetas es indicar al navegador qué es cada parte del documento y cómo debe interpretarla.\n\n\nHead\nSe corresponde con la cabecera de la pestaña, principalmente solo se modifica el logotipo y el contenido de esta.\nTambién se utiliza para almacenar los metadatos de la web, así como scripts de JavaScript y hojas de estilo de CSS.\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n\n  &lt;title&gt; Web del TC &lt;/title&gt;\n\n&lt;/head&gt;\n\n&lt;body&gt;\n\n  &lt;p&gt;Clase 1 del TC&lt;/p&gt;\n  \n&lt;/body&gt;\n&lt;/html&gt;\n\n\nBody\nSe corresponde con todo el contenido de la página dentro podemos utilizar multitud de etiquetas, acontinuación expondremos las más importantes.\nHasta el momento hemos trabajado únicamente con etiquietas invividuales, pero pronto veremos como podemos juntar varias etiquetas simples para obtener estructuras más complejas como tablas o formularios.\nTodo el código mostrado a partir de ahora se asume que esta correctamente ubicado dentro de una etiqueta body\n\n&lt;p&gt; Paragraph\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;p&gt;\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;/p&gt;\n\n\n&lt;br&gt; Break Line\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\nullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;p&gt;\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\n  &lt;br&gt;&lt;/br&gt;\n  ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n&lt;/p&gt;\n\n\n&lt;ul&gt; Unordered list\n\nFrancisco de Quevedo\nLope de Vega\nGóngora\n\n&lt;ul&gt;\n  &lt;li&gt;Francisco de Quevedo&lt;/li&gt;\n  &lt;li&gt;Lope de Vega&lt;/li&gt;\n  &lt;li&gt;Góngora&lt;/li&gt;\n&lt;/ul&gt;\n\n\n&lt;ol&gt; Ordered list\n\nRecepción\nDiscurso del Rector\nDespedida\n\n&lt;ol&gt;\n  &lt;li&gt;Recepción &lt;/li&gt;\n  &lt;li&gt;Discruso del Rector&lt;/li&gt;\n  &lt;li&gt;Despedida&lt;/li&gt;\n&lt;/ol&gt;\n\n\n&lt;h#&gt; Headings\n&lt;h1&gt;Título 1&lt;/h1&gt;\n&lt;h2&gt;Título 2&lt;/h2&gt;\n&lt;h3&gt;Título 3&lt;/h3&gt;\n&lt;h4&gt;Título 4&lt;/h4&gt;\n&lt;h5&gt;Título 5&lt;/h5&gt;\n&lt;h6&gt;Título 6&lt;/h6&gt;\n\n\n&lt;div&gt; Divisor y &lt;span&gt; Span\nEtiquetas contenedores, utilizadas para agrupar otras etiquetas, no presentan ningún efecto visible intrínsico, salvo que tras utilizar &lt;div&gt; se produce un salto de línea. Por lo que utilizaremos &lt;div&gt; para agrupar grandes grupos de etiquetas y &lt;span&gt; para fragementos más pequeños\n\n&lt;div&gt;\n&lt;div&gt;\n  &lt;h2&gt;Capítulo 2 &lt;/h2&gt;\n  &lt;p&gt;\n    Mio Cid Ruy Díaz por Burgos entró,&lt;br&gt;&lt;/br&gt;\n    en su conpaña sessaenta pendones.&lt;br&gt;&lt;/br&gt;\n    Exiénlo ver mugieres e varones,&lt;br&gt;&lt;/br&gt;\n    burgeses e burgesas por las finiestras son,&lt;br&gt;&lt;/br&gt;\n    plorando de los ojos, tanto avién el dolor,&lt;br&gt;&lt;/br&gt;\n    de las sus bocas todos dizían una razón:&lt;br&gt;&lt;/br&gt;\n    — ¡Dios, qué buen vassallo, si oviesse buen señor!—\n  &lt;/p&gt;\n&lt;/div&gt;\n\n\n\n&lt;strong&gt; Strong, &lt;i&gt; Italic\nNegrita Itálica Negrita e Itálica\n&lt;strong&gt;Negrita&lt;/strong&gt;\n&lt;i&gt;Itálica&lt;/i&gt;\n&lt;strong&gt;&lt;i&gt; Negrita e Itálica&lt;/i&gt;&lt;/strong&gt;\n\n\nComentario\nEtiqueta invisible\n&lt;p&gt;Etiqueta invisible&lt;/p&gt;\n\n&lt;!-- Soy un comenario --&gt;\n\n\nTablas\n\n\n\n\nProducto\n\n\nCantidad\n\n\nPrecio (€)\n\n\n\n\n\n\nManzanas\n\n\n10\n\n\n3,50\n\n\n\n\nNaranjas\n\n\n8\n\n\n4,00\n\n\n\n\nPlátanos\n\n\n6\n\n\n2,80\n\n\n\n\n\n\nTotal\n\n\n24\n\n\n10,30\n\n\n\n\n&lt;table&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Producto&lt;/th&gt;\n      &lt;th&gt;Cantidad&lt;/th&gt;\n      &lt;th&gt;Precio (€)&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Manzanas&lt;/td&gt;\n      &lt;td&gt;10&lt;/td&gt;\n      &lt;td&gt;3,50&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Naranjas&lt;/td&gt;\n      &lt;td&gt;8&lt;/td&gt;\n      &lt;td&gt;4,00&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Plátanos&lt;/td&gt;\n      &lt;td&gt;6&lt;/td&gt;\n      &lt;td&gt;2,80&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n\n  &lt;tfoot&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Total&lt;/td&gt;\n      &lt;td&gt;24&lt;/td&gt;\n      &lt;td&gt;10,30&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tfoot&gt;\n&lt;/table&gt;\n\n\n&lt;a&gt; Link\nHyperloopUPV\n&lt;!-- ¿Qué pasa con la URL --&gt;\n&lt;a&gt;Hyperloop UPV&lt;/a&gt;\n\nPropiedades HTML\nLas etiquetas o elementos html disponen de atributos que nos permiten modificar su comportamiento interno.\nEn el caso de las etiquetas &lt;a&gt; debemos de especificar en los atributos la referncia en cuestión\n  &lt;a href=\"https://hyperloopupv.com/\"&gt; HyperloopUPV &lt;/a&gt;\n\n\n\n&lt;img&gt; Image\n\n\n\n“Plaza de la Reina”\n\n\n&lt;img src=\"../pr.jpg\" alt=\"Plaza con una fuente en el centro alrdedor casetas y fincas\"&gt;\n\n\n&lt;form&gt; Forms\nAmpliamente utilizados en HTML, trabajan sobre la etiqueta &lt;input&gt; la cual tiene muchos tipos.\n\n&lt;input type=\"text\"&gt;\n\nNombre: \n\n&lt;form&gt;\n\n  &lt;label for=\"first-name\"&gt;Nombre:&lt;/label&gt;\n\n  &lt;input type=\"text\" name=\"first-name\"/&gt;\n&lt;/form&gt;\n\n\n&lt;input type=\"number\"&gt;\n\nEdad: \n\n&lt;form&gt;\n\n  &lt;label for=\"age\"&gt;Edad:&lt;/label&gt;\n\n  &lt;input type=\"number\" name=\"age\" /&gt;\n&lt;/form&gt;\n\n\n&lt;input type=\"radio\"&gt;\n\nSubsistema:   Software   Firmware \n\n&lt;form&gt;\n\n  &lt;label for=\"sub\"&gt;Subsistema: &lt;/label&gt;&lt;br /&gt;\n  &lt;input type=\"radio\" name=\"sub\" value=\"software\" /&gt; Software &lt;br /&gt;\n  &lt;input type=\"radio\" name=\"sub\" value=\"firmware\" /&gt; Firmware &lt;br /&gt;\n\n&lt;/form&gt;\n\n\n&lt;input type=\"submit\"&gt;\n\nNombre:  \n\n\n&lt;form&gt;\n\n  &lt;label for=\"first-name\"&gt;Nombre:&lt;/label&gt;\n  &lt;input type=\"text\" name=\"first-name\"/&gt;\n\n  &lt;br/&gt;\n\n  &lt;input type=\"submit\"/&gt;\n&lt;/form&gt;\n\n\n\n&lt;button&gt; Button\nPor ahora no los utilizaremos, pero es importante saber que existen\n\nSuscribirse\n\n&lt;button&gt;Suscribirse&lt;/button&gt;",
     "crumbs": [
-<<<<<<< HEAD
-      "Bloque III Interacción",
-      "Semana 6",
-      "DOM"
-=======
-    "crumbs": [
-      "Bloque III Interacción",
-      "Semana 9",
-      "MA: *Uncontrolled fields* y `useRef`"
->>>>>>> 8e10774 (feat: explicacion semana 10 (#4))
-    ]
-  },
-  {
-    "objectID": "pages/Bloque3/t9.html",
-    "href": "pages/Bloque3/t9.html",
-    "title": "T6: Romancero Gitano I",
-    "section": "",
-    "text": "El objetivo de esta tarea es aplicar los conceptos básicos de HTML, CSS y JavaScript (DOM) para crear una página web interactiva que muestre poemas del Romancero gitano de Federico García Lorca y modifique su apariencia visual en función de las diferentes metáforas.\nResultado esperado"
-  },
-  {
-    "objectID": "pages/Bloque3/t9.html#objetivo-de-la-tarea",
-    "href": "pages/Bloque3/t9.html#objetivo-de-la-tarea",
-    "title": "T6: Romancero Gitano I",
-    "section": "",
-    "text": "El objetivo de esta tarea es aplicar los conceptos básicos de HTML, CSS y JavaScript (DOM) para crear una página web interactiva que muestre poemas del Romancero gitano de Federico García Lorca y modifique su apariencia visual en función de las diferentes metáforas.\nResultado esperado"
-  },
-  {
-    "objectID": "pages/Bloque3/t9.html#estructura-html",
-    "href": "pages/Bloque3/t9.html#estructura-html",
-    "title": "T6: Romancero Gitano I",
-    "section": "Estructura HTML",
-    "text": "Estructura HTML\nEl documento HTML debe:\n\nEstar correctamente estructurado (&lt;!DOCTYPE&gt;, &lt;html&gt;, &lt;head&gt;, &lt;body&gt;).\nContener un contenedor principal centrado horizontalmente.\nIncluir, en este orden:\n\nUn elemento para mostrar información métrica del poema (número de estrofas y versos).\nUn elemento para el título del poema.\nUn elemento para el texto del poema, respetando los saltos de verso utilizando la etiqueta &lt;pre&gt;.\nUn botón que permita cambiar de poema.\n\n\nNo debe utilizarse ningún framework ni librería externa."
-  },
-  {
-    "objectID": "pages/Bloque3/t9.html#javascript",
-    "href": "pages/Bloque3/t9.html#javascript",
-    "title": "T6: Romancero Gitano I",
-    "section": "JavaScript",
-    "text": "JavaScript\n\nDatos\nEn JavaScript se debe definir un array de objetos, donde cada objeto represente un poema y tenga al menos:\n\nUn título.\nEl texto del poema como una cadena de texto, usando saltos de línea para los versos.\n\nEl cambio de poema debe hacerse recorriendo este array de forma cíclica (cola circular) mediante el botón.\nDescargar poemas (click derecho guardar enlace como)\n\n\nManipulación del DOM\nEl comportamiento de la página debe implementarse exclusivamente con DOM nativo, cumpliendo lo siguiente:\n\nTodas las funciones deben declararse como arrow functions.\nAl pulsar el botón:\n\nSe actualiza el título.\nSe actualiza el texto del poema.\nSe modifica el formato del fondo.\nSe recalculan y muestran:\n\nNúmero de versos.\nNúmero de estrofas (bloques separados por líneas en blanco).\n\n\n\nEl cálculo debe realizarse a partir del texto del poema, no con valores predefinidos."
-  },
-  {
-    "objectID": "pages/Bloque3/t9.html#css",
-    "href": "pages/Bloque3/t9.html#css",
-    "title": "T6: Romancero Gitano I",
-    "section": "CSS",
-    "text": "CSS\nLorca utiliza las metáforas y la alegoría como elemento principal sobre el que construye sus poemas, al analizar profundamente descubrimos que siempre recurre a las mismas metáforas.\nEl color no se utiliza aquí solo como elemento decorativo, sino como un recurso semántico: cada color representa un símbolo literario presente en el poema.\nDesde el punto de vista técnico: - Los colores de fondo y de texto deben definirse en clases CSS. - JavaScript no decide colores, únicamente decide qué clase aplicar según el contenido del poema.\n\nPalabras clave y colores asociados\nSe debe detectar el texto del poema las siguientes palabras clave y aplicar el color de fondo correspondiente:\n\nguardia civil → fondo verde militar\nsangre → fondo granate oscuro\ncaballo → fondo color tierra\ncuchillo / navaja → fondo plateado\n\nEl color del texto debe elegirse siempre de forma que exista contraste suficiente con el fondo y se garantice la legibilidad.\nSi el poema contiene varias palabras clave, solo debe aplicarse un único estilo, siguiendo un orden de prioridad definido previamente.\nSi el poema no contiene ninguna de estas palabras, se aplicará un estilo por defecto con colores aleatorios."
-  },
-  {
-    "objectID": "pages/Bloque3/t9.html#extra-opcional-símbolo-aurora",
-    "href": "pages/Bloque3/t9.html#extra-opcional-símbolo-aurora",
-    "title": "T6: Romancero Gitano I",
-    "section": "Extra opcional: símbolo aurora 🌈",
-    "text": "Extra opcional: símbolo aurora 🌈\nDe forma voluntaria, se puede añadir el símbolo aurora, que tendrá prioridad absoluta sobre todos los demás.\nCuando el poema contenga la palabra aurora, el fondo debe mostrar un degradado animado.\n\nCSS necesario para el extra\n.aurora {\n  background: linear-gradient(120deg,\n    #ff005d,\n    #ff9f1c,\n    #ffee32,\n    #3cff00,\n    #00e5ff,\n    #7a00ff,\n    #ff00c8\n  );\n  background-size: 600% 600%;\n  animation: aurora 10s linear infinite;\n  color: black;\n}\n\n@keyframes aurora {\n  0%   { background-position: 0% 50%; }\n  50%  { background-position: 100% 50%; }\n  100% { background-position: 0% 50%; }\n}"
-  },
-  {
-    "objectID": "pages/Bloque3/t9.html#consejos",
-    "href": "pages/Bloque3/t9.html#consejos",
-    "title": "T6: Romancero Gitano I",
-    "section": "Consejos",
-    "text": "Consejos\n\nCentrado de la página (layout clásico)\nToda la página debe estar centrada horizontalmente.\nEl centrado se consigue mediante:\n\nUn contenedor con un ancho máximo definido.\nMárgenes automáticos a izquierda y derecha.\n\nDesde el punto de vista conceptual:\n\nmargin: 0 auto no centra texto, centra bloques.\nEl navegador reparte automáticamente el espacio sobrante a ambos lados del contenedor.\n\n\n\nAnimación del cambio de color\nPara evitar que los cambios de color sean bruscos, se utiliza la propiedad transition en CSS.\nEsta propiedad indica al navegador que los cambios en determinadas propiedades visuales deben hacerse de forma progresiva.\nEjemplo conceptual:\nbody {\n  transition: background-color 0.6s, color 0.6s;\n}\nGracias a esta transición: - Cuando JavaScript cambia una clase o un color, - el navegador interpola automáticamente entre el color anterior y el nuevo.\nNo es necesario programar animaciones en JavaScript: CSS se encarga de todo el efecto visual.\n\n\nBúsqueda de una palabra\nPara buscar si determinada palabra determinada se debe utilizar la función includes de la clase string\n\ntexto = \"hoy nieva\";\n\ntexto.includes(\"nieva\");    //TRUE\ntexto.includes(\"llueve\");   //FALSE\n\n\nGeneración del color aleatorio\nPara la generacióndel color aleatorio de puede utilizar la siguiente función\nconst randomColor = () =&gt; '#' + Math.floor(Math.random() * 16777215).toString(16);\n\n\nConteo versos y estrofas\nEl recuento de versos y estrofas debe hacerse a partir del texto del poema, no con valores escritos a mano. A continuación se dan algunas pistas técnicas para abordar este problema.\n\nConteo de versos\nUn verso puede considerarse, a efectos prácticos en esta tarea, como una línea de texto no vacía.\nUna estrategia habitual consiste en: - Separar el texto por saltos de línea. - Eliminar las líneas vacías o formadas solo por espacios. - Contar cuántas líneas válidas quedan.\nEjemplo orientativo:\nconst versos = texto\n  .split('\\n')\n  .filter(linea =&gt; linea.trim() !== '')\n  .length;\nEste enfoque es suficiente para la mayoría de los poemas del Romancero gitano y evita errores frecuentes.\n\n\nConteo de estrofas\nUna estrofa puede entenderse como un bloque de versos separado de otros bloques por una línea en blanco.\nUna posible estrategia es: - Separar el texto usando dos (o más) saltos de línea consecutivos. - Eliminar bloques vacíos. - Contar los bloques resultantes.\nEjemplo orientativo:\nconst estrofas = texto\n  .split(/\\n\\s*\\n/)\n  .filter(bloque =&gt; bloque.trim() !== '')\n  .length;\nEntrega: un único archivo HTML funcional."
-  },
-  {
-    "objectID": "pages/Bloque3/t9.html#recomendaciones-para-afrontar-la-tarea",
-    "href": "pages/Bloque3/t9.html#recomendaciones-para-afrontar-la-tarea",
-    "title": "T6: Romancero Gitano I",
-    "section": "Recomendaciones para afrontar la tarea",
-    "text": "Recomendaciones para afrontar la tarea\nAl enfrentarnos a un proyecto de cierta complejitud, el como afrontarlo resulta de cricial para el desarollo del mismo por ello a a continuación dejo un esquema de implementación modular. Sería mejor no utilizarlo, pero puede ser un buen punto de partida si no se sabe como empezar la app, no es el único proceso de implementación válido ni es más correcto que cualquier otro\n\nEstructura de HTML básica contadores de versos y estrofas placeholders de poema y título y botón\nFormateo CSS parte estática: centrado, tamaño (todo lo que no sea color)\nDefinir clases con colores predeterminados\nLógica interna con JS\n\n\nBuscar palabra\nContar estrofas\nConteo versos\nSelección de clase\nGenerar color aleatorio si procede\n\n\nIntegración con DOM"
-  },
-  {
-    "objectID": "pages/Bloque3/reactI.html#sintaxis-jsx",
-    "href": "pages/Bloque3/reactI.html#sintaxis-jsx",
-    "title": "React I",
-    "section": "Sintaxis JSX",
-    "text": "Sintaxis JSX\n¿Qué es la sintaxis JSX?\n\nJSX (JavaScript XML) es una extensión de JavaScript utilizada en React.\n\nPermite escribir estructuras similares a HTML directamente dentro del código JavaScript.\n\nFacilita la creación y lectura de interfaces de usuario, integrando lógica y presentación.\n\nAunque su apariencia es HTML, JSX se transpila a JavaScript puro antes de ejecutarse en el navegador.\nForma cómoda de almacenar etiquetas html como variables de JS"
-=======
       "Bloque I Introducción",
       "Semana 1",
       "HTML"
@@ -1349,7 +1070,6 @@
       "Semana 1",
       "HTML"
     ]
->>>>>>> e3c3469 (feat:  varios)
   },
   {
     "objectID": "pages/Bloque1/t1.html",
@@ -1928,275 +1648,316 @@
     ]
   },
   {
-    "objectID": "pages/Bloque3/t10.html",
-    "href": "pages/Bloque3/t10.html",
-    "title": "T10: Quiz app!",
+    "objectID": "pages/Bloque3/dom.html#qué-es-el-dom",
+    "href": "pages/Bloque3/dom.html#qué-es-el-dom",
+    "title": "DOM",
+    "section": "¿Qué es el DOM?",
+    "text": "¿Qué es el DOM?\nEl DOM (Document Object Model) es la representación en memoria que el navegador crea a partir del HTML.\n\nEl HTML es estático\nEl DOM es dinámico\nJavaScript interactúa con el DOM, no con el HTML original\n\n\nEl DOM es la página web viva dentro del navegador."
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#el-dom-como-árbol",
+    "href": "pages/Bloque3/dom.html#el-dom-como-árbol",
+    "title": "DOM",
+    "section": "El DOM como árbol",
+    "text": "El DOM como árbol\nEl DOM tiene estructura de árbol (grafo):\n\nCada etiqueta HTML es un nodo\nLos nodos tienen relaciones (padre, hijos, hermanos)\n\nEjemplo:\n&lt;body&gt;\n  &lt;h1&gt;Título&lt;/h1&gt;\n  &lt;button&gt;Click&lt;/button&gt;\n&lt;/body&gt;"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#acceso-al-dom-desde-javascript",
+    "href": "pages/Bloque3/dom.html#acceso-al-dom-desde-javascript",
+    "title": "DOM",
+    "section": "Acceso al DOM desde JavaScript",
+    "text": "Acceso al DOM desde JavaScript\nEl navegador nos proporciona el objeto global document, que permite:\n\nBuscar elementos\nLeer su contenido\nModificar la interfaz\n\ndocument\ndocument.body"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#selectores",
+    "href": "pages/Bloque3/dom.html#selectores",
+    "title": "DOM",
+    "section": "Selectores",
+    "text": "Selectores\nPor ID\ndocument.getElementById(\"count\")\ndocument.querySelector(\"#count\")\nPor etiqueta\ndocument.querySelector(\"button\")"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#leer-y-modificar-elementos",
+    "href": "pages/Bloque3/dom.html#leer-y-modificar-elementos",
+    "title": "DOM",
+    "section": "Leer y modificar elementos",
+    "text": "Leer y modificar elementos\nelement.textContent\nelement.textContent = \"Nuevo texto\"\nelement.classList.add(\"active\")\nelement.classList.remove(\"active\")"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#eventos",
+    "href": "pages/Bloque3/dom.html#eventos",
+    "title": "DOM",
+    "section": "Eventos",
+    "text": "Eventos\nEl DOM permite reaccionar a acciones del usuario mediante eventos.\nbutton.addEventListener(\"click\", () =&gt; {\n  // código a ejecutar\n});\nFlujo típico:\nUsuario → Evento → JavaScript → DOM actualizado"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#ejemplo-contador-con-botón",
+    "href": "pages/Bloque3/dom.html#ejemplo-contador-con-botón",
+    "title": "DOM",
+    "section": "Ejemplo: contador con botón",
+    "text": "Ejemplo: contador con botón\nHTML\n&lt;h1 id=\"count\"&gt;0&lt;/h1&gt;\n&lt;button id=\"btn\"&gt;Sumar 1&lt;/button&gt;\nJavaScript\nlet count = 0;\n\nconst countEl = document.querySelector(\"#count\");\nconst btn = document.querySelector(\"#btn\");\n\nbtn.addEventListener(\"click\", () =&gt; {\n  count++;\n  countEl.textContent = count;\n});"
+  },
+  {
+    "objectID": "pages/Bloque3/dom.html#más-ejemplos",
+    "href": "pages/Bloque3/dom.html#más-ejemplos",
+    "title": "DOM",
+    "section": "Más ejemplos",
+    "text": "Más ejemplos\nEj1: Show input\nEj2: Par e Impar\nEj3: Toggle\nEj4: Creación dinámica\nEj5: Validación básica"
+  },
+  {
+    "objectID": "pages/Bloque3/DOM.html",
+    "href": "pages/Bloque3/DOM.html",
+    "title": "DOM",
     "section": "",
-    "text": "Desarrollar una aplicación React que permita al usuario realizar un quiz de cultura general utilizando preguntas obtenidas desde una API pública.\nhttps://astonishing-douhua-44213e.netlify.app/\nLa aplicación debe mostrar preguntas, permitir seleccionar respuestas y calcular la puntuación final.",
+    "text": "El DOM (Document Object Model) es la representación en memoria que el navegador crea a partir del HTML.\n\nEl HTML es estático\nEl DOM es dinámico\nJavaScript interactúa con el DOM, no con el HTML original\n\n\nEl DOM es la página web viva dentro del navegador.",
     "crumbs": [
       "Bloque III Interacción",
-      "Semana 10",
-      "T10: Quiz app!"
+      "Semana 6",
+      "DOM"
     ]
   },
   {
-    "objectID": "pages/Bloque3/t10.html#objetivo",
-    "href": "pages/Bloque3/t10.html#objetivo",
-    "title": "T10: Quiz app!",
+    "objectID": "pages/Bloque3/DOM.html#qué-es-el-dom",
+    "href": "pages/Bloque3/DOM.html#qué-es-el-dom",
+    "title": "DOM",
     "section": "",
-    "text": "Desarrollar una aplicación React que permita al usuario realizar un quiz de cultura general utilizando preguntas obtenidas desde una API pública.\nhttps://astonishing-douhua-44213e.netlify.app/\nLa aplicación debe mostrar preguntas, permitir seleccionar respuestas y calcular la puntuación final.",
+    "text": "El DOM (Document Object Model) es la representación en memoria que el navegador crea a partir del HTML.\n\nEl HTML es estático\nEl DOM es dinámico\nJavaScript interactúa con el DOM, no con el HTML original\n\n\nEl DOM es la página web viva dentro del navegador.",
     "crumbs": [
       "Bloque III Interacción",
-      "Semana 10",
-      "T10: Quiz app!"
+      "Semana 6",
+      "DOM"
     ]
   },
   {
-    "objectID": "pages/Bloque3/t10.html#cargar-preguntas-desde-la-api",
-    "href": "pages/Bloque3/t10.html#cargar-preguntas-desde-la-api",
-    "title": "T10: Quiz app!",
-    "section": "1. Cargar preguntas desde la API",
-    "text": "1. Cargar preguntas desde la API\nCuando la aplicación se inicia debe obtener 10 preguntas desde la API.\nPara ello se debe usar:\n\nfetch\nuseEffect\n\nMientras se cargan los datos se debe mostrar:\nLoading...",
+    "objectID": "pages/Bloque3/DOM.html#el-dom-como-árbol",
+    "href": "pages/Bloque3/DOM.html#el-dom-como-árbol",
+    "title": "DOM",
+    "section": "El DOM como árbol",
+    "text": "El DOM como árbol\nEl DOM tiene estructura de árbol (grafo):\n\nCada etiqueta HTML es un nodo\nLos nodos tienen relaciones (padre, hijos, hermanos)\n\nEjemplo:\n&lt;body&gt;\n  &lt;h1&gt;Título&lt;/h1&gt;\n  &lt;button&gt;Click&lt;/button&gt;\n&lt;/body&gt;\nRepresentación conceptual:\ndocument\n └─ body\n    ├─ h1\n    └─ button",
     "crumbs": [
       "Bloque III Interacción",
-      "Semana 10",
-      "T10: Quiz app!"
+      "Semana 6",
+      "DOM"
     ]
   },
   {
-    "objectID": "pages/Bloque3/t10.html#mostrar-la-pregunta-actual",
-    "href": "pages/Bloque3/t10.html#mostrar-la-pregunta-actual",
-    "title": "T10: Quiz app!",
-    "section": "2. Mostrar la pregunta actual",
-    "text": "2. Mostrar la pregunta actual\nLa aplicación debe mostrar:\n\nnúmero de pregunta\ntexto de la pregunta\n\nEjemplo:\nQuestion 3\nWhat is the capital of France?",
+    "objectID": "pages/Bloque3/DOM.html#acceso-al-dom-desde-javascript",
+    "href": "pages/Bloque3/DOM.html#acceso-al-dom-desde-javascript",
+    "title": "DOM",
+    "section": "Acceso al DOM desde JavaScript",
+    "text": "Acceso al DOM desde JavaScript\nEl navegador nos proporciona el objeto global document, que permite:\n\nBuscar elementos\nLeer su contenido\nModificar la interfaz\n\ndocument\ndocument.body",
     "crumbs": [
       "Bloque III Interacción",
-      "Semana 10",
-      "T10: Quiz app!"
+      "Semana 6",
+      "DOM"
     ]
   },
   {
-    "objectID": "pages/Bloque3/t10.html#mostrar-las-posibles-respuestas",
-    "href": "pages/Bloque3/t10.html#mostrar-las-posibles-respuestas",
-    "title": "T10: Quiz app!",
-    "section": "3. Mostrar las posibles respuestas",
-    "text": "3. Mostrar las posibles respuestas\nCada pregunta tiene:\n\n1 respuesta correcta\n3 respuestas incorrectas\n\nSe deben mostrar las 4 respuestas como botones.\nEjemplo:\nParis\nRome\nMadrid\nBerlin",
+    "objectID": "pages/Bloque3/DOM.html#selectores",
+    "href": "pages/Bloque3/DOM.html#selectores",
+    "title": "DOM",
+    "section": "Selectores",
+    "text": "Selectores\n\nPor ID\ndocument.getElementById(\"count\")\ndocument.querySelector(\"#count\")\n\n\nPor etiqueta\ndocument.querySelector(\"button\")\n\n\nPor clase\ndocument.querySelector(\".item\")\ndocument.querySelectorAll(\".item\")\nNotas: - querySelector devuelve el primer elemento - querySelectorAll devuelve una lista - Usan la misma sintaxis que CSS",
     "crumbs": [
       "Bloque III Interacción",
-      "Semana 10",
-      "T10: Quiz app!"
+      "Semana 6",
+      "DOM"
     ]
   },
   {
-    "objectID": "pages/Bloque3/t10.html#seleccionar-una-respuesta",
-    "href": "pages/Bloque3/t10.html#seleccionar-una-respuesta",
-    "title": "T10: Quiz app!",
-    "section": "4. Seleccionar una respuesta",
-    "text": "4. Seleccionar una respuesta\nCuando el usuario hace clic en una respuesta:\n\nla opción debe quedar marcada visualmente\nla selección debe guardarse en el estado del componente",
+    "objectID": "pages/Bloque3/DOM.html#leer-y-modificar-elementos",
+    "href": "pages/Bloque3/DOM.html#leer-y-modificar-elementos",
+    "title": "DOM",
+    "section": "Leer y modificar elementos",
+    "text": "Leer y modificar elementos\nelement.textContent\nelement.textContent = \"Nuevo texto\"\nelement.classList.add(\"active\")\nelement.classList.remove(\"active\")",
     "crumbs": [
       "Bloque III Interacción",
-      "Semana 10",
-      "T10: Quiz app!"
+      "Semana 6",
+      "DOM"
     ]
   },
   {
-    "objectID": "pages/Bloque3/t10.html#pasar-a-la-siguiente-pregunta",
-    "href": "pages/Bloque3/t10.html#pasar-a-la-siguiente-pregunta",
-    "title": "T10: Quiz app!",
-    "section": "5. Pasar a la siguiente pregunta",
-    "text": "5. Pasar a la siguiente pregunta\nDebe existir un botón:\nNext\nEste botón:\n\nsolo se puede pulsar cuando el usuario ha seleccionado una respuesta\npasa a la siguiente pregunta",
+    "objectID": "pages/Bloque3/DOM.html#eventos",
+    "href": "pages/Bloque3/DOM.html#eventos",
+    "title": "DOM",
+    "section": "Eventos",
+    "text": "Eventos\nEl DOM permite reaccionar a acciones del usuario mediante eventos.\nbutton.addEventListener(\"click\", () =&gt; {\n  // código a ejecutar\n});\nFlujo típico:\nUsuario → Evento → JavaScript → DOM actualizado",
     "crumbs": [
       "Bloque III Interacción",
-      "Semana 10",
-      "T10: Quiz app!"
+      "Semana 6",
+      "DOM"
     ]
   },
   {
-    "objectID": "pages/Bloque3/t10.html#calcular-la-puntuación",
-    "href": "pages/Bloque3/t10.html#calcular-la-puntuación",
-    "title": "T10: Quiz app!",
-    "section": "6. Calcular la puntuación",
-    "text": "6. Calcular la puntuación\nCuando el usuario responde una pregunta:\n\nsi la respuesta es correcta → sumar 1 punto",
+    "objectID": "pages/Bloque3/DOM.html#ejemplo-contador-con-botón",
+    "href": "pages/Bloque3/DOM.html#ejemplo-contador-con-botón",
+    "title": "DOM",
+    "section": "Ejemplo: contador con botón",
+    "text": "Ejemplo: contador con botón\n\nHTML\n&lt;h1 id=\"count\"&gt;0&lt;/h1&gt;\n&lt;button id=\"btn\"&gt;Sumar 1&lt;/button&gt;\n\n\nJavaScript\nlet count = 0;\n\nconst countEl = document.querySelector(\"#count\");\nconst btn = document.querySelector(\"#btn\");\n\nbtn.addEventListener(\"click\", () =&gt; {\n  count++;\n  countEl.textContent = count;\n});",
     "crumbs": [
       "Bloque III Interacción",
-      "Semana 10",
-      "T10: Quiz app!"
+      "Semana 6",
+      "DOM"
     ]
   },
   {
-    "objectID": "pages/Bloque3/t10.html#mostrar-el-resultado-final",
-    "href": "pages/Bloque3/t10.html#mostrar-el-resultado-final",
-    "title": "T10: Quiz app!",
-    "section": "7. Mostrar el resultado final",
-    "text": "7. Mostrar el resultado final\nAl terminar el quiz debe mostrarse:\nQuiz finished!\nYour score: X / 10",
+    "objectID": "pages/Bloque3/DOM.html#más-ejemplos",
+    "href": "pages/Bloque3/DOM.html#más-ejemplos",
+    "title": "DOM",
+    "section": "Más ejemplos",
+    "text": "Más ejemplos\nEj1: Show input\nEj2: Par e Impar\nEj3: Toggle\nEj4: Creación dinámica\nEj5: Validación básica",
     "crumbs": [
       "Bloque III Interacción",
-      "Semana 10",
-      "T10: Quiz app!"
+      "Semana 6",
+      "DOM"
     ]
   },
   {
-    "objectID": "pages/Bloque4/Protocolos.html#http",
-    "href": "pages/Bloque4/Protocolos.html#http",
-    "title": "Protocolos de Comunicación",
-    "section": "HTTP",
-    "text": "HTTP\n¿Qué es HTTP?\nHTTP (HyperText Transfer Protocol) es el protocolo fundamental de la web.\nDefine cómo:\n\nEl cliente (navegador o app)\nSolicita recursos\nA un servidor"
+    "objectID": "pages/Bloque3/reactI.html#sintaxis-jsx",
+    "href": "pages/Bloque3/reactI.html#sintaxis-jsx",
+    "title": "React I",
+    "section": "Sintaxis JSX",
+    "text": "Sintaxis JSX\n¿Qué es la sintaxis JSX?\n\nJSX (JavaScript XML) es una extensión de JavaScript utilizada en React.\n\nPermite escribir estructuras similares a HTML directamente dentro del código JavaScript.\n\nFacilita la creación y lectura de interfaces de usuario, integrando lógica y presentación.\n\nAunque su apariencia es HTML, JSX se transpila a JavaScript puro antes de ejecutarse en el navegador.\nForma cómoda de almacenar etiquetas html como variables de JS"
   },
   {
-    "objectID": "pages/Bloque4/Protocolos.html#http-vs-comunicación-en-tiempo-real",
-    "href": "pages/Bloque4/Protocolos.html#http-vs-comunicación-en-tiempo-real",
-    "title": "Protocolos de Comunicación",
-    "section": "HTTP vs Comunicación en tiempo real",
-    "text": "HTTP vs Comunicación en tiempo real\nHTTP funciona bajo el modelo:\n\nPetición → Respuesta → Fin\n\nSi queremos datos continuamente:\n\nDebemos repetir peticiones\nIntroduce latencia\nIneficiente\n\nSolución: WebSockets"
+    "objectID": "pages/Bloque3/reactI.html#react",
+    "href": "pages/Bloque3/reactI.html#react",
+    "title": "React I",
+    "section": "React",
+    "text": "React\nMotivación\nHasta el momento hemos trabajado únicamente con HTML5, el cual a pesar de ser muy eficaz, presenta el inconveniente de que no implementa ninguna clase de lógica. Es decir, si queremos repetir alguna estructura previamente definida deberemos copiarla y pegarla. Otro problema, de HTML puro es la complejidad que requiere el manejo del DOM, como ya se vio en la semana anterior.\nBajo este pretexto, introducimos el framework React diseñado por Meta."
   },
   {
-    "objectID": "pages/Bloque4/Protocolos.html#websockets",
-    "href": "pages/Bloque4/Protocolos.html#websockets",
-    "title": "Protocolos de Comunicación",
-    "section": "WebSockets",
-    "text": "WebSockets\nWebSockets permiten comunicación bidireccional persistente.\nCaracterísticas:\n\nConexión permanente\nCliente y servidor pueden enviar datos\nBaja latencia\nIdeal para tiempo real"
+    "objectID": "pages/Bloque3/reactI.html#creación-de-una-reactjs-app",
+    "href": "pages/Bloque3/reactI.html#creación-de-una-reactjs-app",
+    "title": "React I",
+    "section": "Creación de una ReactJS app",
+    "text": "Creación de una ReactJS app\nEl desarrollo de aplicaciones web modernas requiere coordinar múltiples elementos: estructura del proyecto, gestión de dependencias, compilación del código y ejecución en el navegador.\nUn framework de desarrollo proporciona un entorno de trabajo preconfigurado que organiza estos elementos y establece una forma estándar de trabajar."
   },
   {
-    "objectID": "pages/Bloque4/Protocolos.html#hook-personalizado",
-    "href": "pages/Bloque4/Protocolos.html#hook-personalizado",
-    "title": "Protocolos de Comunicación",
-    "section": "Hook Personalizado",
-    "text": "Hook Personalizado\nSi usamos WebSockets directamente dentro del componente:\n\nMezclamos lógica de conexión con renderizado\nCódigo difícil de reutilizar\nProblemas de ciclo de vida\n\nSolución: Hook personalizado"
-  },
-  {
-    "objectID": "pages/Bloque4/Protocolos.html#visualización-de-datos",
-    "href": "pages/Bloque4/Protocolos.html#visualización-de-datos",
-    "title": "Protocolos de Comunicación",
-    "section": "Visualización de datos",
-    "text": "Visualización de datos\nEn aplicaciones reales no basta con mostrar texto.\nNecesitamos:\n\nGráficas\nPaneles de control\nVisualización clara\n\nUna librería popular para React es Recharts."
-  },
-  {
-    "objectID": "pages/Bloque4/Protocolos.html#recharts",
-    "href": "pages/Bloque4/Protocolos.html#recharts",
-    "title": "Protocolos de Comunicación",
-    "section": "Recharts",
-    "text": "Recharts\nRecharts es una librería basada en:\n\nComponentes React\nSVG\nComposición declarativa\n\nInstalación:\nnpm install recharts"
-  },
-  {
-    "objectID": "pages/Bloque4/Protocolos.html#integración-completa",
-    "href": "pages/Bloque4/Protocolos.html#integración-completa",
-    "title": "Protocolos de Comunicación",
-    "section": "Integración completa",
-    "text": "Integración completa\nWebSocket + Hook + Recharts\nObjetivo:\n\nVisualizar datos en tiempo real"
-  },
-  {
-    "objectID": "pages/Bloque4/Protocolos.html#material",
-    "href": "pages/Bloque4/Protocolos.html#material",
-    "title": "Protocolos de Comunicación",
-    "section": "Material",
-    "text": "Material\nServidor de testing de Python: Enlace.\nInstalar websockets con pip install websockets\nTester de prueba: Enlace (click derecho guardar enlace como)\nhttps://recharts.github.io/"
-  },
-  {
-    "objectID": "pages/Bloque4/protocolos.html",
-    "href": "pages/Bloque4/protocolos.html",
-    "title": "Protocolos de Comunicación",
+    "objectID": "pages/Bloque3/ReactI.html",
+    "href": "pages/Bloque3/ReactI.html",
+    "title": "React I",
     "section": "",
     "text": "Contenido",
     "crumbs": [
-      "Bloque IV Comunicación",
-      "Semana 11",
-      "Protocolos de Comunicación"
+      "Bloque III Interacción",
+      "Semana 7",
+      "React I"
     ]
   },
   {
-    "objectID": "pages/Bloque4/protocolos.html#http",
-    "href": "pages/Bloque4/protocolos.html#http",
-    "title": "Protocolos de Comunicación",
-    "section": "HTTP",
-    "text": "HTTP\n\n¿Qué es HTTP?\nHTTP (HyperText Transfer Protocol) es el protocolo fundamental de la web.\nDefine cómo:\n\nEl cliente (navegador o app)\nSolicita recursos\nA un servidor\n\nModelo conceptual:\nCliente → Solicitud HTTP → Servidor\nCliente ← Respuesta HTTP ← Servidor\nHTTP es sin estado (stateless).\nCada petición es independiente.\n\n\nComponentes de una petición\nUna petición HTTP contiene:\n\nMétodo\nURL\nCabeceras (headers)\nCuerpo (body, opcional)\n\nEjemplo conceptual:\nGET /users HTTP/1.1\nHost: api.example.com\nAuthorization: Bearer token\n\n\nMétodos HTTP principales\n\nGET\n\nSolicita datos\nNo modifica el servidor\nDebe ser idempotente\n\nEjemplo:\nGET /users\nUso típico en React:\nfetch(\"/api/users\")\n\n\n\nPOST\n\nEnvía datos al servidor\nCrea recursos nuevos\nTiene cuerpo\n\nEjemplo:\nfetch(\"/api/users\", {\n  method: \"POST\",\n  body: JSON.stringify({ name: \"Ana\" }),\n  headers: { \"Content-Type\": \"application/json\" }\n});\n\n\nPUT\n\nActualiza completamente un recurso existente\nIdempotente\n\nPUT /users/3\n\n\nDELETE\n\nElimina un recurso\n\nDELETE /users/3\n\n\nHEAD\n\nIgual que GET\nNo devuelve cuerpo\nSolo cabeceras\n\nSe utiliza para:\n\nComprobar existencia\nTamaño\nMetadatos",
+    "objectID": "pages/Bloque3/ReactI.html#sintaxis-jsx",
+    "href": "pages/Bloque3/ReactI.html#sintaxis-jsx",
+    "title": "React I",
+    "section": "Sintaxis JSX",
+    "text": "Sintaxis JSX\n\n¿Qué es la sintaxis JSX?\n\nJSX (JavaScript XML) es una extensión de JavaScript utilizada en React.\n\nPermite escribir estructuras similares a HTML directamente dentro del código JavaScript.\n\nFacilita la creación y lectura de interfaces de usuario, integrando lógica y presentación.\n\nAunque su apariencia es HTML, JSX se transpila a JavaScript puro antes de ejecutarse en el navegador.\nForma cómoda de almacenar etiquetas html como variables de JS\n\n\n\n¿Qué nos ofrece la sintaxis JSX?\n\nAlmacenar una etiqueta como una variable\nconst title = &lt;h1&gt;Web del TC de SW&lt;/h1&gt;;\n\nconst driveIndication = (drives)? &lt;p&gt;Puede conducir&lt;/p&gt; : &lt;p&gt;No puede conducir&lt;/p&gt;;\nDe esta forma la variable title se corresponde con una etiqueta que contiene el título. Sin embargo, como podemos podemos utilizar está etiqueta una vez la hemos definido como una variable.\n\n\nRenderizar etiquetas dentro de etiquetas\nconst title = &lt;h1&gt;Web del TC de SW&lt;/h1&gt;;\n\nconst page = &lt;div&gt;{title}&lt;/div&gt;\nDe esta forma estámos encapsulando la etiqueta h1 dentro del div.\n\n\nRenderizar con el map\nconst profeAsi= [[\"Rosa\", \"Macro I\"], [\"Gabriela\", \"FSO\"],[\"Yolanda\",\"LTP\"], [\"Ferrán\", \"EM\"], [\"Pepe\", \"TCO\"]];\n\n// Array de li Asignatura: nombre profesor\nconst itemsProfAsi =  profeAsi.map(x =&gt; &lt;li&gt;{x[1]}: {x[0]}&lt;/li&gt;);\n\nconst listaProfesoresAsignatura = &lt;ul&gt;{itemsProfAsi}&lt;/ul&gt;;\n\n\nRenderizar con el map\nconst profeAsi= [[\"Rosa\", \"Macro I\"], [\"Gabriela\", \"FSO\"], [\"Yolanda\",\"LTP\"], [\"Ferrán\", \"EM\"], [\"Pepe\", \"TCO\"]];\n\nconst listaProfesoresAsignatura = &lt;ul&gt;\n{profeAsi.map((x,i) =&gt; &lt;li key={i}&gt;{x[1]}: {x[0]}&lt;/li&gt;)}\n&lt;/ul&gt;;",
     "crumbs": [
-      "Bloque IV Comunicación",
-      "Semana 11",
-      "Protocolos de Comunicación"
+      "Bloque III Interacción",
+      "Semana 7",
+      "React I"
     ]
   },
   {
-    "objectID": "pages/Bloque4/protocolos.html#http-vs-comunicación-en-tiempo-real",
-    "href": "pages/Bloque4/protocolos.html#http-vs-comunicación-en-tiempo-real",
-    "title": "Protocolos de Comunicación",
-    "section": "HTTP vs Comunicación en tiempo real",
-    "text": "HTTP vs Comunicación en tiempo real\nHTTP funciona bajo el modelo:\n\nPetición → Respuesta → Fin\n\nSi queremos datos continuamente:\n\nDebemos repetir peticiones\nIntroduce latencia\nIneficiente\n\nSolución: WebSockets",
+    "objectID": "pages/Bloque3/ReactI.html#react",
+    "href": "pages/Bloque3/ReactI.html#react",
+    "title": "React I",
+    "section": "React",
+    "text": "React\n\nMotivación\nHasta el momento hemos trabajado únicamente con HTML5, el cual a pesar de ser muy eficaz, presenta el inconveniente de que no implementa ninguna clase de lógica. Es decir, si queremos repetir alguna estructura previamente definida deberemos copiarla y pegarla. Otro problema, de HTML puro es la complejidad que requiere el manejo del DOM, como ya se vio en la semana anterior.\nBajo este pretexto, introducimos el framework React diseñado por Meta.\n\n\nBases de React\nReact es un componente basado en la sintaxis JS y en la programación funcional introducida en ES6.\n\n\nComponente React\nLos componentes de React los definimos como unidades reutilizables y modulares que se implementan de esta forma: una función que devuelve un objeto de JSX\nfunction Saludo() {\n  return &lt;h1&gt;Hola, mundo&lt;/h1&gt;;\n}\nPodemos renderizar nuestro componente Saludo asumiendo que se comporta como una etiqueta html. Recordemos que no lo es.\n&lt;main&gt;\n  &lt;Saludo /&gt;\n&lt;/main&gt;\nDentro de este componente podemos incluir lógica propia de JavaScript, de forma que al definir componente podemos dotarlo de lógica interna.\nfunction DivNúmeroAleatorio() {\n\n  let n = Math.random();\n  return &lt;div className=\"n-random\"&gt;{n}&lt;/div&gt;;\n}\n*Nótese que aunque JS utilice camelCase para el nombre de las funciones, con React utilizaremos PascalCase para definir los componentes puesto que a pesar de que se trata de funciones, trabajaremos con ellas como si fuesen clases.\n\n\nProps en React\nHasta ahora, los componentes definidos siempre devuelven el mismo contenido. Sin embargo, para que un componente sea realmente reutilizable, necesitamos poder pasarle información desde el exterior.\nEn React, esta información se transmite mediante props (properties).\nLas props se definen como los parámetros de entrada de un componente y permiten personalizar su comportamiento o su contenido sin modificar su definición interna.\n\nEjemplo 1: uso de props (forma explícita)\nfunction Saludo(props) {\n  return &lt;h1&gt;Hola, {props.nombre}&lt;/h1&gt;;\n}\nUso del componente:\n&lt;Saludo nombre=\"Rosa\" /&gt;\n&lt;Saludo nombre=\"Gabriela\" /&gt;\n\n\nEjemplo 2: props desestructuradas (sintaxis JavaScript)\nfunction Saludo({ nombre }) {\n  return &lt;h1&gt;Hola, {nombre}&lt;/h1&gt;;\n}\nUso del componente (idéntico al anterior):\n&lt;Saludo nombre=\"Rosa\" /&gt;\n&lt;Saludo nombre=\"Gabriela\" /&gt;\n\n\n\nEventos en React\nEn React, el manejo de eventos se basa en los eventos del DOM, pero utilizando una sintaxis propia de JSX y siguiendo el estilo de JavaScript.\n\nEjemplo básico de evento\nfunction BotonSaludo() {\n\n  function manejarClick() {\n    alert(\"Hola desde React\");\n  }\n\n  return (\n    &lt;button onClick={manejarClick}&gt;\n      Saludar\n    &lt;/button&gt;\n  );\n}\n\n\nPaso de funciones como eventos\nLa función asociada al evento no se ejecuta al renderizar el componente, sino únicamente cuando ocurre el evento; es decir la pasamos como un ciudadano de primera clase.\n&lt;button onClick={manejarClick}&gt;Saludar&lt;/button&gt;\nIncorrecto:\n&lt;button onClick={manejarClick()}&gt;Saludar&lt;/button&gt;\n\n\nEventos más habituales en React\nReact soporta la mayoría de los eventos del DOM, adaptados a la sintaxis JSX. A continuación se listan los eventos más utilizados, clasificados por tipo.\n\nEventos de ratón\n\nonClick\nonDoubleClick\nonMouseEnter\nonMouseLeave\nonMouseMove\nonMouseDown\nonMouseUp\n\n\n\nEventos de teclado\n\nonKeyDown\nonKeyUp\nonKeyPress\n\n\n\nEventos de formularios\n\nonChange\nonSubmit\nonFocus\nonBlur\nonInput\nonReset\n\n\n\nEventos de carga y ciclo del elemento\n\nonLoad\nonError\n\n\n\nEventos de selección y portapapeles\n\nonSelect\nonCopy\nonCut\nonPaste\n\n\n\nEventos táctiles (dispositivos móviles)\n\nonTouchStart\nonTouchMove\nonTouchEnd\nonTouchCancel\n\n\n\n\n\nCiclo de vida de los componentes y renderizado en React\nEn React, los componentes no se renderizan directamente sobre el DOM real, sino que siguen un proceso intermedio que permite optimizar las actualizaciones de la interfaz.\nLa idea clave es que la interfaz se organiza como un árbol de componentes, análogo al árbol del DOM, pero a un nivel de abstracción superior.\n\nEl árbol de componentes\nCuando una aplicación React se ejecuta:\n\nCada componente genera otros componentes o elementos JSX.\nReact construye un árbol de componentes, donde:\n\nEl componente raíz suele ser App\nCada componente hijo ocupa una rama del árbol\n\n\nEste árbol de componentes se corresponde conceptualmente con el árbol del DOM, aunque no es el DOM real.\n\n\nProceso de renderizado\nEl proceso general es el siguiente:\n\nReact ejecuta un componente (función).\nEl componente devuelve JSX.\nEl JSX se transforma en una representación interna del árbol.\nReact compara este árbol con el anterior.\nSolo se actualizan en el DOM real los nodos que han cambiado.\n\nDe esta forma, React minimiza el acceso directo al DOM, que es una operación costosa.\n\n\nCiclo de vida (visión simplificada)\nDesde un punto de vista conceptual, un componente pasa por tres fases:\n\nMontaje\n\nEl componente se crea y se inserta en el DOM.\n\nActualización\n\nEl componente se vuelve a renderizar cuando cambian sus datos.\n\nDesmontaje\n\nEl componente se elimina del DOM.\n\n\nEn componentes funcionales modernos, este ciclo se gestiona de forma implícita mediante el renderizado y, más adelante, mediante hooks.\n\n\nRelación con el DOM\n\nEn JavaScript puro:\n\nSe modifica el DOM directamente.\n\nEn React:\n\nSe describe cómo debe ser la interfaz.\nReact decide el cuándo y el cómo modificar el DOM.\n\n\nEl desarrollador no recorre ni manipula el árbol del DOM, sino que trabaja sobre el árbol de componentes.",
     "crumbs": [
-      "Bloque IV Comunicación",
-      "Semana 11",
-      "Protocolos de Comunicación"
+      "Bloque III Interacción",
+      "Semana 7",
+      "React I"
     ]
   },
   {
-    "objectID": "pages/Bloque4/protocolos.html#websockets",
-    "href": "pages/Bloque4/protocolos.html#websockets",
-    "title": "Protocolos de Comunicación",
-    "section": "WebSockets",
-    "text": "WebSockets\nWebSockets permiten comunicación bidireccional persistente.\nCaracterísticas:\n\nConexión permanente\nCliente y servidor pueden enviar datos\nBaja latencia\nIdeal para tiempo real\n\nEjemplos:\n\nChats\nJuegos online\nTelemetría\nTrading\nSistemas IoT\n\n\nFlujo conceptual\nCliente ↔ Servidor\n     conexión abierta\nNo se crea una nueva conexión por mensaje.\n\n\nCreación de un WebSocket en JavaScript\nconst socket = new WebSocket(\"ws://localhost:8080\");\nEventos principales:\n\nonopen\nonmessage\nonclose\nonerror\n\n\n\nRecepción de mensajes\nsocket.onmessage = (event) =&gt; {\n  console.log(\"Mensaje:\", event.data);\n};\n\n\nEnvío de mensajes\nsocket.send(\"Hola servidor\");",
+    "objectID": "pages/Bloque3/ReactI.html#creación-de-una-reactjs-app",
+    "href": "pages/Bloque3/ReactI.html#creación-de-una-reactjs-app",
+    "title": "React I",
+    "section": "Creación de una ReactJS app",
+    "text": "Creación de una ReactJS app\nEl desarrollo de aplicaciones web modernas requiere coordinar múltiples elementos: estructura del proyecto, gestión de dependencias, compilación del código y ejecución en el navegador.\nUn framework de desarrollo proporciona un entorno de trabajo preconfigurado que organiza estos elementos y establece una forma estándar de trabajar.\n\n¿Para qué sirve un framework?\nUn framework permite al desarrollador:\n\nEvitar configuraciones manuales complejas\nSeguir una estructura común de proyecto\nAutomatizar tareas repetitivas\nCentrarse en la lógica de la aplicación y no en la infraestructura\n\nEn lugar de partir de un proyecto vacío, el framework ofrece una base funcional sobre la que desarrollar.\n\n\nFramework y React\nReact se encarga de definir cómo se construye la interfaz, pero no gestiona por sí mismo:\n\nLa estructura de archivos\nEl arranque de la aplicación\nLa compilación del código\nEl servidor de desarrollo\n\nPor ello, React se apoya en un framework que orquesta el entorno de ejecución.\n\n\nCreación de la aplicación\nPara crear una nueva aplicación React utilizando un framework, se ejecuta el siguiente comando en la terminal:\nnpm create vite@latest\nEste comando genera:\n\nUna estructura inicial del proyecto\nLa configuración necesaria para trabajar con React\nUn entorno listo para el desarrollo",
     "crumbs": [
-      "Bloque IV Comunicación",
-      "Semana 11",
-      "Protocolos de Comunicación"
+      "Bloque III Interacción",
+      "Semana 7",
+      "React I"
     ]
   },
   {
-    "objectID": "pages/Bloque4/protocolos.html#hook-personalizado",
-    "href": "pages/Bloque4/protocolos.html#hook-personalizado",
-    "title": "Protocolos de Comunicación",
-    "section": "Hook Personalizado",
-    "text": "Hook Personalizado\nSi usamos WebSockets directamente dentro del componente:\n\nMezclamos lógica de conexión con renderizado\nCódigo difícil de reutilizar\nProblemas de ciclo de vida\n\nSolución: Hook personalizado\n\nHook personalizado\nUn hook personalizado es:\n\nUna función que utiliza hooks internos para encapsular lógica reutilizable\n\nConvención:\nuseNombre()\n\n\nHook useWebSocket\nimport { useEffect, useState } from \"react\";\n\nexport function useWebSocket(url) {\n\n  const [data, setData] = useState(null);\n\n  useEffect(() =&gt; {\n\n    const socket = new WebSocket(url);\n\n    socket.onmessage = (event) =&gt; {\n      setData(event.data);\n    };\n\n    return () =&gt; socket.close();\n\n  }, [url]);\n\n  return data;\n}\n\n\nAnálisis conceptual\n\nSe crea la conexión al montar\nSe actualiza el estado al recibir datos\nSe cierra al desmontar\nEl componente solo consume datos\n\n\n\nUso del hook\nfunction Monitor() {\n\n  const data = useWebSocket(\"ws://localhost:8080\");\n\n  return (\n    &lt;div&gt;\n      &lt;h2&gt;Datos en tiempo real&lt;/h2&gt;\n      &lt;p&gt;{data}&lt;/p&gt;\n    &lt;/div&gt;\n  );\n}\nFlujo:\n\nComponente se renderiza\n\nHook abre conexión\n\nLlegan datos\n\nEstado cambia\n\nNuevo render",
+    "objectID": "pages/final.html#contextualización-de-la-tarea",
+    "href": "pages/final.html#contextualización-de-la-tarea",
+    "title": "Proyecto Final TC SW",
+    "section": "Contextualización de la tarea",
+    "text": "Contextualización de la tarea\nEl Hyperloop es una tecnología que se basa en la eficiencia energética; para ello se introduce lo que a día de hoy conocemos como booster, un módulo de infraestructura que confiere energía al pod para su propulsión. Al externalizar la potencia de la cápsula al carril, se logra un sistema más verde y sostenible, reduciendo el peso del vehículo y optimizando el consumo eléctrico mediante una gestión inteligente de la energía.\nA lo largo de los años en Hyperloop-UPV hemos tratado de desarrollar nuestro propio booster, uno de los problemas que identificamos a la hora de desarrollarlo es que para poder hacer pruebas era necesario disponer del POD completo. Por ello, este año hemos diseñado una bancada de pruebas1 que nos permite validar el funcionamiento del booster de forma sencilla.\n\nFundamentos físicos\n\nComponentes\nPodemos dividir la bancada de pruebas en 4 componentes:\n\nCarro booster (o Carro): módulo de tracción móvil compuesto por un bastidor de cuatro ruedas y un EMS2 que es propulsado por la sección\nTrack: vía de 50 metros por la que circula el Carro booster\n\nSección booster: sección del track por la que el al pasar Carro booster lo impulsa.\n\nArmario booster: lugar donde se almacenan los supercondensadores y las resistencias que generan el campo magnético que impulsa al Carro booster en la Sección booster\n\n\n\nVariables\nTrabajaremos como todas la variables asumiendo que son escalares.\n\nCarro Booster\n\nPosición: ubicación física del Carro en el Track. \\(s\\) medida en \\(\\mathrm{m}\\) y \\(s \\in[0,50]\\).\n\nAsumiremos que la Sección booster se encuentra ubicada entre \\(s=2\\) y \\(s =4\\)\n\nVelocidad: cambio de la posición del Carro respecto al tiempo. \\(v\\) medida en \\(\\mathrm{km/h}\\)\nAceleración: cambio de la velocidad del Carro respecto al tiempo. \\(a\\) medida en \\(\\mathrm{m/s^2}\\)\nMasa: masa total del Carro booster. \\(m\\) medida en \\(\\mathrm{kg}\\)\nFuerza: fuerza neta aplicada sobre el Carro, resultado del empuje del booster y de las fuerzas de frenado u oposición al movimiento. \\(F\\) medida en \\(\\mathrm{N}\\). Por convenio, \\(F&gt;0\\) si actúa en el sentido de avance (dirección creciente de \\(s\\)) y \\(F&lt;0\\) en caso contrario.\n\n\n\nArmario Booster\n\nTensión: diferencia de potencial eléctrico suministrada por el sistema de almacenamiento de energía. \\(V\\) medida en \\(\\mathrm{V}\\)\nIntensidad: corriente eléctrica que circula por el sistema para generar el campo magnético del booster. \\(I\\) medida en \\(\\mathrm{A}\\)\n\n\n\nOtras consideraciones\nAsumiremos que:\n\nEl movimiento únicamente es horizontal \\[\n\\begin{aligned}\ng &= 9.81\\,\\mathrm{m/s^2} \\\\\nF &= m \\cdot a \\\\\n|\\vec{N}| &= |\\vec{P}| = m g \\\\\nF_\\text{rozamiento} &= \\mu|\\vec{N}| \\\\\n\\mu &=\n\\begin{cases}\n0, & \\text{si el Carro no está frenando} \\\\\n0.5, & \\text{si el Carro está frenando}\n\\end{cases}\n\\end{aligned}\n\\]\n\n\n\n\nFuncionamiento\n\nPartiremos de un estado inicial de espera IDLE donde \\(s=0; a = 0; v = 0; V= 0; I = 0\\);\nSe dará la orden de precarga PRECHARGE donde todas las variables se mantendrán a 0 menos \\(V\\) que empezará a aumentar hasta alcanzar \\(V =400\\)\nCuando \\(V=400\\) entramos al estado de READY, donde la bancada está lista para operar\nCuando se inicie la prueba, el carro adquirirá una \\(v_\\text{base} = 4\\) que mantendrá en todo momento hasta que frene. RUNNING \\(a = 0; V= 400\\)\nAl entrar en la Sección Booster la velocidad y aceleración del Carro se verán incrementadas. BOOSTING. Durante el funcionamiento del Booster la Intensidad se modificará\nUna vez haya salido de la Sección Booster (\\(s &gt; 4\\)) mantendrá una velocidad constante de \\(v = 25\\) hasta que el Carro llegue al final del track (\\(s=50\\)) o bien sea frenado. RUNNING\nFrenado: al lanzar la orden de Frenado BRAKE el Carro comenzará a disminuir su velocidad hasta \\(v = 0\\) o llegar al final del track.\n\nSi el Carro llega a detenerse antes de alcanzar el final del track (\\(s &lt; 50\\)), se informará mediante un mensaje\nEn caso de que el Carro llegue al final del track con \\(v &gt; 0\\), será detenido por el mechanical stopper3, también se informará con un mensaje.\n\nUna vez el Carro reste detenido STOPPED todas las variables de mantendran a 0 salvo la posición.",
     "crumbs": [
-      "Bloque IV Comunicación",
-      "Semana 11",
-      "Protocolos de Comunicación"
+      "Proyecto Final TC SW"
     ]
   },
   {
-    "objectID": "pages/Bloque4/protocolos.html#visualización-de-datos",
-    "href": "pages/Bloque4/protocolos.html#visualización-de-datos",
-    "title": "Protocolos de Comunicación",
-    "section": "Visualización de datos",
-    "text": "Visualización de datos\nEn aplicaciones reales no basta con mostrar texto.\nNecesitamos:\n\nGráficas\nPaneles de control\nVisualización clara\n\nUna librería popular para React es Recharts.",
+    "objectID": "pages/final.html#objetivos-de-aprendizaje",
+    "href": "pages/final.html#objetivos-de-aprendizaje",
+    "title": "Proyecto Final TC SW",
+    "section": "Objetivos de aprendizaje",
+    "text": "Objetivos de aprendizaje\nEl objetivo principal de la tarea es poner en práctica el contenido aprendido durante el training center de Software, el diseño de UI dinámicas para el control de telemetría del vehículo. Asimismo, el proyecto se realizará en colaboración con otros subsistemas, para potenciar el trabajo en equipo y la comunicación entre los subsistemas, simulando así un miniequipo de Hyperloop.",
     "crumbs": [
-      "Bloque IV Comunicación",
-      "Semana 11",
-      "Protocolos de Comunicación"
+      "Proyecto Final TC SW"
     ]
   },
   {
-    "objectID": "pages/Bloque4/protocolos.html#recharts",
-    "href": "pages/Bloque4/protocolos.html#recharts",
-    "title": "Protocolos de Comunicación",
-    "section": "Recharts",
-    "text": "Recharts\nRecharts es una librería basada en:\n\nComponentes React\nSVG\nComposición declarativa\n\nInstalación:\nnpm install recharts\n\nEjemplo básico\nimport {\n  LineChart, Line, XAxis, YAxis,\n  CartesianGrid, Tooltip\n} from \"recharts\";\n\nconst data = [\n  { t: 1, v: 10 },\n  { t: 2, v: 15 },\n  { t: 3, v: 8 }\n];\n\nfunction Grafica() {\n  return (\n    &lt;LineChart width={400} height={300} data={data}&gt;\n      &lt;CartesianGrid stroke=\"#ccc\" /&gt;\n      &lt;XAxis dataKey=\"t\" /&gt;\n      &lt;YAxis /&gt;\n      &lt;Tooltip /&gt;\n      &lt;Line type=\"monotone\" dataKey=\"v\" stroke=\"#8884d8\" /&gt;\n    &lt;/LineChart&gt;\n  );\n}\n\n\nInterpretación\nCada objeto representa un punto.\n{ t: 1, v: 10 }\n\nt → eje X\nv → eje Y",
+    "objectID": "pages/final.html#descripción-general-de-la-tarea",
+    "href": "pages/final.html#descripción-general-de-la-tarea",
+    "title": "Proyecto Final TC SW",
+    "section": "Descripción general de la tarea",
+    "text": "Descripción general de la tarea\nEl objetivo del proyecto final consiste en desarrollar una bancada de pruebas para el booster (de ahora en adelante bancada booster). Los alumnos de los diferentes subsistemas del Training Center tienen asignadas diferentes tareas interrelacionadas entre sí, donde será necesario que todos cooperen de manera coordinada para cumplir con los requisitos técnicos y alcanzar el objetivo final de la tarea.\n\nDescripción de la tarea de Software\nSe deberá implementar un emulador de la bancada booster, el emulador estará compuesto por dos partes:\n\nFrontend: se conecta al backend y muestra datos sobre la bancada\nBackend: emulación de la bancada booster. (Se permite hacer uso del backend de ejemplo)\n\n\n\nEvaluación de la tarea\nLos requesitos mínimos para evaluar la tarea es realizar un frontend incluyendo las 5 funcionalidades detalladas en el apartado anterior.\nAquellos que deseen aspirar a nota extra podrán entregar también su propio backend que cumpla con las especificaciones de la tarea.",
     "crumbs": [
-      "Bloque IV Comunicación",
-      "Semana 11",
-      "Protocolos de Comunicación"
+      "Proyecto Final TC SW"
     ]
   },
   {
-    "objectID": "pages/Bloque4/protocolos.html#integración-completa",
-    "href": "pages/Bloque4/protocolos.html#integración-completa",
-    "title": "Protocolos de Comunicación",
-    "section": "Integración completa",
-    "text": "Integración completa\nWebSocket + Hook + Recharts\nObjetivo:\n\nVisualizar datos en tiempo real\n\n\nEjemplo conceptual\nfunction Dashboard() {\n\n  const data = useWebSocket(\"ws://localhost:8080\");\n\n  const chartData = data\n    ? JSON.parse(data)\n    : [];\n\n  return (\n    &lt;LineChart width={500} height={300} data={chartData}&gt;\n      &lt;XAxis dataKey=\"time\" /&gt;\n      &lt;YAxis /&gt;\n      &lt;Tooltip /&gt;\n      &lt;Line dataKey=\"value\" stroke=\"#82ca9d\" /&gt;\n    &lt;/LineChart&gt;\n  );\n}\n\n\nFlujo completo de una app moderna\nServidor → WebSocket → Hook → Estado → React → Gráfica\nArquitectura típica de sistemas en tiempo real.",
+    "objectID": "pages/final.html#frontend",
+    "href": "pages/final.html#frontend",
+    "title": "Proyecto Final TC SW",
+    "section": "Frontend",
+    "text": "Frontend\nLa Graphical User Interface (GUI) o frontend, debe de conectarse al backend utilizando los protocolos http y websockets.\n\nEspecificacciones de la GUI\n\nUna sección con gráficas que nos permita visualizar las siguientes varibles\n\n\n\\(V\\)\n\\(a\\)\n\\(v\\)\n\\(F\\) (Habrá que calcularla en el Frontend. Usar 2ª Ley de Newton)\n\\(I\\)\nAdemás, de una cronograma con los estados establecidos.\n\nIDLE, PRECHARGE, READY, RUNNING, BOOSTING, BRAKING y STOPPED\n\nUna sección que nos permita mediante botones enviar ordenes al simulador\n\n\nPRECHARGE: inicia la precarga\nSTART: inicia el movimiento del Carro, se debe de especificar la masa\nBRAKE: frena el Carro\nRESET: reinicia el simulador\n\n\nUna sección que nos permita ver los mensajes que envía el simulador al Front, los mensajes harán referencia al estado del simulador, por ejemplo : V = 400V precharge completed sucessfully\nUna sección que nos permita calcular la distancia óptima para presionar el freno mediante una llamada a API\nInclusión de un modelo 3D del Carro Booster\n\n\n\nImplementación\n\nNotas Generales\n\nSe debe desarollar una aplicación Web utilizando React\nSe debe utilizar preferiblemente Typescript o en su defecto JavaScript\nSe recomienda el uso de librerías de estilo como tailwind o bootsrap, así mismo se recomienda el uso de librerías de componentes, en especial shadcn\nEl frontend deberá validar los inputs antes de enviarlos\n\n\n\nGráficas (1) y Mensajes (3)\nEl Backend expondrá en el puerto 5001 un protocolo websockets con ruta backend/stream que se corresponderá con el flujo de datos envidados del cliente a servidor; es decir utilizaremos websockets únicamente para leer datos. De la información transmitida por ws obtendremos tanto los datos que habrá que mostrar en la gráfica, como los mensajes que se debén de mostrar en el área de mensajes.\nWebSocket endpoint: ws://localhost:5001/backend/stream\nLa comunicación por websockets estará, codificada como JSON, del cual distinguiremos 2 formatos, uno para recepción de los datos y otro para los mensajes del servidor.\nFormato datos:\n{\n  \"topic\": \"data\",\n  \"payload\": {\n    \"timestamp\": \"2026-03-27T10:15:32.125Z\",\n    \"state\": \"RUNNING\",\n    \"position_m\": 3.42,\n    \"velocity_kmh\": 18.7,\n    \"acceleration_ms2\": 2.15,\n    \"mass_kg\": 40,\n    \"voltage_v\": 400,\n    \"current_a\": 125.4\n  }\n}\nFormato mensajes:\n{\n  \"topic\": \"message\",\n  \"payload\": {\n    \"type\": \"info\", \n    \"content\": \"Precharge started\"\n  }\n}\nLos tipos de mensajes pueden ser:info, critical, error y success\nEn el caso de formato de datos los paquetes llegarán con una frecuencia de 4 Hz, debido a la gran afluencia de paquetes se recomienda mantener un histórico limitado (por ejemplo, los últimos 5–10 segundos de datos) para la representación gráfica, eliminando los valores más antiguos para evitar problemas de rendimiento.\n\n\nBotones (2)\nAl ser presionados mandarán una orden utilizando una petición HTTP-POST al backend utilizando el formato especificado. El botón de START debe de estar acompañado de un input numérico que permita especificar la massa del carro.\nLa orden se dirigirá al siguiente enpoint /api/command la cual estará en el puerto 8001. El servidor tras recibir la orden devolvera el código 200 indicando que todo ha sido correcto y se enviará un mensaje via websockets.\nEl servidor responderá con:\n\n200 OK si el comando se ha aceptado correctamente\n400 Bad Request si el comando es inválido\n\nEl resultado de la acción se notificará mediante un mensaje vía websockets.\nFormato petición HTTP:\nPOST /api/command\nContent-Type: application/json\n\n{\n  \"command\": \"PRECHARGE\"\n}\n(en el caso de la orden START)\nPOST /api/command\nContent-Type: application/json\n\n{\n  \"command\": \"START\",\n  \"payload\": {\n    \"mass\": 40\n  }\n}\nEn caso de error (400 Bad Request), el frontend deberá mostrar un mensaje informativo al usuario indicando que la operación no se ha podido realizar.\n\n\nCálculo de la posición óptima para presionar el freno (4)\nSección con un formulario que permitirá indicar el peso del vehículo y a cuánta distancia se desea acabar del fin de la vía. Al presionar el botón de submit el frontend realizará una petición tipo GET - HTTP a /api/calculate con los query parameters m y d, que se corresponden con la masa del Carro y la distancia deseada, respectivamente.\nEl servidor devolverá una respuesta en formato JSON con la posición óptima en la que se debe iniciar el frenado. El frontend deberá procesar dicha respuesta y mostrar el resultado de forma clara al usuario.\nFormato de respuesta esperado:\n{\n  \"braking_position_m\": 37.5\n}\n\n\nInclusión del modelo 3D (5)\nSe debe incluir un modelo 3D del Carro booster diseñado por el subsistema de Mechanics, debe de ser interáctivo, no debe de tratarse de una fotografía. 4\n\nNota sobre la velocidad del backend de ejemplo\nEl backend de ejemplo no corre en tiempo real: la simulación transcurre 5× más lenta que el tiempo real (SIM_SPEED = 0.2). La frecuencia de emisión por WebSocket se mantiene en 4 Hz, pero los valores de posición, velocidad, etc. avanzan más despacio de lo que cabría esperar físicamente. Esto es intencionado para facilitar las pruebas interactivas — el frontend no necesita hacer ningún ajuste al respecto.\n\n\n\n\nRecomendaciones\n\nEl objetivo de la tarea es diseñar un panel de control, por lo que sería interesante que haya una única vista, donde no se pueda hacer scroll que lo concentre todo\nSe recomienda hacer uso de los estilos como herramienta para resaltar los eventos que suceden en el simulador, por ejemplo si el Carro, se estrella con el mechanical stopper, podría ponerse el fondo en rojo para indicar que ha colisionado.",
     "crumbs": [
-      "Bloque IV Comunicación",
-      "Semana 11",
-      "Protocolos de Comunicación"
+      "Proyecto Final TC SW"
     ]
   },
   {
-    "objectID": "pages/Bloque4/protocolos.html#material",
-    "href": "pages/Bloque4/protocolos.html#material",
-    "title": "Protocolos de Comunicación",
-    "section": "Material",
-    "text": "Material\nServidor de testing de Python: Enlace.\nInstalar websockets con pip install websockets\nTester de prueba: Enlace (click derecho guardar enlace como)\nhttps://recharts.github.io/",
+    "objectID": "pages/final.html#backend-voluntaria-realización",
+    "href": "pages/final.html#backend-voluntaria-realización",
+    "title": "Proyecto Final TC SW",
+    "section": "Backend (VOLUNTARIA REALIZACIÓN)",
+    "text": "Backend (VOLUNTARIA REALIZACIÓN)\nEl backend será el encargado de emular el comportamiento de la bancada booster, gestionando tanto la lógica de estados como la generación de datos de telemetría y la comunicación con el frontend.\nEl backend deberá implementarse preferiblemente en Rust o Go, o en su defecto en Java. Queda a criterio del alumno la elección del lenguaje dentro de estas opciones.\nEl backend deberá exponer dos tipos de comunicación:\n\nWebSockets: envío continuo de datos y mensajes al frontend\nHTTP: recepción de órdenes y cálculo de la posición óptima de frenado\n\n\nEspecificaciones del Backend\n\nArquitectura general\nEl backend deberá estar compuesto por:\n\nUn servidor WebSocket en el puerto 5001 para el envío de datos en tiempo real\nUn servidor HTTP en el puerto 8001 para la recepción de comandos y cálculo\n\nEl sistema deberá funcionar como una máquina de estados, donde las transiciones estarán controladas por las órdenes recibidas.\n\n\n\n\nMáquina de estados\nEl backend deberá implementar los siguientes estados:\nIDLE, PRECHARGE, READY, RUNNING, BOOSTING, BRAKING y STOPPED\n\nTransiciones\n\nIDLE → PRECHARGE mediante comando PRECHARGE\nPRECHARGE → READY cuando \\(V = 400\\)\nREADY → RUNNING mediante comando START\nRUNNING → BOOSTING cuando \\(2 \\le s \\le 4\\)\nBOOSTING → RUNNING cuando \\(s &gt; 4\\)\nRUNNING → BRAKING mediante comando BRAKE\nBOOSTING → BRAKING mediante comando BRAKE\nBRAKING → STOPPED cuando \\(v = 0\\)\nCualquier estado → IDLE mediante comando RESET: todas las variables vuelven a su valor inicial (\\(s=0\\), \\(v=0\\), \\(a=0\\), \\(V=0\\), \\(I=0\\), \\(m=0\\))\n\nLos comandos únicamente podrán ser enviados por el frontend\nNo se permitirán transiciones no definidas.\n\n\n\n\nGeneración de datos\nEl backend deberá generar y enviar datos de forma continua mediante WebSockets.\n\nFrecuencia: 4 Hz\nCada mensaje representará el estado instantáneo del sistema\n\n\nVariables a generar\n\nposition_m\nvelocity_kmh\nacceleration_ms2\nmass_kg\nvoltage_v\ncurrent_a\nstate\ntimestamp\n\nEl campo timestamp deberá estar en formato ISO 8601 (UTC).\n\n\n\n\nLógica física simplificada\nSe deberá respetar el siguiente comportamiento:\n\nEn PRECHARGE: incremento progresivo de \\(V\\) hasta 400 (Incremento de \\(25\\,\\mathrm{V}\\) por tick, es decir, cada \\(250\\,\\mathrm{ms}\\); la precarga completa dura 16 ticks = 4 segundos)\nEn RUNNING: velocidad constante \\(v = 4\\,\\mathrm{km/h}\\) (antes del booster)\nEn BOOSTING: la aceleración se recalcula en cada tick para garantizar que el Carro alcance exactamente \\(v_f = 25\\,\\mathrm{km/h}\\) al llegar a \\(s = 4\\,\\mathrm{m}\\): \\[\na = \\frac{v_f^2 - v^2}{2\\,(4 - s)}\n\\] donde \\(v\\) y \\(s\\) son la velocidad (en \\(\\mathrm{m/s}\\)) y posición actuales. La fuerza es \\(F = m \\cdot a\\). Cuando \\(s \\ge 4\\), no calcular \\(a\\) — fijar directamente \\(v = 25\\,\\mathrm{km/h}\\) y transicionar a RUNNING para evitar división por cero. La intensidad sigue el perfil: \\[\nI(s) = I_{\\max} \\cdot \\sin\\!\\left(\\frac{\\pi\\,(s - 2)}{2}\\right), \\quad I_{\\max} = 200\\,\\mathrm{A}\n\\]\nEn RUNNING (post-booster): velocidad constante \\(v = 25\\,\\mathrm{km/h}\\), \\(a = 0\\), \\(I = 0\\)\nEn BRAKING: \\(F_{\\text{brake}} = 196\\,\\mathrm{N}\\), \\(a = -F_{\\text{brake}}/m\\). En cada tick (\\(\\Delta t = 0.25\\,\\mathrm{s}\\)) se actualiza: \\[\nv \\leftarrow v + a\\,\\Delta t \\qquad s \\leftarrow s + v\\,\\Delta t\n\\] Si \\(v \\le 0\\) → transición a STOPPED. Si \\(s \\ge 50\\) → mechanical stopper.\nEn STOPPED: todas las variables a 0 salvo posición\n\nNo es necesario implementar un modelo físico complejo, pero sí coherente con las reglas anteriores.\n\nVelocidad de simulación\nEl backend no corre en tiempo real. El paso de tiempo físico se escala con un factor fijo SIM_SPEED = 0.2, de modo que la simulación transcurre 5× más lenta que el tiempo real. La frecuencia de emisión por WebSocket se mantiene en 4 Hz.\n\\[\n\\Delta t_{\\text{físico}} = \\Delta t \\times 0{,}2 = 0{,}05\\,\\mathrm{s/tick}\n\\]\nEsto proporciona aproximadamente 33 segundos de margen en el tramo post-booster para enviar la orden de frenado, facilitando las pruebas interactivas.\n\n\n\n\nComunicación WebSocket\nEl servidor deberá emitir mensajes en formato JSON siguiendo los dos tipos definidos:\n\nDatos\n{\n  \"topic\": \"data\",\n  \"payload\": {\n    \"timestamp\": \"2026-03-27T10:15:32.125Z\",\n    \"state\": \"RUNNING\",\n    \"position_m\": 3.42,\n    \"velocity_kmh\": 18.7,\n    \"acceleration_ms2\": 2.15,\n    \"mass_kg\": 40,\n    \"voltage_v\": 400,\n    \"current_a\": 125.4\n  }\n}\n\n\nMensajes\n{\n  \"topic\": \"message\",\n  \"payload\": {\n    \"type\": \"info\",\n    \"content\": \"Precharge started\"\n  }\n}\nLos tipos posibles son info, success, error y critical. El backend deberá emitir un mensaje en cada transición de estado:\n\n\n\n\n\n\n\n\nEvento\ntype\ncontent (ejemplo)\n\n\n\n\nComando PRECHARGE recibido\ninfo\n\"Precharge started\"\n\n\n\\(V = 400\\) alcanzado\nsuccess\n\"V = 400V precharge completed successfully\"\n\n\nComando START recibido\ninfo\n\"Booster test started. Mass: 40 kg\"\n\n\nCarro entra en Sección Booster\ninfo\n\"Booster section entered\"\n\n\nCarro sale de Sección Booster\nsuccess\n\"Boost completed. Velocity: 25 km/h\"\n\n\nComando BRAKE recibido\ninfo\n\"Braking initiated\"\n\n\nCarro detenido (\\(v = 0\\), \\(s &lt; 50\\))\nsuccess\n\"Cart stopped at s = 12.3 m\"\n\n\nCarro llega al mechanical stopper\ncritical\n\"Cart reached mechanical stopper at s = 50 m\"\n\n\nComando no válido para el estado actual\nerror\n\"Command BRAKE not allowed in state IDLE\"\n\n\nComando RESET recibido\ninfo\n\"System reset\"\n\n\n\n\n\n\n\nComunicación HTTP\nEl servidor HTTP escuchará en el puerto 8001 y expondrá dos endpoints.\n\nPOST /api/command\nRecibe un comando del frontend. Si el comando no es válido para el estado actual, responde 400 Bad Request. En caso contrario responde 200 OK y emite el mensaje correspondiente por WebSocket.\nComandos aceptados:\n\n\n\nComando\nEstado requerido\nPayload adicional\n\n\n\n\nPRECHARGE\nIDLE\n—\n\n\nSTART\nREADY\n{ \"mass\": &lt;número&gt; }\n\n\nBRAKE\nRUNNING o BOOSTING\n—\n\n\nRESET\nCualquiera\n—\n\n\n\n\n\nGET /api/calculate\nCalcula la posición óptima para iniciar el frenado. Recibe dos query parameters:\n\nm: masa del Carro en \\(\\mathrm{kg}\\)\nd: distancia deseada al final del track en \\(\\mathrm{m}\\)\n\n\\[\nd_{\\text{brake}} = \\frac{v_0^2 \\cdot m}{2\\,F_{\\text{brake}}} \\qquad s_{\\text{brake}} = (50 - d) - d_{\\text{brake}}\n\\]\ncon \\(v_0 = 25\\,\\mathrm{km/h}\\) (convertido a m/s) y \\(F_{\\text{brake}} = 196\\,\\mathrm{N}\\).\nRespuesta:\n{\n  \"braking_position_m\": 37.5\n}\nSi los parámetros son inválidos (negativos, ausentes, o \\(s_{\\text{brake}} &lt; 0\\)), responder 400 Bad Request.",
     "crumbs": [
-      "Bloque IV Comunicación",
-      "Semana 11",
-      "Protocolos de Comunicación"
+      "Proyecto Final TC SW"
+    ]
+  },
+  {
+    "objectID": "pages/final.html#uso-del-backend-de-ejemplo",
+    "href": "pages/final.html#uso-del-backend-de-ejemplo",
+    "title": "Proyecto Final TC SW",
+    "section": "Uso del backend de ejemplo",
+    "text": "Uso del backend de ejemplo\nPara los alumnos que realicen únicamente el frontend, se proporciona un backend de ejemplo ya compilado y listo para ejecutar, sin necesidad de instalar Python ni ninguna dependencia.\n\nDescarga\n\n\n\nSistema operativo\nEnlace\n\n\n\n\nWindows\nDescargar backend.exe\n\n\nLinux\nDescargar backend\n\n\n\n\n\nEjecución\n\nWindowsLinux\n\n\nHaz doble clic sobre backend.exe o ejecútalo desde una terminal:\nbackend.exe\n\n\nOtorga permisos de ejecución y lánzalo:\nchmod +x backend\n./backend\n\n\n\n\n\nPuertos\nUna vez en marcha, el backend expone dos servicios de forma simultánea:\n\n\n\nServicio\nURL\n\n\n\n\nWebSocket (telemetría)\nws://localhost:5001/backend/stream\n\n\nHTTP (comandos y cálculo)\nhttp://localhost:8001\n\n\n\nEl frontend debe estar lanzado después de que el backend esté corriendo. Asegúrate de que los puertos 5001 y 8001 no están ocupados por otro proceso.",
+    "crumbs": [
+      "Proyecto Final TC SW"
+    ]
+  },
+  {
+    "objectID": "pages/final.html#entrega",
+    "href": "pages/final.html#entrega",
+    "title": "Proyecto Final TC SW",
+    "section": "Entrega",
+    "text": "Entrega\nLa entrega del proyecto se realizará a través de un repositorio de GitHub que deberá cumplir los siguientes requisitos:\n\nEl repositorio debe contener únicamente el proyecto — sin archivos innecesarios, sin el binario del backend de ejemplo descargado, y sin carpetas de dependencias (node_modules, entornos virtuales, etc.). Se recomienda incluir un .gitignore adecuado.\nEl repositorio debe incluir un README.md con instrucciones claras para instalar y ejecutar el proyecto.\nSe enviará el enlace al repositorio al responsable del subsistema de Software.\n\n\nPlazos\n\n\n\nHito\nFecha\n\n\n\n\nPlazo para añadir cambios al repositorio\n12 de mayo de 2026\n\n\nExposición del proyecto\n14 de mayo de 2026\n\n\n\n\nA partir del 12 de mayo no se tendrán en cuenta los cambios realizados en el repositorio para la evaluación. La exposición consistirá en una demostración en vivo del proyecto y una breve explicación de las decisiones de implementación tomadas.",
+    "crumbs": [
+      "Proyecto Final TC SW"
+    ]
+  },
+  {
+    "objectID": "pages/final.html#footnotes",
+    "href": "pages/final.html#footnotes",
+    "title": "Proyecto Final TC SW",
+    "section": "Notas",
+    "text": "Notas\n\n\nSistema estructural diseñado para el montaje rígido de prototipos o componentes, equipado con sensores para la medición de parámetros operativos y la simulación de condiciones de carga controladas.↩︎\nUn imán.↩︎\nPlancha de metal que asegura que el Carro booster no salga del track.↩︎\nNo se incluye una descripción más extensa porque el desafio de este apartado es ver, vuestras habilidades para seleccionar la forma óptima.↩︎",
+    "crumbs": [
+      "Proyecto Final TC SW"
     ]
   },
   {

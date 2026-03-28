@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Javier Ribal del Río">
+
+<title>Proyecto Final TC SW – Training Center SW</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7010b3c259c44ebb4b6b7a5b7b7107e0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-036d13c4e18d8d7539729d541f55cf23.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-7010b3c259c44ebb4b6b7a5b7b7107e0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../style/main.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/final.html">Proyecto Final TC SW</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../public/logo-text.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../public/logo-text.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Training Center SW</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programa TC</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../pages/Bloque1/bloque1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bloque I Introducción</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Semana 0</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque1/entorno.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preparación del entorno de trabajo</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Semana 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque1/html.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HTML</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque1/t1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T1: Web de HL I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque1/MAhtml2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MA: Mas HTML</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque1/t1a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TA1: Mi CV I</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Semana 2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque1/css.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CSS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque1/t2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T2: Web de HL II</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque1/MAcss.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MA: Selectores y Pseudoselectores</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque1/t2a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TA2: Mi CV II</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Bloque II Programación</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Repaso Intensivo</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque2/intensivo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repaso Intensivo JS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque2/ti.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TI: Ejercicios JS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque2/MAclases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MA: Clases ES6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque2/tia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TAI: La objetización de las personas</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Bloque III Interacción</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Semana 6</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque3/DOM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DOM</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque3/t6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T6: Romancero Gitano I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque3/MAcss2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MA: CSS Flex y CSS</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Semana 7</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque3/ReactI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">React I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque3/ps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Proyecto Subsistema</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Semana 9</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque3/Intermedio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">React III</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque3/MARef.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MA: <em>Uncontrolled fields</em> y <code>useRef</code></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Semana 10</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque3/ReactIV.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">React IV</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque3/t10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T10: Quiz app!</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Bloque IV Comunicación</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Semana 11</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/Bloque4/protocolos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Protocolos de Comunicación</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/rubric.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rúbrica de evaluación</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/final.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Proyecto Final TC SW</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<p><img src="https://i.imgur.com/jbGUd7N.png" class="img-fluid"><br><br><br> © Javier Ribal del Río <br> 2025 - Hyperloop UPV</p>
+</div></div></nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#contextualización-de-la-tarea" id="toc-contextualización-de-la-tarea" class="nav-link active" data-scroll-target="#contextualización-de-la-tarea">Contextualización de la tarea</a>
+  <ul>
+  <li><a href="#fundamentos-físicos" id="toc-fundamentos-físicos" class="nav-link" data-scroll-target="#fundamentos-físicos">Fundamentos físicos</a>
+  <ul class="collapse">
+  <li><a href="#componentes" id="toc-componentes" class="nav-link" data-scroll-target="#componentes">Componentes</a></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
+  <li><a href="#funcionamiento" id="toc-funcionamiento" class="nav-link" data-scroll-target="#funcionamiento">Funcionamiento</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#objetivos-de-aprendizaje" id="toc-objetivos-de-aprendizaje" class="nav-link" data-scroll-target="#objetivos-de-aprendizaje">Objetivos de aprendizaje</a></li>
+  <li><a href="#descripción-general-de-la-tarea" id="toc-descripción-general-de-la-tarea" class="nav-link" data-scroll-target="#descripción-general-de-la-tarea">Descripción general de la tarea</a>
+  <ul>
+  <li><a href="#descripción-de-la-tarea-de-software" id="toc-descripción-de-la-tarea-de-software" class="nav-link" data-scroll-target="#descripción-de-la-tarea-de-software">Descripción de la tarea de Software</a></li>
+  <li><a href="#evaluación-de-la-tarea" id="toc-evaluación-de-la-tarea" class="nav-link" data-scroll-target="#evaluación-de-la-tarea">Evaluación de la tarea</a></li>
+  </ul></li>
+  <li><a href="#frontend" id="toc-frontend" class="nav-link" data-scroll-target="#frontend">Frontend</a>
+  <ul>
+  <li><a href="#especificacciones-de-la-gui" id="toc-especificacciones-de-la-gui" class="nav-link" data-scroll-target="#especificacciones-de-la-gui">Especificacciones de la GUI</a></li>
+  <li><a href="#implementación" id="toc-implementación" class="nav-link" data-scroll-target="#implementación">Implementación</a>
+  <ul class="collapse">
+  <li><a href="#notas-generales" id="toc-notas-generales" class="nav-link" data-scroll-target="#notas-generales">Notas Generales</a></li>
+  <li><a href="#gráficas-1-y-mensajes-3" id="toc-gráficas-1-y-mensajes-3" class="nav-link" data-scroll-target="#gráficas-1-y-mensajes-3">Gráficas (1) y Mensajes (3)</a></li>
+  <li><a href="#botones-2" id="toc-botones-2" class="nav-link" data-scroll-target="#botones-2">Botones (2)</a></li>
+  <li><a href="#cálculo-de-la-posición-óptima-para-presionar-el-freno-4" id="toc-cálculo-de-la-posición-óptima-para-presionar-el-freno-4" class="nav-link" data-scroll-target="#cálculo-de-la-posición-óptima-para-presionar-el-freno-4"><em>Cálculo</em> de la posición óptima para presionar el freno (4)</a></li>
+  <li><a href="#inclusión-del-modelo-3d-5" id="toc-inclusión-del-modelo-3d-5" class="nav-link" data-scroll-target="#inclusión-del-modelo-3d-5">Inclusión del modelo 3D (5)</a></li>
+  </ul></li>
+  <li><a href="#recomendaciones" id="toc-recomendaciones" class="nav-link" data-scroll-target="#recomendaciones">Recomendaciones</a></li>
+  </ul></li>
+  <li><a href="#backend-voluntaria-realización" id="toc-backend-voluntaria-realización" class="nav-link" data-scroll-target="#backend-voluntaria-realización">Backend <strong>(VOLUNTARIA REALIZACIÓN)</strong></a>
+  <ul>
+  <li><a href="#especificaciones-del-backend" id="toc-especificaciones-del-backend" class="nav-link" data-scroll-target="#especificaciones-del-backend">Especificaciones del Backend</a>
+  <ul class="collapse">
+  <li><a href="#arquitectura-general" id="toc-arquitectura-general" class="nav-link" data-scroll-target="#arquitectura-general">Arquitectura general</a></li>
+  </ul></li>
+  <li><a href="#máquina-de-estados" id="toc-máquina-de-estados" class="nav-link" data-scroll-target="#máquina-de-estados">Máquina de estados</a>
+  <ul class="collapse">
+  <li><a href="#transiciones" id="toc-transiciones" class="nav-link" data-scroll-target="#transiciones">Transiciones</a></li>
+  </ul></li>
+  <li><a href="#generación-de-datos" id="toc-generación-de-datos" class="nav-link" data-scroll-target="#generación-de-datos">Generación de datos</a>
+  <ul class="collapse">
+  <li><a href="#variables-a-generar" id="toc-variables-a-generar" class="nav-link" data-scroll-target="#variables-a-generar">Variables a generar</a></li>
+  </ul></li>
+  <li><a href="#lógica-física-simplificada" id="toc-lógica-física-simplificada" class="nav-link" data-scroll-target="#lógica-física-simplificada">Lógica física simplificada</a></li>
+  <li><a href="#comunicación-websocket" id="toc-comunicación-websocket" class="nav-link" data-scroll-target="#comunicación-websocket">Comunicación WebSocket</a>
+  <ul class="collapse">
+  <li><a href="#datos" id="toc-datos" class="nav-link" data-scroll-target="#datos">Datos</a></li>
+  <li><a href="#mensajes" id="toc-mensajes" class="nav-link" data-scroll-target="#mensajes">Mensajes</a></li>
+  </ul></li>
+  <li><a href="#comunicación-http" id="toc-comunicación-http" class="nav-link" data-scroll-target="#comunicación-http">Comunicación HTTP</a>
+  <ul class="collapse">
+  <li><a href="#post-apicommand" id="toc-post-apicommand" class="nav-link" data-scroll-target="#post-apicommand"><code>POST /api/command</code></a></li>
+  <li><a href="#get-apicalculate" id="toc-get-apicalculate" class="nav-link" data-scroll-target="#get-apicalculate"><code>GET /api/calculate</code></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#uso-del-backend-de-ejemplo" id="toc-uso-del-backend-de-ejemplo" class="nav-link" data-scroll-target="#uso-del-backend-de-ejemplo">Uso del backend de ejemplo</a>
+  <ul>
+  <li><a href="#descarga" id="toc-descarga" class="nav-link" data-scroll-target="#descarga">Descarga</a></li>
+  <li><a href="#ejecución" id="toc-ejecución" class="nav-link" data-scroll-target="#ejecución">Ejecución</a></li>
+  <li><a href="#puertos" id="toc-puertos" class="nav-link" data-scroll-target="#puertos">Puertos</a></li>
+  </ul></li>
+  <li><a href="#entrega" id="toc-entrega" class="nav-link" data-scroll-target="#entrega">Entrega</a>
+  <ul>
+  <li><a href="#plazos" id="toc-plazos" class="nav-link" data-scroll-target="#plazos">Plazos</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="final.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Proyecto Final TC SW</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Javier Ribal del Río </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">27 de marzo de 2026</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de última modificación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">27 de marzo de 2026</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+<div style="page-break-after: always;"></div>
+<section id="contextualización-de-la-tarea" class="level2">
+<h2 class="anchored" data-anchor-id="contextualización-de-la-tarea">Contextualización de la tarea</h2>
+<p>El Hyperloop es una tecnología que se basa en la eficiencia energética; para ello se introduce lo que a día de hoy conocemos como <em>booster</em>, un módulo de infraestructura que confiere energía al pod para su propulsión. Al externalizar la potencia de la cápsula al carril, se logra un sistema más verde y sostenible, reduciendo el peso del vehículo y optimizando el consumo eléctrico mediante una gestión inteligente de la energía.</p>
+<p>A lo largo de los años en <em>Hyperloop-UPV</em> hemos tratado de desarrollar nuestro propio <em>booster</em>, uno de los problemas que identificamos a la hora de desarrollarlo es que para poder hacer pruebas era necesario disponer del POD completo. Por ello, este año hemos diseñado una bancada de pruebas<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> que nos permite validar el funcionamiento del <em>booster</em> de forma sencilla.</p>
+<section id="fundamentos-físicos" class="level3">
+<h3 class="anchored" data-anchor-id="fundamentos-físicos">Fundamentos físicos</h3>
+<section id="componentes" class="level4">
+<h4 class="anchored" data-anchor-id="componentes">Componentes</h4>
+<p>Podemos dividir la bancada de pruebas en 4 componentes:</p>
+<ul>
+<li><strong>Carro <em>booster</em></strong> (o Carro): módulo de tracción móvil compuesto por un bastidor de cuatro ruedas y un EMS<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> que es propulsado por la sección</li>
+<li><strong><em>Track</em></strong>: vía de 50 metros por la que circula el Carro <em>booster</em>
+<ul>
+<li><strong>Sección <em>booster</em></strong>: sección del <em>track</em> por la que el al pasar Carro <em>booster</em> lo impulsa.</li>
+</ul></li>
+<li><strong>Armario <em>booster</em></strong>: lugar donde se almacenan los supercondensadores y las resistencias que generan el campo magnético que impulsa al Carro <em>booster</em> en la Sección <em>booster</em></li>
+</ul>
+</section>
+<section id="variables" class="level4">
+<h4 class="anchored" data-anchor-id="variables">Variables</h4>
+<p>Trabajaremos como todas la variables asumiendo que son escalares.</p>
+<section id="carro-booster" class="level5">
+<h5 class="anchored" data-anchor-id="carro-booster">Carro <em>Booster</em></h5>
+<ul>
+<li>Posición: ubicación física del Carro en el <em>Track</em>. <span class="math inline">\(s\)</span> medida en <span class="math inline">\(\mathrm{m}\)</span> y <span class="math inline">\(s \in[0,50]\)</span>.
+<ul>
+<li>Asumiremos que la Sección <em>booster</em> se encuentra ubicada entre <span class="math inline">\(s=2\)</span> y <span class="math inline">\(s =4\)</span></li>
+</ul></li>
+<li>Velocidad: cambio de la posición del Carro respecto al tiempo. <span class="math inline">\(v\)</span> medida en <span class="math inline">\(\mathrm{km/h}\)</span></li>
+<li>Aceleración: cambio de la velocidad del Carro respecto al tiempo. <span class="math inline">\(a\)</span> medida en <span class="math inline">\(\mathrm{m/s^2}\)</span></li>
+<li>Masa: masa total del Carro <em>booster</em>. <span class="math inline">\(m\)</span> medida en <span class="math inline">\(\mathrm{kg}\)</span></li>
+<li>Fuerza: fuerza neta aplicada sobre el Carro, resultado del empuje del <em>booster</em> y de las fuerzas de frenado u oposición al movimiento. <span class="math inline">\(F\)</span> medida en <span class="math inline">\(\mathrm{N}\)</span>. Por convenio, <span class="math inline">\(F&gt;0\)</span> si actúa en el sentido de avance (dirección creciente de <span class="math inline">\(s\)</span>) y <span class="math inline">\(F&lt;0\)</span> en caso contrario.</li>
+</ul>
+</section>
+<section id="armario-booster" class="level5">
+<h5 class="anchored" data-anchor-id="armario-booster">Armario <em>Booster</em></h5>
+<ul>
+<li>Tensión: diferencia de potencial eléctrico suministrada por el sistema de almacenamiento de energía. <span class="math inline">\(V\)</span> medida en <span class="math inline">\(\mathrm{V}\)</span></li>
+<li>Intensidad: corriente eléctrica que circula por el sistema para generar el campo magnético del <em>booster</em>. <span class="math inline">\(I\)</span> medida en <span class="math inline">\(\mathrm{A}\)</span></li>
+</ul>
+</section>
+<section id="otras-consideraciones" class="level5">
+<h5 class="anchored" data-anchor-id="otras-consideraciones">Otras consideraciones</h5>
+<p>Asumiremos que:</p>
+<ul>
+<li>El movimiento únicamente es horizontal <span class="math display">\[
+\begin{aligned}
+g &amp;= 9.81\,\mathrm{m/s^2} \\
+F &amp;= m \cdot a \\
+|\vec{N}| &amp;= |\vec{P}| = m g \\
+F_\text{rozamiento} &amp;= \mu|\vec{N}| \\
+\mu &amp;=
+\begin{cases}
+0, &amp; \text{si el Carro no está frenando} \\
+0.5, &amp; \text{si el Carro está frenando}
+\end{cases}
+\end{aligned}
+\]</span></li>
+</ul>
+</section>
+</section>
+<section id="funcionamiento" class="level4">
+<h4 class="anchored" data-anchor-id="funcionamiento">Funcionamiento</h4>
+<ul>
+<li>Partiremos de un estado inicial de espera <code>IDLE</code> donde <span class="math inline">\(s=0; a = 0; v = 0; V= 0; I = 0\)</span>;</li>
+<li>Se dará la orden de precarga <code>PRECHARGE</code> donde todas las variables se mantendrán a 0 menos <span class="math inline">\(V\)</span> que empezará a aumentar hasta alcanzar <span class="math inline">\(V =400\)</span></li>
+<li>Cuando <span class="math inline">\(V=400\)</span> entramos al estado de <code>READY</code>, donde la bancada está lista para operar</li>
+<li>Cuando se inicie la prueba, el carro adquirirá una <span class="math inline">\(v_\text{base} = 4\)</span> que mantendrá en todo momento hasta que frene. <code>RUNNING</code> <span class="math inline">\(a = 0; V= 400\)</span></li>
+<li>Al entrar en la Sección <em>Booster</em> la velocidad y aceleración del Carro se verán incrementadas. <code>BOOSTING</code>. Durante el funcionamiento del <em>Booster</em> la Intensidad se modificará</li>
+<li>Una vez haya salido de la Sección <em>Booster</em> (<span class="math inline">\(s &gt; 4\)</span>) mantendrá una velocidad constante de <span class="math inline">\(v = 25\)</span> hasta que el Carro llegue al final del <em>track</em> (<span class="math inline">\(s=50\)</span>) o bien sea frenado. <code>RUNNING</code></li>
+<li>Frenado: al lanzar la orden de Frenado <code>BRAKE</code> el Carro comenzará a disminuir su velocidad hasta <span class="math inline">\(v = 0\)</span> o llegar al final del <em>track</em>.
+<ul>
+<li>Si el Carro llega a detenerse antes de alcanzar el final del <em>track</em> (<span class="math inline">\(s &lt; 50\)</span>), se informará mediante un mensaje</li>
+<li>En caso de que el Carro llegue al final del <em>track</em> con <span class="math inline">\(v &gt; 0\)</span>, será detenido por el <em>mechanical stopper</em><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, también se informará con un mensaje.</li>
+</ul></li>
+<li>Una vez el Carro reste detenido <code>STOPPED</code> todas las variables de mantendran a 0 salvo la posición.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+</section>
+<section id="objetivos-de-aprendizaje" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos-de-aprendizaje">Objetivos de aprendizaje</h2>
+<p>El objetivo principal de la tarea es poner en práctica el contenido aprendido durante el <em>training center</em> de Software, el diseño de UI dinámicas para el control de telemetría del vehículo. Asimismo, el proyecto se realizará en colaboración con otros subsistemas, para potenciar el trabajo en equipo y la comunicación entre los subsistemas, simulando así un <em>miniequipo</em> de Hyperloop.</p>
+</section>
+<section id="descripción-general-de-la-tarea" class="level2">
+<h2 class="anchored" data-anchor-id="descripción-general-de-la-tarea">Descripción general de la tarea</h2>
+<p>El objetivo del proyecto final consiste en desarrollar una bancada de pruebas para el <em>booster</em> (de ahora en adelante bancada <em>booster</em>). Los alumnos de los diferentes subsistemas del Training Center tienen asignadas diferentes tareas interrelacionadas entre sí, donde será necesario que todos cooperen de manera coordinada para cumplir con los requisitos técnicos y alcanzar el objetivo final de la tarea.</p>
+<section id="descripción-de-la-tarea-de-software" class="level3">
+<h3 class="anchored" data-anchor-id="descripción-de-la-tarea-de-software">Descripción de la tarea de Software</h3>
+<p>Se deberá implementar un emulador de la bancada <em>booster</em>, el emulador estará compuesto por dos partes:</p>
+<ul>
+<li>Frontend: se conecta al backend y muestra datos sobre la bancada</li>
+<li>Backend: emulación de la bancada <em>booster</em>. (<strong>Se permite hacer uso del backend de ejemplo</strong>)</li>
+</ul>
+</section>
+<section id="evaluación-de-la-tarea" class="level3">
+<h3 class="anchored" data-anchor-id="evaluación-de-la-tarea">Evaluación de la tarea</h3>
+<p>Los requesitos mínimos para evaluar la tarea es realizar un frontend incluyendo las 5 funcionalidades detalladas en el apartado anterior.</p>
+<p>Aquellos que deseen aspirar a nota extra podrán entregar también su propio backend que cumpla con las especificaciones de la tarea.</p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="frontend" class="level2">
+<h2 class="anchored" data-anchor-id="frontend">Frontend</h2>
+<p>La <em>Graphical User Interface</em> (GUI) o frontend, debe de conectarse al backend utilizando los protocolos <code>http</code> y <code>websockets</code>.</p>
+<section id="especificacciones-de-la-gui" class="level3">
+<h3 class="anchored" data-anchor-id="especificacciones-de-la-gui">Especificacciones de la GUI</h3>
+<ol type="1">
+<li>Una sección con gráficas que nos permita visualizar las siguientes varibles</li>
+</ol>
+<ul>
+<li><p><span class="math inline">\(V\)</span></p></li>
+<li><p><span class="math inline">\(a\)</span></p></li>
+<li><p><span class="math inline">\(v\)</span></p></li>
+<li><p><span class="math inline">\(F\)</span> (Habrá que calcularla en el Frontend. Usar 2ª Ley de Newton)</p></li>
+<li><p><span class="math inline">\(I\)</span></p></li>
+<li><p>Además, de una cronograma con los estados establecidos.</p></li>
+</ul>
+<p><code>IDLE</code>, <code>PRECHARGE</code>, <code>READY</code>, <code>RUNNING</code>, <code>BOOSTING</code>, <code>BRAKING</code> y <code>STOPPED</code></p>
+<ol start="2" type="1">
+<li>Una sección que nos permita mediante botones enviar ordenes al simulador</li>
+</ol>
+<ul>
+<li><code>PRECHARGE</code>: inicia la precarga</li>
+<li><code>START</code>: inicia el movimiento del Carro, se debe de especificar la masa</li>
+<li><code>BRAKE</code>: frena el Carro</li>
+<li><code>RESET</code>: reinicia el simulador</li>
+</ul>
+<ol start="3" type="1">
+<li><p>Una sección que nos permita ver los mensajes que envía el simulador al <em>Front</em>, los mensajes harán referencia al estado del simulador, por ejemplo : <em>V = 400V precharge completed sucessfully</em></p></li>
+<li><p>Una sección que nos permita calcular la distancia óptima para presionar el freno mediante una llamada a API</p></li>
+<li><p>Inclusión de un modelo 3D del Carro <em>Booster</em></p></li>
+</ol>
+</section>
+<section id="implementación" class="level3">
+<h3 class="anchored" data-anchor-id="implementación">Implementación</h3>
+<section id="notas-generales" class="level4">
+<h4 class="anchored" data-anchor-id="notas-generales">Notas Generales</h4>
+<ul>
+<li>Se debe desarollar una aplicación Web utilizando React</li>
+<li>Se debe utilizar preferiblemente Typescript o en su defecto JavaScript</li>
+<li>Se recomienda el uso de librerías de estilo como <em>tailwind</em> o <em>bootsrap</em>, así mismo se recomienda el uso de librerías de componentes, en especial <em>shadcn</em></li>
+<li>El frontend deberá validar los inputs antes de enviarlos</li>
+</ul>
+</section>
+<section id="gráficas-1-y-mensajes-3" class="level4">
+<h4 class="anchored" data-anchor-id="gráficas-1-y-mensajes-3">Gráficas (1) y Mensajes (3)</h4>
+<p>El Backend expondrá en el puerto <code>5001</code> un protocolo <code>websockets</code> con ruta <code>backend/stream</code> que se corresponderá con el flujo de datos envidados del cliente a servidor; es decir utilizaremos <code>websockets</code> únicamente para leer datos. De la información transmitida por <code>ws</code> obtendremos tanto los datos que habrá que mostrar en la gráfica, como los mensajes que se debén de mostrar en el área de mensajes.</p>
+<p>WebSocket endpoint: <code>ws://localhost:5001/backend/stream</code></p>
+<p>La comunicación por websockets estará, codificada como JSON, del cual distinguiremos 2 formatos, uno para recepción de los datos y otro para los mensajes del servidor.</p>
+<p><strong>Formato datos:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"topic"</span><span class="fu">:</span> <span class="st">"data"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"payload"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"timestamp"</span><span class="fu">:</span> <span class="st">"2026-03-27T10:15:32.125Z"</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"state"</span><span class="fu">:</span> <span class="st">"RUNNING"</span><span class="fu">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"position_m"</span><span class="fu">:</span> <span class="fl">3.42</span><span class="fu">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"velocity_kmh"</span><span class="fu">:</span> <span class="fl">18.7</span><span class="fu">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"acceleration_ms2"</span><span class="fu">:</span> <span class="fl">2.15</span><span class="fu">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"mass_kg"</span><span class="fu">:</span> <span class="dv">40</span><span class="fu">,</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"voltage_v"</span><span class="fu">:</span> <span class="dv">400</span><span class="fu">,</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"current_a"</span><span class="fu">:</span> <span class="fl">125.4</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Formato mensajes:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"topic"</span><span class="fu">:</span> <span class="st">"message"</span><span class="fu">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"payload"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"info"</span><span class="fu">,</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"content"</span><span class="fu">:</span> <span class="st">"Precharge started"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Los tipos de mensajes pueden ser:<code>info</code>, <code>critical</code>, <code>error</code> y <code>success</code></p>
+<p>En el caso de formato de datos los paquetes llegarán con una frecuencia de 4 Hz, debido a la gran afluencia de paquetes se recomienda mantener un histórico limitado (por ejemplo, los últimos 5–10 segundos de datos) para la representación gráfica, eliminando los valores más antiguos para evitar problemas de rendimiento.</p>
+</section>
+<section id="botones-2" class="level4">
+<h4 class="anchored" data-anchor-id="botones-2">Botones (2)</h4>
+<p>Al ser presionados mandarán una orden utilizando una petición <code>HTTP-POST</code> al backend utilizando el formato especificado. El botón de <code>START</code> debe de estar acompañado de un <code>input</code> numérico que permita especificar la massa del carro.</p>
+<p>La orden se dirigirá al siguiente enpoint <code>/api/command</code> la cual estará en el puerto <code>8001</code>. El servidor tras recibir la orden devolvera el código 200 indicando que todo ha sido correcto y se enviará un mensaje via <code>websockets</code>.</p>
+<p>El servidor responderá con:</p>
+<ul>
+<li><code>200 OK</code> si el comando se ha aceptado correctamente</li>
+<li><code>400 Bad Request</code> si el comando es inválido</li>
+</ul>
+<p>El resultado de la acción se notificará mediante un mensaje vía <code>websockets</code>.</p>
+<p><strong>Formato petición HTTP:</strong></p>
+<pre><code>POST /api/command
+Content-Type: application/json
+
+{
+  "command": "PRECHARGE"
+}</code></pre>
+<p>(en el caso de la orden <code>START</code>)</p>
+<pre><code>POST /api/command
+Content-Type: application/json
+
+{
+  "command": "START",
+  "payload": {
+    "mass": 40
+  }
+}</code></pre>
+<p>En caso de error (<code>400 Bad Request</code>), el frontend deberá mostrar un mensaje informativo al usuario indicando que la operación no se ha podido realizar.</p>
+</section>
+<section id="cálculo-de-la-posición-óptima-para-presionar-el-freno-4" class="level4">
+<h4 class="anchored" data-anchor-id="cálculo-de-la-posición-óptima-para-presionar-el-freno-4"><em>Cálculo</em> de la posición óptima para presionar el freno (4)</h4>
+<p>Sección con un formulario que permitirá indicar el peso del vehículo y a cuánta distancia se desea acabar del fin de la vía. Al presionar el botón de <em>submit</em> el frontend realizará una petición tipo <code>GET - HTTP</code> a <code>/api/calculate</code> con los <em>query parameters</em> <code>m</code> y <code>d</code>, que se corresponden con la masa del Carro y la distancia deseada, respectivamente.</p>
+<p>El servidor devolverá una respuesta en formato JSON con la posición óptima en la que se debe iniciar el frenado. El frontend deberá procesar dicha respuesta y mostrar el resultado de forma clara al usuario.</p>
+<p><strong>Formato de respuesta esperado:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"braking_position_m"</span><span class="fu">:</span> <span class="fl">37.5</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="inclusión-del-modelo-3d-5" class="level4">
+<h4 class="anchored" data-anchor-id="inclusión-del-modelo-3d-5">Inclusión del modelo 3D (5)</h4>
+<p>Se debe incluir un modelo 3D del Carro <em>booster</em> diseñado por el subsistema de <em>Mechanics</em>, debe de ser interáctivo, no debe de tratarse de una fotografía. <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<blockquote class="blockquote">
+<p><strong>Nota sobre la velocidad del backend de ejemplo</strong></p>
+<p>El backend de ejemplo no corre en tiempo real: la simulación transcurre <strong>5× más lenta</strong> que el tiempo real (<code>SIM_SPEED = 0.2</code>). La frecuencia de emisión por WebSocket se mantiene en 4 Hz, pero los valores de posición, velocidad, etc. avanzan más despacio de lo que cabría esperar físicamente. Esto es intencionado para facilitar las pruebas interactivas — el frontend no necesita hacer ningún ajuste al respecto.</p>
+</blockquote>
+</section>
+</section>
+<section id="recomendaciones" class="level3">
+<h3 class="anchored" data-anchor-id="recomendaciones">Recomendaciones</h3>
+<ul>
+<li>El objetivo de la tarea es diseñar un panel de control, por lo que sería interesante que haya una única vista, donde no se pueda hacer <em>scroll</em> que lo concentre todo</li>
+<li>Se recomienda hacer uso de los estilos como herramienta para resaltar los eventos que suceden en el simulador, por ejemplo si el Carro, se estrella con el <em>mechanical stopper</em>, podría ponerse el fondo en rojo para indicar que ha colisionado.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="backend-voluntaria-realización" class="level2">
+<h2 class="anchored" data-anchor-id="backend-voluntaria-realización">Backend <strong>(VOLUNTARIA REALIZACIÓN)</strong></h2>
+<p>El backend será el encargado de emular el comportamiento de la bancada <em>booster</em>, gestionando tanto la lógica de estados como la generación de datos de telemetría y la comunicación con el frontend.</p>
+<p>El backend deberá implementarse preferiblemente en <strong>Rust</strong> o <strong>Go</strong>, o en su defecto en <strong>Java</strong>. Queda a criterio del alumno la elección del lenguaje dentro de estas opciones.</p>
+<p>El backend deberá exponer dos tipos de comunicación:</p>
+<ul>
+<li><code>WebSockets</code>: envío continuo de datos y mensajes al frontend</li>
+<li><code>HTTP</code>: recepción de órdenes y cálculo de la posición óptima de frenado</li>
+</ul>
+<section id="especificaciones-del-backend" class="level3">
+<h3 class="anchored" data-anchor-id="especificaciones-del-backend">Especificaciones del Backend</h3>
+<section id="arquitectura-general" class="level4">
+<h4 class="anchored" data-anchor-id="arquitectura-general">Arquitectura general</h4>
+<p>El backend deberá estar compuesto por:</p>
+<ul>
+<li>Un servidor <code>WebSocket</code> en el puerto <code>5001</code> para el envío de datos en tiempo real</li>
+<li>Un servidor <code>HTTP</code> en el puerto <code>8001</code> para la recepción de comandos y cálculo</li>
+</ul>
+<p>El sistema deberá funcionar como una <strong>máquina de estados</strong>, donde las transiciones estarán controladas por las órdenes recibidas.</p>
+<hr>
+</section>
+</section>
+<section id="máquina-de-estados" class="level3">
+<h3 class="anchored" data-anchor-id="máquina-de-estados">Máquina de estados</h3>
+<p>El backend deberá implementar los siguientes estados:</p>
+<p><code>IDLE</code>, <code>PRECHARGE</code>, <code>READY</code>, <code>RUNNING</code>, <code>BOOSTING</code>, <code>BRAKING</code> y <code>STOPPED</code></p>
+<section id="transiciones" class="level4">
+<h4 class="anchored" data-anchor-id="transiciones">Transiciones</h4>
+<ul>
+<li><code>IDLE → PRECHARGE</code> mediante comando <code>PRECHARGE</code></li>
+<li><code>PRECHARGE → READY</code> cuando <span class="math inline">\(V = 400\)</span></li>
+<li><code>READY → RUNNING</code> mediante comando <code>START</code></li>
+<li><code>RUNNING → BOOSTING</code> cuando <span class="math inline">\(2 \le s \le 4\)</span></li>
+<li><code>BOOSTING → RUNNING</code> cuando <span class="math inline">\(s &gt; 4\)</span></li>
+<li><code>RUNNING → BRAKING</code> mediante comando <code>BRAKE</code></li>
+<li><code>BOOSTING → BRAKING</code> mediante comando <code>BRAKE</code></li>
+<li><code>BRAKING → STOPPED</code> cuando <span class="math inline">\(v = 0\)</span></li>
+<li><code>Cualquier estado → IDLE</code> mediante comando <code>RESET</code>: todas las variables vuelven a su valor inicial (<span class="math inline">\(s=0\)</span>, <span class="math inline">\(v=0\)</span>, <span class="math inline">\(a=0\)</span>, <span class="math inline">\(V=0\)</span>, <span class="math inline">\(I=0\)</span>, <span class="math inline">\(m=0\)</span>)</li>
+</ul>
+<p>Los comandos únicamente podrán ser enviados por el frontend</p>
+<p>No se permitirán transiciones no definidas.</p>
+<hr>
+</section>
+</section>
+<section id="generación-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="generación-de-datos">Generación de datos</h3>
+<p>El backend deberá generar y enviar datos de forma continua mediante <code>WebSockets</code>.</p>
+<ul>
+<li>Frecuencia: <strong>4 Hz</strong></li>
+<li>Cada mensaje representará el estado instantáneo del sistema</li>
+</ul>
+<section id="variables-a-generar" class="level4">
+<h4 class="anchored" data-anchor-id="variables-a-generar">Variables a generar</h4>
+<ul>
+<li><code>position_m</code></li>
+<li><code>velocity_kmh</code></li>
+<li><code>acceleration_ms2</code></li>
+<li><code>mass_kg</code></li>
+<li><code>voltage_v</code></li>
+<li><code>current_a</code></li>
+<li><code>state</code></li>
+<li><code>timestamp</code></li>
+</ul>
+<p>El campo <code>timestamp</code> deberá estar en formato <strong>ISO 8601 (UTC)</strong>.</p>
+<hr>
+</section>
+</section>
+<section id="lógica-física-simplificada" class="level3">
+<h3 class="anchored" data-anchor-id="lógica-física-simplificada">Lógica física simplificada</h3>
+<p>Se deberá respetar el siguiente comportamiento:</p>
+<ul>
+<li>En <code>PRECHARGE</code>: incremento progresivo de <span class="math inline">\(V\)</span> hasta 400 (Incremento de <span class="math inline">\(25\,\mathrm{V}\)</span> por tick, es decir, cada <span class="math inline">\(250\,\mathrm{ms}\)</span>; la precarga completa dura 16 ticks = 4 segundos)</li>
+<li>En <code>RUNNING</code>: velocidad constante <span class="math inline">\(v = 4\,\mathrm{km/h}\)</span> (antes del booster)</li>
+<li>En <code>BOOSTING</code>: la aceleración se recalcula en cada tick para garantizar que el Carro alcance exactamente <span class="math inline">\(v_f = 25\,\mathrm{km/h}\)</span> al llegar a <span class="math inline">\(s = 4\,\mathrm{m}\)</span>: <span class="math display">\[
+a = \frac{v_f^2 - v^2}{2\,(4 - s)}
+\]</span> donde <span class="math inline">\(v\)</span> y <span class="math inline">\(s\)</span> son la velocidad (en <span class="math inline">\(\mathrm{m/s}\)</span>) y posición actuales. La fuerza es <span class="math inline">\(F = m \cdot a\)</span>. <strong>Cuando <span class="math inline">\(s \ge 4\)</span>, no calcular <span class="math inline">\(a\)</span> — fijar directamente <span class="math inline">\(v = 25\,\mathrm{km/h}\)</span> y transicionar a <code>RUNNING</code></strong> para evitar división por cero. La intensidad sigue el perfil: <span class="math display">\[
+I(s) = I_{\max} \cdot \sin\!\left(\frac{\pi\,(s - 2)}{2}\right), \quad I_{\max} = 200\,\mathrm{A}
+\]</span></li>
+<li>En <code>RUNNING</code> (post-booster): velocidad constante <span class="math inline">\(v = 25\,\mathrm{km/h}\)</span>, <span class="math inline">\(a = 0\)</span>, <span class="math inline">\(I = 0\)</span></li>
+<li>En <code>BRAKING</code>: <span class="math inline">\(F_{\text{brake}} = 196\,\mathrm{N}\)</span>, <span class="math inline">\(a = -F_{\text{brake}}/m\)</span>. En cada tick (<span class="math inline">\(\Delta t = 0.25\,\mathrm{s}\)</span>) se actualiza: <span class="math display">\[
+v \leftarrow v + a\,\Delta t \qquad s \leftarrow s + v\,\Delta t
+\]</span> Si <span class="math inline">\(v \le 0\)</span> → transición a <code>STOPPED</code>. Si <span class="math inline">\(s \ge 50\)</span> → <em>mechanical stopper</em>.</li>
+<li>En <code>STOPPED</code>: todas las variables a 0 salvo posición</li>
+</ul>
+<p>No es necesario implementar un modelo físico complejo, pero sí coherente con las reglas anteriores.</p>
+<blockquote class="blockquote">
+<p><strong>Velocidad de simulación</strong></p>
+<p>El backend no corre en tiempo real. El paso de tiempo físico se escala con un factor fijo <code>SIM_SPEED = 0.2</code>, de modo que la simulación transcurre <strong>5× más lenta</strong> que el tiempo real. La frecuencia de emisión por WebSocket se mantiene en 4 Hz.</p>
+<p><span class="math display">\[
+\Delta t_{\text{físico}} = \Delta t \times 0{,}2 = 0{,}05\,\mathrm{s/tick}
+\]</span></p>
+<p>Esto proporciona aproximadamente 33 segundos de margen en el tramo post-booster para enviar la orden de frenado, facilitando las pruebas interactivas.</p>
+</blockquote>
+<hr>
+</section>
+<section id="comunicación-websocket" class="level3">
+<h3 class="anchored" data-anchor-id="comunicación-websocket">Comunicación WebSocket</h3>
+<p>El servidor deberá emitir mensajes en formato JSON siguiendo los dos tipos definidos:</p>
+<section id="datos" class="level4">
+<h4 class="anchored" data-anchor-id="datos">Datos</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"topic"</span><span class="fu">:</span> <span class="st">"data"</span><span class="fu">,</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"payload"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"timestamp"</span><span class="fu">:</span> <span class="st">"2026-03-27T10:15:32.125Z"</span><span class="fu">,</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"state"</span><span class="fu">:</span> <span class="st">"RUNNING"</span><span class="fu">,</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"position_m"</span><span class="fu">:</span> <span class="fl">3.42</span><span class="fu">,</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"velocity_kmh"</span><span class="fu">:</span> <span class="fl">18.7</span><span class="fu">,</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"acceleration_ms2"</span><span class="fu">:</span> <span class="fl">2.15</span><span class="fu">,</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"mass_kg"</span><span class="fu">:</span> <span class="dv">40</span><span class="fu">,</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"voltage_v"</span><span class="fu">:</span> <span class="dv">400</span><span class="fu">,</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"current_a"</span><span class="fu">:</span> <span class="fl">125.4</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="mensajes" class="level4">
+<h4 class="anchored" data-anchor-id="mensajes">Mensajes</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"topic"</span><span class="fu">:</span> <span class="st">"message"</span><span class="fu">,</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"payload"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"info"</span><span class="fu">,</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"content"</span><span class="fu">:</span> <span class="st">"Precharge started"</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Los tipos posibles son <code>info</code>, <code>success</code>, <code>error</code> y <code>critical</code>. El backend deberá emitir un mensaje en cada transición de estado:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 57%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Evento</th>
+<th><code>type</code></th>
+<th><code>content</code> (ejemplo)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Comando <code>PRECHARGE</code> recibido</td>
+<td><code>info</code></td>
+<td><code>"Precharge started"</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(V = 400\)</span> alcanzado</td>
+<td><code>success</code></td>
+<td><code>"V = 400V precharge completed successfully"</code></td>
+</tr>
+<tr class="odd">
+<td>Comando <code>START</code> recibido</td>
+<td><code>info</code></td>
+<td><code>"Booster test started. Mass: 40 kg"</code></td>
+</tr>
+<tr class="even">
+<td>Carro entra en Sección <em>Booster</em></td>
+<td><code>info</code></td>
+<td><code>"Booster section entered"</code></td>
+</tr>
+<tr class="odd">
+<td>Carro sale de Sección <em>Booster</em></td>
+<td><code>success</code></td>
+<td><code>"Boost completed. Velocity: 25 km/h"</code></td>
+</tr>
+<tr class="even">
+<td>Comando <code>BRAKE</code> recibido</td>
+<td><code>info</code></td>
+<td><code>"Braking initiated"</code></td>
+</tr>
+<tr class="odd">
+<td>Carro detenido (<span class="math inline">\(v = 0\)</span>, <span class="math inline">\(s &lt; 50\)</span>)</td>
+<td><code>success</code></td>
+<td><code>"Cart stopped at s = 12.3 m"</code></td>
+</tr>
+<tr class="even">
+<td>Carro llega al <em>mechanical stopper</em></td>
+<td><code>critical</code></td>
+<td><code>"Cart reached mechanical stopper at s = 50 m"</code></td>
+</tr>
+<tr class="odd">
+<td>Comando no válido para el estado actual</td>
+<td><code>error</code></td>
+<td><code>"Command BRAKE not allowed in state IDLE"</code></td>
+</tr>
+<tr class="even">
+<td>Comando <code>RESET</code> recibido</td>
+<td><code>info</code></td>
+<td><code>"System reset"</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="comunicación-http" class="level3">
+<h3 class="anchored" data-anchor-id="comunicación-http">Comunicación HTTP</h3>
+<p>El servidor HTTP escuchará en el puerto <code>8001</code> y expondrá dos endpoints.</p>
+<section id="post-apicommand" class="level4">
+<h4 class="anchored" data-anchor-id="post-apicommand"><code>POST /api/command</code></h4>
+<p>Recibe un comando del frontend. Si el comando no es válido para el estado actual, responde <code>400 Bad Request</code>. En caso contrario responde <code>200 OK</code> y emite el mensaje correspondiente por WebSocket.</p>
+<p>Comandos aceptados:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Comando</th>
+<th>Estado requerido</th>
+<th>Payload adicional</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>PRECHARGE</code></td>
+<td><code>IDLE</code></td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><code>START</code></td>
+<td><code>READY</code></td>
+<td><code>{ "mass": &lt;número&gt; }</code></td>
+</tr>
+<tr class="odd">
+<td><code>BRAKE</code></td>
+<td><code>RUNNING</code> o <code>BOOSTING</code></td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><code>RESET</code></td>
+<td>Cualquiera</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="get-apicalculate" class="level4">
+<h4 class="anchored" data-anchor-id="get-apicalculate"><code>GET /api/calculate</code></h4>
+<p>Calcula la posición óptima para iniciar el frenado. Recibe dos <em>query parameters</em>:</p>
+<ul>
+<li><code>m</code>: masa del Carro en <span class="math inline">\(\mathrm{kg}\)</span></li>
+<li><code>d</code>: distancia deseada al final del <em>track</em> en <span class="math inline">\(\mathrm{m}\)</span></li>
+</ul>
+<p><span class="math display">\[
+d_{\text{brake}} = \frac{v_0^2 \cdot m}{2\,F_{\text{brake}}} \qquad s_{\text{brake}} = (50 - d) - d_{\text{brake}}
+\]</span></p>
+<p>con <span class="math inline">\(v_0 = 25\,\mathrm{km/h}\)</span> (convertido a m/s) y <span class="math inline">\(F_{\text{brake}} = 196\,\mathrm{N}\)</span>.</p>
+<p><strong>Respuesta:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"braking_position_m"</span><span class="fu">:</span> <span class="fl">37.5</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Si los parámetros son inválidos (negativos, ausentes, o <span class="math inline">\(s_{\text{brake}} &lt; 0\)</span>), responder <code>400 Bad Request</code>.</p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+</section>
+<section id="uso-del-backend-de-ejemplo" class="level2">
+<h2 class="anchored" data-anchor-id="uso-del-backend-de-ejemplo">Uso del backend de ejemplo</h2>
+<p>Para los alumnos que realicen únicamente el frontend, se proporciona un backend de ejemplo ya compilado y listo para ejecutar, sin necesidad de instalar Python ni ninguna dependencia.</p>
+<section id="descarga" class="level3">
+<h3 class="anchored" data-anchor-id="descarga">Descarga</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Sistema operativo</th>
+<th>Enlace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Windows</td>
+<td><a href="backend-windows.zip">Descargar backend.exe</a></td>
+</tr>
+<tr class="even">
+<td>Linux</td>
+<td><a href="backend-linux.zip">Descargar backend</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ejecución" class="level3">
+<h3 class="anchored" data-anchor-id="ejecución">Ejecución</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="" aria-current="page">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Linux</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Haz doble clic sobre <code>backend.exe</code> o ejecútalo desde una terminal:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>backend.exe</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Otorga permisos de ejecución y lánzalo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x backend</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./backend</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="puertos" class="level3">
+<h3 class="anchored" data-anchor-id="puertos">Puertos</h3>
+<p>Una vez en marcha, el backend expone dos servicios de forma simultánea:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Servicio</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>WebSocket (telemetría)</td>
+<td><code>ws://localhost:5001/backend/stream</code></td>
+</tr>
+<tr class="even">
+<td>HTTP (comandos y cálculo)</td>
+<td><code>http://localhost:8001</code></td>
+</tr>
+</tbody>
+</table>
+<p>El frontend debe estar lanzado <strong>después</strong> de que el backend esté corriendo. Asegúrate de que los puertos <code>5001</code> y <code>8001</code> no están ocupados por otro proceso.</p>
+<hr>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="entrega" class="level2">
+<h2 class="anchored" data-anchor-id="entrega">Entrega</h2>
+<p>La entrega del proyecto se realizará a través de un <strong>repositorio de GitHub</strong> que deberá cumplir los siguientes requisitos:</p>
+<ul>
+<li>El repositorio debe contener <strong>únicamente el proyecto</strong> — sin archivos innecesarios, sin el binario del backend de ejemplo descargado, y sin carpetas de dependencias (<code>node_modules</code>, entornos virtuales, etc.). Se recomienda incluir un <code>.gitignore</code> adecuado.</li>
+<li>El repositorio debe incluir un <code>README.md</code> con instrucciones claras para instalar y ejecutar el proyecto.</li>
+<li>Se enviará el enlace al repositorio al responsable del subsistema de Software.</li>
+</ul>
+<section id="plazos" class="level3">
+<h3 class="anchored" data-anchor-id="plazos">Plazos</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Hito</th>
+<th>Fecha</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Plazo para añadir cambios al repositorio</td>
+<td><strong>12 de mayo de 2026</strong></td>
+</tr>
+<tr class="even">
+<td>Exposición del proyecto</td>
+<td><strong>14 de mayo de 2026</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>A partir del <strong>12 de mayo</strong> no se tendrán en cuenta los cambios realizados en el repositorio para la evaluación. La exposición consistirá en una demostración en vivo del proyecto y una breve explicación de las decisiones de implementación tomadas.</p>
+</blockquote>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas</h2>
+
+<ol>
+<li id="fn1"><p>Sistema estructural diseñado para el montaje rígido de prototipos o componentes, equipado con sensores para la medición de parámetros operativos y la simulación de condiciones de carga controladas.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Un imán.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Plancha de metal que asegura que el Carro <em>booster</em> no salga del <em>track</em>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>No se incluye una descripción más extensa porque el desafio de este apartado es ver, vuestras habilidades para seleccionar la forma óptima.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
